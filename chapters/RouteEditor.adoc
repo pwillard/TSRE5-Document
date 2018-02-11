@@ -1,0 +1,896 @@
+== Route Editor
+
+=== Before Getting Started
+
+To start working with Route Editor you need to:
+
+* Have downloaded and installed the TSRE5 application
+* Have at least one train simulator *gameRoot* Directory to refer to
+
+[NOTE]
+ A `gameRoot` also referred to the as the *Root Dir* must be one of the following items:
+
+* An MSTS root directory
+* An {OR} installation profile
+* A Mini Route directory
+* Any other Directory that contains populated "global", "routes" and "trains" folders 
+
+=== Overview
+
+* (Optional) Set the `gameRoot` value in the application settings to your desired Root Directory. See: <<settings>>
+
+* Open `TSRE5.exe`, or `TSRE5x32.exe` if you are using a 32 bit version of Windows
+
+[IMAGE]
+image::images/re1.png[]
+
+* Read message in the Warning Box. If you wish to no longer see the warning in the future, set the item `warningBox = false` in settings file. See: <<settings>>
+
+[IMAGE]
+image::images/re2.png[]
+
+* If you have properly set up the `gameRoot` settings then the {RE} is ready to use
+
+[IMAGE]
+image::images/re3.png[]
+
+Otherwise, click browse button:
+
+[IMAGE]
+image::images/re4.png[]
+
+And select your Root Directory:
+
+[IMAGE]
+image::images/re5.png[]
+
+Now {RE} i ready to use!
+
+<<<<
+
+=== Route Editing
+
+If you want to use the {RE}, open the TSRE5 application. By default, the Route Editing features will be available.  The Activity Editor is also available within the {RE}.
+
+[NOTE]
+ If you want to use Consist Editor however, you need to use the `ConsistEditor.bat` file to start a Consist Editing session.
+
+[IMAGE]
+image::images/intro3.png[]
+
+
+=== Loading a Route
+
+If you have not defined a default "gameRoot" setting, you need to click the *browse* button and select your game directory. It can be any directory that contains `Routes`, `Trains` and `Global` folders such as the standard MSTS installation folder, or a mini route folder.
+
+[IMAGE]
+image::images/lr1.png[]
+
+You can also select from your "recently used" folders if you have had previous {RE} sessions.
+
+[IMAGE]
+image::images/lr2.png[]
+
+Select the route you want to edit and click *Load*
+
+[IMAGE]
+image::images/lr3.png[]
+
+
+
+
+<<<<
+
+=== Creating new Route
+
+Click the *New* button
+
+[IMAGE]
+image::images/ren1.png[]
+
+Enter the name to use as a *Route Name ID*. This will become the route's directory name and is used for the naming of key files. It is a good practice to enter a short, lowercase name with no spaces.
+
+Enter the Latitude and Longitude of the World coordinates where you want to start the new Route. If it will be fictional route, you can use default values. 
+
+[WARNING]
+  The values entered need to be valid Latitude and Longitude coordinate values, otherwise {RE} will crash. 
+
+[IMAGE]
+image::images/ren2.png[]
+
+To find the Latitude and Longitude of the location you want to work in, you can use Google Maps.
+
+[IMAGE]
+image::images/ren4.png[]
+
+Click *OK* button.
+
+You can now edit the Route Settings. You can also click *OK* here and come back to update these values later.
+
+[IMAGE]
+image::images/ren3.png[]
+
+Display name:: The Route name. 
+Description::  The Route description.
+
+Electrified:: Yes/No option to choose if tracks have electricity.
+Wire Height:: The overhead line height. 
+
+[NOTE]
+The default MSTS/{OR} wire is visually unpleasing and many route builders ignore this value.
+
+
+Max Voltage:: The overhead line voltage.
+
+Start Tile:: The {RE} will start at this world position. Changing these values is not recommended while creating new route.
+
+[IMAGE]
+image::images/ren4.png[]
+
+You can now begin editing your new route.
+
+<<<<
+
+=== Route editing
+
+*Main Window*
+
+
+[IMAGE]
+image::images/rec1.png[]
+
+==== Menu
+
+`Route->Save`:: Save changes.
+`Route->Create Paths`:: Delete all existing paths and create new simple paths for each track end node. You can use it to test route in OR without manually creating paths. If route has custom paths - make backup first!
+`Route->Edit Route settings`:: edit route settings (TRK file) in new window.
+`Route->Exit`:: Close the route editor.
+
+`Edit->Copy`:: copy selected object (ctrl+c).
+`Edit->Paste`:: paste selected object (ctrl+v).
+
+`View`:: show/hide route objects.
+
+`Tools->Properties`:: show/hide properties tab.
+`Tools->NaviWindow`:: show/hide navigation window.
+`Tools->F1 - Tools->F12`:: choose a tool-set to work with.
+
+`Help->About`:: show app info.
+
+==== Properties
+
+Shows the selected object's properties.
+
+==== Tools
+
+Tools you can use to edit your route.
+
+`Route View`::  Shows route.
+
+[#naviwindow]
+==== Navigation Window
+
+[IMAGE]
+image::images/naviwindow.png[]
+
+1. Select marker file from list (current: MKR, KML, GPX) and select item from the file. _See <<realistic>>_
+2. Shows current world position. You can enter position you want to go and press Jump button (3).
+3. Shows current tile object count and removed object count. 
+
+[IMAGE]
+image::images/rec2.png[]
+
+==== Navigating in TSRE
+
+Use *ADWS* or Arrow keys to move around. Press left mouse button and move mouse to look around.
+
+===== Keyboard
+
+[IMAGE]
+image::images/rec3.png[]
+
+Keyboard has two layouts depending on the setting in the `settings.txt` file 
+1. If `useNumPad = true` TSRE assumes you have a number pad
+2. If `useNumPad = false` TSRE assumes you will use the Arrow Keys
+
+[TIP]
+
+Remember: `Ctrl + Z` will *Undo* the last operation
+
+[#editor]
+=== Using the Editor
+
+==== Main
+
+`F1 ... F12`::    Choose a tool-set.
+`M`::   Save the route
+`B`::   Create new Tile at current position:
+
+[IMAGE]
+image::images/rec4.png[]
+
+==== Navigation
+
+*Navigating Keys*
+
+`AWSD` (and *Arrows* if layout 1)::  Move left, right, front, back.
+`Space`::  Move up.
+`E` or `Shift`:: Move faster
+
+
+==== Working with objects:
+
+`Q`:: Place a new object.
+`Ctrl + Q`:: Toggle the "manual/auto" `add track to TDB` option (use Z key for manual).
+`Shift + Q`::  Change the placement mode: stick only to terrain / stick to everything.
+
+[IMAGE]
+image::images/rec5.png[]
+
+*Placement* 
+
+`E`:: Select
+
+`R`:: Rotate
+`T`:: Translate / Transform
+`Y`:: Scale. Use for example with transfers, dynamic tracks
+
+`H`:: Adjust object position to terrain.
+`N`:: Adjust object rotation to terrain.
+
+`P`:: Pick object. You can pick existing object and place it in different place.
+`C`:: Clone object. Creates object duplicate at the same position.
+`Delete`:: Delete selected object.
+`Ctrl`:: Change R/T/Y step slower.
+`Alt`:: Change R/T/Y step faster.
+`\`:: Toggle Terrain Collision mode.
+
+Additionally:
+
+*Numpad keys* + *pgup* / *pgdown*:: Use for R/T/Y if in keyboard layout 1 mode.
+*Arrows* and *pgup* / *pgdown*::    Use R/T/Y if layout 2.
+*Mouse*::   Use RTY R/T/Y if in placement mode: Will stick only to terrain.
+
+*Track keys*
+
+`Z`:: add selected track to TDB.
+`X`:: change new track position. Use before Z.
+`F`:: adjust terrain to track. Use after Z. See more: Editing terrain.
+
+*Terrain keys*
+
+Z:: change height-map painting direction: + or -
+
+
+=== Selecting objects
+
+You can select all objects using Select Tool. Enable it using:
+
+* `E` key
+* Right click -> *Select*
+* Edit Menu -> *Select*
+* Select button in *F1* Object Tools
+
+=== Rotating Objects
+
+* `E` key
+* Right click -> *Select*
+* Edit Menu -> *Select*
+* `T` key
+
+When you rotate an object by use of the Copy/Paste or Transform button, be sure to re-select the object (even though it appears to be selected (blue outline)) by use of the 'E' key or Select Button. This is to allow you to regain fine movement control when the `Ctrl` Key is pressed and held with the movement keys.
+
+
+<<<<
+
+=== Fast Travel
+
+You can easily jump to many locations in your route using *Navi Window*.
+
+[IMAGE]
+image::images/rec5.png[]
+
+Example:
+
+1. Select a category from the categories list, for example *Route: Sidings*.
+2. Select *siding*.
+3. Click Jump.
+
+For more information about the  *Navi Window*, refer to: <<naviwindow>> 
+
+
+<<<
+
+[#realistic]
+=== Making realistic Routes using GEO data
+
+ Route Editor supports using several methods for making realistic routes easier. You can use:
+
+* Marker Files
+* Map Layers
+* HGT terrain data import
+
+[NOTE]
+ If you are making an imaginary route, you can also skip this section.
+
+==== Marker Files 
+
+Current version of Route Editor supports three different types of marker files formats:
+
+1. MKR MSTS file http://msts.steam4me.net/tutorials/mkr_googlemaps.html
+2. KML file https://en.wikipedia.org/wiki/Keyhole_Markup_Language
+3. GPX file https://en.wikipedia.org/wiki/GPS_Exchange_Format
+
+
+MKR files are the legacy method of placement references used with the MSTS Route Editor.  This is by far the most common method used when creating MSTS routes, however, with TSRE5  everyone should use KML or GPX methods instead.
+
+===== How to create KML/GPX format files
+
+You can use http://www.gpsvisualizer.com/draw/
+This site allows you to draw points and paths on a large number of map layers, including the Google Maps Satellite images. 
+
+[IMAGE]
+image::images/reg1.png[]
+
+Use Button marked `1` to draw points, or use the Button marked `2` to draw paths.
+
+[IMAGE]
+image::images/reg2.png[]
+
+Draw some points and paths
+
+[IMAGE]
+image::images/reg3.png[]
+
+1. to select file type
+2. to download it
+
+[IMAGE]
+image::images/reg4.png[]
+
+
+Place the file in working route directory.
+
+[IMAGE]
+image::images/reg5.png[]
+
+In the *World Position* window, select your file.
+You can select file item and use Jump button to jump to item position.
+Click menu *View->Markers* to show selected file items. 
+
+[IMAGE]
+image::images/reg6.png[]
+
+==== Map Layers 
+
+Using a _Map layer_ is a better and faster solution than using marker files if you want to create realistic route.
+
+* Go to *Geo Tools*. Menu `Tools->Geo` or press `F3`.
+* Click `Load Map` button.
+* Find Tile you want to load map layer and click on it.
+* In new window click `Load` and wait until map layer download is complete.
+
+You can choose between bright and dark colors.
+
+[IMAGE]
+image::images/reg7.png[]
+
+* Close the window.
+* Click `Show/H Map` button.
+* Find Tile you want to show map layer and click on it.
+
+[IMAGE]
+image::images/reg8.png[]
+
+[WARNING] 
+    Don't load too many Tile maps at once.
+
+
+==== HGT terrain data import 
+
+HGT terrain data import allows you to easily create realistic terrain. 
+You need to download the proper HGT files manually. There are many places that HGT files can be downloaded. An Example of a site where you can get them is: http://e4ftl01.cr.usgs.gov/SRTM/SRTMGL1.003/2000.02.11/
+If you don't know which files to download - See below.
+
+* Set *geoPath* in settings to directory where you have your HGT files. _See: <<settings>>_
+* Go to *Geo Tools*. Menu `Tools->Geo` or `F3`.
+* Click `Load Height` button.
+* Find Tile you want to load terrain data and click on it.
+* In new window click `Load` button.
+
+If a proper HGT file doesn't exist, a message box will tell you name of the file you need to download. Close {RE} and download the missing files.
+
+[IMAGE]
+image::images/reg9.png[]
+
+* Close the window.
+* Enjoy realistic terrain.
+
+[IMAGE]
+image::images/reg9.png[]
+
+=== Placing New Tracks
+
+How to place tracks or roads?
+
+* Select track or road type you want.
+* Select shape you want.
+
+[IMAGE]
+image::images/ret1.png[]
+
+* Click `Place New` button.
+* Click on the ground where you want new track.
+
+[IMAGE]
+image::images/ret2.png[]
+
+* You can adjust track position by pressing `T` and using `4,6,8,2` keys (move XZ axis), `9,3` keys (move Y axis).
+* You can adjust track rotation by pressing `R` and using `4,6` keys.
+* You can adjust track elevation by pressing `R` and using `8,2` keys. The Properties window will show you elevation value.
+* You can hold `Ctrl` with *R* & *T* mode to change the step rate (0.10%).
+
+[NOTE]
+Depending on your keyboard layout, you can also use other keys. See _<<editor>>_.
+
+[IMAGE]
+image::images/ret3.png[]
+
+* Press `Z` to add track to the TDB (Track DataBase). If you want to remove track from the TDB and keep the shape - press `Z` again.
+
+[WARNING] 
+ Never translate or rotate track when it is in the TDB (when it has a yellow line) !!! If you do, you will need to delete this track and place new one.
+
+* When track is in TDB, you can press `F` to adjust terrain to the track. You can also do it later by selecting the track you want to adjust and press `F`. See more: <<Editing_terrain>>.
+
+[IMAGE]
+image::images/ret4.png[]
+
+* If you want to place the next track, click around the endpoint (the blue pole) where you want to add next track. 
+* If you have difficulty placing a track above or below ground, press `Q` to change placement mode to `stick to all`. 
+
+[IMAGE]
+image::images/ret5.png[]
+
+* If you want to change direction of track or joining point, press `X`. *Do it before pressing `Z`!*
+
+[IMAGE]
+image::images/ret6.png[]
+
+* If you want to delete track from TDB, but keep the shape placed, press `Z`
+
+[IMAGE]
+image::images/ret7.png[]
+
+If you want to delete track completely, press `Delete`. In this case, you don't need to press `Z`.
+
+==== Dynamic Track sections
+ 
+1. Place track
+2. Adjust dynamic track properties
+3. Save w/no TDB lines
+4. Re-select track
+5. Press `Z` for TDB 
+6. Save
+
+
+
+
+==== Copying Tracks
+
+You can duplicate an existing track by find the one you want, selecting it and then pressing `P`.
+
+Now you can click `Place New` and place this track at another location.
+
+You can also select track and press `Ctrl+C` to copy it and then move to the location where you want add the new track and press `Ctrl+V` to paste it.
+
+[IMAGE]
+image::images/ret8.png[]
+
+
+
+==== Tips for Placing and Rotating Tracks for Gradients
+*From Vince Cockeram*
+
+[TIP]
+When Elevating track, remember the 'snap' elevation settings to get a smooth gradient transition. 0.150, 0.300, 0.450, 0.600 and so on.
+
+==== Rotating Tracks for Gradient
+
+1. Place a track section in TSRE
+
+2. Press keyboard `R`. This puts just installed track section in ROTATE Mode.
+
+3. Holding the keyboard `CTRL` key down, tap either `NumPad 8` for up or `NumPad 2` for down.
+
+4. The track will elevate or descend in *0.1 per-cent steps* with each key tap of `8` or `2`.
+
+5. The *0.1 grade per-cent* is equal to *1.0 per-mille* which is equal to *0.058 degrees* (MSTS measurement) steps.
+
+6. *All three of these gradient values are displayed on the TSRE panel, left side.* 
+
+7. If you want a very smooth a gradient transition, use 1.5 meter track sections with each sections elevation greater or less than the previous track section by 0.1 per-cent or 1.0 per-mille or 0.058 degrees.
+It will look less smooth but will still look good when you elevate / descend in 0.2 percent steps.
+
+
+When manually entering the numbers into the gradient section of the panel you must use a two place decimal, where 1 percent (per hundred) is entered as 1.00 and is equal to 10 permille (per thousand) which must be entered as 10.00 in the permille field and 0.1 percent is entered as 0.10 or 1.00 permille.
+
+[NOTE]
+TSRE will strip off leading and trailing zeros when saved but this does NOT change the gradient values.
+
+*Keyword: Practice!*
+
+Either may be used but the PERMILLE is much easier to understand. Here's a little chart
+
+WHAT YOU ENTER IN THE GRADE FIELDS 
+
+[width="75%",align="center"]
+[cols="50,50]
+|===
+|PERMILLE |PERCENT
+|1.00     |0.100
+|2.00     | 0.200
+|3.00     | 0.300 
+|4.00     | 0.400
+|5.00     | 0.500
+|6.00     | 0.600
+|7.00     | 0.700
+|8.00     | 0.800
+|9.00     | 0.900
+|10.00    | 1.00
+|===
+
+
+For whatever reason if you enter, lets say, 6 permille or .6 percent when you select the track/road the 6 permille changes to 5.9996 permille or 0.59996 percent. 
+
+Make sense? I dunno' but it is what it is.
+
+*USE TWO PLACE DECIMALS IN EITHER FIELD AND IT WILL SAVE EXACTLY AS ENTERED. IF YOU FAIL TO USE 2 PLACE DECIMAL PLACES, TSRE WILL ROUND OFF NUMBERS*
+
+You can see why I like using the PERMILLE field but I admit I had to be dragged kicking and screaming into it.
+I had never heard of permille when Goku brought it up and I thought it was a typo for PERMILE!!! Ouch!
+Goku says Europe has been using permille for 40 years or so because there is more precision. I AGREE!
+
+
+*Some General thoughts from Vince about working with gradients*
+
+Until you get used to working with gradients get down close and personal as you adjust track grade. Entering (typing) into the gradient dialog panel sometimes produces unwanted results. 
+
+
+Example: I'll set (type in ) a grade of 20 in the permille field ( 2.0 percent ) and then when I have to select the already selected track section ( why do I have to re-select) in order to use the 'Z' key to add track section to the TDB. (yellow lines)The gradient field 20 permille becomes 19.9998. It seems to have a arithmetic error. I want 20 permille and I get 19.99989 something? It's required to have the editor hold the grade a designer wants.
+
+Additionally I can't figure why if I select a track section (Blue Outlined) why do I have to select ('E' key or Select Button) it again . . .and again, the need to select just about any object multiple times to perform multiple concurrent operations. 
+
+1. select and use the Transform feature. 
+2. now select the already selected (blue outlined) object if you need to move the object into a final position.
+
+Seems a bit silly but this editor is a work-in-progress so I have gotten used to having to select over and over again as just a very small nit. Annoying but not a show stopper.
+
+==== The TRANSFORM panel
+
+This is very very helpful. A great feature only lacking a detailed method of Operation.
+
+How many times have you wanted to align a platform, bridge, berm, to track on a grade? Me? A LOT!
+Once I figured out (sort of) how Transform worked it is a super tool! 
+I urge and recommend experimentation. Post results here. One day we can put all these 'found-out-about-features' in a FAQ.
+Note that the Transform Panel has `OK` --- `Cancel` buttons. You enter your numbers and `OK` does the job. How about the same thing for the Track Grade Panel? That would eliminate the track or road moving until you are ready.
+
+One last nit to pick: `Dynamic Track` . . . . I don't see how (other than tapping the keys I use for grade) to set a gradient for DT?
+I do know that holding the `Ctrl` key down as I tap the `NumPad 2` or `8` keys for down / up slope of 1 permille (0.1 percent) grade changes so I just count off key taps. 
+A display of grade as is done for 'normal' track is preferred. 
+Now add a Grade Panel OK button to set the typed in grade and we'll be cooking.
+
+==== Laying Track
+
+When swapping track sections in and out it's better to set TSRE to NOT automatically add track into the database. 
+The yellow lines over the track are a graphic representation of the TDB.
+
+To toggle `Auto-Add TDB ON/OFF` With nothing selected press `Ctrl + Q` 
+
+This prevents the auto-add to TDB when a track is de-selected.
+
+This is good practice because if you move a track section without first removing the yellow TDB lines will create a MIS-MATCH between the TDB and the WORLD file. 
+This is a well known 'Out of Sync' condition and it's a real pain to repair.
+At this time there is no indication of `Ctrl + Q` being on or off. 
+Before beginning editing you should test to see if Auto-TDB add is on or off. How?
+
+When a *Auto-Add TDB is ON*, the Yellow TDB indicator lines will come ON when the track is deselected. 
+There is no indication of Auto-TDB at this editor release level other that the above procedure. Goku is aware of the no indication.
+
+Another use for the `Q` key: Allowing easy installing underground or on up-in-the-sky bridges.
+*With nothing selected press `SHIFT + Q`"
+
+This allows you to place the cursor ( pointer ) on any object for the purpose of placing a track or road section.
+The cursor normally 'sticks' to the terrain. `Shift + Q` allows the cursor to *Stick to Anything*. 
+This IS covered in the Manual. 
+-
+There is an error in the Manual for the entry on this in section /rewobj.html page 1 of 4 Item 5. `Shift +` is missing.
+-
+There is no indication of Shift + Q being on or off however the behavior of the cursor provides a positive indication.
+
+* When placing track underground as for a tunnel, first check 'Hide Terrain Shape' in the View Menu
+* Now, position the cursor very close to the end on the previously installed track section to place the next track section. 
+* For new track to SNAP to previously installed track, the previous track section MUST have the Yellow TDB lines present.
+* To add a newly placed track section to the TDB when in manual (`Ctrl + Q`) mode: 
+
+1.Select the track. Blue outline appears. 
+2. press the `Z` key. Yellow line appears & track is added to the TDB. Save to make final. 
+
+Do NOT move the track if TDB lines are present
+
+* Dragging track underground? _Don't try it!_ 
+* Misplace or lose a track underground? (which dragging is sure to do) Press `DELETE` and do over! 
+
+
+
+=== Placing Objects
+
+How to place objects?
+
+* Select object type you want.
+* Select shape you want.
+
+[IMAGE]
+image::images/reo1.png[]
+
+* Click `Place New` button.
+* Click on the ground where you want new object.
+
+[TIP]
+ Remember that using `Shift+Q` you can change placement mode between *stick only to terrain* or *stick to everything*.
+
+[IMAGE]
+image::images/rec5.png[]
+
+*Selecting objects:*
+
+Click `Select` button or press `E` key.
+
+*Moving and Rotating objects:*
+
+1. Select object and move it around using mouse. Use mouse wheel to raise or lower its position. 
+2. You can use advanced translation by pressing `T` and using `4,6,8,2` keys{DOT} to move in X and Z Axis, and `9,3` keys to move in Y axis. 
+3. You can adjust object rotation by pressing `R` and using `4,6,8,2` keys{DOT}.
+4. You can press `Ctrl` to change `RT` step.
+
+[NOTE]
+ {DOT} Depending on your keyboard layout, you can use other keys. See How to use Route Editor.
+
+*How to duplicate objects?*
+
+1. Select object and press `Ctrl+C`, find place you want new object and press `Ctrl+V`
+2. Press `C` to clone object and make duplicate at the same position.
+3. Press `P` to pick object. Now you can click `Place New` button and place this object in a new location.
+
+*How to delete objects?*
+
+* Select object and press `Delete`.
+
+==== How to align objects to track
+
+*Stick to track method*
+
+* Click `Stick to track` checkbox.
+* Click `Place New` button and place object you want on a track you want to align.
+
+[IMAGE]
+image::images/reo2.png[]
+
+*Stick to Target*
+For when you need to align ANYTHING to track.
+
+* Place a Check in the `Stick to Target` box.
+* Any object placed within the distance specified in the *Snappable max radius field* {DOT}, will align to the track.
+* Set the size radius smaller to align objects in crowded areas.
+
+This sure makes placing track-side equipment, bridges, platforms, gantries easy, even on curve!.
+
+Placed items will follow (align to) the track grade. If the alignment is off by 90 degrees,  use the `Rot Y 90` button. The correct gradient will follow the rotation! 
+
+[TIP]
+  Signals will automatically align to the track when placed except for direction. Use `Flip` to change direction.
+
+{DOT} _This is set in the `Target Field Default` setting is Tracks_
+
+
+*Copy Rotation*
+
+* Select track you want to get the rotation from.
+* Click `Copy Rotation` button.
+* Select object you want to set the rotation.
+* Click `Paste Rotation` button.
+
+[IMAGE]
+image::images/reo3.png[]
+
+==== Static Objects 
+
+
+
+==== Forests 
+
+
+
+==== Transfers 
+
+
+
+==== Platforms and Sidings 
+
+
+
+==== Carspawners 
+
+
+
+==== Level Crossings
+
+
+==== Signals
+
+* Linking Signals* 
+
+TSRE's method of linking signals is quite intuitive, but can be daunting for the uninitiated. Here are some lessons learned.
+
+[TIP]
+  Be sure the pointer (cursor) is set to *Stick to Anything mode*. `Shift+Q` toggles the selection.
+
+*Easy Junction*
+
+[IMAGE]
+image::images/sig1.jpg[]
+
+1. Locate pointer on the track and place the signal. Red marker and signal object appear. Flip if necessary.
+2. Click the `Show list` button. 
+3. Click the `Link Top Head` checkbox. A check in the box appears and the `Link` button enables.
+4. Click the `Link` button. The `Set link` button enables. The fields are blank.
+5. Click on the `Set link button.` 
+6. Click the switch exit track you want linked. Junction data appears in the *Set Link* fields. 
+7. Save 
+
+*Explanation* 
+
+1. Assuming you've placed your signal and know what you want linked, click on the button `Show List` on the left-hand side of the screen. A menu will pop up with all the signal's sub-objects on it. Select what you need. Note that unlike MSTS, you must actually click on the checkbox, rather than either the text or checkbox.
+2. When you're ready to link a route, click the `Link` button for that sub-object, which should no longer be greyed-out now that that sub-object has been selected. When you press the `Link` button, the `Set Link` button should now read `Set Link [x]`, with `x` being the sub-object number assigned to it in the `sigcfg file`. That number is not otherwise indicated in the menu, but can be determined by counting from the top starting at 0 for the topmost one. In my case, it reads `Set Link [13]`.
+3. When you have done this, click on the track where you want the link set. In my case it will be the diverging route. In the image below, a red arrow indicates where I clicked to set the link. If done right, a set of numbers will appear in the blanks in the SubObjLink info section next to the Set Link button. The two outside numbers will be switch or end-of-track nodes wich will be visible in TSRE. These can be used, especially in tight quarters, to make sure you got the right track linked.
+
+[IMAGE]
+image::images/sig2.jpg[]
+
+*Complex Junction*
+
+[IMAGE]
+image::images/sig3.jpg[]
+
+Use above steps, but when clicking on links, especially for double slips, these are best practices.
+The red circle shows where I would link the through route on this switch. The green dotted line shows the *TSection* line for the through route, which will be a good guide to where to link that route. The blue circle shows where a diverging route can be selected on this switch. It works almost without fail, even in very tight spaces.
+
+[IMAGE]
+image::images/Link_areas.jpg[]
+
+These guides will work on any switch, not just double slips.
+
+
+==== Speedposts
+
+
+
+==== Pickups 
+
+
+
+==== Hazard Objects 
+
+
+
+==== Soundsources 
+
+
+
+==== Soundregions
+
+=== Editing Terrain
+
+*How to edit terrain settings?*
+
+Go to *Terrain Tools*. `Menu Tools->Terrain` or `F2`.
+
+* Use `Fixed Height` button and click on tile if you want to reset its height map to fixed value.
+* Use `Water level` button and click on tile if you want to set water level for tile.
+* Use `Show/H Water` button and click on small tile if you want to show/hide water.
+* Use `Show/H Tile` button and click on small tile if you want to show/hide it.
+
+[TIP]
+ If you want to show a hidden tile - click on its line.
+
+* If you want to make holes in terrain, use the `Gaps` button and click where you want it. You can use holes for tunnel entrances. If you want to fill the holes, show water first.
+
+[IMAGE]
+image::images/rete5.png[]
+
+==== Painting the Terrain Heightmap. 
+
+* Go to *Terrain Tools*. `Menu Tools->Terrain` or `F2`.
+* Click `HeightMap` button.
+* Click on terrain and paint using mouse.
+
+If you want to switch between making mountains and valleys, press `Z`
+
+[IMAGE]
+image::images/rete1.png[]
+
+You can adjust settings:
+
+[IMAGE]
+image::images/rete2.png[]
+
+*A: Brush Size*
+
+[IMAGE]
+image::images/rete3.png[]
+
+*B: Brush Intensity*
+
+[IMAGE]
+image::images/rete4.png[]
+
+*C: Brush fixed height* - it is used if Brush type = Fixed Height. 
+
+*D: Brush type*
+
+* Add simple: current height += brush size {mult} brush intensity
+* Add if inside size radius: current height += brush size {mult} brush intensity, but max value is brush size {mult} brush intensity
+* Fixed height: set fixed height
+* Flatten: make current height closer to average value
+
+*For Fine Adjustments to terrain* 
+
+* `F2` then Click on *HeightMap+* --> *Brush settings:* `Size=1`, `Intensity=1`(this is fine setting) 
+
+* In the View Menu, Check `Terrain Grid` (it's easy when you can see the vertex's to position the cursor.) 
+
+* The `Z` key toggles terrain vertex up/down. It make it VERY handy when sliding cursor around with mouse and left finger on `Z` key. 
+
+Tapping left mouse does it. Sliding and painting with the cursor is really a nice feature, especially with larger brush (cursor) sizes. 
+
+[WARNING]
+  Beware of terrain gaps . . . you can loose stuff, it falls though the hole if you dragging... bye bye... it's a long way down. 
+
+[TIP]
+  For a very fine adjustment of terrain you can use a track or a road section or just about any object to adjust and/or flatten terrain. However some objects/shapes produce some very strange terrain sculpting. The `Ctrl+Z` key comes in handy here.
+
+==== Painting Terrain Texture. 
+
+Go to *Terrain Tools*. `Menu Tools->Terrain` or `F2`.
+
+*Putting textures on terrain:*
+
+1. Find some textures and place them in `routeDirectory/terrtex`.
+2. Click `Load` button and select your texture from terrtex directory.
+3. Click `Put` and click on small tile you want place this texture. 
+4. If you want to rotate the texture, click on small tile again.
+
+You can use `Pick` button and pick a texture from the existing small tile instead of loading it from disk.
+
+*Painting terrain textures:*
+
+1. Pick or load texture you want to use as paint, or choose color from color window. 
+2. Click `Texture` button if you want to paint using texture.
+3. Click `Color` button if you want to paint using color.
+
+You can't lock small tile to avoid painting it by mistake.
+
+[NOTE]
+  Remember that painted textures need a lot of memory and disk space. Use them in important locations only. 
+
+[IMAGE]
+image::images/rete6.png[]
+
+==== Embankments and Cuttings
+
+Here you can adjust embankment settings. Look at this image: 
+
+[IMAGE]
+image::images/rete7.png[]
+
+If you want to create embankment or cutting, select the track or road (it must be in TDB) and press `F`.

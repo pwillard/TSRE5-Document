@@ -1,0 +1,169 @@
+
+
+:numbered!:
+[preface]
+== Preface
+
+*Here is what it is assumed that you already know.*
+
+* MSTS is the Microsoft Train Simulator
+* {OR} is an open source train simulator that can utilize MSTS Assets
+* You have seen the "editor" documentation related to MSTS or have used the utilities supplied with MSTS
+
+=== What is TSRE5 
+
+* TSRE5 is Game Engine compatible with MSTS and Open Rails
+* TSRE stands for Train Sim Route Explorer, the name I gave my "university homework"
+* 5 is 5th version of this engine
+
+The currently functional components of TSRE5 are:
+
+* Route Editor
+* Consist Editor
+* Activity Editor 
+
+=== Who Is This Document For?
+
+The utilities supplied with the Microsoft Train Simulator have always seemed a bit unpolished and in general have been prone to some unusual behaviors that includes crashing at various times or the random corruption of data files that can possibly lose you hours of work.
+
+The TSRE5 application attempts to resolve some of these historical issues by creating a brand new route, activity and consist editor from scratch. It remains fully compatible with the files created and used by the original MSTS utilities.
+
+The TSRE5 application is for content developers who which to create or edit routes, consists and activities for {OR} or MSTS.
+
+<<<<
+
+=== How to Download TSRE5 
+
+
+The latest version of TSRE5 is always here: http://koniec.org/tsre5/data/?C=M;O=D
+
+For example, download:  http://koniec.org/tsre5/data/TSRE5_v0.6955.exe
+
+[NOTE]
+ If you have 32 bit Windows (usually foe use with an older computer), you would download: http://koniec.org/tsre5/data/TSRE5x32_v0.6951.exe
+
+=== Installing TSRE
+
+Run the *EXE* file that was downloaded. The TSRE executable will download additional application data from the server.
+
+==== Manually Installing the additional TSRE application data 
+
+If the automatic installation download doesn’t work for you ( for instance, if you have Windows XP or no internet connection), download latest ZIP version from here: http://koniec.org/tsre5/data/appdata/ and then unzip into the desired directory location `tsre_appdata`):
+
+
+[IMAGE]
+image::images/install1.png[]
+
+Example Path to the shader directory:   `./tsre_appdata/0.69/shaders/`
+
+=== Linking TSRE to Your Simulator Files
+
+For TSRE to operate properly, you need to have some pre-existing simulator data folders on your computer.  This is referred to as `gameRoot` or `Root Dir` in this document. 
+
+Possible `gameRoot` locations are:
+
+* The MSTS root directory
+* An {OR} installation profile
+* A Mini Route directory
+* Any other Directory that has "global", "routes" and "trains" directories inside. 
+
+
+=== Linux
+
+You can also download a Linux native version.  The Linux release is only available as a 64 bit version. 
+
+The Linux version requires all of the files and directories that are located under the Root Directory, (gameRoot), to have lowercase names only.  Windows is generally a case insensitive operating system when it comes to file names, so `texture.ACE` and `Texture.Ace` refer to the same file in Windows.  This is not true with Linux. 
+
+For example,  in an `.s` file there might be a reference to`TEXTURE.ACE`, but in the hard drive it is named `Texture.ACE`. Linux does not see these as the same file.  To deal with this issue,  the Linux TSRE program always looks for only lowercase file names. 
+
+An example script to change all the filenames lowercase on Linux would be: 
+
+`rename 's!/([^/]*/?)$!\L/$1!' **/*` 
+
+_(It might require running it several times)_. 
+
+There are also Windows based tools like "Bulk Rename" http://www.bulkrenameutility.co.uk/Main_Intro.php that can process the files before being moved to a Linux platform.
+
+<<<<
+
+[#settings]
+=== How to Manually Configure TSRE5 
+
+This is optional. 
+
+==== How does `settings.txt` work?
+
+You can manually change the program's default settings by editing the `settings.txt` file.  The settings options are described below: 
+
+
+`#`:: Any line that starts with a `#` character is a "Comment" line and its contents are ignored.
+
+`consoleOutput = false`::  Set this to true if you want log printed on console. It will output to a file named `log.txt`. _It seems to not be working in the current version_ 
+
+`gameRoot = F:/train simulator`::  If you don't want to specify a root directory each time you start the application, enter the path to your desired MSTS/{OR} directory. 
+
+[TIP]
+ What is `gameRoot`? It is the directory where MSTS is installed, the {OR} installation profile, a Mini Route directory or any other Directory that has "global", "routes" and "trains" directories inside. 
+
+`routeName = cmk`:: Place a route name here if you want to skip the Load Window and instead use this route on startup.
+
+`startTile[x|y]`:: Optional Route Editor Start Tile position. This overrides the route settings in the `TRK` file. 
+
+  startTileX = -5306 
+  startTileY = 14961
+
+`createNewIfNotExist = true`::  Set this to true to auto create new route if the routeName is specified and the route does not already exist. 
+
+[TIP]
+ This setting is not recommended for new users.
+
+`writeEnabled = true`::  Set this to false if you want to disable all `Save` functions.
+
+`writeTDB = true`:: Set this to false if you want to disable the `Save Track Database` functions.
+
+`deleteTrWatermarks = true`:: Set this to true if you want to delete `TrWatermarks` objects in `.W` files on save.
+
+`deleteViewDbSpheres = true`:: Set this to true if you want to delete ViewDbSpheres objects in `.W` files on save.
+
+[TIP]
+  This option is needed if you are editing an existing MSTS route and have issues with displaying the objects in MSTS/{OR}.
+
+`geoPath = F:/hgst`::  Enter the path to directory where you have .HGT files stored if you want to use the terrain height data import in {RE}.
+
+`systemTheme = true`:: Set to true if you want to use a system theme instead of the default dark one.
+
+`colorConView = #FF0000`:: Consist Viewer custom background color.
+
+`colorShapeView = #00FF00`:: Shape Viewer custom background color.
+
+`toolsHidden = true`::  Set to true if you want to hide all tools in the {RE}.
+
+`usenNumPad = true`::   Set to false if you have keyboard with no numpad 0-9 keys.
+
+`tileLod = 2`::  Tile view distance. 0 = 1x1 tiles, 1 = 3x3 tiles, 2 = 5x5 tiles etc. The default MSTS value is 1.
+
+`objectLod = 4000`:: View distance in meters. tileLod = objectLod/2000 required. The default for the MSTS {RE} is `tileLod = 1, objectLod = 2000`
+
+`maxObjLag = 10`:: Number of new loading threads/frame. IMO, for HDD best value is 2. Lower value for older HDD and CPU, higher for SSD and better CPU. 
+
+`allowObjLag = 1000`:: As above. Lower value may be better for HDD. Higher value increases loading speed on startup but requires SSD.
+
+`fpsLimit = 0`::    Set FPS limit. Default 0 = no limit.
+
+`cameraFov = 20.0`:: {RE} Camera field of view.
+
+`warningBox = true`:: Set to false if you don't want warning window on startup.
+
+`leaveTrackShapeAfterDelete = false`:: Set to true if you want to manually fix broken TDB vectors in {RE}. _Only for advanced users_
+
+`renderTrItems = true`::    Set to true if you want to see TDB items. _Only for advanced users_
+
+`useImperial = false`:: Set to true if you want to use miles instead kilometers etc.  _Does not work currently_
+
+
+
+
+
+
+
+

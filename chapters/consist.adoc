@@ -1,0 +1,188 @@
+== Consist Editor
+
+The Consist Editor is a built-in part of the TSRE5 application.  It is enabled by supplying a command line option to TSRE5 when the program is started.  This option contains the value of "--conedit".  This is step that is accomplished by the supplied `ConsistEditor.bat` file.
+
+* To use the Consist Editor you must have a version of TSRE5 that is V0.6124 or higher.
+* You need to edit the `settings.txt` file and set the path to your MSTS/OR routes/trains directory, Example: `gameRoot = F:/train simulator`
+* You run the `ConsistEditor.bat` file from the command line or you can use Windows Explorer to copy the `ConsistEditor.bat` file and then use "Paste Shortcut" to save it to your desktop.  You can then use the new desktop icon to start the Consist Editor.
+
+=== How to use the Consist Editor
+
+*The File Menu*
+
+`File->New`::   Start a new consist
+`File->Save`::  Save the current consist
+`File->Exit`::  Exit the program
+
+[NOTE]
+  If you have made changes and they are unsaved when you attempt to exit, you will see the "save changes" pop-up menu.
+
+[IMAGE]
+image::images/Consistexit.png[]
+
+<<<< 
+
+==== Starting a new Consist or open an existing one:
+
+* Select an existing consist from the list or click `File->New` to begin a new one
+* Find a desired train item in the asset list and double click it to add it to the consist
+* You can also click the desired item once to highlight it and then use one of the following buttons at the top of the list:
+
+`Add Beg`:: Add the selected item to the beginning of the consist
+`Add Cur`:: Add the selected item to the currently selected consist position
+`Add End`:: Add the selected item to the end of the consist
+`Add Rand`:: Add items to a list that you want in a random consist. This is a separate list. You can also save and load random consist lists  within the *"Random Consist"* pop-up dialog box.
+
+
+[IMAGE]
+image::images/Consistrand.png[]
+
+
+[WARNING]
+ `Add Rand` is part of a Random Consist generation tool.  It is designed to replace the current consist entirely when the `Add Random` button is pressed inside the *"Random Consist"* pop-up dialog box.  You won't lose the changes to a consist you might have been working on as you do get the option to save all pending changes upon exiting the program.
+
+==== To Save the Current Consist
+
+* Enter the *File Name* and *Display Name* of the current consist, if these fields are empty.
+* `File->Save` -  Will save the consist file to disk
+
+==== Consist Tools
+
+`Consist->Reverse`:: Reverse the order of the whole consist
+`Consist->Clone`:: This is the "Save As" feature, allowing you to save the current consist under a new name.
+`Consist->Delete`:: Will delete the current consist from the disk
+`Consist->Open in External Editor`::  _Untested_ it does nothing for me at the moment
+`Consist->Save as Eng Set`:: This option is used to combine multiple items into a set.  See: <<EngineSets>>
+
+==== Eng Tools
+
+`Eng->Find Consists`:: Perform a filtered search, using the filter pulldown options
+`Eng->Open In External Editor`:: Open the ENG or WAG file of the currently selected item in the associated editor (ORTS Compliant)
+`Eng->Open Legacy ENG In External Editor`:: Open the ENG or WAG file of the currently selected item (MSTS Specific)
+`Eng->Refresh Shape`:: Will refresh the displayed item from disk  
+
+
+
+[#EngineSets]
+=== Engine Sets
+
+*What are "eng sets"?*
+
+Engine sets are dedicated collections of items for a better experience with multi-mesh/multi-eng locomotives, steam locomotives etc.
+
+[IMAGE]
+image::images/engset1.png[]
+
+For example, now you can add to consist steam loco and tender in one click. 
+It's possible to have many eng sets for one locomotive:
+
+[IMAGE]
+image::images/engset2.png[]
+
+*How the "eng sets" feature works?*
+
+Options:
+
+1. Consist with name = eng_name -> eng set      {dot} See Note Below
+
+2. Consist with name = eng_name#something -> eng set
+
+Eng must be included in it's eng set consist.
+
+[NOTE]
+ {dot} Developers Comment: I think it's worth ignoring option #1 in this case because lots of default consists have names that match its eng. Looking for feedback.  For some trains it just works, for others you must create your own sets.
+
+*How create new eng set?*
+
+* Create new consist
+* Add the items you want in new eng set
+* Enter in the "File Name" that you want based on the eng name or leave it empty.
+* Click `Consist -> Save as eng set`
+
+[TIP]
+ You can also use this method to create Wagon Sets by omitting an engine.  The set will be linked to the first item in the list.
+
+[IMAGE]
+image::images/engset3.png[]
+
+
+==== The Replace Menu
+
+*I don't understand this option yet*
+
+Now you can replace units in consists easily.
+
+* Select a consist unit
+* Find new unit in ENG list and select it, making sure it is displayed in the ENG View window. (Don't double click)
+* Use one of the Replace Menu functions
+
+`Replace->Only Selected Unit`:: Swap the consist item with a selected item from the asset list
+`Replace->Replace All units in selected consist`:: Replace Unit consist-wide
+`Replace->All units in all consists`:: Replace the unit in *all* consists
+
+
+
+==== The View Menu
+
+The view menu provides a selection of panels that can be toggled on an off to customize the way components of the Consist Editor are displayed.
+
+For example, if all of the view options are toggled off, you will only have a blank screen.
+
+The most useful layout will have   `Consist List`, `Eng List 1`, `Eng View` and `Con View` enabled.
+
+As an example,  you can use the `View Menu` options to have  `ENG LIST 1` and `ENG LIST 2` enabled to use them to display Diesels in on panel and Freight cars in another ppanel based on the filter selections.
+
+
+==== Graphical Consist 3D Model View
+
+Select Items using the mouse. A selected item will have a red highlight around it.
+
+[IMAGE]
+image::images/consist2.png[]
+
+*Available Actions using Keyboard* 
+
+`F`:: Flip, This will reverse the current consist item
+`Delete`::  This will delete the current consist item
+`Left` / `Right`:: This will move a consist item left or right
+
+*The Context Menu Options* 
+
+When you *"Right-Click"* with the mouse above an item in the consist, that device becomes the selected item and a context menu appears with available actions. 
+
+*Available Actions using the "Right-Click" Context Menu*
+
+`Flip`:: This will reverse the current consist item
+`Move Left`:: Move the selected item one position to the left in the consist
+`Move Right`:: Move the selected item one position to the right in the consist
+`Delete`:: Remove the current item from the consist
+`Copy`:: Copy the selected item so it can be pasted into the same or different consist
+`Paste Right`:: Paste the copied item into the consist to the right of the currently selected item
+
+* To copy an item from current consist and paste it into another, do the following steps:
+
+A. From the context menu, `Copy` an item from the current consist 
+B. Select a consist name from the consist file list
+C. The consist editor will open the selected consist file and it will be displayed.
+D. Using the context menu again, you may `Paste Right` to insert the item to the right ot the selected item in the consist. 
+E. You can then use the context menu or keyboard keys to shift the position of the newly pasted item, if needed
+
+
+==== 3D View Menu - ENG View
+
+These menu items refer to the larger 3D Model image in the upper right of the consist editor.
+
+This section can have its visibility toggled by selecting the `View->EngView item`
+
+`Shape View->Reset`::  Reset viewing angle to default (Side View)
+`Shape View->Copy Image`:: Copy the current 3D View to the ClipBoard
+`Shape View->Save`:: Save a copy of the 3D View image to disk
+`Shape View->Set Color`:: Set the background color for the 3D Model View from an available color pallette
+
+* There is currently no context menu for the Model details portion of the editor  
+
+
+
+
+
+

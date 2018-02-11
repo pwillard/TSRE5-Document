@@ -1,0 +1,40 @@
+== Introduction
+
+TSRE is, first and foremost, a route editor. It allows you to create and edit routes for {OR} and MSTS. 
+
+It's also very fast route viewer. It's written in c++, OpenGL and QT and is based on a new Train Simulator engine that was developed a few years ago. There are no other dependencies, so all you need is a Windows system with OpenGL. MSTS does not need to be installed for this Route Editor to work. It only requires the `Global`, `Routes` and `Trains` folders.
+
+
+=== Before Getting Started
+
+To start working with Route Editor you need to:
+
+* Have downloaded and unpacked the TSRE application
+* Have at least one train simulator *gameRoot* Directory to refer to
+
+
+ The *gameRoot* also referred to the *Root Dir* is one of the following items:
+
+ * An MSTS root directory
+ * An {OR} installation profile
+ * A Mini Route directory
+ * Any other Directory that contains "global", "routes" and "trains" folders 
+
+=== How to Begin 
+
+* (Optional) Set the `gameRoot` value in the application settings file to your desired Root Directory. See: <<settings>>
+
+* Open `TSRE5.exe`, or `TSRE5x32.exe` if you are using a 32 bit version of Windows
+
+[IMAGE]
+image::images/re1.png[]
+
+* You might see a Warning Box. If you wish to no longer see the warning in the future, set the item `warningBox = false` in settings file. See: How to Manually Configure TSRE5
+
+[IMAGE]
+image::images/re2.png[]
+
+* If you have properly set up the `gameRoot` settings then the Route Editor is ready to use
+
+[IMAGE]
+image::images/re3.png[]

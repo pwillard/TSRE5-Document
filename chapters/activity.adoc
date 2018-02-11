@@ -1,0 +1,46 @@
+== Working with activities
+
+Press *F4* or select *Tools->Activity*.
+
+=== Selecting an Activity
+
+Select an activity from the Activity List.
+
+[IMAGE]
+image::images/act1.png[]
+
+=== Creating new Activity
+
+Click New Activity button below the Activity List. A new activity will be created and selected. 
+
+=== Editing Activity Settings
+
+Click Open Settings … button.
+
+[IMAGE]
+image::images/act2.png[]
+
+
+New window will appear. 
+
+[IMAGE]
+image::images/act3.png[]
+
+File Name:: You can edit it only for new activity before first activity save.
+Display Name:: The name of the activity. The name will be updated on the activity list after TSRE is restarted.
+
+
+
+=== Placing Loose consists
+
+[IMAGE]
+image::images/act4.png[]
+
+1. Select consist from Consist list.
+2. Click Place Consist.
+3. Click on the track you want to place consist.
+
+[IMAGE]
+image::images/act5.png[]
+
+If you want to change consist direction, select consist, right click and choose Toggle Direction 
