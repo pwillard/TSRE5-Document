@@ -8,27 +8,30 @@
 
 * MSTS is the Microsoft Train Simulator
 * {OR} is an open source train simulator that can utilize MSTS Assets
-* You have seen the "editor" documentation related to MSTS or have used the utilities supplied with MSTS
+* While {OR} is a new train simulator that can use MSTS assets, it does not come with additional utilities, such as a Route Editor, Activities Editor or Consist Editor
 
 === What is TSRE5 
 
-* TSRE5 is Game Engine compatible with MSTS and Open Rails
+* TSRE5 is Game Engine that is compatible with MSTS and Open Rails
 * TSRE stands for Train Sim Route Explorer, the name I gave my "university homework"
 * 5 is 5th version of this engine
 
 The currently functional components of TSRE5 are:
 
 * Route Editor
-* Consist Editor
 * Activity Editor 
+* Consist Editor (Which is enabled using a command line option with TSRE)
+
 
 === Who Is This Document For?
 
-The utilities supplied with the Microsoft Train Simulator have always seemed a bit unpolished and in general have been prone to some unusual behaviors that includes crashing at various times or the random corruption of data files that can possibly lose you hours of work.
+{OR} needs developer utilities. MSTS needs utilities that are not stuck in the 1990's.  TSRE can solve these issues.
 
-The TSRE5 application attempts to resolve some of these historical issues by creating a brand new route, activity and consist editor from scratch. It remains fully compatible with the files created and used by the original MSTS utilities.
+The utilities supplied with the Microsoft Train Simulator have always seemed a bit unpolished and in general have had to some unusual behaviors.  These behaviors include crashing at various times while editing or the random corruption of data files that can possibly lose you hours of work.
 
-The TSRE5 application is for content developers who which to create or edit routes, consists and activities for {OR} or MSTS.
+The TSRE5 application attempts to resolve some of these _new needs_ and _legacy issues_ by creating a brand new Route, Activity and Consist editor from scratch. It is fully compatible with the files created and used by the original MSTS utilities.
+
+The TSRE5 application is for content developers who wish to create or edit routes, consists and activities for {OR} or MSTS.
 
 <<<<
 
@@ -42,11 +45,11 @@ For example, download:  http://koniec.org/tsre5/data/TSRE5_v0.6955.exe
 [NOTE]
  If you have 32 bit Windows (usually foe use with an older computer), you would download: http://koniec.org/tsre5/data/TSRE5x32_v0.6951.exe
 
-=== Installing TSRE
+==== Installing TSRE
 
 Run the *EXE* file that was downloaded. The TSRE executable will download additional application data from the server.
 
-==== Manually Installing the additional TSRE application data 
+===== Manually Installing the additional TSRE application data 
 
 If the automatic installation download doesn’t work for you ( for instance, if you have Windows XP or no internet connection), download latest ZIP version from here: http://koniec.org/tsre5/data/appdata/ and then unzip into the desired directory location `tsre_appdata`):
 
@@ -56,7 +59,7 @@ image::images/install1.png[]
 
 Example Path to the shader directory:   `./tsre_appdata/0.69/shaders/`
 
-=== Linking TSRE to Your Simulator Files
+==== Linking TSRE to Your Simulator Files
 
 For TSRE to operate properly, you need to have some pre-existing simulator data folders on your computer.  This is referred to as `gameRoot` or `Root Dir` in this document. 
 
@@ -67,7 +70,7 @@ Possible `gameRoot` locations are:
 * A Mini Route directory
 * Any other Directory that has "global", "routes" and "trains" directories inside. 
 
-
+<<<
 === Linux
 
 You can also download a Linux native version.  The Linux release is only available as a 64 bit version. 
@@ -78,7 +81,10 @@ For example,  in an `.s` file there might be a reference to`TEXTURE.ACE`, but in
 
 An example script to change all the filenames lowercase on Linux would be: 
 
-`rename 's!/([^/]*/?)$!\L/$1!' **/*` 
+[source,shell]
+----
+  rename 's!/([^/]*/?)$!\L/$1!' **/* 
+----
 
 _(It might require running it several times)_. 
 
@@ -89,11 +95,11 @@ There are also Windows based tools like "Bulk Rename" http://www.bulkrenameutili
 [#settings]
 === How to Manually Configure TSRE5 
 
-This is optional. 
+Persistent Settings can be saved using a `settings.txt`. This is optional. 
 
 ==== How does `settings.txt` work?
 
-You can manually change the program's default settings by editing the `settings.txt` file.  The settings options are described below: 
+You can manually change the program's default settings by editing the `settings.txt` file.  The available settings options are described below: 
 
 
 `#`:: Any line that starts with a `#` character is a "Comment" line and its contents are ignored.

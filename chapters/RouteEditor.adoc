@@ -2,13 +2,13 @@
 
 === Before Getting Started
 
-To start working with Route Editor you need to:
+To start working with the Route Editor you need to:
 
 * Have downloaded and installed the TSRE5 application
-* Have at least one train simulator *gameRoot* Directory to refer to
+* Have at least one train simulator *gameRoot* or *Root Directory* to refer to
 
 [NOTE]
- A `gameRoot` also referred to the as the *Root Dir* must be one of the following items:
+ A `gameRoot`, also referred to the as the *Root Dir*, must be one of the following items:
 
 * An MSTS root directory
 * An {OR} installation profile
@@ -24,33 +24,14 @@ To start working with Route Editor you need to:
 [IMAGE]
 image::images/re1.png[]
 
-* Read message in the Warning Box. If you wish to no longer see the warning in the future, set the item `warningBox = false` in settings file. See: <<settings>>
+If you have properly set up the `gameRoot` settings then the {RE} is ready to use.  
 
-[IMAGE]
-image::images/re2.png[]
-
-* If you have properly set up the `gameRoot` settings then the {RE} is ready to use
-
-[IMAGE]
-image::images/re3.png[]
-
-Otherwise, click browse button:
-
-[IMAGE]
-image::images/re4.png[]
-
-And select your Root Directory:
-
-[IMAGE]
-image::images/re5.png[]
-
-Now {RE} i ready to use!
 
 <<<<
 
-=== Route Editing
+=== Starting a Session
 
-If you want to use the {RE}, open the TSRE5 application. By default, the Route Editing features will be available.  The Activity Editor is also available within the {RE}.
+If you want to use the {RE}, simply open the TSRE5 application. By default, the Route Editing features will be available.  The Activity Editor is also available from within the {RE}.
 
 [NOTE]
  If you want to use Consist Editor however, you need to use the `ConsistEditor.bat` file to start a Consist Editing session.
@@ -61,7 +42,7 @@ image::images/intro3.png[]
 
 === Loading a Route
 
-If you have not defined a default "gameRoot" setting, you need to click the *browse* button and select your game directory. It can be any directory that contains `Routes`, `Trains` and `Global` folders such as the standard MSTS installation folder, or a mini route folder.
+If you have not defined a default "gameRoot" setting, you will need to click the *browse* button and select your game directory every time that TSRE is loaded. It can be any directory that contains `Routes`, `Trains` and `Global` folders such as the standard MSTS installation folder, or a mini route folder.
 
 [IMAGE]
 image::images/lr1.png[]
@@ -71,7 +52,7 @@ You can also select from your "recently used" folders if you have had previous {
 [IMAGE]
 image::images/lr2.png[]
 
-Select the route you want to edit and click *Load*
+Select the route you want to edit and click `Load`
 
 [IMAGE]
 image::images/lr3.png[]
@@ -81,16 +62,16 @@ image::images/lr3.png[]
 
 <<<<
 
-=== Creating new Route
+=== Creating A New Route
 
-Click the *New* button
+Click the `New` button
 
 [IMAGE]
 image::images/ren1.png[]
 
 Enter the name to use as a *Route Name ID*. This will become the route's directory name and is used for the naming of key files. It is a good practice to enter a short, lowercase name with no spaces.
 
-Enter the Latitude and Longitude of the World coordinates where you want to start the new Route. If it will be fictional route, you can use default values. 
+Enter the Latitude and Longitude of the World coordinates where you want to start the new Route. If it will be a fictional route, you can use default values. 
 
 [WARNING]
   The values entered need to be valid Latitude and Longitude coordinate values, otherwise {RE} will crash. 
@@ -131,7 +112,7 @@ You can now begin editing your new route.
 
 <<<<
 
-=== Route editing
+=== Getting Around in the Route Editor
 
 *Main Window*
 
@@ -139,6 +120,7 @@ You can now begin editing your new route.
 [IMAGE]
 image::images/rec1.png[]
 
+[#menu]
 ==== Menu
 
 `Route->Save`:: Save changes.
@@ -165,26 +147,34 @@ Shows the selected object's properties.
 
 Tools you can use to edit your route.
 
-`Route View`::  Shows route.
+==== Route View  
+Shows the route visuals.
 
-[#naviwindow]
-==== Navigation Window
+
+
+[#editor]
+=== Using the Editor
+
+==== Main
+
+`F1 ... F12`::    Choose a tool-set.
+`M`::   Save the route
+`B`::   Create new Tile at current position
 
 [IMAGE]
-image::images/naviwindow.png[]
+image::images/rec4.png[]
 
-1. Select marker file from list (current: MKR, KML, GPX) and select item from the file. _See <<realistic>>_
-2. Shows current world position. You can enter position you want to go and press Jump button (3).
-3. Shows current tile object count and removed object count. 
+==== General Navigation
 
-[IMAGE]
-image::images/rec2.png[]
+*Navigating Keys*
 
-==== Navigating in TSRE
+`AWSD` (and *Arrows* if layout 1)::  Move left, right, front, back.
+`Space`::  Move up.
+`E` or `Shift`:: Move faster
 
-Use *ADWS* or Arrow keys to move around. Press left mouse button and move mouse to look around.
+ Press left mouse button and move mouse to look around.
 
-===== Keyboard
+==== Keyboard
 
 [IMAGE]
 image::images/rec3.png[]
@@ -195,27 +185,8 @@ Keyboard has two layouts depending on the setting in the `settings.txt` file
 
 [TIP]
 
-Remember: `Ctrl + Z` will *Undo* the last operation
+ Remember: `Ctrl + Z` will *Undo* the last operation
 
-[#editor]
-=== Using the Editor
-
-==== Main
-
-`F1 ... F12`::    Choose a tool-set.
-`M`::   Save the route
-`B`::   Create new Tile at current position:
-
-[IMAGE]
-image::images/rec4.png[]
-
-==== Navigation
-
-*Navigating Keys*
-
-`AWSD` (and *Arrows* if layout 1)::  Move left, right, front, back.
-`Space`::  Move up.
-`E` or `Shift`:: Move faster
 
 
 ==== Working with objects:
@@ -227,7 +198,7 @@ image::images/rec4.png[]
 [IMAGE]
 image::images/rec5.png[]
 
-*Placement* 
+===== Placement 
 
 `E`:: Select
 
@@ -241,28 +212,27 @@ image::images/rec5.png[]
 `P`:: Pick object. You can pick existing object and place it in different place.
 `C`:: Clone object. Creates object duplicate at the same position.
 `Delete`:: Delete selected object.
-`Ctrl`:: Change R/T/Y step slower.
-`Alt`:: Change R/T/Y step faster.
+`Ctrl`:: Change *R/T/Y* step slower.
+`Alt`:: Change *R/T/Y* step faster.
 `\`:: Toggle Terrain Collision mode.
 
-Additionally:
 
-*Numpad keys* + *pgup* / *pgdown*:: Use for R/T/Y if in keyboard layout 1 mode.
-*Arrows* and *pgup* / *pgdown*::    Use R/T/Y if layout 2.
-*Mouse*::   Use RTY R/T/Y if in placement mode: Will stick only to terrain.
+*Numpad keys* + *pgup* / *pgdown*:: Use for *R/T/Y* if in keyboard layout 1 mode.
+*Arrows* and *pgup* / *pgdown*::    Use *R/T/Y* if layout 2.
+*Mouse*::   Use `R` `T` `Y`; R/T/Y, if in placement mode, will stick only to terrain.
 
-*Track keys*
+===== Track keys
 
 `Z`:: add selected track to TDB.
 `X`:: change new track position. Use before Z.
 `F`:: adjust terrain to track. Use after Z. See more: Editing terrain.
 
-*Terrain keys*
+===== Terrain Keys
 
-Z:: change height-map painting direction: + or -
+`Z`:: change height-map painting direction: *+* or *-*
 
 
-=== Selecting objects
+==== Selecting Objects
 
 You can select all objects using Select Tool. Enable it using:
 
@@ -271,24 +241,52 @@ You can select all objects using Select Tool. Enable it using:
 * Edit Menu -> *Select*
 * Select button in *F1* Object Tools
 
-=== Rotating Objects
+==== Rotating amd Transforming Objects
 
 * `E` key
 * Right click -> *Select*
 * Edit Menu -> *Select*
-* `T` key
+* Use the `R` ket to Rotate, `T` key to Transform
 
-When you rotate an object by use of the Copy/Paste or Transform button, be sure to re-select the object (even though it appears to be selected (blue outline)) by use of the 'E' key or Select Button. This is to allow you to regain fine movement control when the `Ctrl` Key is pressed and held with the movement keys.
+When you rotate an object by use of the Copy/Paste or Transform button, be sure to re-select the object (even though it appears to be selected (blue outline)) by using the 'E' key or the `Select` Button. This is to allow you to regain fine movement control when the `Ctrl` Key is pressed and held with the movement keys.
 
 
 <<<<
 
-=== Fast Travel
+[#naviwindow]
+=== Navi Window 
+
+The Navi Window is a separate movable window that allows coarse adjustments of position with the {RE}. It can take input from Traditional Marker Files, Google Earth Keyhole Markup Language (KML) files and Open Street Map GPX files.
+
+If desired, it will accept Latitude and Longitude values or any existing Route entities that have been defined. 
+
+[IMAGE]
+image::images/naviwindow.png[]
+
+*Using Lat/Long, Marker files or GPS position files in the Navi Window*
+
+Example 1:: 
+Select a file from the pull down list in the navi windows (You can use MKR, KML, GPX) and select item from the file for a location to go to. _See <<realistic>>_
+
+Example 2::
+The Navi Window will shows current world Lat/Long position. You can enter a specific Lat/Long position you want to go to 
+
+When you have entered the desired position, Select `Jump` to go there.
+
+[IMAGE]
+image::images/rec2.png[]
+
+[NOTE]
+  The Navi Window will also show the current tile object count and removed object count. 
+
+
+
+==== Fast Travel Using Tool Categories 
 
 You can easily jump to many locations in your route using *Navi Window*.
 
 [IMAGE]
-image::images/rec5.png[]
+image::images/image10.png[]
 
 Example:
 
@@ -302,9 +300,9 @@ For more information about the  *Navi Window*, refer to: <<naviwindow>>
 <<<
 
 [#realistic]
-=== Making realistic Routes using GEO data
+=== Making Realistic Routes Using GEO Data
 
- Route Editor supports using several methods for making realistic routes easier. You can use:
+The Route Editor supports using several methods for making realistic routes easier. You can use:
 
 * Marker Files
 * Map Layers
@@ -322,41 +320,39 @@ Current version of Route Editor supports three different types of marker files f
 3. GPX file https://en.wikipedia.org/wiki/GPS_Exchange_Format
 
 
-MKR files are the legacy method of placement references used with the MSTS Route Editor.  This is by far the most common method used when creating MSTS routes, however, with TSRE5  everyone should use KML or GPX methods instead.
+The original MKR files are the legacy method of placement references used with the MSTS Route Editor.  This is by far the most common method used when creating MSTS routes, however, with TSRE5  everyone should use KML or GPX methods instead.
 
 ===== How to create KML/GPX format files
 
 You can use http://www.gpsvisualizer.com/draw/
 This site allows you to draw points and paths on a large number of map layers, including the Google Maps Satellite images. 
 
-[IMAGE]
-image::images/reg1.png[]
+Using the GPS Visualizer is very simple. 
 
-Use Button marked `1` to draw points, or use the Button marked `2` to draw paths.
+
+Use the Button labeled WPT draw individual waypoints used to define specific locations
+Use the Button labeled TRK to draw long segmented paths for roads or tracks.
 
 [IMAGE]
 image::images/reg2.png[]
 
 Draw some points and paths
 
-[IMAGE]
-image::images/reg3.png[]
 
-1. to select file type
-2. to download it
+The the appropriate button to choose a file type (GPX or KML). Selecting the button will change the  file type used for downloading.  A download link will appear and allow you to download the file to your computer.
 
 [IMAGE]
 image::images/reg4.png[]
 
 
-Place the file in working route directory.
+Place the downloaded file in working directory for the route being worked on.
 
 [IMAGE]
 image::images/reg5.png[]
 
-In the *World Position* window, select your file.
-You can select file item and use Jump button to jump to item position.
-Click menu *View->Markers* to show selected file items. 
+* In the *World Position* window, select your file.
+* You can select file item and use `Jump` button to jump to item position.
+* Click menu `View->Markers` to show selected file items. 
 
 [IMAGE]
 image::images/reg6.png[]
@@ -407,8 +403,9 @@ image::images/reg9.png[]
 * Enjoy realistic terrain.
 
 [IMAGE]
-image::images/reg9.png[]
+image::images/reg10.png[]
 
+<<<
 === Placing New Tracks
 
 How to place tracks or roads?
@@ -520,7 +517,9 @@ TSRE will strip off leading and trailing zeros when saved but this does NOT chan
 
 *Keyword: Practice!*
 
-Either may be used but the PERMILLE is much easier to understand. Here's a little chart
+[TIP]
+ There is a general consensus that using PerMille is easier than working grade percentage.
+
 
 WHAT YOU ENTER IN THE GRADE FIELDS 
 
@@ -541,16 +540,10 @@ WHAT YOU ENTER IN THE GRADE FIELDS
 |===
 
 
-For whatever reason if you enter, lets say, 6 permille or .6 percent when you select the track/road the 6 permille changes to 5.9996 permille or 0.59996 percent. 
-
-Make sense? I dunno' but it is what it is.
+[WARNING]
+ For whatever reason if you enter, lets say, 6 permille or .6 percent when you select the track/road the 6 permille changes to 5.9996 permille or 0.59996 percent. 
 
 *USE TWO PLACE DECIMALS IN EITHER FIELD AND IT WILL SAVE EXACTLY AS ENTERED. IF YOU FAIL TO USE 2 PLACE DECIMAL PLACES, TSRE WILL ROUND OFF NUMBERS*
-
-You can see why I like using the PERMILLE field but I admit I had to be dragged kicking and screaming into it.
-I had never heard of permille when Goku brought it up and I thought it was a typo for PERMILE!!! Ouch!
-Goku says Europe has been using permille for 40 years or so because there is more precision. I AGREE!
-
 
 *Some General thoughts from Vince about working with gradients*
 
@@ -566,7 +559,7 @@ Additionally I can't figure why if I select a track section (Blue Outlined) why 
 
 Seems a bit silly but this editor is a work-in-progress so I have gotten used to having to select over and over again as just a very small nit. Annoying but not a show stopper.
 
-==== The TRANSFORM panel
+==== Using the TRANSFORM panel
 
 This is very very helpful. A great feature only lacking a detailed method of Operation.
 
@@ -580,7 +573,7 @@ I do know that holding the `Ctrl` key down as I tap the `NumPad 2` or `8` keys f
 A display of grade as is done for 'normal' track is preferred. 
 Now add a Grade Panel OK button to set the typed in grade and we'll be cooking.
 
-==== Laying Track
+==== Some thoughts on Laying Track
 
 When swapping track sections in and out it's better to set TSRE to NOT automatically add track into the database. 
 The yellow lines over the track are a graphic representation of the TDB.
@@ -642,7 +635,7 @@ image::images/reo1.png[]
 [IMAGE]
 image::images/rec5.png[]
 
-*Selecting objects:*
+==== Selecting objects:
 
 Click `Select` button or press `E` key.
 
@@ -656,13 +649,13 @@ Click `Select` button or press `E` key.
 [NOTE]
  {DOT} Depending on your keyboard layout, you can use other keys. See How to use Route Editor.
 
-*How to duplicate objects?*
+==== How to duplicate objects?
 
 1. Select object and press `Ctrl+C`, find place you want new object and press `Ctrl+V`
 2. Press `C` to clone object and make duplicate at the same position.
 3. Press `P` to pick object. Now you can click `Place New` button and place this object in a new location.
 
-*How to delete objects?*
+==== How to delete objects
 
 * Select object and press `Delete`.
 
@@ -677,23 +670,23 @@ Click `Select` button or press `E` key.
 image::images/reo2.png[]
 
 *Stick to Target*
-For when you need to align ANYTHING to track.
+
+For use when you need to align ANYTHING to track.
 
 * Place a Check in the `Stick to Target` box.
 * Any object placed within the distance specified in the *Snappable max radius field* {DOT}, will align to the track.
 * Set the size radius smaller to align objects in crowded areas.
 
-This sure makes placing track-side equipment, bridges, platforms, gantries easy, even on curve!.
+{DOT} _This is set in the `Target Field Default` setting is Tracks_
 
-Placed items will follow (align to) the track grade. If the alignment is off by 90 degrees,  use the `Rot Y 90` button. The correct gradient will follow the rotation! 
+[TIP]
+  This sure makes placing track-side equipment, bridges, platforms, gantries easy, even on curve!. Placed items will follow (align to) the track grade. If the alignment is off by 90 degrees,  use the `Rot Y 90` button. The correct gradient will follow the rotation! 
 
 [TIP]
   Signals will automatically align to the track when placed except for direction. Use `Flip` to change direction.
 
-{DOT} _This is set in the `Target Field Default` setting is Tracks_
 
-
-*Copy Rotation*
+==== Copy Rotation
 
 * Select track you want to get the rotation from.
 * Click `Copy Rotation` button.
@@ -702,6 +695,8 @@ Placed items will follow (align to) the track grade. If the alignment is off by 
 
 [IMAGE]
 image::images/reo3.png[]
+
+=== Object Panels
 
 ==== Static Objects 
 
@@ -728,7 +723,7 @@ image::images/reo3.png[]
 
 ==== Signals
 
-* Linking Signals* 
+*Linking Signals* 
 
 TSRE's method of linking signals is quite intuitive, but can be daunting for the uninitiated. Here are some lessons learned.
 
@@ -788,6 +783,8 @@ These guides will work on any switch, not just double slips.
 
 
 ==== Soundregions
+
+<<<
 
 === Editing Terrain
 

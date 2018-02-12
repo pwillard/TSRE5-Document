@@ -29,10 +29,6 @@ To start working with Route Editor you need to:
 [IMAGE]
 image::images/re1.png[]
 
-* You might see a Warning Box. If you wish to no longer see the warning in the future, set the item `warningBox = false` in settings file. See: How to Manually Configure TSRE5
-
-[IMAGE]
-image::images/re2.png[]
 
 * If you have properly set up the `gameRoot` settings then the Route Editor is ready to use
 

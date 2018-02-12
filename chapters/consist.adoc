@@ -172,6 +172,10 @@ E. You can then use the context menu or keyboard keys to shift the position of t
 
 These menu items refer to the larger 3D Model image in the upper right of the consist editor.
 
+[IMAGE]
+image::images/3dview.png[]
+
+
 This section can have its visibility toggled by selecting the `View->EngView item`
 
 `Shape View->Reset`::  Reset viewing angle to default (Side View)

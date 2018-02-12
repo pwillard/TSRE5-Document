@@ -1,6 +1,6 @@
 == Working with activities
 
-Press *F4* or select *Tools->Activity*.
+Press *F4* or select `Tools->Activity`.
 
 === Selecting an Activity
 
@@ -11,7 +11,7 @@ image::images/act1.png[]
 
 === Creating new Activity
 
-Click New Activity button below the Activity List. A new activity will be created and selected. 
+Click `New Activity` button below the Activity List. A new activity will be created and selected. 
 
 === Editing Activity Settings
 
@@ -37,10 +37,139 @@ Display Name:: The name of the activity. The name will be updated on the activit
 image::images/act4.png[]
 
 1. Select consist from Consist list.
-2. Click Place Consist.
-3. Click on the track you want to place consist.
+2. Click `Place Consist`.
+3. Click on the track where you want to place the consist.
 
 [IMAGE]
 image::images/act5.png[]
 
-If you want to change consist direction, select consist, right click and choose Toggle Direction 
+If you want to change consist direction, *select* the consist, right click for the context menu and then choose `Toggle Direction` 
+
+[IMAGE]
+image::images/image33.png[]
+
+It will end up like this:
+
+[IMAGE]
+image::images/image41.png[]
+
+=== Moving loose consists
+
+*Select* consist, and drag it using mouse.
+
+=== Removing loose consists
+
+*Select* the consist you want to remove and then click the `Delete` button in properties window.
+
+[IMAGE]
+image::images/image25.png[]
+
+=== Working With Services
+
+Click *Open Service Editor*. 
+
+[IMAGE]
+image::images/image3.png[]
+
+1. Service list.
+2. Checked if service is set as player service in current activity.
+3. Checked if service is used in current activity.
+4. Checked if service is used by any activity.
+5. Click this button to create new service.
+6. Click this button to delete this service. _Doesn’t work currently_.
+7. File name of the service file - _not editable_.
+8. Display name of the service - _editable_. 
+9. Service properties -  _editable_.
+10. Consist used by this activity. 
+11. Path used by this activity. _Changing path will reset service timetable_.
+12. Station list. Check station if train must stop: _See the Image Below_
+13. List of files that use this service.
+
+[IMAGE]
+image::images/image3.png[]
+
+==== Creating a new Service
+
+Click `New Service` button and enter service file name in new window.
+
+[IMAGE]
+image::images/image1.png[]
+
+*Selecting activity player service:*
+
+Just select service from the list.
+
+[IMAGE]
+image::images/image34.png[]
+
+=== Working with Traffic
+
+Click on *Open Traffic Editor*
+
+[IMAGE]
+image::images/image4.png[]
+
+A new window will appear:
+
+[IMAGE]
+image::images/image11.png[]
+
+1. Traffic list.
+2. Checked if traffic is used in current activity.
+3. Checked if traffic is used by any activity.
+4. Click this button to create new traffic.
+5. Click this button to delete this traffic. _Doesn’t work currently_.
+6. File name of the traffic file - _not editable_.
+7. Service list. _Click service to edit it’s preferences_.
+8. Add new Service.
+9. Delete Service. _Doesn’t work currently_.
+10. Edit service preferences: service file used by this entry and start time.
+
+==== Creating new Traffic
+
+Click *New Traffic* button and enter traffic file name in new window.
+
+
+[IMAGE]
+image::images/image1.png[]
+
+*Selecting activity traffic:*
+
+Just select traffic from the list.
+
+[IMAGE]
+image::images/image12.png[]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
