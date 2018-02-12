@@ -63,6 +63,91 @@ image::images/Consistrand.png[]
 
 
 
+
+==== The Replace Menu
+
+*I don't understand this option yet*
+
+Now you can replace units in consists easily.
+
+* Select a consist unit
+* Find new unit in ENG list and select it, making sure it is displayed in the ENG View window. (Don't double click)
+* Use one of the Replace Menu functions
+
+`Replace->Only Selected Unit`:: Swap the consist item with a selected item from the asset list
+`Replace->Replace All units in selected consist`:: Replace Unit consist-wide
+`Replace->All units in all consists`:: Replace the unit in *all* consists
+
+
+
+==== The View Menu
+
+The view menu provides a selection of panels that can be toggled on an off to customize the way components of the Consist Editor are displayed.
+
+For example, if all of the view options are toggled off, you will only have a blank screen.
+
+The most useful layout will have   `Consist List`, `Eng List 1`, `Eng View` and `Con View` enabled.
+
+As an example,  you can use the `View Menu` options to have  `ENG LIST 1` and `ENG LIST 2` enabled to use them to display Diesels in on panel and Freight cars in another ppanel based on the filter selections.
+
+
+==== Graphical Consist 3D Model View
+
+Select Items using the mouse. A selected item will have a red highlight around it.
+
+[IMAGE]
+image::images/consist2.png[]
+
+*Available Actions using the Keyboard* 
+
+`F`:: Flip, This will reverse the current consist item
+`Delete`::  This will delete the current consist item
+`Left` or `Right`:: This will move a consist item left or right
+
+[NOTE] 
+  You can also use the slider bar at the bottom of the to slide the windows left and right if the consist is larger than the width of a screen 
+
+*The Context Menu Options* 
+
+When you *"Right-Click"* with the mouse above an item in the consist, that device becomes the selected item and a context menu appears with available actions. 
+
+*Available Actions using the "Right-Click" Context Menu*
+
+`Flip`:: This will reverse the current consist item
+`Move Left`:: Move the selected item one position to the left in the consist
+`Move Right`:: Move the selected item one position to the right in the consist
+`Delete`:: Remove the current item from the consist
+`Copy`:: Copy the selected item so it can be pasted into the same or different consist
+`Paste Right`:: Paste the copied item into the consist to the right of the currently selected item
+
+* To copy an item from current consist and paste it into another, do the following steps:
+
+1. From the context menu, `Copy` an item from the current consist 
+2. Select a consist name from the consist file list
+3. The consist editor will open the selected consist file and it will be displayed.
+4. Using the context menu again, you may `Paste Right` to insert the item to the right ot the selected item in the consist. 
+5. You can then use the context menu or keyboard keys to shift the position of the newly pasted item, if needed
+
+
+==== 3D View Menu - ENG View
+
+These menu items refer to the larger 3D Model image in the upper right of the consist editor.
+
+[IMAGE]
+image::images/3dview.png[]
+
+
+This section can have its visibility toggled by selecting the `View->EngView item`
+
+`Shape View->Reset`::  Reset viewing angle to default (Side View)
+`Shape View->Copy Image`:: Copy the current 3D View to the ClipBoard
+`Shape View->Save`:: Save a copy of the 3D View image to disk
+`Shape View->Set Color`:: Set the background color for the 3D Model View from an available color pallette
+
+* There is currently no context menu for the Model details portion of the editor  
+
+<<<
+
 [#EngineSets]
 === Engine Sets
 
@@ -106,84 +191,6 @@ Eng must be included in it's eng set consist.
 image::images/engset3.png[]
 
 
-==== The Replace Menu
-
-*I don't understand this option yet*
-
-Now you can replace units in consists easily.
-
-* Select a consist unit
-* Find new unit in ENG list and select it, making sure it is displayed in the ENG View window. (Don't double click)
-* Use one of the Replace Menu functions
-
-`Replace->Only Selected Unit`:: Swap the consist item with a selected item from the asset list
-`Replace->Replace All units in selected consist`:: Replace Unit consist-wide
-`Replace->All units in all consists`:: Replace the unit in *all* consists
-
-
-
-==== The View Menu
-
-The view menu provides a selection of panels that can be toggled on an off to customize the way components of the Consist Editor are displayed.
-
-For example, if all of the view options are toggled off, you will only have a blank screen.
-
-The most useful layout will have   `Consist List`, `Eng List 1`, `Eng View` and `Con View` enabled.
-
-As an example,  you can use the `View Menu` options to have  `ENG LIST 1` and `ENG LIST 2` enabled to use them to display Diesels in on panel and Freight cars in another ppanel based on the filter selections.
-
-
-==== Graphical Consist 3D Model View
-
-Select Items using the mouse. A selected item will have a red highlight around it.
-
-[IMAGE]
-image::images/consist2.png[]
-
-*Available Actions using Keyboard* 
-
-`F`:: Flip, This will reverse the current consist item
-`Delete`::  This will delete the current consist item
-`Left` / `Right`:: This will move a consist item left or right
-
-*The Context Menu Options* 
-
-When you *"Right-Click"* with the mouse above an item in the consist, that device becomes the selected item and a context menu appears with available actions. 
-
-*Available Actions using the "Right-Click" Context Menu*
-
-`Flip`:: This will reverse the current consist item
-`Move Left`:: Move the selected item one position to the left in the consist
-`Move Right`:: Move the selected item one position to the right in the consist
-`Delete`:: Remove the current item from the consist
-`Copy`:: Copy the selected item so it can be pasted into the same or different consist
-`Paste Right`:: Paste the copied item into the consist to the right of the currently selected item
-
-* To copy an item from current consist and paste it into another, do the following steps:
-
-A. From the context menu, `Copy` an item from the current consist 
-B. Select a consist name from the consist file list
-C. The consist editor will open the selected consist file and it will be displayed.
-D. Using the context menu again, you may `Paste Right` to insert the item to the right ot the selected item in the consist. 
-E. You can then use the context menu or keyboard keys to shift the position of the newly pasted item, if needed
-
-
-==== 3D View Menu - ENG View
-
-These menu items refer to the larger 3D Model image in the upper right of the consist editor.
-
-[IMAGE]
-image::images/3dview.png[]
-
-
-This section can have its visibility toggled by selecting the `View->EngView item`
-
-`Shape View->Reset`::  Reset viewing angle to default (Side View)
-`Shape View->Copy Image`:: Copy the current 3D View to the ClipBoard
-`Shape View->Save`:: Save a copy of the 3D View image to disk
-`Shape View->Set Color`:: Set the background color for the 3D Model View from an available color pallette
-
-* There is currently no context menu for the Model details portion of the editor  
 
 
 

@@ -264,9 +264,9 @@ image::images/rec5.png[]
 
 
 
-*Numpad keys* + *pgup* / *pgdown*:: Use for *R/T/Y* if in keyboard layout 1 mode.
-*Arrows* and *pgup* / *pgdown*::    Use *R/T/Y* if layout 2.
-*Mouse*::   Use `R` `T` `Y`; R/T/Y, if in placement mode, will stick only to terrain.
+`Numpad keys` + `pgup` / `pgdown`:: Use for *R/T/Y* if in keyboard layout 1 mode.
+`Arrows` and `pgup` / `pgdown`::    Use *R/T/Y* if layout 2.
+`Mouse`::   Use `R` `T` `Y`; R/T/Y, if in placement mode, will stick only to terrain.
 
 ===== Track Keys
 
