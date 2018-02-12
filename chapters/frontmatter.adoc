@@ -4,7 +4,7 @@
 [preface]
 == Preface
 
-*Here is what it is assumed that you already know.*
+=== Here is what is assumed that you already know.
 
 * MSTS is the Microsoft Train Simulator
 * {OR} is an open source train simulator that can utilize MSTS Assets
@@ -12,7 +12,7 @@
 
 === What is TSRE5 
 
-* TSRE5 is Game Engine that is compatible with MSTS and Open Rails
+* TSRE5 is Game Engine that is compatible with MSTS and {OR}
 * TSRE stands for Train Sim Route Explorer, the name I gave my "university homework"
 * 5 is 5th version of this engine
 
@@ -158,6 +158,8 @@ You can manually change the program's default settings by editing the `settings.
 
 `cameraFov = 20.0`:: {RE} Camera field of view.
 
+`cameraStickToTerrain = true`:: Camera will stick to ground level
+
 `warningBox = true`:: Set to false if you don't want warning window on startup.
 
 `leaveTrackShapeAfterDelete = false`:: Set to true if you want to manually fix broken TDB vectors in {RE}. _Only for advanced users_
@@ -165,6 +167,13 @@ You can manually change the program's default settings by editing the `settings.
 `renderTrItems = true`::    Set to true if you want to see TDB items. _Only for advanced users_
 
 `useImperial = false`:: Set to true if you want to use miles instead kilometers etc.  _Does not work currently_
+
+`mainwindowslayout`= PWT:: Default, Other options include "TWP", "PTW", "WTP" etc.  Using just "W" will make all windows be separate.  
+
+`UseQuadTree = false` = Disable or Enable the new rennderer.
+
+`mouseSpeed = 0.5`::  Control mouse movement speed
+
 
 
 

@@ -28,7 +28,7 @@ If you have properly set up the `gameRoot` settings then the {RE} is ready to us
 
 
 <<<<
-
+[#begin]
 === Starting a Session
 
 If you want to use the {RE}, simply open the TSRE5 application. By default, the Route Editing features will be available.  The Activity Editor is also available from within the {RE}.
@@ -61,7 +61,7 @@ image::images/lr3.png[]
 
 
 <<<<
-
+[#newroute]
 === Creating A New Route
 
 Click the `New` button
@@ -157,7 +157,7 @@ Shows the route visuals.
 
 ==== Main
 
-`F1 ... F12`::    Choose a tool-set.
+`F1 ... F4`::    Choose a tool-set.
 `M`::   Save the route
 `B`::   Create new Tile at current position
 
@@ -187,74 +187,10 @@ Keyboard has two layouts depending on the setting in the `settings.txt` file
 
  Remember: `Ctrl + Z` will *Undo* the last operation
 
-
-
-==== Working with objects:
-
-`Q`:: Place a new object.
-`Ctrl + Q`:: Toggle the "manual/auto" `add track to TDB` option (use Z key for manual).
-`Shift + Q`::  Change the placement mode: stick only to terrain / stick to everything.
-
-[IMAGE]
-image::images/rec5.png[]
-
-===== Placement 
-
-`E`:: Select
-
-`R`:: Rotate
-`T`:: Translate / Transform
-`Y`:: Scale. Use for example with transfers, dynamic tracks
-
-`H`:: Adjust object position to terrain.
-`N`:: Adjust object rotation to terrain.
-
-`P`:: Pick object. You can pick existing object and place it in different place.
-`C`:: Clone object. Creates object duplicate at the same position.
-`Delete`:: Delete selected object.
-`Ctrl`:: Change *R/T/Y* step slower.
-`Alt`:: Change *R/T/Y* step faster.
-`\`:: Toggle Terrain Collision mode.
-
-
-*Numpad keys* + *pgup* / *pgdown*:: Use for *R/T/Y* if in keyboard layout 1 mode.
-*Arrows* and *pgup* / *pgdown*::    Use *R/T/Y* if layout 2.
-*Mouse*::   Use `R` `T` `Y`; R/T/Y, if in placement mode, will stick only to terrain.
-
-===== Track keys
-
-`Z`:: add selected track to TDB.
-`X`:: change new track position. Use before Z.
-`F`:: adjust terrain to track. Use after Z. See more: Editing terrain.
-
-===== Terrain Keys
-
-`Z`:: change height-map painting direction: *+* or *-*
-
-
-==== Selecting Objects
-
-You can select all objects using Select Tool. Enable it using:
-
-* `E` key
-* Right click -> *Select*
-* Edit Menu -> *Select*
-* Select button in *F1* Object Tools
-
-==== Rotating amd Transforming Objects
-
-* `E` key
-* Right click -> *Select*
-* Edit Menu -> *Select*
-* Use the `R` ket to Rotate, `T` key to Transform
-
-When you rotate an object by use of the Copy/Paste or Transform button, be sure to re-select the object (even though it appears to be selected (blue outline)) by using the 'E' key or the `Select` Button. This is to allow you to regain fine movement control when the `Ctrl` Key is pressed and held with the movement keys.
-
-
-<<<<
-
 [#naviwindow]
 === Navi Window 
+
+ Needs review and new images
 
 The Navi Window is a separate movable window that allows coarse adjustments of position with the {RE}. It can take input from Traditional Marker Files, Google Earth Keyhole Markup Language (KML) files and Open Street Map GPX files.
 
@@ -297,169 +233,77 @@ Example:
 For more information about the  *Navi Window*, refer to: <<naviwindow>> 
 
 
-<<<
+==== Working With Objects:
 
-[#realistic]
-=== Making Realistic Routes Using GEO Data
-
-The Route Editor supports using several methods for making realistic routes easier. You can use:
-
-* Marker Files
-* Map Layers
-* HGT terrain data import
-
-[NOTE]
- If you are making an imaginary route, you can also skip this section.
-
-==== Marker Files 
-
-Current version of Route Editor supports three different types of marker files formats:
-
-1. MKR MSTS file http://msts.steam4me.net/tutorials/mkr_googlemaps.html
-2. KML file https://en.wikipedia.org/wiki/Keyhole_Markup_Language
-3. GPX file https://en.wikipedia.org/wiki/GPS_Exchange_Format
-
-
-The original MKR files are the legacy method of placement references used with the MSTS Route Editor.  This is by far the most common method used when creating MSTS routes, however, with TSRE5  everyone should use KML or GPX methods instead.
-
-===== How to create KML/GPX format files
-
-You can use http://www.gpsvisualizer.com/draw/
-This site allows you to draw points and paths on a large number of map layers, including the Google Maps Satellite images. 
-
-Using the GPS Visualizer is very simple. 
-
-
-Use the Button labeled WPT draw individual waypoints used to define specific locations
-Use the Button labeled TRK to draw long segmented paths for roads or tracks.
+`Q`:: Place a new object.
+`Ctrl + Q`:: Toggle the "manual/auto" `add track to TDB` option (use Z key for manual).
+`Shift + Q`::  Change the placement mode: stick only to terrain / stick to everything.
 
 [IMAGE]
-image::images/reg2.png[]
+image::images/rec5.png[]
 
-Draw some points and paths
+===== Object Placement
 
+`E`:: Select
 
-The the appropriate button to choose a file type (GPX or KML). Selecting the button will change the  file type used for downloading.  A download link will appear and allow you to download the file to your computer.
+`R`:: Rotate
+`T`:: Translate / Transform
+`Y`:: Scale. Use for example with transfers, dynamic tracks
 
-[IMAGE]
-image::images/reg4.png[]
+`Ctrl`:: Change *R/T/Y* step slower.
+`Alt`:: Change *R/T/Y* step faster.
 
+`H`:: Adjust object position to terrain.
+`N`:: Adjust object rotation to terrain.
 
-Place the downloaded file in working directory for the route being worked on.
-
-[IMAGE]
-image::images/reg5.png[]
-
-* In the *World Position* window, select your file.
-* You can select file item and use `Jump` button to jump to item position.
-* Click menu `View->Markers` to show selected file items. 
-
-[IMAGE]
-image::images/reg6.png[]
-
-==== Map Layers 
-
-Using a _Map layer_ is a better and faster solution than using marker files if you want to create realistic route.
-
-* Go to *Geo Tools*. Menu `Tools->Geo` or press `F3`.
-* Click `Load Map` button.
-* Find Tile you want to load map layer and click on it.
-* In new window click `Load` and wait until map layer download is complete.
-
-You can choose between bright and dark colors.
-
-[IMAGE]
-image::images/reg7.png[]
-
-* Close the window.
-* Click `Show/H Map` button.
-* Find Tile you want to show map layer and click on it.
-
-[IMAGE]
-image::images/reg8.png[]
-
-[WARNING] 
-    Don't load too many Tile maps at once.
+`P`:: Pick object. You can pick existing object and place it in different place
+`CTRL`:: Holding `CTTL` while "picking" will allow selection of multiple items
+`C`:: Clone object. Creates object duplicate at the same position.
+`Delete`:: Delete selected object.
 
 
-==== HGT terrain data import 
 
-HGT terrain data import allows you to easily create realistic terrain. 
-You need to download the proper HGT files manually. There are many places that HGT files can be downloaded. An Example of a site where you can get them is: http://e4ftl01.cr.usgs.gov/SRTM/SRTMGL1.003/2000.02.11/
-If you don't know which files to download - See below.
 
-* Set *geoPath* in settings to directory where you have your HGT files. _See: <<settings>>_
-* Go to *Geo Tools*. Menu `Tools->Geo` or `F3`.
-* Click `Load Height` button.
-* Find Tile you want to load terrain data and click on it.
-* In new window click `Load` button.
+*Numpad keys* + *pgup* / *pgdown*:: Use for *R/T/Y* if in keyboard layout 1 mode.
+*Arrows* and *pgup* / *pgdown*::    Use *R/T/Y* if layout 2.
+*Mouse*::   Use `R` `T` `Y`; R/T/Y, if in placement mode, will stick only to terrain.
 
-If a proper HGT file doesn't exist, a message box will tell you name of the file you need to download. Close {RE} and download the missing files.
+===== Track Keys
 
-[IMAGE]
-image::images/reg9.png[]
+`Z`:: add selected track to TDB.
+`X`:: change new track position. Use before Z.
+`F`:: adjust terrain to track. Use after Z. See more: Editing terrain.
 
-* Close the window.
-* Enjoy realistic terrain.
+===== Terrain Keys
 
-[IMAGE]
-image::images/reg10.png[]
+`Z`:: change height-map painting direction: *+* or *-*
+`/`:: Toggle Terrain Collision mode.
 
-<<<
-=== Placing New Tracks
 
-How to place tracks or roads?
+==== Selecting Objects
 
-* Select track or road type you want.
-* Select shape you want.
+You can select all objects using Select Tool. Enable it using:
 
-[IMAGE]
-image::images/ret1.png[]
+* `E` key
+* Right click -> *Select*
+* Edit Menu -> *Select*
+* Select button in *F1* Object Tools
 
-* Click `Place New` button.
-* Click on the ground where you want new track.
+Press and hold `CTRL` while selecting to select multiple items
 
-[IMAGE]
-image::images/ret2.png[]
+==== Manipulating Objects
 
-* You can adjust track position by pressing `T` and using `4,6,8,2` keys (move XZ axis), `9,3` keys (move Y axis).
-* You can adjust track rotation by pressing `R` and using `4,6` keys.
-* You can adjust track elevation by pressing `R` and using `8,2` keys. The Properties window will show you elevation value.
-* You can hold `Ctrl` with *R* & *T* mode to change the step rate (0.10%).
+* `E` key
+* Right click -> *Select*
+* Edit Menu -> *Select*
+* Use the `R` ket to Rotate, `T` key to Transform, `Y` key to Scale
 
-[NOTE]
-Depending on your keyboard layout, you can also use other keys. See _<<editor>>_.
+When you rotate an object by use of the Copy/Paste or Transform button, be sure to re-select the object (even though it appears to be selected (blue outline)) by using the 'E' key or the `Select` Button. This is to allow you to regain fine movement control when the `Ctrl` Key is pressed and held with the movement keys.
 
-[IMAGE]
-image::images/ret3.png[]
 
-* Press `Z` to add track to the TDB (Track DataBase). If you want to remove track from the TDB and keep the shape - press `Z` again.
+<<<<
 
-[WARNING] 
- Never translate or rotate track when it is in the TDB (when it has a yellow line) !!! If you do, you will need to delete this track and place new one.
 
-* When track is in TDB, you can press `F` to adjust terrain to the track. You can also do it later by selecting the track you want to adjust and press `F`. See more: <<Editing_terrain>>.
-
-[IMAGE]
-image::images/ret4.png[]
-
-* If you want to place the next track, click around the endpoint (the blue pole) where you want to add next track. 
-* If you have difficulty placing a track above or below ground, press `Q` to change placement mode to `stick to all`. 
-
-[IMAGE]
-image::images/ret5.png[]
-
-* If you want to change direction of track or joining point, press `X`. *Do it before pressing `Z`!*
-
-[IMAGE]
-image::images/ret6.png[]
-
-* If you want to delete track from TDB, but keep the shape placed, press `Z`
-
-[IMAGE]
-image::images/ret7.png[]
-
-If you want to delete track completely, press `Delete`. In this case, you don't need to press `Z`.
 
 ==== Dynamic Track sections
  
@@ -891,3 +735,170 @@ Here you can adjust embankment settings. Look at this image:
 image::images/rete7.png[]
 
 If you want to create embankment or cutting, select the track or road (it must be in TDB) and press `F`.
+
+
+
+
+<<<
+
+[#realistic]
+=== Making Realistic Routes Using GEO Data
+
+The Route Editor supports using several methods for making realistic routes easier. You can use:
+
+* Marker Files
+* Map Layers
+* HGT terrain data import
+
+[NOTE]
+ If you are making an imaginary route, you can also skip this section.
+
+==== Marker Files 
+
+Current version of Route Editor supports three different types of marker files formats:
+
+1. MKR MSTS file http://msts.steam4me.net/tutorials/mkr_googlemaps.html
+2. KML file https://en.wikipedia.org/wiki/Keyhole_Markup_Language
+3. GPX file https://en.wikipedia.org/wiki/GPS_Exchange_Format
+
+
+The original MKR files are the legacy method of placement references used with the MSTS Route Editor.  This is by far the most common method used when creating MSTS routes, however, with TSRE5  everyone should use KML or GPX methods instead.
+
+===== How to create KML/GPX format files
+
+You can use http://www.gpsvisualizer.com/draw/
+This site allows you to draw points and paths on a large number of map layers, including the Google Maps Satellite images. 
+
+Using the GPS Visualizer is very simple. 
+
+
+Use the Button labeled WPT draw individual waypoints used to define specific locations
+Use the Button labeled TRK to draw long segmented paths for roads or tracks.
+
+[IMAGE]
+image::images/reg2.png[]
+
+Draw some points and paths
+
+
+The the appropriate button to choose a file type (GPX or KML). Selecting the button will change the  file type used for downloading.  A download link will appear and allow you to download the file to your computer.
+
+[IMAGE]
+image::images/reg4.png[]
+
+
+Place the downloaded file in working directory for the route being worked on.
+
+[IMAGE]
+image::images/reg5.png[]
+
+* In the *World Position* window, select your file.
+* You can select file item and use `Jump` button to jump to item position.
+* Click menu `View->Markers` to show selected file items. 
+
+[IMAGE]
+image::images/reg6.png[]
+
+==== Map Layers 
+
+Using a _Map layer_ is a better and faster solution than using marker files if you want to create realistic route.
+
+* Go to *Geo Tools*. Menu `Tools->Geo` or press `F3`.
+* Click `Load Map` button.
+* Find Tile you want to load map layer and click on it.
+* In new window click `Load` and wait until map layer download is complete.
+
+You can choose between bright and dark colors.
+
+[IMAGE]
+image::images/reg7.png[]
+
+* Close the window.
+* Click `Show/H Map` button.
+* Find Tile you want to show map layer and click on it.
+
+[IMAGE]
+image::images/reg8.png[]
+
+[WARNING] 
+    Don't load too many Tile maps at once.
+
+
+==== HGT terrain data import 
+
+HGT terrain data import allows you to easily create realistic terrain. 
+You need to download the proper HGT files manually. There are many places that HGT files can be downloaded. An Example of a site where you can get them is: http://e4ftl01.cr.usgs.gov/SRTM/SRTMGL1.003/2000.02.11/
+If you don't know which files to download - See below.
+
+* Set *geoPath* in settings to directory where you have your HGT files. _See: <<settings>>_
+* Go to *Geo Tools*. Menu `Tools->Geo` or `F3`.
+* Click `Load Height` button.
+* Find Tile you want to load terrain data and click on it.
+* In new window click `Load` button.
+
+If a proper HGT file doesn't exist, a message box will tell you name of the file you need to download. Close {RE} and download the missing files.
+
+[IMAGE]
+image::images/reg9.png[]
+
+* Close the window.
+* Enjoy realistic terrain.
+
+[IMAGE]
+image::images/reg10.png[]
+
+<<<
+=== Placing New Tracks
+
+How to place tracks or roads?
+
+* Select track or road type you want.
+* Select shape you want.
+
+[IMAGE]
+image::images/ret1.png[]
+
+* Click `Place New` button.
+* Click on the ground where you want new track.
+
+[IMAGE]
+image::images/ret2.png[]
+
+* You can adjust track position by pressing `T` and using `4,6,8,2` keys (move XZ axis), `9,3` keys (move Y axis).
+* You can adjust track rotation by pressing `R` and using `4,6` keys.
+* You can adjust track elevation by pressing `R` and using `8,2` keys. The Properties window will show you elevation value.
+* You can hold `Ctrl` with *R* & *T* mode to change the step rate (0.10%).
+
+[NOTE]
+Depending on your keyboard layout, you can also use other keys. See _<<editor>>_.
+
+[IMAGE]
+image::images/ret3.png[]
+
+* Press `Z` to add track to the TDB (Track DataBase). If you want to remove track from the TDB and keep the shape - press `Z` again.
+
+[WARNING] 
+ Never translate or rotate track when it is in the TDB (when it has a yellow line) !!! If you do, you will need to delete this track and place new one.
+
+* When track is in TDB, you can press `F` to adjust terrain to the track. You can also do it later by selecting the track you want to adjust and press `F`. See more: <<Editing_terrain>>.
+
+[IMAGE]
+image::images/ret4.png[]
+
+* If you want to place the next track, click around the endpoint (the blue pole) where you want to add next track. 
+* If you have difficulty placing a track above or below ground, press `Q` to change placement mode to `stick to all`. 
+
+[IMAGE]
+image::images/ret5.png[]
+
+* If you want to change direction of track or joining point, press `X`. *Do it before pressing `Z`!*
+
+[IMAGE]
+image::images/ret6.png[]
+
+* If you want to delete track from TDB, but keep the shape placed, press `Z`
+
+[IMAGE]
+image::images/ret7.png[]
+
+If you want to delete track completely, press `Delete`. In this case, you don't need to press `Z`.
