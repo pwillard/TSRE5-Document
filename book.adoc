@@ -72,9 +72,16 @@ No liabilities are accepted or implied.
 include::chapters/frontmatter.adoc[]
 
 <<<
+
 :sectids!:
 :numbered!:
 include::chapters/RouteEditor.adoc[]
+
+<<<
+
+:sectids!:
+:numbered!:
+include::chapters/RouteBuildingExample.adoc[]
 
 <<<
 

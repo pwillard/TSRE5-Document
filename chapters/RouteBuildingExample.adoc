@@ -1,0 +1,167 @@
+== Route Building - By Example
+
+=== Route Building Tools
+
+=== Route Building Tips
+
+=== Planning
+
+=== Laying Track with gradients
+
+
+==== Tips for Placing and Rotating Tracks for Gradients
+*From Vince Cockeram*
+
+[TIP]
+When Elevating track, remember the 'snap' elevation settings to get a smooth gradient transition. 0.150, 0.300, 0.450, 0.600 and so on.
+
+==== Rotating Tracks for Gradient
+
+1. Place a track section in TSRE
+
+2. Press keyboard `R`. This puts just installed track section in ROTATE Mode.
+
+3. Holding the keyboard `CTRL` key down, tap either `NumPad 8` for up or `NumPad 2` for down.
+
+4. The track will elevate or descend in *0.1 per-cent steps* with each key tap of `8` or `2`.
+
+5. The *0.1 grade per-cent* is equal to *1.0 per-mille* which is equal to *0.058 degrees* (MSTS measurement) steps.
+
+6. *All three of these gradient values are displayed on the TSRE panel, left side.* 
+
+7. If you want a very smooth a gradient transition, use 1.5 meter track sections with each sections elevation greater or less than the previous track section by 0.1 per-cent or 1.0 per-mille or 0.058 degrees.
+It will look less smooth but will still look good when you elevate / descend in 0.2 percent steps.
+
+
+When manually entering the numbers into the gradient section of the panel you must use a two place decimal, where 1 percent (per hundred) is entered as 1.00 and is equal to 10 permille (per thousand) which must be entered as 10.00 in the permille field and 0.1 percent is entered as 0.10 or 1.00 permille.
+
+[NOTE]
+TSRE will strip off leading and trailing zeros when saved but this does NOT change the gradient values.
+
+*Keyword: Practice!*
+
+[TIP]
+ There is a general consensus that using PerMille is easier than working grade percentage.
+
+
+WHAT YOU ENTER IN THE GRADE FIELDS 
+
+[width="75%",align="center"]
+[cols="50,50]
+|===
+|PERMILLE |PERCENT
+|1.00     |0.100
+|2.00     | 0.200
+|3.00     | 0.300 
+|4.00     | 0.400
+|5.00     | 0.500
+|6.00     | 0.600
+|7.00     | 0.700
+|8.00     | 0.800
+|9.00     | 0.900
+|10.00    | 1.00
+|===
+
+
+[WARNING]
+ For whatever reason if you enter, lets say, 6 permille or .6 percent when you select the track/road the 6 permille changes to 5.9996 permille or 0.59996 percent. 
+
+*USE TWO PLACE DECIMALS IN EITHER FIELD AND IT WILL SAVE EXACTLY AS ENTERED. IF YOU FAIL TO USE 2 PLACE DECIMAL PLACES, TSRE WILL ROUND OFF NUMBERS*
+
+*Some General thoughts from Vince about working with gradients*
+
+Until you get used to working with gradients get down close and personal as you adjust track grade. Entering (typing) into the gradient dialog panel sometimes produces unwanted results. 
+
+
+Example: I'll set (type in ) a grade of 20 in the permille field ( 2.0 percent ) and then when I have to select the already selected track section ( why do I have to re-select) in order to use the 'Z' key to add track section to the TDB. (yellow lines)The gradient field 20 permille becomes 19.9998. It seems to have a arithmetic error. I want 20 permille and I get 19.99989 something? It's required to have the editor hold the grade a designer wants.
+
+Additionally I can't figure why if I select a track section (Blue Outlined) why do I have to select ('E' key or Select Button) it again . . .and again, the need to select just about any object multiple times to perform multiple concurrent operations. 
+
+1. select and use the Transform feature. 
+2. now select the already selected (blue outlined) object if you need to move the object into a final position.
+
+Seems a bit silly but this editor is a work-in-progress so I have gotten used to having to select over and over again as just a very small nit. Annoying but not a show stopper.
+
+==== Tips for Using the TRANSFORM panel
+
+This is very very helpful. A great feature only lacking a detailed method of Operation.
+
+How many times have you wanted to align a platform, bridge, berm, to track on a grade? Me? A LOT!
+Once I figured out (sort of) how Transform worked it is a super tool! 
+I urge and recommend experimentation. Post results here. One day we can put all these 'found-out-about-features' in a FAQ.
+Note that the Transform Panel has `OK` --- `Cancel` buttons. You enter your numbers and `OK` does the job. How about the same thing for the Track Grade Panel? That would eliminate the track or road moving until you are ready.
+
+One last nit to pick: `Dynamic Track` . . . . I don't see how (other than tapping the keys I use for grade) to set a gradient for DT?
+I do know that holding the `Ctrl` key down as I tap the `NumPad 2` or `8` keys for down / up slope of 1 permille (0.1 percent) grade changes so I just count off key taps. 
+A display of grade as is done for 'normal' track is preferred. 
+Now add a Grade Panel OK button to set the typed in grade and we'll be cooking.
+
+==== Some thoughts on Laying Track
+
+When swapping track sections in and out it's better to set TSRE to NOT automatically add track into the database. 
+The yellow lines over the track are a graphic representation of the TDB.
+
+To toggle `Auto-Add TDB ON/OFF` With nothing selected press `Ctrl + Q` 
+
+This prevents the auto-add to TDB when a track is de-selected.
+
+This is good practice because if you move a track section without first removing the yellow TDB lines will create a MIS-MATCH between the TDB and the WORLD file. 
+This is a well known 'Out of Sync' condition and it's a real pain to repair.
+At this time there is no indication of `Ctrl + Q` being on or off. 
+Before beginning editing you should test to see if Auto-TDB add is on or off. How?
+
+When a *Auto-Add TDB is ON*, the Yellow TDB indicator lines will come ON when the track is deselected. 
+There is no indication of Auto-TDB at this editor release level other that the above procedure. Goku is aware of the no indication.
+
+Another use for the `Q` key: Allowing easy installing underground or on up-in-the-sky bridges.
+*With nothing selected press `SHIFT + Q`"
+
+This allows you to place the cursor ( pointer ) on any object for the purpose of placing a track or road section.
+The cursor normally 'sticks' to the terrain. `Shift + Q` allows the cursor to *Stick to Anything*. 
+This IS covered in the Manual. 
+-
+There is an error in the Manual for the entry on this in section /rewobj.html page 1 of 4 Item 5. `Shift +` is missing.
+-
+There is no indication of Shift + Q being on or off however the behavior of the cursor provides a positive indication.
+
+* When placing track underground as for a tunnel, first check 'Hide Terrain Shape' in the View Menu
+* Now, position the cursor very close to the end on the previously installed track section to place the next track section. 
+* For new track to SNAP to previously installed track, the previous track section MUST have the Yellow TDB lines present.
+* To add a newly placed track section to the TDB when in manual (`Ctrl + Q`) mode: 
+
+1.Select the track. Blue outline appears. 
+2. press the `Z` key. Yellow line appears & track is added to the TDB. Save to make final. 
+
+Do NOT move the track if TDB lines are present
+
+* Dragging track underground? _Don't try it!_ 
+* Misplace or lose a track underground? (which dragging is sure to do) Press `DELETE` and do over! 
+
+
+
+=== Placing objects - A guide
+
+=== Car Spawning Tips
+
+Car Spawner Speeds Table
+|===
+|meter/s	|km/h	|mph
+
+|10		|36		|22.4
+|12		|43.2	|26.8
+|13		|46.8	|29.1
+|15		|54		|33.6
+|16		|57.6	|35.8
+|17		|61.2	|38
+|18		|64.8	|40.3
+|19		|68.4	|42.5
+|20		|72		|44.7
+|21		|75.6	|47
+|22		|79.2	|49.2
+|25		|90		|55.9
+|27		|97.2	|60.4
+|28		|100.8	|62.6
+|29		|104.4	|64.9
+|30		|108	|67.1
+|35		|126	|78.3
+|===
