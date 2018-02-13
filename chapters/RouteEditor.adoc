@@ -239,7 +239,7 @@ image::images/rec2.png[]
 [IMAGE]
 image::images/rec5.png[]
 
-===== Object Placement Keys
+==== Object Placement Keys
 
 `E`:: Select
 
@@ -264,13 +264,13 @@ image::images/rec5.png[]
 `Arrows` and `pgup` / `pgdown`::    Use *R/T/Y* if layout 2.
 `Mouse`::   Use `R` `T` `Y`; R/T/Y will stick only to terrain.
 
-===== Track Keys
+==== Track Keys
 
 `Z`:: add selected track to TDB.
 `X`:: change new track position. Use before Z.
 `F`:: adjust terrain to track. Use after Z. See more: Editing terrain.
 
-===== Terrain Keys
+==== Terrain Keys
 
 `Z`:: change the terrain 'height-map' painting direction: *+* or *-*
 `/`:: Toggle Terrain Collision mode.
@@ -785,6 +785,6 @@ Using this feature requires Google maps api key. Without it sooner or later you 
 
 `GoogleMapsKey = AIzaSyB1whjhasdshkashasdasdhaskdt1Et9g4`
 
-To get your own Google Maps API Key, use this link: https://developers.google.com/maps/d...pt/get-api-key
+To get your own Google Maps API Key, use this link: https://developers.google.com/maps/documentation/javascript/get-api-key
 
 <<<
