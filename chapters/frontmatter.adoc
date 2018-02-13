@@ -4,26 +4,34 @@
 [preface]
 == Preface
 
-=== Here is what is assumed that you already know.
+=== General Information
 
 * MSTS is the Microsoft Train Simulator
-* {OR} is an open source train simulator that can utilize MSTS Assets
+* {OR} or ORTS is an open source train simulator that can utilize MSTS Assets
 * While {OR} is a new train simulator that can use MSTS assets, it does not come with additional utilities, such as a Route Editor, Activities Editor or Consist Editor
 
-=== What is TSRE5 
+=== What is TSRE5? 
 
 * TSRE5 is Game Engine that is compatible with MSTS and {OR}
 * TSRE stands for Train Sim Route Explorer, the name I gave my "university homework"
 * 5 is 5th version of this engine
 
-The currently functional components of TSRE5 are:
+=== Who is behind TSRE5?
+
+The TSRE open source project is the creation of Piotr Gadecki who often goes by the nickname "GokuMK" on the train simulation related forums.
+
+
+=== What can the TSRE5 program do? 
+
+The functional components of TSRE5 are:
 
 * Route Editor
+* Track Viewer
 * Activity Editor 
 * Consist Editor (Which is enabled using a command line option with TSRE)
 
 
-=== Who Is This Document For?
+=== Why does TSRE5 exist?
 
 {OR} needs developer utilities. MSTS needs utilities that are not stuck in the 1990's.  TSRE can solve these issues.
 
@@ -38,34 +46,38 @@ The TSRE5 application is for content developers who wish to create or edit route
 === How to Download TSRE5 
 
 
-The latest version of TSRE5 is always here: http://koniec.org/tsre5/data/?C=M;O=D
+The latest version of TSRE5 is always available for download here: http://koniec.org/tsre5/data/?C=M;O=D
 
-For example, download:  http://koniec.org/tsre5/data/TSRE5_v0.6955.exe
+For example, you would download:  http://koniec.org/tsre5/data/TSRE5_v0.6955.exe as of January 2018.
 
 [NOTE]
  If you have 32 bit Windows (usually foe use with an older computer), you would download: http://koniec.org/tsre5/data/TSRE5x32_v0.6951.exe
 
-==== Installing TSRE
+==== Installing TSRE5
 
-Run the *EXE* file that was downloaded. The TSRE executable will download additional application data from the server.
+Run the *EXE* file that was downloaded. The TSRE executable will download the additional application data from the server.
 
 ===== Manually Installing the additional TSRE application data 
 
 If the automatic installation download doesn’t work for you ( for instance, if you have Windows XP or no internet connection), download latest ZIP version from here: http://koniec.org/tsre5/data/appdata/ and then unzip into the desired directory location `tsre_appdata`):
 
+===== What gets installed by the additional download?
 
 [IMAGE]
 image::images/install1.png[]
 
 Example Path to the shader directory:   `./tsre_appdata/0.69/shaders/`
 
+If TSRE isn't working right, check to see that your installation folders look similar to this. 
+
+
 ==== Linking TSRE to Your Simulator Files
 
-For TSRE to operate properly, you need to have some pre-existing simulator data folders on your computer.  This is referred to as `gameRoot` or `Root Dir` in this document. 
+For TSRE to operate properly, you need to have some pre-existing simulator data folders on your computer.  This is referred to as `gameRoot` in this document. 
 
 Possible `gameRoot` locations are:
 
-* The MSTS root directory
+* The MSTS root  (Where `train.exe` is located)
 * An {OR} installation profile
 * A Mini Route directory
 * Any other Directory that has "global", "routes" and "trains" directories inside. 
@@ -95,11 +107,14 @@ There are also Windows based tools like "Bulk Rename" http://www.bulkrenameutili
 [#settings]
 === How to Manually Configure TSRE5 
 
-Persistent Settings can be saved using a `settings.txt`. This is optional. 
+Persistent Settings for TSRE can be managed using  the `settings.txt` in the program folder where `tsre5.exe` is located. 
+
+[NOTE]
+  Configuring the `settings.txt` file is optional but it can be very helpful. Since the program is still under development, this list of options can change.
 
 ==== How does `settings.txt` work?
 
-You can manually change the program's default settings by editing the `settings.txt` file.  The available settings options are described below: 
+You can manually change the program's default settings by editing the `settings.txt` file.  Most of the available settings options are described below: 
 
 
 `#`:: Any line that starts with a `#` character is a "Comment" line and its contents are ignored.
@@ -158,7 +173,7 @@ You can manually change the program's default settings by editing the `settings.
 
 `cameraFov = 20.0`:: {RE} Camera field of view.
 
-`cameraStickToTerrain = true`:: Camera will stick to ground level
+`cameraStickToTerrain = true`:: Camera will stick to ground level and follow terrain
 
 `warningBox = true`:: Set to false if you don't want warning window on startup.
 

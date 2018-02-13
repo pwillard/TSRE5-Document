@@ -145,7 +145,7 @@ Shows the selected object's properties.
 
 ==== Tools
 
-Tools you can use to edit your route.
+Tools you can use to edit your route. The list adjusts to context.
 
 ==== Route View  
 Shows the route visuals.
@@ -157,7 +157,7 @@ Shows the route visuals.
 
 ==== Main
 
-`F1 ... F4`::    Choose a tool-set.
+`F1 ... F12`::    Choose a tool-set.
 `M`::   Save the route
 `B`::   Create new Tile at current position
 
@@ -207,6 +207,8 @@ Select a file from the pull down list in the navi windows (You can use MKR, KML,
 Example 2::
 The Navi Window will shows current world Lat/Long position. You can enter a specific Lat/Long position you want to go to 
 
+Example 3:: Select a category from the categories list, like *Route: Sidings*. Select a *siding*.
+
 When you have entered the desired position, Select `Jump` to go there.
 
 [IMAGE]
@@ -214,23 +216,6 @@ image::images/rec2.png[]
 
 [NOTE]
   The Navi Window will also show the current tile object count and removed object count. 
-
-
-
-==== Fast Travel Using Tool Categories 
-
-You can easily jump to many locations in your route using *Navi Window*.
-
-[IMAGE]
-image::images/image10.png[]
-
-Example:
-
-1. Select a category from the categories list, for example *Route: Sidings*.
-2. Select *siding*.
-3. Click Jump.
-
-For more information about the  *Navi Window*, refer to: <<naviwindow>> 
 
 
 ==== Working With Objects:
@@ -242,7 +227,7 @@ For more information about the  *Navi Window*, refer to: <<naviwindow>>
 [IMAGE]
 image::images/rec5.png[]
 
-===== Object Placement
+===== Object Placement Keys
 
 `E`:: Select
 
@@ -262,8 +247,6 @@ image::images/rec5.png[]
 `Delete`:: Delete selected object.
 
 
-
-
 `Numpad keys` + `pgup` / `pgdown`:: Use for *R/T/Y* if in keyboard layout 1 mode.
 `Arrows` and `pgup` / `pgdown`::    Use *R/T/Y* if layout 2.
 `Mouse`::   Use `R` `T` `Y`; R/T/Y, if in placement mode, will stick only to terrain.
@@ -278,6 +261,28 @@ image::images/rec5.png[]
 
 `Z`:: change height-map painting direction: *+* or *-*
 `/`:: Toggle Terrain Collision mode.
+
+
+
+=== Placing Objects
+
+How to place objects?
+
+* Select object type you want.
+* Select shape you want.
+
+[IMAGE]
+image::images/reo1.png[]
+
+* Click `Place New` button.
+* Click on the ground where you want new object.
+
+[TIP]
+ Remember that using `Shift+Q` you can change placement mode between *stick only to terrain* or *stick to everything*.
+
+[IMAGE]
+image::images/rec5.png[]
+
 
 
 ==== Selecting Objects
@@ -298,14 +303,32 @@ Press and hold `CTRL` while selecting to select multiple items
 * Edit Menu -> *Select*
 * Use the `R` ket to Rotate, `T` key to Transform, `Y` key to Scale
 
-When you rotate an object by use of the Copy/Paste or Transform button, be sure to re-select the object (even though it appears to be selected (blue outline)) by using the 'E' key or the `Select` Button. This is to allow you to regain fine movement control when the `Ctrl` Key is pressed and held with the movement keys.
+a. You can select object and move it around using mouse. Use mouse wheel to raise or lower its position. 
+b. You can perform advanced translation by pressing `T` and using `4,6,8,2` keys{DOT} to move in X and Z Axis, and `9,3` keys to move in Y axis.
+c. You can adjust object rotation by pressing `R` and using `4,6,8,2` keys{DOT}.
+d. You can press `Ctrl` to change `RT` step.
+
+[NOTE]
+ {DOT} Depending on your keyboard layout, you can use other keys. See How to use <<editor>>
+
+[TIP] 
+  When you rotate an object by use of the Copy/Paste or Transform button, be sure to re-select the object (even though it appears to be selected (blue outline)) by using the 'E' key or the `Select` Button. This is to allow you to regain fine movement control when the `Ctrl` Key is pressed and held with the movement keys.
+
+
+==== How to duplicate objects?
+
+1. Select object and press `Ctrl+C`, find place you want new object and press `Ctrl+V`
+2. Press `C` to clone object and make duplicate at the same position.
+3. Press `P` to pick object. Now you can click `Place New` button and place this object in a new location.
+
+==== How to delete objects
+
+* Select the object and press `Delete`.
 
 
 <<<<
 
-
-
-==== Dynamic Track sections
+==== Working with Track sections
  
 1. Place track
 2. Adjust dynamic track properties
@@ -403,7 +426,7 @@ Additionally I can't figure why if I select a track section (Blue Outlined) why 
 
 Seems a bit silly but this editor is a work-in-progress so I have gotten used to having to select over and over again as just a very small nit. Annoying but not a show stopper.
 
-==== Using the TRANSFORM panel
+==== Tips for Using the TRANSFORM panel
 
 This is very very helpful. A great feature only lacking a detailed method of Operation.
 
@@ -460,48 +483,7 @@ Do NOT move the track if TDB lines are present
 
 
 
-=== Placing Objects
 
-How to place objects?
-
-* Select object type you want.
-* Select shape you want.
-
-[IMAGE]
-image::images/reo1.png[]
-
-* Click `Place New` button.
-* Click on the ground where you want new object.
-
-[TIP]
- Remember that using `Shift+Q` you can change placement mode between *stick only to terrain* or *stick to everything*.
-
-[IMAGE]
-image::images/rec5.png[]
-
-==== Selecting objects:
-
-Click `Select` button or press `E` key.
-
-*Moving and Rotating objects:*
-
-1. Select object and move it around using mouse. Use mouse wheel to raise or lower its position. 
-2. You can use advanced translation by pressing `T` and using `4,6,8,2` keys{DOT} to move in X and Z Axis, and `9,3` keys to move in Y axis. 
-3. You can adjust object rotation by pressing `R` and using `4,6,8,2` keys{DOT}.
-4. You can press `Ctrl` to change `RT` step.
-
-[NOTE]
- {DOT} Depending on your keyboard layout, you can use other keys. See How to use Route Editor.
-
-==== How to duplicate objects?
-
-1. Select object and press `Ctrl+C`, find place you want new object and press `Ctrl+V`
-2. Press `C` to clone object and make duplicate at the same position.
-3. Press `P` to pick object. Now you can click `Place New` button and place this object in a new location.
-
-==== How to delete objects
-
-* Select object and press `Delete`.
 
 ==== How to align objects to track
 
