@@ -1,5 +1,8 @@
 == Route Editor
 
+[NOTE]
+  _There are probably many dozens of errors in the doument_
+
 === Before Getting Started
 
 _Some comments in case you just jumped right to to this section_
@@ -107,7 +110,7 @@ Max Voltage:: The overhead line voltage.
 
 Start Tile:: The {RE} will start at this world position. Changing these values is not recommended while creating new route.
 
-[IMAGE]
+[IMAGE]how to use
 image::images/ren4.png[]
 
 You can now begin editing your new route.
@@ -153,14 +156,13 @@ Tools you can use to edit your route. The list adjusts to context.
 Shows the route visuals.
 
 
+<<<
 
 [#editor]
 === Using the Editor
 
-==== Main
-
 `F1 ... F12`::    Choose a tool-set.
-`M`::   Save the route
+`Ctrl-Shift-S`::   Save the route
 `B`::   Create new Tile at current position
 
 [IMAGE]
@@ -168,20 +170,25 @@ image::images/rec4.png[]
 
 ==== General Navigation
 
-*Navigating Keys*
+===== Navigating Keys
 
-`AWSD` (and *Arrows* if layout 1)::  Move left, right, front, back.
-`Space`::  Move up.
-`E` or `Shift`:: Move faster
+`AWSD` (and *Arrows* if `UseNumPad=False`)::  Move left, right, front, back.
+
+Min Speed is keyboard arrow keys + SHIFT key.
+Std Speed is keyboard arrow keys.
+Max Speed is keyboard arrow keys + CTRL key.
+
+See Camera Speed Presets in <<settings>>
 
  Press left mouse button and move mouse to look around.
 
-==== Keyboard
+===== Keyboard
 
 [IMAGE]
 image::images/rec3.png[]
 
-Keyboard has two layouts depending on the setting in the `settings.txt` file 
+Keyboard has two layouts depending on the setting in the `settings.txt` file.
+
 1. If `useNumPad = true` TSRE assumes you have a number pad
 2. If `useNumPad = false` TSRE assumes you will use the Arrow Keys
 
@@ -189,29 +196,31 @@ Keyboard has two layouts depending on the setting in the `settings.txt` file
 
  Remember: `Ctrl + Z` will *Undo* the last operation
 
+<<<
+
 [#naviwindow]
 === Navi Window 
 
- Needs review and new images
+ Needs review and updated images
 
-The Navi Window is a separate movable window that allows coarse adjustments of position with the {RE}. It can take input from Traditional Marker Files, Google Earth Keyhole Markup Language (KML) files and Open Street Map GPX files.
+The Navi Window is a separate movable window that allows coarse adjustments of position with the {RE}. It can take input from Traditional Marker Files (MKR), Google Earth Keyhole Markup Language (KML) files and Open Street Map (GPX) files.
 
 If desired, it will accept Latitude and Longitude values or any existing Route entities that have been defined. 
 
 [IMAGE]
 image::images/naviwindow.png[]
 
-*Using Lat/Long, Marker files or GPS position files in the Navi Window*
+*Using Lat/Long, Marker files, GPS position files, or object placements in the Navi Window*
 
 Example 1:: 
 Select a file from the pull down list in the navi windows (You can use MKR, KML, GPX) and select item from the file for a location to go to. _See <<realistic>>_
 
 Example 2::
-The Navi Window will shows current world Lat/Long position. You can enter a specific Lat/Long position you want to go to 
+The Navi Window will show the current world Lat/Long position. You can enter a specific Lat/Long position you want to go to 
 
 Example 3:: Select a category from the categories list, like *Route: Sidings*. Select a *siding*.
 
-When you have entered the desired position, Select `Jump` to go there.
+When you have entered the desired position you wish to be moved to, Select `Jump` to go there.
 
 [IMAGE]
 image::images/rec2.png[]
@@ -219,8 +228,9 @@ image::images/rec2.png[]
 [NOTE]
   The Navi Window will also show the current tile object count and removed object count. 
 
+<<<
 
-==== Working With Objects:
+=== Working With Objects:
 
 `Q`:: Place a new object.
 `Ctrl + Q`:: Toggle the "manual/auto" `add track to TDB` option (use Z key for manual).
@@ -236,6 +246,7 @@ image::images/rec5.png[]
 `R`:: Rotate
 `T`:: Translate / Transform
 `Y`:: Scale. Use for example with transfers, dynamic tracks
+`X`:: Flip
 
 `Ctrl`:: Change *R/T/Y* step slower.
 `Alt`:: Change *R/T/Y* step faster.
@@ -251,7 +262,7 @@ image::images/rec5.png[]
 
 `Numpad keys` + `pgup` / `pgdown`:: Use for *R/T/Y* if in keyboard layout 1 mode.
 `Arrows` and `pgup` / `pgdown`::    Use *R/T/Y* if layout 2.
-`Mouse`::   Use `R` `T` `Y`; R/T/Y, if in placement mode, will stick only to terrain.
+`Mouse`::   Use `R` `T` `Y`; R/T/Y will stick only to terrain.
 
 ===== Track Keys
 
@@ -261,8 +272,9 @@ image::images/rec5.png[]
 
 ===== Terrain Keys
 
-`Z`:: change height-map painting direction: *+* or *-*
+`Z`:: change the terrain 'height-map' painting direction: *+* or *-*
 `/`:: Toggle Terrain Collision mode.
+`CTRL`:: Auto-Paint Mode
 
 
 <<<
@@ -271,21 +283,17 @@ image::images/rec5.png[]
 
 How to place objects?
 
-* Select object type you want.
-* Select shape you want.
+1. Select object type you want.
+2. Select shape you want.
+3. Click `Place New` button or `Q`
 
 [IMAGE]
 image::images/reo1.png[]
 
-* Click `Place New` button or `Q`
-* Click on the ground where you want new object.
+Click on the ground where you want new object.
 
 [TIP]
  Remember that using `Shift+Q` you can change placement mode between *stick only to terrain* or *stick to everything*.
-
-[IMAGE]
-image::images/rec5.png[]
-
 
 
 ==== Selecting Objects
@@ -312,7 +320,7 @@ c. You can adjust object rotation by pressing `R` and using `4,6,8,2` keys{DOT}.
 d. You can press `Ctrl` to change `RT` step.
 
 [NOTE]
- {DOT} Depending on your keyboard layout, you can use other keys. See How to use <<editor>>
+ {DOT} Depending on your keyboard layout, you can use other keys. See: <<editor>>
 
 [TIP] 
   When you rotate an object by use of the Copy/Paste or Transform button, be sure to re-select the object (even though it appears to be selected (blue outline)) by using the 'E' key or the `Select` Button. This is to allow you to regain fine movement control when the `Ctrl` Key is pressed and held with the movement keys.
@@ -320,9 +328,11 @@ d. You can press `Ctrl` to change `RT` step.
 
 ==== How to duplicate objects?
 
-1. Select object and press `Ctrl+C`, find place you want new object and press `Ctrl+V`
-2. Press `C` to clone object and make duplicate at the same position.
-3. Press `P` to pick object. Now you can click `Place New` button and place this object in a new location.
+There are multiple options for object duplication
+
+* Select object and press `Ctrl+C`, find place you want new object and press `Ctrl+V`
+* Press `C` to clone object and make duplicate at the same position.
+* Press `P` to pick object. Now you can click `Place New` button and place this object in a new location.
 
 ==== How to delete objects
 
@@ -372,19 +382,27 @@ image::images/reo2.png[]
 
 *Stick to Target*
 
+1. Enable `Stick To Target`
+2. Select "Snapable" target
+3. If you want to see snapable points, you can enable `View->Snapable Points`
+4. Place new object near snapable point. It will be adjusted to adjacent shape
+
+[IMAGE]
+image::images/snap1.png[]
+
 For use when you need to align ANYTHING to track.
 
 * Place a Check in the `Stick to Target` box.
 * Any object placed within the distance specified in the *Snappable max radius field* {DOT}, will align to the track.
 * Set the size radius smaller to align objects in crowded areas.
 
-{DOT} _This is set in the `Target Field Default` setting is Tracks_
+{DOT} _This is set in the_ `Target Field Default` _setting is Tracks_
 
 [TIP]
   This sure makes placing track-side equipment, bridges, platforms, gantries easy, even on curve!. Placed items will follow (align to) the track grade. If the alignment is off by 90 degrees,  use the `Rot Y 90` button. The correct gradient will follow the rotation! 
 
 [TIP]
-  Signals will automatically align to the track when placed except for direction. Use `Flip` to change direction.
+  Signals will automatically align to the track when placed except for direction. Use `Flip`  or `X` to change direction.
 
 
 ==== Copy Rotation
@@ -415,7 +433,7 @@ image::images/reo3.png[]
 
 
 
-==== Carspawners 
+==== Carspawners
 
 
 
@@ -426,17 +444,29 @@ image::images/reo3.png[]
 
 *Linking Signals* 
 
-TSRE's method of linking signals is quite intuitive, but can be daunting for the uninitiated. Here are some lessons learned.
+
+
+
+1. Click 'link' button.
+2. Click 'set link' button.
+3. Click on track (siding for example) you waypoints
+
+[IMAGE]
+image::images/signalLink1.png[]
+
+
 
 [TIP]
   Be sure the pointer (cursor) is set to *Stick to Anything mode*. `Shift+Q` toggles the selection.
+
+TSRE's method of linking signals is quite intuitive, but can be daunting for the uninitiated. Here are some lessons learned.
 
 *Easy Junction*
 
 [IMAGE]
 image::images/sig1.jpg[]
 
-1. Locate pointer on the track and place the signal. A *red* marker and signal object appear. Flip if necessary.
+1. Locate pointer on the track and place the signal. A *red* marker and signal object appear. Flip with `X` if necessary.
 2. Click the `Show list` button. 
 3. Click the `Link Top Head` checkbox. A check in the box appears and the `Link` button enables.
 4. Click the `Link` button. The `Set link` button enables. The fields are blank.
@@ -557,6 +587,8 @@ Tapping left mouse does it. Sliding and painting with the cursor is really a nic
 [TIP]
   For a very fine adjustment of terrain you can use a track or a road section or just about any object to adjust and/or flatten terrain. However some objects/shapes produce some very strange terrain sculpting. The `Ctrl+Z` key comes in handy here.
 
+<<<
+
 ==== Painting Terrain Texture. 
 
 Go to *Terrain Tools*. `Menu Tools->Terrain` or `F2`.
@@ -576,13 +608,41 @@ You can use `Pick` button and pick a texture from the existing small tile instea
 2. Click `Texture` button if you want to paint using texture.
 3. Click `Color` button if you want to paint using color.
 
-You can't lock small tile to avoid painting it by mistake.
+[TIP]
+  You can't lock small tile to avoid painting it by mistake.
 
 [NOTE]
   Remember that painted textures need a lot of memory and disk space. Use them in important locations only. 
 
 [IMAGE]
 image::images/rete6.png[]
+
+
+It is possible to create terrain texture from map texture.
+
+[IMAGE]
+image::images/terrain1.png[]
+
+==== Auto Tile Generation
+
+[IMAGE]
+image::images/autotile1.png[]
+
+
+1. Select marker file.
+2. Select radius in tiles from marker file line.
+3. Check if all heightmap files are awailable.
+4. Create whole terrain in one click.
+
+
+[IMAGE]
+image::images/autotile2.png[]
+
+[IMAGE]
+image::images/autotile3.png[]
+
+
+<<<
 
 ==== Embankments and Cuttings
 
@@ -612,21 +672,22 @@ The Route Editor supports using several methods for making realistic routes easi
 
 ==== Marker Files 
 
-Current version of Route Editor supports three different types of marker files formats:
+Current version of Route Editor supports three different types of marker files formats. It can take input from Traditional Marker Files (MKR), Google Earth Keyhole Markup Language (KML) files and Open Street Map (GPX) files.
 
-1. MKR MSTS file http://msts.steam4me.net/tutorials/mkr_googlemaps.html
+1. MKR MSTS file http://msts.steam4me.net/tutorials/mkr_Googlemaps.html
 2. KML file https://en.wikipedia.org/wiki/Keyhole_Markup_Language
 3. GPX file https://en.wikipedia.org/wiki/GPS_Exchange_Format
 
+[NOTE]
+  The original MKR files are the legacy method of placement references used with the MSTS Route Editor.  This is by far the most common method used when creating MSTS routes, however, with TSRE5  everyone should use *KML* or *GPX* methods instead.
 
-The original MKR files are the legacy method of placement references used with the MSTS Route Editor.  This is by far the most common method used when creating MSTS routes, however, with TSRE5  everyone should use KML or GPX methods instead.
 
 ===== How to create KML/GPX format files
 
 You can use http://www.gpsvisualizer.com/draw/
 This site allows you to draw points and paths on a large number of map layers, including the Google Maps Satellite images. 
 
-Using the GPS Visualizer is very simple. 
+Using the *GPS Visualizer* website is very simple. 
 
 
 Use the Button labeled WPT draw individual waypoints used to define specific locations
@@ -635,26 +696,27 @@ Use the Button labeled TRK to draw long segmented paths for roads or tracks.
 [IMAGE]
 image::images/reg2.png[]
 
-Draw some points and paths
+Draw some waypoints and continuos paths
 
-
-The the appropriate button to choose a file type (GPX or KML). Selecting the button will change the  file type used for downloading.  A download link will appear and allow you to download the file to your computer.
+Click on the appropriate button to choose a file type (GPX or KML). Selecting the button will change the file type to be downloaded.  A download link will appear and clicking it will allow you to download the generated file to your computer.
 
 [IMAGE]
 image::images/reg4.png[]
 
 
-Place the downloaded file in working directory for the route being worked on.
+Place the downloaded file into the working directory of the route being worked on.
 
 [IMAGE]
 image::images/reg5.png[]
 
-* In the *World Position* window, select your file.
-* You can select file item and use `Jump` button to jump to item position.
+* In the *Navi Window*, use the pulldown bar to select your file.
+* You can select a file item and then seect the `Jump` button to go to desired position.
 * Click menu `View->Markers` to show selected file items. 
 
 [IMAGE]
 image::images/reg6.png[]
+
+<<<
 
 ==== Map Layers 
 
@@ -680,18 +742,22 @@ image::images/reg8.png[]
 [WARNING] 
     Don't load too many Tile maps at once.
 
+<<<
 
 ==== HGT terrain data import 
 
 HGT terrain data import allows you to easily create realistic terrain. 
-You need to download the proper HGT files manually. There are many places that HGT files can be downloaded. An Example of a site where you can get them is: http://e4ftl01.cr.usgs.gov/SRTM/SRTMGL1.003/2000.02.11/
-If you don't know which files to download - See below.
+You need to download the proper HGT files manually. There are many places that HGT files can be downloaded. An example of a site where you can get them from is: http://e4ftl01.cr.usgs.gov/SRTM/SRTMGL1.003/2000.02.11/
 
-* Set *geoPath* in settings to directory where you have your HGT files. _See: <<settings>>_
-* Go to *Geo Tools*. Menu `Tools->Geo` or `F3`.
-* Click `Load Height` button.
-* Find Tile you want to load terrain data and click on it.
-* In new window click `Load` button.
+[TIP]
+  Register here gets you authorized: https://urs.earthdata.nasa.gov/users/new
+
+
+1. Set *geoPath* in settings to directory where you have your HGT files. _See: <<settings>>_
+2. Go to *Geo Tools*. Menu `Tools->Geo` or `F3`.
+3. Click `Load Height` button.
+4. Find Tile you want to load terrain data and click on it.
+5. In new window click `Load` button.
 
 If a proper HGT file doesn't exist, a message box will tell you name of the file you need to download. Close {RE} and download the missing files.
 
@@ -705,57 +771,20 @@ image::images/reg9.png[]
 image::images/reg10.png[]
 
 <<<
-=== Placing New Tracks
 
-How to place tracks or roads?
-
-* Select track or road type you want.
-* Select shape you want.
+==== Using Satellite Images
 
 [IMAGE]
-image::images/ret1.png[]
+image::images/Satellite1.jpg[]
 
-* Click `Place New` button.
-* Click on the ground where you want new track.
+Using this feature requires Google maps api key. Without it sooner or later you will see grey image instead of satellite view
 
-[IMAGE]
-image::images/ret2.png[]
+1. Create Google maps api key.
+2. Enable static maps for your key.
+3. Place key in `settings.txt`. Example below:
 
-* You can adjust track position by pressing `T` and using `4,6,8,2` keys (move XZ axis), `9,3` keys (move Y axis).
-* You can adjust track rotation by pressing `R` and using `4,6` keys.
-* You can adjust track elevation by pressing `R` and using `8,2` keys. The Properties window will show you elevation value.
-* You can hold `Ctrl` with *R* & *T* mode to change the step rate (0.10%).
+`GoogleMapsKey = AIzaSyB1whjhasdshkashasdasdhaskdt1Et9g4`
 
-[NOTE]
-Depending on your keyboard layout, you can also use other keys. See _<<editor>>_.
+To get your own Google Maps API Key, use this link: https://developers.google.com/maps/d...pt/get-api-key
 
-[IMAGE]
-image::images/ret3.png[]
-
-* Press `Z` to add track to the TDB (Track DataBase). If you want to remove track from the TDB and keep the shape - press `Z` again.
-
-[WARNING] 
- Never translate or rotate track when it is in the TDB (when it has a yellow line) !!! If you do, you will need to delete this track and place new one.
-
-* When track is in TDB, you can press `F` to adjust terrain to the track. You can also do it later by selecting the track you want to adjust and press `F`. See more: <<Editing_terrain>>.
-
-[IMAGE]
-image::images/ret4.png[]
-
-* If you want to place the next track, click around the endpoint (the blue pole) where you want to add next track. 
-* If you have difficulty placing a track above or below ground, press `Q` to change placement mode to `stick to all`. 
-
-[IMAGE]
-image::images/ret5.png[]
-
-* If you want to change direction of track or joining point, press `X`. *Do it before pressing `Z`!*
-
-[IMAGE]
-image::images/ret6.png[]
-
-* If you want to delete track from TDB, but keep the shape placed, press `Z`
-
-[IMAGE]
-image::images/ret7.png[]
-
-If you want to delete track completely, press `Delete`. In this case, you don't need to press `Z`.
+<<<

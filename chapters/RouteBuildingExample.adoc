@@ -137,6 +137,61 @@ Do NOT move the track if TDB lines are present
 * Dragging track underground? _Don't try it!_ 
 * Misplace or lose a track underground? (which dragging is sure to do) Press `DELETE` and do over! 
 
+=== Placing New Tracks
+
+How to place tracks or roads?
+
+* Select track or road type you want.
+* Select shape you want.
+
+[IMAGE]
+image::images/ret1.png[]
+
+* Click `Place New` button.
+* Click on the ground where you want new track.
+
+[IMAGE]
+image::images/ret2.png[]
+
+* You can adjust track position by pressing `T` and using `4,6,8,2` keys (move XZ axis), `9,3` keys (move Y axis).
+* You can adjust track rotation by pressing `R` and using `4,6` keys.
+* You can adjust track elevation by pressing `R` and using `8,2` keys. The Properties window will show you elevation value.
+* You can hold `Ctrl` with *R* & *T* mode to change the step rate (0.10%).
+
+[NOTE]
+Depending on your keyboard layout, you can also use other keys. See _<<editor>>_.
+
+[IMAGE]
+
+image::images/ret3.png[]
+
+* Press `Z` to add track to the TDB (Track DataBase). If you want to remove track from the TDB and keep the shape - press `Z` again.
+
+[WARNING] 
+ Never translate or rotate track when it is in the TDB (when it has a yellow line) !!! If you do, you will need to delete this track and place new one.
+
+* When track is in TDB, you can press `F` to adjust terrain to the track. You can also do it later by selecting the track you want to adjust and press `F`. See more: <<Editing_terrain>>.
+
+[IMAGE]
+image::images/ret4.png[]
+
+* If you want to place the next track, click around the endpoint (the blue pole) where you want to add next track. 
+* If you have difficulty placing a track above or below ground, press `Q` to change placement mode to `stick to all`. 
+
+[IMAGE]
+image::images/ret5.png[]
+
+* If you want to change direction of track or joining point, press `X`. *Do it before pressing `Z`!*
+
+[IMAGE]
+image::images/ret6.png[]
+
+* If you want to delete track from TDB, but keep the shape placed, press `Z`
+
+[IMAGE]
+image::images/ret7.png[]
+
+If you want to delete track completely, press `Delete`. In this case, you don't need to press `Z`.
 
 
 === Placing objects - A guide

@@ -18,7 +18,7 @@
 
 === Who is behind TSRE5?
 
-The TSRE open source project is the creation of Piotr Gadecki who often goes by the nickname "GokuMK" on the train simulation related forums.
+The TSRE open source project is the creation of Piotr Gadecki who often goes by the nickname "GokuMK" or "Goku" on the train simulation related forums. The Source Code for TSRE5 is maintained by GokuMK on GITHUB at https://github.com/GokuMK/TSRE5
 
 
 === What can the TSRE5 program do? 
@@ -58,6 +58,9 @@ For example, you would download:  http://koniec.org/tsre5/data/TSRE5_v0.6955.exe
 [NOTE]
    While the download file is an installer of sorts, it is not a "Windows" installer. The program will run from where ever you placed it so make sure you place the downloaded file where you want TSRE to permanently run from.
 
+[WARNING]
+  TSRE will not operate corretly in a *system* managed folder like `C:\Program Files` or `C:\Program Files(X86)`. You must place the *EXE* somewhere else, like maybe a new folder you can name `C:\Programs\TSRE\`.
+ 
 Run the *EXE* file that was downloaded. The TSRE executable will download the additional application data from the server.
 
 ===== Manually Installing the additional TSRE application data 
@@ -154,6 +157,13 @@ You can manually change the program's default settings by editing the `settings.
 
 `geoPath = F:/hgst`::  Enter the path to directory where you have .HGT files stored if you want to use the terrain height data import in {RE}.
 
+`GoogleMapsKey = AIzaSyB1whjhasdshkashasdasdhaskdt1Et9g4`:: Enter your Google Maps API key here to use satellite Imagery
+
+`imageMapsUrl = http://maps.googleapis.com/maps/api/staticmap?center={lat},{lon}&zoom={zoom}&size={res}x{res}&maptype=satellite&key=`:: Universal URL setting for using google maps
+`mapImageResolution = 2048`::  use multiples, IE; 2048,4096,8192 etc
+
+`ignoreMissingGlobalShapes = true`:: hide unavailable global shapes
+
 `systemTheme = true`:: Set to true if you want to use a system theme instead of the default dark one.
 
 `colorConView = #FF0000`:: Consist Viewer custom background color.
@@ -178,6 +188,10 @@ You can manually change the program's default settings by editing the `settings.
 
 `cameraStickToTerrain = true`:: Camera will stick to ground level and follow terrain
 
+`cameraSpeedMin = 15`:: Slow Speed Preset
+`cameraSpeedStd = 0.20`:: Normal Speed Preset
+`cameraSpeedMax = 3`:: High Speed Preset
+
 `warningBox = true`:: Set to false if you don't want warning window on startup.
 
 `leaveTrackShapeAfterDelete = false`:: Set to true if you want to manually fix broken TDB vectors in {RE}. _Only for advanced users_
@@ -191,6 +205,14 @@ You can manually change the program's default settings by editing the `settings.
 `UseQuadTree = false` = Disable or Enable the new rennderer.
 
 `mouseSpeed = 0.5`::  Control mouse movement speed
+
+`snapableOnlyRot = [true|false]`:: True or False, Stick to track property
+
+`oglDefaultLineWidth = 1`::Bounding Box Line Width Value Adjustment 
+
+`fogColor = #80C0FF`:: Ambient Fog settings - Color
+
+`fogDensity = 0.55`:: Ambient Fog settings - Density
 
 
 
