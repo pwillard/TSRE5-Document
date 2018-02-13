@@ -55,6 +55,9 @@ For example, you would download:  http://koniec.org/tsre5/data/TSRE5_v0.6955.exe
 
 ==== Installing TSRE5
 
+[NOTE]
+   While the download file is an installer of sorts, it is not a "Windows" installer. The program will run from where ever you placed it so make sure you place the downloaded file where you want TSRE to permanently run from.
+
 Run the *EXE* file that was downloaded. The TSRE executable will download the additional application data from the server.
 
 ===== Manually Installing the additional TSRE application data 
@@ -89,7 +92,7 @@ You can also download a Linux native version.  The Linux release is only availab
 
 The Linux version requires all of the files and directories that are located under the Root Directory, (gameRoot), to have lowercase names only.  Windows is generally a case insensitive operating system when it comes to file names, so `texture.ACE` and `Texture.Ace` refer to the same file in Windows.  This is not true with Linux. 
 
-For example,  in an `.s` file there might be a reference to`TEXTURE.ACE`, but in the hard drive it is named `Texture.ACE`. Linux does not see these as the same file.  To deal with this issue,  the Linux TSRE program always looks for only lowercase file names. 
+For example,  in an `.s` file there might be a reference to `TEXTURE.ACE`, but in the hard drive it is named `Texture.ACE`. Linux does not see these as the same file.  To deal with this issue,  the Linux TSRE program always looks for only lowercase file names. 
 
 An example script to change all the filenames lowercase on Linux would be: 
 

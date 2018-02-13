@@ -2,13 +2,15 @@
 
 === Before Getting Started
 
+_Some comments in case you just jumped right to to this section_
+
 To start working with the Route Editor you need to:
 
-* Have downloaded and installed the TSRE5 application
+* Have downloaded and run the TSRE5 application
 * Have at least one train simulator *gameRoot* or *Root Directory* to refer to
 
 [NOTE]
- A `gameRoot`, also referred to the as the *Root Dir*, must be one of the following items:
+ A `gameRoot` must be one of the following items:
 
 * An MSTS root directory
 * An {OR} installation profile
@@ -17,7 +19,7 @@ To start working with the Route Editor you need to:
 
 === Overview
 
-* (Optional) Set the `gameRoot` value in the application settings to your desired Root Directory. See: <<settings>>
+* _(Optional)_ Set the `gameRoot` value in the application settings to your desired Root Directory. See: <<settings>>
 
 * Open `TSRE5.exe`, or `TSRE5x32.exe` if you are using a 32 bit version of Windows
 
@@ -31,10 +33,10 @@ If you have properly set up the `gameRoot` settings then the {RE} is ready to us
 [#begin]
 === Starting a Session
 
-If you want to use the {RE}, simply open the TSRE5 application. By default, the Route Editing features will be available.  The Activity Editor is also available from within the {RE}.
+If you want to use the {RE}, simply open the TSRE5 application. By default, the *Route Editor* features will be available.  The *Activity Editor* is also available from within the {RE}.
 
 [NOTE]
- If you want to use Consist Editor however, you need to use the `ConsistEditor.bat` file to start a Consist Editing session.
+ If you want to use *Consist Editor*  however, you need to use the `ConsistEditor.bat` file to start a Consist Editing session.
 
 [IMAGE]
 image::images/intro3.png[]
