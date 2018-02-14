@@ -1,8 +1,5 @@
 == Route Editor
 
-[NOTE]
-  _There are probably many dozens of errors in the doument_
-
 === Before Getting Started
 
 _Some comments in case you just jumped right to to this section_
@@ -172,15 +169,18 @@ image::images/rec4.png[]
 
 ===== Navigating Keys
 
-`AWSD` (and *Arrows* if `UseNumPad=False`)::  Move left, right, front, back.
+`AWSD` (and *Arrows* if `UseNumPad=False in 'settings.txt'`)::  Move left, right, front, back.
 
-Min Speed is keyboard arrow keys + SHIFT key.
-Std Speed is keyboard arrow keys.
-Max Speed is keyboard arrow keys + CTRL key.
+* Min Speed is keyboard arrow keys + SHIFT key.
+* Std Speed is keyboard arrow keys.
+* Max Speed is keyboard arrow keys + CTRL key.
 
 See Camera Speed Presets in <<settings>>
 
+[TIP] 
  Press left mouse button and move mouse to look around.
+
+<<<
 
 ===== Keyboard
 
@@ -193,15 +193,12 @@ Keyboard has two layouts depending on the setting in the `settings.txt` file.
 2. If `useNumPad = false` TSRE assumes you will use the Arrow Keys
 
 [TIP]
-
  Remember: `Ctrl + Z` will *Undo* the last operation
 
 <<<
 
 [#naviwindow]
 === Navi Window 
-
- Needs review and updated images
 
 The Navi Window is a separate movable window that allows coarse adjustments of position with the {RE}. It can take input from Traditional Marker Files (MKR), Google Earth Keyhole Markup Language (KML) files and Open Street Map (GPX) files.
 
@@ -617,11 +614,6 @@ You can use `Pick` button and pick a texture from the existing small tile instea
 [IMAGE]
 image::images/rete6.png[]
 
-
-It is possible to create terrain texture from map texture.
-
-[IMAGE]
-image::images/terrain1.png[]
 
 ==== Auto Tile Generation
 
