@@ -59,7 +59,8 @@ For example, you would download:  http://koniec.org/tsre5/data/TSRE5_v0.6955.exe
    While the download file is an installer of sorts, it is not a "Windows" installer. The program will run from where ever you placed it so make sure you place the downloaded file where you want TSRE to permanently run from.
 
 [WARNING]
-  TSRE will not operate corretly in a *system* managed folder like `C:\Program Files` or `C:\Program Files(X86)`. You must place the *EXE* somewhere else, like maybe a new folder you can name `C:\Programs\TSRE\`.
+  If you install your MSTS into \Program Files\ or \program Files (x86)\ expect problems due to Microsoft Security.
+  TSRE will not operate corretly in a *system* managed folder like these . You must place the *EXE* somewhere else, like maybe a new folder you that you name `C:\Programs\TSRE\`.
  
 Run the *EXE* file that was downloaded. The TSRE executable will download the additional application data from the server.
 

@@ -4,7 +4,7 @@
 
 === Route Building Tips
 
-=== Planning
+=== Route Planning
 
 === Laying Track with gradients
 
@@ -45,6 +45,8 @@ TSRE will strip off leading and trailing zeros when saved but this does NOT chan
 
 
 WHAT YOU ENTER IN THE GRADE FIELDS 
+
+////  Generic Table layout Example
 
 [width="75%",align="center"]
 [cols="50,50]

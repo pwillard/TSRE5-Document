@@ -8,6 +8,7 @@
 :doctype: book
 :revision: 1.0
 :copyright: Copyright 2018
+:author: GokuMK
 :encoding: utf-8
 :lang: EN
 :experimental:
@@ -31,7 +32,7 @@
 
 Lettering:: This book is typeset using the Ubuntu TrueType font
 
-Text Layout:: Ruby - ASCIIDOCTOR-PDF
+Text Layout:: Ruby - With ASCIIDOCTOR, ASCIIDOCTOR-PDF, ASCIIDOCTOR-DIAGRAM 
 
 Cover Art:: Neil (Qballbandit) at TrainSim.com
 
@@ -40,7 +41,7 @@ Cover Art:: Neil (Qballbandit) at TrainSim.com
 
 == Train Simulator Route Explorer
 
-{copyright} Piotr Gadecki 
+{copyright} {author} 
 
 // [IMAGE]
 // image::images/pgadecki.jpg[]

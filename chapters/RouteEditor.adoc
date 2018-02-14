@@ -766,8 +766,7 @@ image::images/reg10.png[]
 
 ==== Using Satellite Images
 
-[IMAGE]
-image::images/Satellite1.jpg[]
+// I don't know if these even works yet
 
 Using this feature requires Google maps api key. Without it sooner or later you will see grey image instead of satellite view
 
@@ -775,7 +774,7 @@ Using this feature requires Google maps api key. Without it sooner or later you 
 2. Enable static maps for your key.
 3. Place key in `settings.txt`. Example below:
 
-`GoogleMapsKey = AIzaSyB1whjhasdshkashasdasdhaskdt1Et9g4`
+`GoogleMapsKey = Key Goes Here`
 
 To get your own Google Maps API Key, use this link: https://developers.google.com/maps/documentation/javascript/get-api-key
 
