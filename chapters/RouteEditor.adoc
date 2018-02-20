@@ -17,6 +17,10 @@ To start working with the Route Editor you need to:
 * A Mini Route directory
 * Any other Directory that contains populated "global", "routes" and "trains" folders 
 
+[WARNING]
+  If you haven't done this by now, please make sure that you are running any instances of MSTS outside of system managed folders like `c:\program files(x86)`.  This means that you didn't accept the default folder options when installing MSTS from CDROMS.  It is recommended that a root directory for MSTS be used, like `C:\MSTS`.  This installation location would be one of your possible `gameRoot` locations.
+
+
 === Overview
 
 * _(Optional)_ Set the `gameRoot` value in the application settings to your desired Root Directory. See: <<settings>>
@@ -113,7 +117,7 @@ image::images/ren4.png[]
 You can now begin editing your new route.
 
 <<<<
-
+[#mainwindow]
 === Getting Around in the Route Editor
 
 *Main Window*
@@ -181,7 +185,7 @@ See Camera Speed Presets in <<settings>>
  Press left mouse button and move mouse to look around.
 
 <<<
-
+[#keyboard]
 ===== Keyboard
 
 [IMAGE]
@@ -323,7 +327,7 @@ d. You can press `Ctrl` to change `RT` step.
   When you rotate an object by use of the Copy/Paste or Transform button, be sure to re-select the object (even though it appears to be selected (blue outline)) by using the 'E' key or the `Select` Button. This is to allow you to regain fine movement control when the `Ctrl` Key is pressed and held with the movement keys.
 
 
-==== How to duplicate objects?
+==== How to duplicate objects
 
 There are multiple options for object duplication
 
@@ -516,7 +520,7 @@ These guides will work on any switch, not just double slips.
 
 === Editing Terrain
 
-*How to edit terrain settings?*
+*How to edit terrain settings*
 
 Go to *Terrain Tools*. `Menu Tools->Terrain` or `F2`.
 
@@ -526,7 +530,7 @@ Go to *Terrain Tools*. `Menu Tools->Terrain` or `F2`.
 * Use `Show/H Tile` button and click on small tile if you want to show/hide it.
 
 [TIP]
- If you want to show a hidden tile - click on its line.
+ If you want to show a hidden tile - click on its "line".
 
 * If you want to make holes in terrain, use the `Gaps` button and click where you want it. You can use holes for tunnel entrances. If you want to fill the holes, show water first.
 
@@ -688,7 +692,7 @@ Use the Button labeled TRK to draw long segmented paths for roads or tracks.
 [IMAGE]
 image::images/reg2.png[]
 
-Draw some waypoints and continuos paths
+Draw some way-points and continuos paths
 
 Click on the appropriate button to choose a file type (GPX or KML). Selecting the button will change the file type to be downloaded.  A download link will appear and clicking it will allow you to download the generated file to your computer.
 
