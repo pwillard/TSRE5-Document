@@ -121,105 +121,50 @@ Persistent Settings for TSRE can be managed using  the `settings.txt` in the pro
 
 ==== How does `settings.txt` work?
 
-You can manually change the program's default settings by editing the `settings.txt` file.  Most of the available settings options are described below: 
-
-
-`#`:: Any line that starts with a `#` character is a "Comment" line and its contents are ignored.
-
-`consoleOutput = false`::  Set this to true if you want log printed on console. It will output to a file named `log.txt`. _It seems to not be working in the current version_ 
-
-`gameRoot = F:/train simulator`::  If you don't want to specify a root directory each time you start the application, enter the path to your desired MSTS/{OR} directory. 
-
-[TIP]
- What is `gameRoot`? It is the directory where MSTS is installed, the {OR} installation profile, a Mini Route directory or any other Directory that has "global", "routes" and "trains" directories inside. 
-
-`routeName = cmk`:: Place a route name here if you want to skip the Load Window and instead use this route on startup.
-
-`startTile[x|y]`:: Optional Route Editor Start Tile position. This overrides the route settings in the `TRK` file. 
-
-  startTileX = -5306 
-  startTileY = 14961
-
-`createNewIfNotExist = true`::  Set this to true to auto create new route if the routeName is specified and the route does not already exist. 
-
-[TIP]
- This setting is not recommended for new users.
-
-`writeEnabled = true`::  Set this to false if you want to disable all `Save` functions.
-
-`writeTDB = true`:: Set this to false if you want to disable the `Save Track Database` functions.
-
-`deleteTrWatermarks = true`:: Set this to true if you want to delete `TrWatermarks` objects in `.W` files on save.
-
-`deleteViewDbSpheres = true`:: Set this to true if you want to delete ViewDbSpheres objects in `.W` files on save.
-
-[TIP]
-  This option is needed if you are editing an existing MSTS route and have issues with displaying the objects in MSTS/{OR}.
-
-`geoPath = F:/hgst`::  Enter the path to directory where you have .HGT files stored if you want to use the terrain height data import in {RE}.
-
-`GoogleMapsKey = AIzaSyB1whjhasdshkashasdasdhaskdt1Et9g4`:: Enter your Google Maps API key here to use satellite Imagery
-
-`imageMapsUrl = http://maps.googleapis.com/maps/api/staticmap?center={lat},{lon}&zoom={zoom}&size={res}x{res}&maptype=satellite&key=`:: Universal URL setting for using google maps
-`mapImageResolution = 2048`::  use multiples, IE; 2048,4096,8192 etc
-
-`ignoreMissingGlobalShapes = true`:: hide unavailable global shapes
-
-`systemTheme = true`:: Set to true if you want to use a system theme instead of the default dark one.
-
-`colorConView = #FF0000`:: Consist Viewer custom background color.
-
-`colorShapeView = #00FF00`:: Shape Viewer custom background color.
-
-`toolsHidden = true`::  Set to true if you want to hide all tools in the {RE}.
-
-`usenNumPad = true`::   Set to false if you have keyboard with no numpad 0-9 keys.
-
-`tileLod = 2`::  Tile view distance. 0 = 1x1 tiles, 1 = 3x3 tiles, 2 = 5x5 tiles etc. The default MSTS value is 1.
-
-`objectLod = 4000`:: View distance in meters. tileLod = objectLod/2000 required. The default for the MSTS {RE} is `tileLod = 1, objectLod = 2000`
-
-`maxObjLag = 10`:: Number of new loading threads/frame. IMO, for HDD best value is 2. Lower value for older HDD and CPU, higher for SSD and better CPU. 
-
-`allowObjLag = 1000`:: As above. Lower value may be better for HDD. Higher value increases loading speed on startup but requires SSD.
-
-`fpsLimit = 0`::    Set FPS limit. Default 0 = no limit.
-
-`cameraFov = 20.0`:: {RE} Camera field of view.
-
-`cameraStickToTerrain = true`:: Camera will stick to ground level and follow terrain
-
-`cameraSpeedMin = 15`:: Slow Speed Preset
-`cameraSpeedStd = 0.20`:: Normal Speed Preset
-`cameraSpeedMax = 3`:: High Speed Preset
-
-`warningBox = true`:: Set to false if you don't want warning window on startup.
-
-`leaveTrackShapeAfterDelete = false`:: Set to true if you want to manually fix broken TDB vectors in {RE}. _Only for advanced users_
-
-`renderTrItems = true`::    Set to true if you want to see TDB items. _Only for advanced users_
-
-`useImperial = false`:: Set to true if you want to use miles instead kilometers etc.  _Does not work currently_
-
-`mainwindowslayout`= PWT:: Default, Other options include "TWP", "PTW", "WTP" etc.  Using just "W" will make all windows be separate.  
-
-`UseQuadTree = false` = Disable or Enable the new rennderer.
-
-`mouseSpeed = 0.5`::  Control mouse movement speed
-
-`snapableOnlyRot = [true|false]`:: True or False, Stick to track property
-
-`oglDefaultLineWidth = 1`::Bounding Box Line Width Value Adjustment 
-
-`fogColor = #80C0FF`:: Ambient Fog settings - Color
-
-`fogDensity = 0.55`:: Ambient Fog settings - Density
-
-
-
-
-
-
-
-
-
+|===
+| Setting | Function
+|#|      Any line that starts with a `#` character is a "Comment" line and its contents are ignored.
+|allowObjLag = 1000|     As above. Lower value may be better for HDD. Higher value increases loading speed on startup but requires SSD. 
+|cameraFov = 20.0|       {RE} Camera field of view.     
+|cameraSpeedMax = 3|     High Speed Preset      
+|cameraSpeedMin = 15|    Slow Speed Preset      
+|cameraSpeedStd = 0.20|  Normal Speed Preset    
+|cameraStickToTerrain = true|    Camera will stick to ground level and follow terrain   
+|ceWindowLayout = CU1|   Gui Setting    
+|colorConView = #FF0000|         Consist Viewer custom background color.        
+|colorShapeView = #00FF00|       Shape Viewer custom background color.  
+|consoleOutput = false|   Set this to true if you want log printed on console. It will output to a file named `log.txt`. _It seems to not be working in the current version_
+|defaultElevationBox = 0|         [values 0 - 3]        
+|defaultMoveStep = 0.25|           [default 0.25]       
+|deleteTrWatermarks = true|      Set this to true if you want to delete |TrWatermarks| objects in `.W` files on save.
+|deleteViewDbSpheres = true|     Set this to true if you want to delete ViewDbSpheres objects in `.W` files on save.
+|fogColor = #80C0FF|     Ambient Fog settings - Color   
+|fogDensity = 0.55|      Ambient Fog settings - Density 
+|fpsLimit = 0|      Set FPS limit. Default 0 = no limit.        
+|gameRoot = F:/train simulator|         If you don't want to specify a root directory each time you start the application, enter the path to your desired MSTS/{OR} directory.
+|geoPath = F:/hgst|    Enter the path to directory where you have .HGT files stored if you want to use the terrain height data import in {RE}.
+|GoogleMapsKey = AIzaSyB1whjhasdshkashasdasdhaskdt1Et9g4|        Enter your Google Maps API key here to use satellite Imagery   
+|ignoreMissingGlobalShapes = true|       hide unavailable global shapes 
+|imageMapsUrl = http://maps.googleapis.com/maps/api/staticmap?center={lat},{lon}&zoom={zoom}&size={res}x{res}&maptype=satellite&key | `Universal URL setting for using google maps`
+|leaveTrackShapeAfterDelete = false|     Set to true if you want to manually fix broken TDB vectors in {RE}. _Only for advanced users_
+|mainwindowslayout= PWT|    Default, Other options include "TWP", "PTW", "WTP" etc.  Using just "W" will make all windows be separate.
+|mapImageResolution = 2048|       use multiples, IE; 2048,4096,8192 etc
+|maxObjLag = 10|         Number of new loading threads/frame. IMO, for HDD best value is 2. Lower value for older HDD and CPU, higher for SSD and better CPU.
+|mouseSpeed = 0.5|        Control mouse movement speed
+|objectLod = 4000|       View distance in meters.`tileLod = objectLod/2000 required`. The default for the MSTS {RE} is `tileLod = 1, objectLod = 2000`
+|oglDefaultLineWidth = 1|       Bounding Box Line Width Value Adjustment
+|renderTrItems = true|      Set to true if you want to see TDB items. _Only for advanced users_ 
+|routeName = cmk|        Place a route name here if you want to skip the Load Window and instead use this route on startup.     
+|snapableOnlyRot = [true or false]|         True or False, Stick to track property 
+|startTilex = -5306 |   Optional Route Editor Start Tile *X* position. This overrides the route settings in the `TRK` file
+|startTiley =  14961|   Optional Route Editor Start Tile *Y* position.
+|systemTheme = true|     Set to true if you want to use a system theme instead of the default dark one. 
+|tileLod = 2|     Tile view distance. 0 = 1x1 tiles, 1 = 3x3 tiles, 2 = 5x5 tiles etc. The default MSTS value is 1.     
+|toolsHidden = true|      Set to true if you want to hide all tools in the {RE}.        
+|useImperial = false|    Set to true if you want to use miles instead kilometers etc.  _Does not work currently_
+|usenNumPad = true|        Set to false if you have keyboard with no numpad 0-9 keys.   
+|UseQuadTree = false| = Disable or Enable the new renderer.                    
+|warningBox = true|      Set to false if you don't want warning window on startup.      
+|writeEnabled = true|     Set this to false if you want to disable all `Save` functions.
+|writeTDB = true|        Set this to false if you want to disable the `Save Track Database` functions.
+|===
