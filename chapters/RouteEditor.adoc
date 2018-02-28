@@ -742,11 +742,13 @@ image::images/reg8.png[]
 
 ==== HGT terrain data import 
 
-HGT terrain data import allows you to easily create realistic terrain. 
-You need to download the proper HGT files manually. There are many places that HGT files can be downloaded. An example of a site where you can get them from is: http://e4ftl01.cr.usgs.gov/SRTM/SRTMGL1.003/2000.02.11/
+HGT terrain data import allows you to easily create realistic terrain. The easiest to use place I have found to get HGT files is below.
 
-[TIP]
-  Register here gets you authorized: https://urs.earthdata.nasa.gov/users/new
+http://www.viewfinderpanoramas.org/dem3.html
+
+[NOTE]
+ SRTM data is available from official sources, such as NASA.gov and the USGS.gov websites. 
+
 
 
 1. Set *geoPath* in settings to directory where you have your HGT files. _See: <<settings>>_
