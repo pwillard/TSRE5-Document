@@ -247,7 +247,12 @@ image::images/rec5.png[]
 `R`:: Rotate
 `T`:: Translate / Transform
 `Y`:: Scale. Use for example with transfers, dynamic tracks
+
+`Numpad keys` + `pgup` / `pgdown`:: Use for *R/T/Y* if in keyboard layout 1 mode.
+`Arrows` and `pgup` / `pgdown`::    Use *R/T/Y* if layout 2.
+
 `X`:: Flip
+
 
 `Ctrl`:: Change *R/T/Y* step slower.
 `Alt`:: Change *R/T/Y* step faster.
@@ -259,11 +264,7 @@ image::images/rec5.png[]
 `CTRL`:: Holding `CTTL` while "picking" will allow selection of multiple items
 `C`:: Clone object. Creates object duplicate at the same position.
 `Delete`:: Delete selected object.
-
-
-`Numpad keys` + `pgup` / `pgdown`:: Use for *R/T/Y* if in keyboard layout 1 mode.
-`Arrows` and `pgup` / `pgdown`::    Use *R/T/Y* if layout 2.
-`Mouse`::   Use `R` `T` `Y`; R/T/Y will stick only to terrain.
+`Mouse Scroll Wheel`::  Raise/Lower object after placing
 
 ==== Track Keys
 
@@ -292,6 +293,9 @@ How to place objects?
 image::images/reo1.png[]
 
 Click on the ground where you want new object.
+
+You can use the Mouse Scroll wheel to Raise or Lower object after placing
+
 
 [TIP]
  Remember that using `Shift+Q` you can change placement mode between *stick only to terrain* or *stick to everything*.
@@ -767,6 +771,18 @@ image::images/reg9.png[]
 
 [IMAGE]
 image::images/reg10.png[]
+
+
+===== Example session - Adding a tile with terrain:
+
+Add a tile to existing route by jumping to the location of where you want to add a tile. 
+
+* Push the `B` key. Tile is created and the quad tree updated. 
+* Push `F2` to load Terrain tools menu. 
+* Push `Height` button and push `LOAD` button in the window. The "Hgt" data for that tile is located and loaded, provided that the hgt files are downloaded and saved in the location pointed to by what is in `settings.txt`. 
+* Save. 
+
+There is now a new tile with terrain in the route. 
 
 <<<
 
