@@ -746,8 +746,8 @@ HGT terrain data import allows you to easily create realistic terrain. The easie
 
 http://www.viewfinderpanoramas.org/dem3.html
 
-[NOTE]
- SRTM data is available from official sources, such as NASA.gov and the USGS.gov websites. 
+
+ SRTM HGT data is available from other official sources, such as NASA.gov and the USGS.gov websites. Example: https://dds.cr.usgs.gov/srtm/version1/ 
 
 
 
