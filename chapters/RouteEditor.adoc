@@ -385,6 +385,9 @@ image::images/ret8.png[]
 [IMAGE]
 image::images/reo2.png[]
 
+[IMAGE]
+image::images/stick1.png[]
+
 *Stick to Target*
 
 1. Enable `Stick To Target`
