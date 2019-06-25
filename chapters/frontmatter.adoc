@@ -134,6 +134,7 @@ Persistent Settings for TSRE can be managed using  the `settings.txt` in the pro
 |colorConView = #FF0000|         Consist Viewer custom background color.        
 |colorShapeView = #00FF00|       Shape Viewer custom background color.  
 |consoleOutput = false|   Set this to true if you want log printed on console. It will output to a file named `log.txt`. _It seems to not be working in the current version_
+|createNewIfNotExist = true | Set to true to auto create new route if routeName is set and route not exists. Not recommended.
 |defaultElevationBox = 0|         [values 0 - 3]        
 |defaultMoveStep = 0.25|           [default 0.25]       
 |deleteTrWatermarks = true|      Set this to true if you want to delete |TrWatermarks| objects in `.W` files on save.

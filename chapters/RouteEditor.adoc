@@ -197,7 +197,8 @@ Keyboard has two layouts depending on the setting in the `settings.txt` file.
 2. If `useNumPad = false` TSRE assumes you will use the Arrow Keys
 
 [TIP]
- Remember: `Ctrl + Z` will *Undo* the last operation
+ Remember: `Ctrl + Z` will *Undo* the last operation.  This is probably the most important tip you should remember.
+ 
 
 <<<
 
@@ -239,6 +240,10 @@ image::images/rec2.png[]
 
 [IMAGE]
 image::images/rec5.png[]
+
+[TIP]
+In TSRE, when laying track inside tunnels, use: `Shift + Q`. It will change the placement mode between "stick only to terrain" and "stick to everything". Then you will then be able to stick the new track to the existing track that is under the terrain.
+
 
 ==== Object Placement Keys
 
@@ -298,8 +303,11 @@ You can use the Mouse Scroll wheel to Raise or Lower object after placing
 
 
 [TIP]
- Remember that using `Shift+Q` you can change placement mode between *stick only to terrain* or *stick to everything*.
+ Remember: using `Shift+Q` you can change placement mode between *stick only to terrain* or *stick to everything*.
 
+[TIP]
+ Remember: `Ctrl + Z` will *Undo* the last operation.  
+ 
 
 ==== Selecting Objects
 
@@ -527,7 +535,49 @@ These guides will work on any switch, not just double slips.
 
 === Editing Terrain
 
-*How to edit terrain settings*
+==== Ace File Thumbnails
+
+There is a 64bit ACE file viewer add-on available at:
+
+http://koniec.org/MstsAceThumbnails_v1.zip
+
+[IMAGE]
+image::images/acefile1.png[]
+
+[NOTE]
+On Windows 7, UAC must be disabled.
+
+1. Download and extract the files somewhere. Pick something that makes sense,  like where you installed *TSRE* or something you can remember, like `c:\bin`.
+
+2. Open an command prompt and make sure you open it "as Administrator".
+
+3. Go to the directory where the unzipped files are
+
+4. Register the library using the command:
+
+`Regsvr32.exe CppShellExtThumbnailHandler.dll`
+
+Now all .ace files will have thumbnails like other images.
+
+*REMOVAL*
+If you want to remove it, unregister the library using the command:
+
+`Regsvr32.exe /u CppShellExtThumbnailHandler.dll`
+
+Once the removal step is performed, you can then delete the files.
+
+[NOTE] 
+This thumbnail library is only for 64 bit only
+
+
+
+[IMAGE]
+image::images/acefile2.png[]
+
+
+
+
+==== How to edit terrain settings
 
 Go to *Terrain Tools*. `Menu Tools->Terrain` or `F2`.
 
@@ -540,6 +590,12 @@ Go to *Terrain Tools*. `Menu Tools->Terrain` or `F2`.
  If you want to show a hidden tile - click on its "line".
 
 * If you want to make holes in terrain, use the `Gaps` button and click where you want it. You can use holes for tunnel entrances. If you want to fill the holes, show water first.
+
+[TIP]
+In TSRE, when laying track inside tunnels, use: `Shift + Q`. It will change the placement mode between "stick only to terrain" and "stick to everything". Then you will then be able to stick the new track to the existing track that is under the terrain.
+
+[TIP]
+Tunneling: ( Garry's method) My tunneling method is a bit unique, but easy. I make a copy of the tiles folder. Then each piece of track I lay I press F to mould the terrain to the track, turning the tunnel into a cutting. I can follow the track path on a map overlay, and when I get to the far end of the tunnel I can check the height, then go back and change the gradient until the track emerges at the correct height. Finally I replace the Tiles folder with the one I saved earlier.
 
 [IMAGE]
 image::images/rete5.png[]
@@ -625,6 +681,10 @@ You can use `Pick` button and pick a texture from the existing small tile instea
 [IMAGE]
 image::images/rete6.png[]
 
+This below is after spending 10 to 15 minutes work painting the Right of Way .
+
+[IMAGE]
+image::images/terrainpaint.jpg[]
 
 ==== Auto Tile Generation
 
@@ -787,13 +847,26 @@ Add a tile to existing route by jumping to the location of where you want to add
 
 There is now a new tile with terrain in the route. 
 
+	
+===== Some Additional Internet Links for .hgt Files.
+
+These are subject to change and may stop working...
+
+http://viewfinderpanoramas.org/Coverage%20map%20viewfinderpanoramas_org3.htm
+
+https://dds.cr.usgs.gov/srtm/version2_1/SRTM3/
+
+https://search.earthdata.nasa.gov/search/granules/collection-details?p=C1000000240-LPDAAC_ECS&m=18.984375!-10.40625!2!1!0!&tl=1098377168!6!!
+
+
+
 <<<
 
 ==== Using Satellite Images
 
-// I don't know if these even works yet
+===== Google Maps
 
-Using this feature requires Google maps api key. Without it sooner or later you will see grey image instead of satellite view
+Using this feature requires Google maps api key. Without it sooner or later you will see gray image instead of satellite view
 
 1. Create Google maps api key.
 2. Enable static maps for your key.
@@ -802,5 +875,29 @@ Using this feature requires Google maps api key. Without it sooner or later you 
 `GoogleMapsKey = Key Goes Here`
 
 To get your own Google Maps API Key, use this link: https://developers.google.com/maps/documentation/javascript/get-api-key
+
+
+[NOTE]
+Google Maps changed how API keys are administered and are "technically" no longer free since you need to provide a way for them to bill you in case you exceed their usage guidelines for each service.  _An alternative to Google Maps API has also been implemented._
+
+
+===== Mapbox
+
+Mapbox provide not just a vector street map also an satellite images.
+
+http://www.Mapbox.com
+
+1.  Register and obtain your API KEY.
+2.  Once you obtain your API KEY, open the *TSRE* `settings.txt` file and alter *imageMapsURL* line with the following code:
+
+----
+imageMapsUrl = http://api.mapbox.com/v4/mapbox.satellite/{lon},{lat},{zoom}/{res}x{res}.png?access_token=INSERT_YOUR_API_KEY_HERE
+----
+
+Example:
+
+[IMAGE]
+image::images/mapbox1.jpg[]
+
 
 <<<
