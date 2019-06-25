@@ -230,7 +230,12 @@ image::images/rec2.png[]
 [NOTE]
   The Navi Window will also show the current tile object count and removed object count. 
 
+[TIP]
+If your camera is looking down on terrain, you would also beflying down to terrain by using the arrow-key to move foreward. If you press the period-key `.`( dot ), you are flying horizontally, and the camera is looking down. By pressing dot `.` a second time, you will get the standard-function back.
+
 <<<
+
+
 
 === Working With Objects:
 
@@ -363,7 +368,8 @@ There are multiple options for object duplication
 5. Press `Z` for TDB 
 6. Save
 
-
+[TIP]
+Having the {OR} *Track Viewer* tool open when using TSRE is a useful assistant when editing a route. It works fine even with a one monitor setup. Navigation becomes easy and tracking down errant TDB items too!
 
 
 ==== Copying Tracks
@@ -530,6 +536,7 @@ These guides will work on any switch, not just double slips.
 
 
 ==== Soundregions
+To add sounds in TSRE,  go to "Object View" then in the right hand window under "Other" you will find "Sound Regions". 
 
 <<<
 
@@ -686,6 +693,43 @@ This below is after spending 10 to 15 minutes work painting the Right of Way .
 [IMAGE]
 image::images/terrainpaint.jpg[]
 
+===== Some Painting Tips
+
+Each painted texture is almost 1MB, because these textures are not compressed. The DXT compression method reduces the size of these to approx 1/8th of the original size. Compressing them individually isn't a solution if you extensively use this feature. Thousands of files are difficult to manage if you have to compress each of them one at a time.
+
+*Route Riter* won't compress them to DXT, because it uses the *AceIt* tool, and the *AceIt* tool doesn't like the "-" prefix that these files have. You can make *AceIt* work for you though since it only has a problem if the output files have the "-" prefix. The get this to work, the output files need to be created without prefix and then you need to rename them afterward.
+
+*One way to do it* 
+
+It can be done with a text editor or Excel and the creation of some batch files. An example for a batch file:
+
+----
+aceit.exe -01a769f8_0_1.ace 01a769f8_0_1.ace /dxt /q
+aceit.exe -01a769fc_0_4.ace 01a769fc_0_4.ace /dxt /q
+aceit.exe -01a769fc_0_5.ace 01a769fc_0_5.ace /dxt /q
+----
+
+Notice the missing prefix at the output files.
+
+After that, with another batch file You can rename them back to originals:
+
+----
+ren 01a769f8_0_1.ace -01a769f8_0_1.ace
+ren 01a769fc_0_4.ace -01a769fc_0_4.ace
+ren 01a769fc_0_5.ace -01a769fc_0_5.ace
+----
+
+You need Excel or a text editing program to create list of the commands.
+
+And of course you need a copy of `AceIt.exe` placed in the same folder.
+
+*Additional tip:*
+
+To generate a list of matching files from the command prompt:
+
+`DIR /S /B /A:-D -*.ACE > myfiles.txt`
+
+
 ==== Auto Tile Generation
 
 [IMAGE]
@@ -694,7 +738,7 @@ image::images/autotile1.png[]
 
 1. Select marker file.
 2. Select radius in tiles from marker file line.
-3. Check if all heightmap files are awailable.
+3. Check if all height-map files are available.
 4. Create whole terrain in one click.
 
 
