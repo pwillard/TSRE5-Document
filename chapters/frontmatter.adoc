@@ -136,7 +136,7 @@ Persistent Settings for TSRE can be managed using  the `settings.txt` in the pro
 |consoleOutput = false|   Set this to true if you want log printed on console. It will output to a file named `log.txt`. _It seems to not be working in the current version_
 |createNewIfNotExist = true | Set to true to auto create new route if routeName is set and route not exists. Not recommended.
 |defaultElevationBox = 0|         [values 0 - 3]        
-|defaultMoveStep = 0.25|           [default 0.25]       
+|defaultMoveStep = 0.25| [default 0.25]       
 |deleteTrWatermarks = true|      Set this to true if you want to delete |TrWatermarks| objects in `.W` files on save.
 |deleteViewDbSpheres = true|     Set this to true if you want to delete ViewDbSpheres objects in `.W` files on save.
 |fogColor = #80C0FF|     Ambient Fog settings - Color   
@@ -164,8 +164,75 @@ Persistent Settings for TSRE can be managed using  the `settings.txt` in the pro
 |toolsHidden = true|      Set to true if you want to hide all tools in the {RE}.        
 |useImperial = false|    Set to true if you want to use miles instead kilometers etc.  _Does not work currently_
 |usenNumPad = true|        Set to false if you have keyboard with no numpad 0-9 keys.   
-|UseQuadTree = false| = Disable or Enable the new renderer.                    
+|UseQuadTree = false| = Disable or Enable the new renderer.
 |warningBox = true|      Set to false if you don't want warning window on startup.      
 |writeEnabled = true|     Set this to false if you want to disable all `Save` functions.
 |writeTDB = true|        Set this to false if you want to disable the `Save Track Database` functions.
 |===
+
+==== Full List of Settings Options based on GITHUB Source Code:
+
+|===
+| Setting | Function
+|consoleOutput| Set this to true if you want log printed on console. It will output to a file named `log.txt`. _It seems to not be working in the current version_
+|gameRoot| Default: F:/train simulator
+|routeName| If defined will skip the name screen
+|startTileX| Tile Location - overide TRK setting
+|startTileY| Tile Location - overide TRK setting
+|deleteTrWatermarks| Set this to true if you want to delete |TrWatermarks| objects in `.W` files on save.
+|deleteViewDbSpheres| Set this to true if you want to delete ViewDbSpheres objects in `.W` files on save.
+|createNewIfNotExist|  Set to true to auto create new route if routeName is set and route not exists. Not recommended.
+|writeEnabled| Set this to false if you want to disable all `Save` functions.
+|writeTDB| Set this to false if you want to disable the `Save Track Database` functions.
+|systemTheme| Set to true if you want to use a system theme instead of the default dark one. 
+|toolsHidden| Set to true if you want to hide all tools in the {RE}.        
+|usenNumPad| Set to false if you have keyboard with no numpad 0-9 keys.   
+|tileLod| Tile view distance. 0 = 1x1 tiles, 1 = 3x3 tiles, 2 = 5x5 tiles etc. The default MSTS value is 1.     
+|objectLod| View distance in meters.`tileLod = objectLod/2000 required`. The default for the MSTS {RE} is `tileLod = 1, objectLod = 2000
+|maxObjLag| Number of new loading threads/frame. IMO, for HDD best value is 2. Lower value for older HDD and CPU, higher for SSD and better CPU.
+|allowObjLag|  As above. Lower value may be better for HDD. Higher value increases loading speed on startup but requires SSD. 
+|fpsLimit|  Set FPS limit. Default 0 = no limit.    
+|cameraFov| {RE} Camera field of view.
+|warningBox| Set to false if you don't want warning window on startup.  
+|leaveTrackShapeAfterDelete| Set to true if you want to manually fix broken TDB vectors in {RE}. _Only for advanced users_
+|renderTrItems| Set to true if you want to see TDB items. _Only for advanced users_ 
+|geoPath| Enter the path to directory where you have .HGT files stored if you want to use the terrain height data import in {RE}.
+|colorConView| Consist Viewer custom background color.
+|colorShapeView| Shape Viewer custom background color.
+|ortsEngEnable| Set to true to enable ORTS ENG file support (new)
+|sortTileObjects [True/False]| (new)
+|ignoreMissingGlobalShapes|   hide unavailable global shapes
+|snapableOnlyRot|  Stick to track property 
+|oglDefaultLineWidth| Bounding Box Line Width Value Adjustment
+|shadowsEnabled [True/False]| (new)
+|shadowMapSize| (new)
+|shadowLowMapSize| (new)
+|textureQuality| (new)
+|imageMapsUrl| |imageMapsUrl = http://maps.googleapis.com/maps/api/staticmap?center={lat},{lon}&zoom={zoom}&size={res}x{res}&maptype=satellite&key | `Universal URL setting for using google maps`
+|mapImageResolution|  use multiples, IE; 2048,4096,8192 etc
+|AASamples| (new)
+|cameraStickToTerrain [True/False]| Camera will stick to ground level and follow terrain 
+|proceduralTracks [True/False]| (new)
+|fullscreen [True/False]| (new)
+|soundEnabled [True/False]| (new)
+|cameraSpeedMin| Slow Speed Preset 
+|cameraSpeedStd| Normal Speed Preset
+|cameraSpeedMax| High Speed Preset
+|mouseSpeed| Control Mouse Speed
+|trackElevationMaxPm| (new)
+|mainWindowLayout|  PWT Default, Other options include "TWP", "PTW", "WTP" etc.  Using just "W" will make all windows be separate.
+|ceWindowLayout| Gui Setting 
+|useQuadTree [True/False]| Disable or Enable the new renderer.
+|playerMode [True/False] | (new) 
+|useNetworkEng [True/False]| (new)
+|fogDensity|  Ambient Fog settings - thickness
+|fogColor|  Ambient Fog settings - color  (#R #G #B)
+|skyColor|  (new) (#R #G #B)
+|defaultElevationBox| [values 0 - 3] 
+|defaultMoveStep|  [default 0.25] 
+|hudEnabled [True/False]| (new)
+|hudScale| (new)
+|useTdbEmptyItems [True/False]| (new)
+|===
+
+The list of items above was extracted from the TSRE5 Source Code.

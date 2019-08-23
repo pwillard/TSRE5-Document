@@ -179,6 +179,8 @@ image::images/rec4.png[]
 * Std Speed is keyboard arrow keys.
 * Max Speed is keyboard arrow keys + CTRL key.
 
+`.` (Period Key):: Top Down View. Press to toggle on/off
+
 See Camera Speed Presets in <<settings>>
 
 [TIP] 
@@ -878,6 +880,7 @@ image::images/reg9.png[]
 
 [IMAGE]
 image::images/reg10.png[]
+
 
 
 ===== Example session - Adding a tile with terrain:
