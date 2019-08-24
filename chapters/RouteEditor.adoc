@@ -721,9 +721,9 @@ ren 01a769fc_0_4.ace -01a769fc_0_4.ace
 ren 01a769fc_0_5.ace -01a769fc_0_5.ace
 ----
 
-You need Excel or a text editing program to create list of the commands.
+You need something like Excel or a text editing program to create list of the commands.
 
-And of course you need a copy of `AceIt.exe` placed in the same folder.
+You will also need a copy of `AceIt.exe` placed in the same folder, for simplicity sake.
 
 *Additional tip:*
 
@@ -946,5 +946,7 @@ Example:
 [IMAGE]
 image::images/mapbox1.jpg[]
 
+[WARNING]
+You might find that usiing these map projections for Japan are problematic,however for Europe and America it works well...
 
 <<<
