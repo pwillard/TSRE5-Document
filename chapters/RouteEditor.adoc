@@ -362,8 +362,10 @@ There are multiple options for object duplication
 <<<<
 
 ==== Working with Track sections
+
+The general sequence of steps for adding tracks is as follows.
  
-1. Place track
+1. Place the track
 2. Adjust dynamic track properties
 3. Save w/no TDB lines
 4. Re-select track
@@ -372,6 +374,50 @@ There are multiple options for object duplication
 
 [TIP]
 Having the {OR} *Track Viewer* tool open when using TSRE is a useful assistant when editing a route. It works fine even with a one monitor setup. Navigation becomes easy and tracking down errant TDB items too!
+
+[WARNING]
+ Advice from Vince: A good rule to follow is NEVER move a track section if the `Yellow TDB` line appears above the track section.
+
+ Vince also says that a good track addition sequence is:
+ 1. Place the track
+ 2. Adjust the elevation, and for Dynamic Track, make "all" curve adjustments
+ 3. Bring terrain to the track
+ 4. Press "Z" to finally add your changes to the TDB
+
+[TIP]
+It is recommend you turn OFF `auto add to TDB` while adding / adjusting track and so prevent TDB corruption.
+
+Adding tracks to the TDB *manually* will prevent all sorts of problems that will arise if a track is physically moved after it is added to the TDB.
+
+You must be in `Select Mode` to toggle `auto-add TDB` OFF and ON using the `Ctrl+Q` key combination.  There is also an option you can set in the settings file.
+
+[TIP]
+When making _micro adjustments_ of the gradient are needed,  remember the `STEP` value in the Left Side Panel when the track is selected.  The Default setting is 25. This woks out to around 2.5 cm.  This value may be too large for any fine adjustments that are needed and you can set it to very small values.   Good values for finer control over adjustments would be 0.01 for some 'really small' adjustments.  The value can be reset in the `context menu` brought up by `right clicking` anywhere on the screen and selecting `Reset Move Step`. It will go back to the default value of 25.
+
+
+[NOTE]
+If you are having problems with a section, there is always "CTRL-Z" to undo.
+
+*Dealing with Shape issues* 
+
+image::images/TrackShape1.jpg[TDB Issue]
+
+If you end up having issues with track section such as yellow TDB section but no track shape, there is hope.
+
+Vince Says: 
+
+* Delete the track sections on either end of the missing shape then attach a small track section to one end of the missing section; you can use a 30d tram curve but any short section will do.
+* Save.
+* Select the short section you just attached. At the bottom of the left side panel select `Hacks`.
+* A `TrackObj Hacks` window opens.
+* Select `Remove TDB Vector`. The yellow database lines above the missing track and the just added short section will go away.
+* Select the short track section you previously added and `Delete` the track. 
+* Save. Done!
+
+[TIP]
+When adding track I'd suggest keeping `auto-add to TDB` off. Press combo `Ctrl+Q` to toggle. _Sound familiar?_
+
+
 
 
 ==== Copying Tracks

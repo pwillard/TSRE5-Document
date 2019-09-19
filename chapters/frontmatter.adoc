@@ -170,7 +170,9 @@ Persistent Settings for TSRE can be managed using  the `settings.txt` in the pro
 |writeTDB = true|        Set this to false if you want to disable the `Save Track Database` functions.
 |===
 
-==== Full List of Settings Options based on GITHUB Source Code:
+==== The Full List of Settings Options Based on GITHUB Source Code:
+
+ANY items marked with a comment "NEW" are recent additions and may or may not have an existing explanation of useage nor even any code to fully support it.  Use these new items with caution and the understanding that they may not work.
 
 |===
 | Setting | Function
