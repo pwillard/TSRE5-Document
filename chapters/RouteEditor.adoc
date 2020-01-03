@@ -509,6 +509,23 @@ image::images/reo3.png[]
 
 ==== Level Crossings
 
+===== Max Placing Radius
+
+Did you plan on having your railroad grade crossing span every track in a wide area, but the orange cubes don't cover all of them? Do you want to make sure one railroad line's mileposts doesn't cover a parallel line that uses a different milepost measurement?
+
+This is where the Max Placing Radius box comes into function. By default, it's set at 30. For the purpose of this tip, the Max Placing Radius function and it's text box are highlighted in red.
+
+Here, we are attempting to place a railroad crossing gate at a wide multi-track crossing. Notice that the two furthest tracks aren't covered.
+
+[IMAGE]
+image::images/levelR1.png[]
+
+Click on the text box below the Max Placing Radius text and change the value to an appropriate number. For this example we've changed the Max Placing Radius to 50 and this allows each track served by the crossing to be covered by the orange box.
+
+[IMAGE]
+image::images/levelR2.png[]
+
+This little function should allow you to have proper massive-sized crossings and limited-track-reach mileposts, among other things.
 
 ==== Signals
 
@@ -741,7 +758,9 @@ This below is after spending 10 to 15 minutes work painting the Right of Way .
 [IMAGE]
 image::images/terrainpaint.jpg[]
 
-===== Some Painting Tips
+
+
+===== Some Painting Tips - Compression
 
 Each painted texture is almost 1MB, because these textures are not compressed. The DXT compression method reduces the size of these to approx 1/8th of the original size. Compressing them individually isn't a solution if you extensively use this feature. Thousands of files are difficult to manage if you have to compress each of them one at a time.
 

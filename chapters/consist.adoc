@@ -35,7 +35,7 @@ image::images/Consistexit.png[]
 
 
 [IMAGE]
-image::images/Consistrand.png[]
+image::images/consistrand.png[]
 
 
 [WARNING]
