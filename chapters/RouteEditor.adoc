@@ -179,6 +179,8 @@ image::images/rec4.png[]
 * Std Speed is keyboard arrow keys.
 * Max Speed is keyboard arrow keys + CTRL key.
 
+`.` (Period Key):: Top Down View. Press to toggle on/off
+
 See Camera Speed Presets in <<settings>>
 
 [TIP] 
@@ -197,7 +199,8 @@ Keyboard has two layouts depending on the setting in the `settings.txt` file.
 2. If `useNumPad = false` TSRE assumes you will use the Arrow Keys
 
 [TIP]
- Remember: `Ctrl + Z` will *Undo* the last operation
+ Remember: `Ctrl + Z` will *Undo* the last operation.  This is probably the most important tip you should remember.
+ 
 
 <<<
 
@@ -229,7 +232,12 @@ image::images/rec2.png[]
 [NOTE]
   The Navi Window will also show the current tile object count and removed object count. 
 
+[TIP]
+If your camera is looking down on terrain, you would also beflying down to terrain by using the arrow-key to move foreward. If you press the period-key `.`( dot ), you are flying horizontally, and the camera is looking down. By pressing dot `.` a second time, you will get the standard-function back.
+
 <<<
+
+
 
 === Working With Objects:
 
@@ -240,6 +248,10 @@ image::images/rec2.png[]
 [IMAGE]
 image::images/rec5.png[]
 
+[TIP]
+In TSRE, when laying track inside tunnels, use: `Shift + Q`. It will change the placement mode between "stick only to terrain" and "stick to everything". Then you will then be able to stick the new track to the existing track that is under the terrain.
+
+
 ==== Object Placement Keys
 
 `E`:: Select
@@ -247,7 +259,12 @@ image::images/rec5.png[]
 `R`:: Rotate
 `T`:: Translate / Transform
 `Y`:: Scale. Use for example with transfers, dynamic tracks
+
+`Numpad keys` + `pgup` / `pgdown`:: Use for *R/T/Y* if in keyboard layout 1 mode.
+`Arrows` and `pgup` / `pgdown`::    Use *R/T/Y* if layout 2.
+
 `X`:: Flip
+
 
 `Ctrl`:: Change *R/T/Y* step slower.
 `Alt`:: Change *R/T/Y* step faster.
@@ -259,11 +276,7 @@ image::images/rec5.png[]
 `CTRL`:: Holding `CTTL` while "picking" will allow selection of multiple items
 `C`:: Clone object. Creates object duplicate at the same position.
 `Delete`:: Delete selected object.
-
-
-`Numpad keys` + `pgup` / `pgdown`:: Use for *R/T/Y* if in keyboard layout 1 mode.
-`Arrows` and `pgup` / `pgdown`::    Use *R/T/Y* if layout 2.
-`Mouse`::   Use `R` `T` `Y`; R/T/Y will stick only to terrain.
+`Mouse Scroll Wheel`::  Raise/Lower object after placing
 
 ==== Track Keys
 
@@ -293,9 +306,15 @@ image::images/reo1.png[]
 
 Click on the ground where you want new object.
 
-[TIP]
- Remember that using `Shift+Q` you can change placement mode between *stick only to terrain* or *stick to everything*.
+You can use the Mouse Scroll wheel to Raise or Lower object after placing
 
+
+[TIP]
+ Remember: using `Shift+Q` you can change placement mode between *stick only to terrain* or *stick to everything*.
+
+[TIP]
+ Remember: `Ctrl + Z` will *Undo* the last operation.  
+ 
 
 ==== Selecting Objects
 
@@ -343,13 +362,60 @@ There are multiple options for object duplication
 <<<<
 
 ==== Working with Track sections
+
+The general sequence of steps for adding tracks is as follows.
  
-1. Place track
+1. Place the track
 2. Adjust dynamic track properties
 3. Save w/no TDB lines
 4. Re-select track
 5. Press `Z` for TDB 
 6. Save
+
+[TIP]
+Having the {OR} *Track Viewer* tool open when using TSRE is a useful assistant when editing a route. It works fine even with a one monitor setup. Navigation becomes easy and tracking down errant TDB items too!
+
+[WARNING]
+ Advice from Vince: A good rule to follow is NEVER move a track section if the `Yellow TDB` line appears above the track section.
+
+ Vince also says that a good track addition sequence is:
+ 1. Place the track
+ 2. Adjust the elevation, and for Dynamic Track, make "all" curve adjustments
+ 3. Bring terrain to the track
+ 4. Press "Z" to finally add your changes to the TDB
+
+[TIP]
+It is recommend you turn OFF `auto add to TDB` while adding / adjusting track and so prevent TDB corruption.
+
+Adding tracks to the TDB *manually* will prevent all sorts of problems that will arise if a track is physically moved after it is added to the TDB.
+
+You must be in `Select Mode` to toggle `auto-add TDB` OFF and ON using the `Ctrl+Q` key combination.  There is also an option you can set in the settings file.
+
+[TIP]
+When making _micro adjustments_ of the gradient are needed,  remember the `STEP` value in the Left Side Panel when the track is selected.  The Default setting is 25. This woks out to around 2.5 cm.  This value may be too large for any fine adjustments that are needed and you can set it to very small values.   Good values for finer control over adjustments would be 0.01 for some 'really small' adjustments.  The value can be reset in the `context menu` brought up by `right clicking` anywhere on the screen and selecting `Reset Move Step`. It will go back to the default value of 25.
+
+
+[NOTE]
+If you are having problems with a section, there is always "CTRL-Z" to undo.
+
+*Dealing with Shape issues* 
+
+image::images/TrackShape1.jpg[TDB Issue]
+
+If you end up having issues with track section such as yellow TDB section but no track shape, there is hope.
+
+Vince Says: 
+
+* Delete the track sections on either end of the missing shape then attach a small track section to one end of the missing section; you can use a 30d tram curve but any short section will do.
+* Save.
+* Select the short section you just attached. At the bottom of the left side panel select `Hacks`.
+* A `TrackObj Hacks` window opens.
+* Select `Remove TDB Vector`. The yellow database lines above the missing track and the just added short section will go away.
+* Select the short track section you previously added and `Delete` the track. 
+* Save. Done!
+
+[TIP]
+When adding track I'd suggest keeping `auto-add to TDB` off. Press combo `Ctrl+Q` to toggle. _Sound familiar?_
 
 
 
@@ -380,6 +446,9 @@ image::images/ret8.png[]
 
 [IMAGE]
 image::images/reo2.png[]
+
+[IMAGE]
+image::images/stick1.png[]
 
 *Stick to Target*
 
@@ -440,6 +509,23 @@ image::images/reo3.png[]
 
 ==== Level Crossings
 
+===== Max Placing Radius
+
+Did you plan on having your railroad grade crossing span every track in a wide area, but the orange cubes don't cover all of them? Do you want to make sure one railroad line's mileposts doesn't cover a parallel line that uses a different milepost measurement?
+
+This is where the Max Placing Radius box comes into function. By default, it's set at 30. For the purpose of this tip, the Max Placing Radius function and it's text box are highlighted in red.
+
+Here, we are attempting to place a railroad crossing gate at a wide multi-track crossing. Notice that the two furthest tracks aren't covered.
+
+[IMAGE]
+image::images/levelR1.png[]
+
+Click on the text box below the Max Placing Radius text and change the value to an appropriate number. For this example we've changed the Max Placing Radius to 50 and this allows each track served by the crossing to be covered by the orange box.
+
+[IMAGE]
+image::images/levelR2.png[]
+
+This little function should allow you to have proper massive-sized crossings and limited-track-reach mileposts, among other things.
 
 ==== Signals
 
@@ -515,12 +601,55 @@ These guides will work on any switch, not just double slips.
 
 
 ==== Soundregions
+To add sounds in TSRE,  go to "Object View" then in the right hand window under "Other" you will find "Sound Regions". 
 
 <<<
 
 === Editing Terrain
 
-*How to edit terrain settings*
+==== Ace File Thumbnails
+
+There is a 64bit ACE file viewer add-on available at:
+
+http://koniec.org/MstsAceThumbnails_v1.zip
+
+[IMAGE]
+image::images/acefile1.png[]
+
+[NOTE]
+On Windows 7, UAC must be disabled.
+
+1. Download and extract the files somewhere. Pick something that makes sense,  like where you installed *TSRE* or something you can remember, like `c:\bin`.
+
+2. Open an command prompt and make sure you open it "as Administrator".
+
+3. Go to the directory where the unzipped files are
+
+4. Register the library using the command:
+
+`Regsvr32.exe CppShellExtThumbnailHandler.dll`
+
+Now all .ace files will have thumbnails like other images.
+
+*REMOVAL*
+If you want to remove it, unregister the library using the command:
+
+`Regsvr32.exe /u CppShellExtThumbnailHandler.dll`
+
+Once the removal step is performed, you can then delete the files.
+
+[NOTE] 
+This thumbnail library is only for 64 bit only
+
+
+
+[IMAGE]
+image::images/acefile2.png[]
+
+
+
+
+==== How to edit terrain settings
 
 Go to *Terrain Tools*. `Menu Tools->Terrain` or `F2`.
 
@@ -533,6 +662,12 @@ Go to *Terrain Tools*. `Menu Tools->Terrain` or `F2`.
  If you want to show a hidden tile - click on its "line".
 
 * If you want to make holes in terrain, use the `Gaps` button and click where you want it. You can use holes for tunnel entrances. If you want to fill the holes, show water first.
+
+[TIP]
+In TSRE, when laying track inside tunnels, use: `Shift + Q`. It will change the placement mode between "stick only to terrain" and "stick to everything". Then you will then be able to stick the new track to the existing track that is under the terrain.
+
+[TIP]
+Tunneling: ( Garry's method) My tunneling method is a bit unique, but easy. I make a copy of the tiles folder. Then each piece of track I lay I press F to mould the terrain to the track, turning the tunnel into a cutting. I can follow the track path on a map overlay, and when I get to the far end of the tunnel I can check the height, then go back and change the gradient until the track emerges at the correct height. Finally I replace the Tiles folder with the one I saved earlier.
 
 [IMAGE]
 image::images/rete5.png[]
@@ -618,6 +753,49 @@ You can use `Pick` button and pick a texture from the existing small tile instea
 [IMAGE]
 image::images/rete6.png[]
 
+This below is after spending 10 to 15 minutes work painting the Right of Way .
+
+[IMAGE]
+image::images/terrainpaint.jpg[]
+
+
+
+===== Some Painting Tips - Compression
+
+Each painted texture is almost 1MB, because these textures are not compressed. The DXT compression method reduces the size of these to approx 1/8th of the original size. Compressing them individually isn't a solution if you extensively use this feature. Thousands of files are difficult to manage if you have to compress each of them one at a time.
+
+*Route Riter* won't compress them to DXT, because it uses the *AceIt* tool, and the *AceIt* tool doesn't like the "-" prefix that these files have. You can make *AceIt* work for you though since it only has a problem if the output files have the "-" prefix. The get this to work, the output files need to be created without prefix and then you need to rename them afterward.
+
+*One way to do it* 
+
+It can be done with a text editor or Excel and the creation of some batch files. An example for a batch file:
+
+----
+aceit.exe -01a769f8_0_1.ace 01a769f8_0_1.ace /dxt /q
+aceit.exe -01a769fc_0_4.ace 01a769fc_0_4.ace /dxt /q
+aceit.exe -01a769fc_0_5.ace 01a769fc_0_5.ace /dxt /q
+----
+
+Notice the missing prefix at the output files.
+
+After that, with another batch file You can rename them back to originals:
+
+----
+ren 01a769f8_0_1.ace -01a769f8_0_1.ace
+ren 01a769fc_0_4.ace -01a769fc_0_4.ace
+ren 01a769fc_0_5.ace -01a769fc_0_5.ace
+----
+
+You need something like Excel or a text editing program to create list of the commands.
+
+You will also need a copy of `AceIt.exe` placed in the same folder, for simplicity sake.
+
+*Additional tip:*
+
+To generate a list of matching files from the command prompt:
+
+`DIR /S /B /A:-D -*.ACE > myfiles.txt`
+
 
 ==== Auto Tile Generation
 
@@ -627,7 +805,7 @@ image::images/autotile1.png[]
 
 1. Select marker file.
 2. Select radius in tiles from marker file line.
-3. Check if all heightmap files are awailable.
+3. Check if all height-map files are available.
 4. Create whole terrain in one click.
 
 
@@ -742,11 +920,13 @@ image::images/reg8.png[]
 
 ==== HGT terrain data import 
 
-HGT terrain data import allows you to easily create realistic terrain. 
-You need to download the proper HGT files manually. There are many places that HGT files can be downloaded. An example of a site where you can get them from is: http://e4ftl01.cr.usgs.gov/SRTM/SRTMGL1.003/2000.02.11/
+HGT terrain data import allows you to easily create realistic terrain. The easiest to use place I have found to get HGT files is below.
 
-[TIP]
-  Register here gets you authorized: https://urs.earthdata.nasa.gov/users/new
+http://www.viewfinderpanoramas.org/dem3.html
+
+
+ SRTM HGT data is available from other official sources, such as NASA.gov and the USGS.gov websites. Example: https://dds.cr.usgs.gov/srtm/version1/ 
+
 
 
 1. Set *geoPath* in settings to directory where you have your HGT files. _See: <<settings>>_
@@ -766,13 +946,39 @@ image::images/reg9.png[]
 [IMAGE]
 image::images/reg10.png[]
 
+
+
+===== Example session - Adding a tile with terrain:
+
+Add a tile to existing route by jumping to the location of where you want to add a tile. 
+
+* Push the `B` key. Tile is created and the quad tree updated. 
+* Push `F2` to load Terrain tools menu. 
+* Push `Height` button and push `LOAD` button in the window. The "Hgt" data for that tile is located and loaded, provided that the hgt files are downloaded and saved in the location pointed to by what is in `settings.txt`. 
+* Save. 
+
+There is now a new tile with terrain in the route. 
+
+	
+===== Some Additional Internet Links for .hgt Files.
+
+These are subject to change and may stop working...
+
+http://viewfinderpanoramas.org/Coverage%20map%20viewfinderpanoramas_org3.htm
+
+https://dds.cr.usgs.gov/srtm/version2_1/SRTM3/
+
+https://search.earthdata.nasa.gov/search/granules/collection-details?p=C1000000240-LPDAAC_ECS&m=18.984375!-10.40625!2!1!0!&tl=1098377168!6!!
+
+
+
 <<<
 
 ==== Using Satellite Images
 
-// I don't know if these even works yet
+===== Google Maps
 
-Using this feature requires Google maps api key. Without it sooner or later you will see grey image instead of satellite view
+Using this feature requires Google maps api key. Without it sooner or later you will see gray image instead of satellite view
 
 1. Create Google maps api key.
 2. Enable static maps for your key.
@@ -782,4 +988,127 @@ Using this feature requires Google maps api key. Without it sooner or later you 
 
 To get your own Google Maps API Key, use this link: https://developers.google.com/maps/documentation/javascript/get-api-key
 
+
+[NOTE]
+Google Maps changed how API keys are administered and are "technically" no longer free since you need to provide a way for them to bill you in case you exceed their usage guidelines for each service.  _An alternative to Google Maps API has also been implemented._
+
+
+===== Mapbox
+
+Mapbox provide not just a vector street map also an satellite images.
+
+http://www.Mapbox.com
+
+1.  Register and obtain your API KEY.
+2.  Once you obtain your API KEY, open the *TSRE* `settings.txt` file and alter *imageMapsURL* line with the following code:
+
+----
+imageMapsUrl = http://api.mapbox.com/v4/mapbox.satellite/{lon},{lat},{zoom}/{res}x{res}.png?access_token=INSERT_YOUR_API_KEY_HERE
+----
+
+Example:
+
+[IMAGE]
+image::images/mapbox1.jpg[]
+
+[WARNING]
+You might find that using these map projections for Japan are problematic,however for Europe and America it works well...
+
 <<<
+
+==== Distant Mountains  
+(Supplied by Renzo Grassi & Giuseppe Ptrains)
+
+[NOTE]
+This section related to TSRE5 from version 0.698 onwards. 
+
+[WARNING]
+This Distant Mountains solution is only compatible with Open Rails and will not work in Microsoft Train Simulator routes.
+
+
+===== General Workflow
+
+[ditaa]
+
+....
+
++-------------------+    +---------------+    +------------+    +-----------------+    +-----------------+
+| Download relevant |    | Update        |    | Load Route |    | Change EDIT Mode|    | Use HGT files   |
+| GEO Height Data   |--->| SETTINGS.TXT  |--->| in         |--->| to              |--->| to generate     |
+| & Unpack it       |    | with GEODATA  |    | TSRE       |    | Distant Terrain |    | Distant Terrain |
++-------------------+    +---------------+    +------------+    +-----------------+    +-----------------+
+....
+
+As a first step, it is necessary to download the geographical data of the area to be produced. There are several websites that allow you to download `geodata`. 
+
+Examples were downloaded from: http://www.viewfinderpanoramas.org/dem3.html, a site which contains geodata from different parts of the world at a resolution of 3" (almost) all over the world. They are files in `.hgt` format. 
+
+[TIP]
+To locate alternate `geodata` sources, you only need to do a Google search and enter "geodata hgt" as the search criteria. 
+
+
+==== Setup 
+
+Once the `geodata` you require has been downloaded to your PC, you need to edit the `settings.txt` file in the `TSRE5` folder and search for  the *geoPath* entry. This entry defines the "path" to the folder containing the downloaded `geodata`, for example: `geoPath = c:\train\MSTS\DEM\dem90m\SRTM`
+
+For more information, refer to the *HGT terrain data import* section of this document.
+
+
+==== Editing
+
+At this point, the preparations are complete and we can start `TSRE5` and open the route in which we want to add the distant mountains. Once it is loaded in the main window, choose `Settings -> Terrain Editing: -> Distant Terrain` from the top menu. 
+
+[IMAGE]
+image::images/DistantMountTSre5.png[]
+
+[TIP]
+To return to normal terrain editing so you once again see the terrain of the route, simply select the item `Settings -> Terrain Editing: -> Detailed Terrain`. 
+
+Once the `Distant Terrain` option is selected, the standard terrain will disappear and TSRE will display the current Distant Mountain settings, and these don't exist yet.  
+
+[IMAGE]
+image::images/DistantMountTSre5-2.png[]
+
+The right side `Tools` options menu normally contains the objects we must select.  We need the `Geo` window tools options and 
+we reach it by either opening the menu at the top under `Tools` or by pressing the `F3` key.
+
+To create a new tile, press the `B` key and a window will open asking whether or not to create a 
+new tile. Answer: "Yes". 
+
+[IMAGE]
+image::images/DistantMountTSre5-3.png[]
+
+It will say that the tile exists and if we want to overwrite it, again Answer: "YES".
+
+_next section of text needs some clarification_ 
+
+The new tile just created is much larger than those of the normal terrain (which have the side of 2 km) and if, as in the figure below, we are close to the edge of the tile, once you have finished fixing this, it is sufficient to move to the area white and repeat the creation procedure from button B onwards. 
+
+[IMAGE]
+image::images/DistantMountTSre5-4.png[]
+
+In the `Geo` window, which we opened by pressing `F3`, we must now press the `Load Height` button and 
+with the left mouse button click on a portion of the created tile to select it. 
+
+A new black window opens, press the big `Load` button at the top and an image of the mountainous 
+reliefs of the area will appear. 
+
+[IMAGE]
+image::images/DistantMountTSre5-5.png[]
+
+If this does not happen, check that you have correctly entered the path to the `geodata` folder and that the `hgt` file covering that part of the territory is present. 
+Once this is done you can close the window and the new tile will show the view of the area. 
+
+[IMAGE]
+image::images/DistantMountTSre5-6.png[]
+
+[]
+Before leaving the editor, remember to save your work. 
+
+
+
+
+
+
+
+
