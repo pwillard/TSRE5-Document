@@ -6,8 +6,8 @@ _Some comments in case you just jumped right to to this section_
 
 To start working with the Route Editor you need to:
 
-* Have downloaded and run the TSRE5 application
-* Have at least one train simulator *gameRoot* or *Root Directory* to refer to
+* Download and run the TSRE5 application
+* Have at least one populated train simulator *gameRoot* or *Root Directory* to refer to
 
 [NOTE]
  A `gameRoot` must be one of the following items:
@@ -818,7 +818,7 @@ image::images/autotile3.png[]
 
 <<<
 
-==== Embankments and Cuttings
+==== Embankments, Cuttings and Road Height
 
 Here you can adjust embankment settings. Look at this image: 
 
@@ -827,6 +827,15 @@ image::images/rete7.png[]
 
 If you want to create embankment or cutting, select the track or road (it must be in TDB) and press `F`.
 
+===== Road/Terrain Adjustment
+
+To adjust terrain under the road:
+1 Click "View" at the top of the screen, and tick "Terrain Grid"
+2 Press `F2` to get the terrain window on the right. Set "Size" and "Intensity" to `1`, "Height Type" to `Add-Simple`
+3 Select the "HeightMap" button at the top (it turns light grey)
+4 Mouse click repeatedly on the terrain junctions to adjust the terrain height. The keyboard `Z` key adjusts between up/down.
+
+If the road piece is already in the rdb (or you just placed it without deselecting), just press the `F` key. This will raise the terrain under your road piece, but doesn't raise it everywhere else.
 
 
 
@@ -1020,7 +1029,7 @@ You might find that using these map projections for Japan are problematic,howeve
 (Supplied by Renzo Grassi & Giuseppe Ptrains)
 
 [NOTE]
-This section related to TSRE5 from version 0.698 onwards. 
+This section is related to TSRE5 from version 0.698 onwards. 
 
 [WARNING]
 This Distant Mountains solution is only compatible with Open Rails and will not work in Microsoft Train Simulator routes.

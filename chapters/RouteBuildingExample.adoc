@@ -196,6 +196,11 @@ image::images/ret7.png[]
 If you want to delete track completely, press `Delete`. In this case, you don't need to press `Z`.
 
 
+[TIP]
+To adjust a road piece, Press `Z`. This should remove the Blue Line above the selected road.  Select the road again and attempt to drag it to where you want it connected.  It _should drag along the terrain!_  If it doesn't then toggle the Cursor Mode using [Shift+Q] Key.  You might need to try using a different road section to get it to snap correctly.
+
+
+
 === Placing objects - A guide
 
 === Car Spawning Tips
