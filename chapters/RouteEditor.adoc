@@ -207,6 +207,8 @@ Keyboard has two layouts depending on the setting in the `settings.txt` file.
 [#naviwindow]
 === Navi Window 
 
+[TIP] Due to map projection issues, using actual LAT/LONG values may not be 100% accurate.  It is recommended that MARKERS from Google Earth (saved as KML files) be used as jump references.  Some people have found that determining the *offset* for the route area is handy.  For example; adding approx 100 to the ingame compass latitude reading and subtracting approx 150 from the longitude and then inputting those figures into the navi window gets me near enough to work with. eg: a lat fig of 48.0785 up to 48.0883 and lon -82.1266 down to -82.1113.
+
 The Navi Window is a separate movable window that allows coarse adjustments of position with the {RE}. It can take input from Traditional Marker Files (MKR), Google Earth Keyhole Markup Language (KML) files and Open Street Map (GPX) files.
 
 If desired, it will accept Latitude and Longitude values or any existing Route entities that have been defined. 
