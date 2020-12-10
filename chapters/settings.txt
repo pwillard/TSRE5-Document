@@ -1,0 +1,71 @@
+#AASamples
+allowObjLag | 1000
+#autoFix | true
+#cameraFov | 20.0
+cameraSpeedMax | 2 
+cameraSpeedMin | 20
+cameraSpeedStd | 0.20
+#cameraStickToTerrain | true
+#ceWindowLayout | CU1
+colorConView | #87ceeb
+colorShapeView | #87ceeb
+consoleOutput | false
+#createNewIfNotExist | true
+#defaultElevationBox | 0
+#defaultMoveStep | 0.25
+#deleteTrWatermarks | true
+#deleteViewDbSpheres | true
+fogColor | #D0D0FF
+fogDensity | 0.55
+#fpsLimit | 0
+fullscreen | true
+gameRoot | T:\0_NEKS
+geoPath | H:/Hgt
+#GoogleMapsKey |
+#hudEnabled | true
+#hudScale
+ignoreMissingGlobalShapes | true
+imageMapsUrl | http://api.mapbox.com/v4/mapbox.satellite/{lon},{lat},{zoom}/{res}x{res}.png?access_token|
+leaveTrackShapeAfterDelete | false
+loadAllWFiles | true
+#mainwindowslayout| PWT
+mapImageResolution | 1024
+markerLines | true
+maxObjLag | 10
+mouseSpeed | 0.1
+numRecentItems | 30
+objectLod | 4000
+#objectsToRemove
+#oglDefaultLineWidth | 1
+#ortsEngEnable | true
+#playerMode | true
+#proceduralTracks | true
+#renderTrItems | true
+#routeMergeString
+#routeName | cmk
+#season
+#seasonalEditing | true
+#serverLogin
+#shadowMapSize
+shadowsEnabled | 0
+#skyColor
+snapableOnlyRot | false
+#sortTileObjects | true
+soundEnabled | true
+#startTilex | -5306
+#startTiley | 14961
+#systemTheme | true
+tileLod | 2
+#textureQuality
+#toolsHidden | true
+#trackElevationMaxPm
+#useImperial | true
+#useNetworkEng | true
+usenNumPad | true
+#useOnlyPositiveQuaternions | true
+UseQuadTree | false
+#useTdbEmptyItems | true
+#UseWorkingDir | true
+warningBox | false
+writeEnabled | true
+writeTDB | true
