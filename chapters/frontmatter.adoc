@@ -199,10 +199,15 @@ writeEnabled | true
 writeTDB | true
 ----
 
-The list of items above was extracted from the TSRE5 Source Code.  The list below is an attempt to describe each option, where possible.
+The list of items above includes items that were extracted from the TSRE5 Source Code.  
 
+<<<
+The list below is an attempt to describe each option, where possible.
+
+					
 |===					
-|	Entry	| 	Default	|	Description
+|	Entry	| 	Value	|	Description
+					
 |	#	|	Comment	|	Any line that starts with a `#` character is a "Comment" line and its contents are ignored.
 |	#AASamples	|		|	Anti-Alias
 |	allowObjLag 	|	1000	|	Lower value may be better for HDD. Higher value increases loading speed on startup but requires SSD. 
@@ -219,19 +224,19 @@ The list of items above was extracted from the TSRE5 Source Code.  The list belo
 |	#createNewIfNotExist 	|	 true	|	Set to true to auto create new route if routeName is set and route not exists. Not recommended
 |	#defaultElevationBox 	|	0	|	 [values 0 - 3]  
 |	#defaultMoveStep 	|	0.25	|	[default 0.25]
-|	#deleteTrWatermarks 	|	 true	|	 Set this to true if you want to delete |TrWatermarks| objects in `.W` files on save.
+|	#deleteTrWatermarks 	|	 true	|	 Set this to true if you want to delete "TrWatermarks" objects in `.W` files on save.
 |	#deleteViewDbSpheres 	|	 true	|	 Set this to true if you want to delete ViewDbSpheres objects in `.W` files on save.
 |	fogColor 	|	 #D0D0FF	|	Ambient Fog settings - Color   
 |	fogDensity 	|	0.55	|	 Ambient Fog settings - Density
 |	#fpsLimit 	|	0	|	 Set FPS limit. Default; 0 = no limit.
 |	fullscreen 	|	 true	|	
-|	gameRoot 	|	 T:\0_NEKS	|	Example: "F:/train simulator"|         If you don't want to specify a root directory each time you start the application, enter the path to your desired MSTS/{OR} directory.
+|	gameRoot 	|	 T:\0_NEKS	|	Example: "F:/train simulator"        If you don't want to specify a root directory each time you start the application, enter the path to your desired MSTS/{OR} directory.
 |	geoPath 	|	 H:/Hgt	|	Enter the path to directory where you have .HGT files stored if you want to use the terrain height data import in {RE}.
 |	#GoogleMapsKey 	|	API KEY	|	 Enter your personal Google Maps API key here to use satellite Imagery 
 |	#hudEnabled 	|	 true	|	*new* True/False
 |	#hudScale	|		|	*new* True/False
 |	ignoreMissingGlobalShapes 	|	 true	|	True/False  hide unavailable global shapes 
-|	imageMapsUrl 	|	 http://api.mapbox.com/v4/mapbox.satellite/{lon},{lat},{zoom}/{res}x{res}.png?access_token	|	http://maps.googleapis.com/maps/api/staticmap?center={lat},{lon}&zoom={zoom}&size={res}x{res}&maptype=satellite&key | `Universal URL setting for using google maps`
+|	imageMapsUrl 	|	 http://api.mapbox.com/v4/mapbox.satellite/{lon},{lat},{zoom}/{res}x{res}.png?access_token	|	EXAMPLE: http://maps.googleapis.com/maps/api/staticmap?center={lat},{lon}&zoom={zoom}&size={res}x{res}&maptype=satellite&key  `Universal URL setting for using google maps`
 |	leaveTrackShapeAfterDelete 	|	 false	|	True/False  Set to true if you want to manually fix broken TDB vectors in {RE}. _Only for advanced users_
 |	loadAllWFiles 	|	 true	|	*new* True/False
 |	#mainwindowslayout	|	 PWT	|	Default, Other options include "TWP", "PTW", "WTP" etc.  Using just "W" will make all windows be separate.
@@ -278,6 +283,5 @@ The list of items above was extracted from the TSRE5 Source Code.  The list belo
 |===					
 
 
-
-
-
+[NOTE]
+It the comment says *new* and nothing else... we still need a good explanation of what it's supposed to do.

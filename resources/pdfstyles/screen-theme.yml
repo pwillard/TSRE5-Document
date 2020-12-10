@@ -212,7 +212,7 @@ table:
   even_row_background_color: b8c5db
   odd_row_background_color: d9e3f4
   foot_background_color: f0f0f0
-  border_color: dddddd
+  border_color: 000000
   border_width: $base_border_width
   # HACK accounting for line-height
   cell_padding: [3, 3, 6, 3]
