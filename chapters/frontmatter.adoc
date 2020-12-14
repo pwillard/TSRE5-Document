@@ -236,7 +236,7 @@ The list below is an attempt to describe each option, where possible.
 |	#hudEnabled 	|	 true	|	*new* True/False
 |	#hudScale	|		|	*new* True/False
 |	ignoreMissingGlobalShapes 	|	 true	|	True/False  hide unavailable global shapes 
-|	imageMapsUrl 	|	 http://api.mapbox.com/v4/mapbox.satellite/{lon},{lat},{zoom}/{res}x{res}.png?access_token	|	EXAMPLE: http://maps.googleapis.com/maps/api/staticmap?center={lat},{lon}&zoom={zoom}&size={res}x{res}&maptype=satellite&key  `Universal URL setting for using google maps`
+|	imageMapsUrl 	|	 http://api.mapbox.com/v4/mapbox.satellite/{lon},{lat},{zoom}/{res}x{res}.png?access_token	There is a section on how to use this in the manual.
 |	leaveTrackShapeAfterDelete 	|	 false	|	True/False  Set to true if you want to manually fix broken TDB vectors in {RE}. _Only for advanced users_
 |	loadAllWFiles 	|	 true	|	*new* True/False
 |	#mainwindowslayout	|	 PWT	|	Default, Other options include "TWP", "PTW", "WTP" etc.  Using just "W" will make all windows be separate.
@@ -284,4 +284,4 @@ The list below is an attempt to describe each option, where possible.
 
 
 [NOTE]
-It the comment says *new* and nothing else... we still need a good explanation of what it's supposed to do.
+If the comment says *new* and nothing else... we still need a good explanation of what it's supposed to do.

@@ -507,6 +507,43 @@ image::images/reo3.png[]
 
 ==== Carspawners
 
+to create a car spawner, you need an entry in the route's `REF` file like this. 
+
+----
+CarSpawner (
+  Class (Vehicles)
+  Description ("Car Spawner")
+  StoreMatrix ()
+)
+----
+
+[TIP] 
+The class can be anything, I put mine in the "vehicles" class.
+
+
+To add a car spawner, select it from the `REF` file list and then select `place new` as you would for any object. When you place it on the road section, you will see 2 purple squares ("handles"). Pull them apart and take note which direction the traffic is flowing. If it is going in the wrong direction, pull one handle past the other to reverse them.
+
+When you select a handle, it changes to a lighter shade of purple and data for the spawner will display on the left side pane.
+
+You may move the handles by either dragging with the mouse or by using the arrow keys. Selecting the `Expand` button on the left side pane expands the spawner to the extent of the road. 
+
+[WARNING]
+It is not recommended to have a car spawner longer than approximately 2 km.
+
+The values for "car number" and "car speed" affect the speed and density of traffic. The car number refers to the average number of seconds between spawning a car so higher numbers mean less traffic such as for a rural road. A car number of 1 tends to produce vehicles so fast that they are sometimes bumper to bumper or worse. 
+
+[TIP] 
+The spawning mechanism randomizes vehicle appearance so this is just an average number.
+
+Car speed is in meters per second. 60 mph is approximately 27 meters/sec. There is a conversion table at the back of the TSRE manual. Basically multiply mph by 0.447 to get meters per second. For kilometers per hour to meters per second multiply by 0.278.
+
+If the car spawner handle refuses to cross a road joint it means that you do not have a good joint at that location and you wil need to remove the road sections and rebuild them. Road sections can be finicky to join especially multi lane highways that sometimes will want to join misaligned. Roads on a grade or over a bridge can be difficult. Try using shorter road sections and turning off "stick to terrain" (Shift-Q).
+
+The cars spawned by the car spawner are defined by the `carspawn.dat` file in the root directory of your route. For MSTS there is only one car list. For {OR} you can define multiple car lists. This is useful when you want to have different cars for different roads or lanes of a road. For example on my 6 lane freeway I have cars and trucks in the right 2 lanes but cars only in the left lane, which is common in many US Interstates and freeways. To set up multiple car lists see *section 15.5* of the {OR} Manual.
+
+[TIP]
+Car spawners can also be used for walking people. Refer to *section 15.6* of the {OR} manual for more details.
+
 
 
 ==== Level Crossings
