@@ -797,6 +797,12 @@ This below is after spending 10 to 15 minutes work painting the Right of Way .
 [IMAGE]
 image::images/terrainpaint.jpg[]
 
+*AutoPaint*
+
+kbd:[F2] -> LOAD -> TEXTURE - Select Brush and Size
+
+Use kbd:[CTRL] kbd:[LMB] on individual tracks to place Ballast under that selected piece or use mouse kbd:[RMB] and you will get the `AUTO PAINT` option and you can find a lit of items including the "Track Nodes" which will have the texture be applied under all track nodes that apply.
+
 
 
 ===== Some Painting Tips - Compression
@@ -973,9 +979,12 @@ HGT terrain data import allows you to easily create realistic terrain. The easie
 http://www.viewfinderpanoramas.org/dem3.html
 
 
- SRTM HGT data is available from other official sources, such as NASA.gov and the USGS.gov websites. Example: https://dds.cr.usgs.gov/srtm/version1/ 
+[TIP]
+SRTM HGT data is available from other official sources, such as NASA.gov and the USGS.gov websites.  Note: the USGS/NASA Sites change constantly so don't expect these links to be permanently correct. Example: 
+as well as https://earthexplorer.usgs.gov/   Since 2016, you need to also have a free account to use  these sites.  With Earth Explorer, You want to locate the results that contain the SRTM - SRTMGL1 database.
 
 
+NOTE: The link provided in the Official TSRE5 website no longer works.
 
 1. Set *geoPath* in settings to directory where you have your HGT files. _See: <<settings>>_
 2. Go to *Geo Tools*. Menu `Tools->Geo` or `F3`.
