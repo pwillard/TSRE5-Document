@@ -2,7 +2,7 @@
 
 === Before Getting Started
 
-_Some comments in case you just jumped right to to this section_
+_Some comments in case you just jump right to to this section_
 
 To start working with the Route Editor you need to:
 
@@ -25,7 +25,7 @@ To start working with the Route Editor you need to:
 
 * _(Optional)_ Set the `gameRoot` value in the application settings to your desired Root Directory. See: <<settings>>
 
-* Open `TSRE5.exe`, or `TSRE5x32.exe` if you are using a 32 bit version of Windows
+* Open the `TSRE5` executable, or the `TSRE5x32` executable if you are using a 32 bit version of Windows
 
 [IMAGE]
 image::images/re1.png[]
@@ -37,7 +37,7 @@ If you have properly set up the `gameRoot` settings then the {RE} is ready to us
 [#begin]
 === Starting a Session
 
-If you want to use the {RE}, simply open the TSRE5 application. By default, the *Route Editor* features will be available.  The *Activity Editor* is also available from within the {RE}.
+If you want to use the {RE}, simply open the TSRE5 executable. By default, the *Route Editor* features will be available.  The *Activity Editor* is also available from within the {RE}.
 
 [NOTE]
  If you want to use *Consist Editor*  however, you need to use the `ConsistEditor.bat` file to start a Consist Editing session.
@@ -182,6 +182,14 @@ kbd:[AWSD] (and *Arrows* if `UseNumPad=False in 'settings.txt'`)::  Move left, r
 kbd:[.] (Period Key):: Top Down View. Press to toggle on/off
 
 See Camera Speed Presets in <<settings>>
+
+You can easily jump to many locations in your route using Navi Window.
+[IMAGE]
+image::images/navitravel.png[]
+
+1. Select from one of the many categories, for example Route: Sidings.
+2. Select siding.
+3. Click Jump.
 
 [TIP] 
  Press kbd:[LMB] left mouse button and move mouse to look around.
