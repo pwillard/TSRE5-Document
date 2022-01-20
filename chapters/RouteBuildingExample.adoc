@@ -4,6 +4,8 @@
 
 === Route Building Tips
 
+
+
 === Route Planning
 
 === Laying Track with gradients
@@ -204,6 +206,38 @@ To adjust a road piece, Press `Z`. This should remove the Blue Line above the se
 === Placing objects - A guide
 
 === Car Spawning Tips
+
+==== Creating a Car Spawner
+
+In order to create a car spawner you need an entry in the route's REF file like this. The class can be anything, I put mine in the "vehicles" class:
+
+----
+CarSpawner (
+Class (Vehicles)
+Description ("Car Spawner")
+StoreMatrix ()
+)
+----
+
+To add a car spawner select it from the ref file list and select place new as you would for any object. When you place it on the road section you will see 2 purple squares ("handles"). Pull them apart and note which direction the traffic is flowing. If it is going in the wrong direction, pull one handle past the other to reverse them.
+
+When you select a handle it turns a lighter shade of purple and data for the spawner will display on the left side pane.
+
+You may move the handles either by dragging with the mouse or using the arrow keys. I am told that Selecting the "Expand" button expands the spawner to the extent of the road, but I have not tried that myself. Note that it is not recommended to have a car spawner longer than 2 km. 
+
+Note: There is no need to drag handles over long distances. Move more than a couple of tiles away from the origin of the spawner and it will stop displaying. If you lose the handles, you can lose the ability to delete it so would need to fix it in the 'w' file (which nobody wants to do). In this case you can increase tile rendering radius "tileLod" in settings.txt and wait until cars reach location of car spawner placement and you can select car spawner by selecting a car. But that's the reason why it isn't recommended.  What to keep in mind: in MSTS car spawners longer than 2 km may cause issues, in TSRE longer than 6 km. 
+
+The values "car number" and "car speed" affect the speed and density of traffic. The car number refers to the average number of seconds between spawning a car so higher numbers mean less traffic such as for a rural road. I have found that a car number of 1 tends to produce vehicles so fast that they are sometimes bumper to bumper or worse. Note that the spawning mechanism randomizes vehicle appearance so this is just an average number.
+
+Car speed is in meters per second. 60 mph is approximately 27 meters/sec. I have seen a table somewhere that converts m/sec to mph but I don't recall where it was. Basically multiply mph by 0.447 to get meters per second. For kilometers per hour to meters per second multiply by 0.278.
+
+If the car spawner handle refuses to cross a road joint it means you do not have a good joint there and you need to remove the road sections and rebuild them. Road sections can be finicky to join especially multi lane highways that sometimes will join misaligned. Roads on a grade or over a bridge can be difficult. Try using shorter road sections and turning off "stick to terrain" (Shift-Q).
+
+[TIP]
+Bad road joints can be identified by a longer blue pole at the bad joint than a standard "good" joint. Anyway as you say, the car spawner will not move past it, so thats a good enough indicator something is wrong. Try to lay roads end to end rather than trying to join them up, as the precision pieces are somewhat limited when using default shapes.
+
+The cars spawned by the car spawner are defined by the "carspawn.dat" file in the root directory of your route. For MSTS there is only one car list. For Open Rails you can define multiple car lists. This is useful when you want to have different cars for different roads or lanes of a road. For example on my 6 lane freeway I have cars and trucks in the right 2 lanes but cars only in the left lane, which is common in many US Interstates and freeways. To set up multiple car lists see section 15.5 of the Open Rails Manual.
+
 
 Car Spawner Speeds Table
 |===

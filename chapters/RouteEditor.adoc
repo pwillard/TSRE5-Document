@@ -280,6 +280,9 @@ In TSRE, when laying track inside tunnels, use: `Shift + Q`. It will change the 
 `Delete`:: Delete selected object.
 `Mouse Scroll Wheel`::  Raise/Lower object after placing
 
+[TIP]
+In the TSRE `Tools` menu of the Objects window is a built-in ruler function.  When measuring mileposts in Real-World routes, use the Geo length rather than game length. It's remarkably fast to measure out 1600 meters, place a milepost, and move on to the next.  Make sure you delete the ruler objects when you're done. {OR} won't necessarily choke on them, but they will create errors in the log file if left
+
 ==== Track Keys
 
 `Z`:: add selected track to TDB.
@@ -507,7 +510,7 @@ image::images/reo3.png[]
 
 ==== Carspawners
 
-to create a car spawner, you need an entry in the route's `REF` file like this. 
+To create a car spawner, you need an entry in the route's `REF` file like this. 
 
 ----
 CarSpawner (
@@ -545,9 +548,35 @@ The cars spawned by the car spawner are defined by the `carspawn.dat` file in th
 Car spawners can also be used for walking people. Refer to *section 15.6* of the {OR} manual for more details.
 
 
+<<<
 
 ==== Level Crossings
 
+==== Simplifying Placement
+
+Step 1:: Place your first interactive. Start with the gate shape. Use the NumPad arrow keys to move your shape generally close the desired position. During this process you may move the camera laterally, but you should not rotate the camera at all! The grid that TSRE uses while moving an object using the NumPad arrows is based on camera angle, so rotating it after placing an object will throw off subsequent objects, and they will not line up perfectly. At this point, this is what we should have:
+
+[IMAGE]
+image::images/Xing_1.jpg[]
+
+<<<<
+Step 2:: Place the second interactive - in this case, the flashers. Use the same method for moving the object as the first one. Once the flasher is in place, if there are no more `interactives` to be placed, you may move and rotate the camera freely. Another progress shot:
+
+[IMAGE]
+image::images/Xing_2.jpg[]
+
+Step 3:: Now you can select both gate and flasher, or more if needed, as a group (Ctrl-Click each part) and move them into their final position. Typically you would set the rotation by copying rotational data from a road piece. Be sure to pick a level road piece, or your signal will be leaning. While you can't copy or paste rotational data from individual crossing objects, you can do this with groups of crossing objects. Once you do this you can use the `Copy Pos/Rot bottom` and instantly align any static parts that remain to be placed.
+
+[IMAGE]
+image::images/Xing_3.jpg[]
+
+[NOTE]
+If a crossing is on a track piece that extends from another tile, copying position won't work (copying rotation will still work). Attempting to use position copying will result in the static part disappearing (actually it teleports a mile or two away). The way to tell if this is a problem is to select one of the `interactives`. If one of the x- or z- coordinates is larger than 1024, it is on a track piece extending over a tile boundary. Up until now, we haven't had any problems with a crossing that is physically in one tile, but in another's .w file. However, when this is the case, we have to eyeball the static object placement. You can place objects with the crosshair on top of the mast, copy the y- coordinate from the mast shape, and then copy rotation data from the interactive shapes so it lines up (that still works on out-of-tile shapes).
+
+[IMAGE]
+image::images/Xing_4.jpg[]
+
+<<<
 ===== Max Placing Radius
 
 Did you plan on having your railroad grade crossing span every track in a wide area, but the orange cubes don't cover all of them? Do you want to make sure one railroad line's mileposts doesn't cover a parallel line that uses a different milepost measurement?
@@ -573,8 +602,8 @@ This little function should allow you to have proper massive-sized crossings and
 
 
 
-1. Click 'link' button.
-2. Click 'set link' button.
+1. Click 'Link' button.
+2. Click 'Link Set' button.
 3. Click on track (siding for example) you waypoints
 
 [IMAGE]
@@ -586,6 +615,19 @@ image::images/signalLink1.png[]
   Be sure the pointer (cursor) is set to *Stick to Anything mode*. `Shift+Q` toggles the selection.
 
 TSRE's method of linking signals is quite intuitive, but can be daunting for the uninitiated. Here are some lessons learned.
+
+
+*Linking Signals for the Deviating Path*
+
+1. Click 'Link' button.
+2. Click 'Link Set'
+3. Click between the straight and the deviating rail close to the root of the switch.
+
+If the Link is set, the `text` in the button 'Link' will be written in `green` and the Fields near "From To" you will see numbers.
+
+[WARNING]
+You will have only one try to set this. If the 'Link' does not get set, you will need to start steps 1-3 over again.  Also, avoid moving the camera while doing these steps as this will also force you to start over.
+
 
 *Easy Junction*
 
@@ -761,6 +803,19 @@ Tapping left mouse does it. Sliding and painting with the cursor is really a nic
 
 [TIP]
   For a very fine adjustment of terrain you can use a track or a road section or just about any object to adjust and/or flatten terrain. However some objects/shapes produce some very strange terrain sculpting. The `Ctrl+Z` key comes in handy here.
+
+
+[WARNING]
+----
+Be careful when "painting" terrain. I am not sure how, but it appears brushing the tile to increase height might affect other tiles as well. Case in point, these spikes below which always appear after I have done terrain editing on adjacent tiles.
+
+Perhaps using the "add if in radius" setting would avoid any unwanted artifacts like these being generated.
+
+[IMAGE]
+image::images/terrain artifacts.jpg[]
+
+these are definitely not DEM artifacts
+----
 
 <<<
 
