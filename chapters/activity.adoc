@@ -1,6 +1,6 @@
 == Working with activities
 
-Press *F4* or select `Tools->Activity`.
+Press kbd:[F4] or select `Tools->Activity`.
 
 === Selecting an Activity
 

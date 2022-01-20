@@ -21,11 +21,11 @@ When Elevating track, remember the 'snap' elevation settings to get a smooth gra
 
 1. Place a track section in TSRE
 
-2. Press keyboard `R`. This puts just installed track section in ROTATE Mode.
+2. Press keyboard kbd:[R]. This puts just installed track section in ROTATE Mode.
 
-3. Holding the keyboard `CTRL` key down, tap either `NumPad 8` for up or `NumPad 2` for down.
+3. Holding the keyboard kbd:[CTRL] key down, tap either kbd:[NumPad 8] for up or kbd:[NumPad 2] for down.
 
-4. The track will elevate or descend in *0.1 per-cent steps* with each key tap of `8` or `2`.
+4. The track will elevate or descend in *0.1 per-cent steps* with each key tap of kbd:[NumPad 8] or kbd:[NummPad 2].
 
 5. The *0.1 grade per-cent* is equal to *1.0 per-mille* which is equal to *0.058 degrees* (MSTS measurement) steps.
 
@@ -77,9 +77,9 @@ WHAT YOU ENTER IN THE GRADE FIELDS
 Until you get used to working with gradients get down close and personal as you adjust track grade. Entering (typing) into the gradient dialog panel sometimes produces unwanted results. 
 
 
-Example: I'll set (type in ) a grade of 20 in the permille field ( 2.0 percent ) and then when I have to select the already selected track section ( why do I have to re-select) in order to use the 'Z' key to add track section to the TDB. (yellow lines)The gradient field 20 permille becomes 19.9998. It seems to have a arithmetic error. I want 20 permille and I get 19.99989 something? It's required to have the editor hold the grade a designer wants.
+Example: I'll set (type in ) a grade of 20 in the permille field ( 2.0 percent ) and then when I have to select the already selected track section ( why do I have to re-select) in order to use the kbd:[Z] key to add track section to the TDB. (yellow lines)The gradient field 20 permille becomes 19.9998. It seems to have a arithmetic error. I want 20 permille and I get 19.99989 something? It's required to have the editor hold the grade a designer wants.
 
-Additionally I can't figure why if I select a track section (Blue Outlined) why do I have to select ('E' key or Select Button) it again . . .and again, the need to select just about any object multiple times to perform multiple concurrent operations. 
+Additionally I can't figure why if I select a track section (Blue Outlined) why do I have to select (kbd:[E] key or Select Button) it again . . .and again, the need to select just about any object multiple times to perform multiple concurrent operations. 
 
 1. select and use the Transform feature. 
 2. now select the already selected (blue outlined) object if you need to move the object into a final position.
@@ -96,7 +96,7 @@ I urge and recommend experimentation. Post results here. One day we can put all 
 Note that the Transform Panel has `OK` --- `Cancel` buttons. You enter your numbers and `OK` does the job. How about the same thing for the Track Grade Panel? That would eliminate the track or road moving until you are ready.
 
 One last nit to pick: `Dynamic Track` . . . . I don't see how (other than tapping the keys I use for grade) to set a gradient for DT?
-I do know that holding the `Ctrl` key down as I tap the `NumPad 2` or `8` keys for down / up slope of 1 permille (0.1 percent) grade changes so I just count off key taps. 
+I do know that holding the kbd:[Ctrl] key down as I tap the kbd:[NumPad 2] or kbd:[NumPad 8] keys for down / up slope of 1 permille (0.1 percent) grade changes so I just count off key taps. 
 A display of grade as is done for 'normal' track is preferred. 
 Now add a Grade Panel OK button to set the typed in grade and we'll be cooking.
 
@@ -105,41 +105,41 @@ Now add a Grade Panel OK button to set the typed in grade and we'll be cooking.
 When swapping track sections in and out it's better to set TSRE to NOT automatically add track into the database. 
 The yellow lines over the track are a graphic representation of the TDB.
 
-To toggle `Auto-Add TDB ON/OFF` With nothing selected press `Ctrl + Q` 
+To toggle `Auto-Add TDB ON/OFF` With nothing selected press kbd:[Ctrl + Q] 
 
 This prevents the auto-add to TDB when a track is de-selected.
 
 This is good practice because if you move a track section without first removing the yellow TDB lines will create a MIS-MATCH between the TDB and the WORLD file. 
 This is a well known 'Out of Sync' condition and it's a real pain to repair.
-At this time there is no indication of `Ctrl + Q` being on or off. 
+At this time there is no indication of kbd:[Ctrl + Q] being on or off. 
 Before beginning editing you should test to see if Auto-TDB add is on or off. How?
 
 When a *Auto-Add TDB is ON*, the Yellow TDB indicator lines will come ON when the track is deselected. 
 There is no indication of Auto-TDB at this editor release level other that the above procedure. Goku is aware of the no indication.
 
 Another use for the `Q` key: Allowing easy installing underground or on up-in-the-sky bridges.
-*With nothing selected press `SHIFT + Q`"
+*With nothing selected press kbd:[SHIFT + Q]"
 
 This allows you to place the cursor ( pointer ) on any object for the purpose of placing a track or road section.
-The cursor normally 'sticks' to the terrain. `Shift + Q` allows the cursor to *Stick to Anything*. 
+The cursor normally 'sticks' to the terrain. kbd:[Shift + Q] allows the cursor to *Stick to Anything*. 
 This IS covered in the Manual. 
 -
 There is an error in the Manual for the entry on this in section /rewobj.html page 1 of 4 Item 5. `Shift +` is missing.
 -
-There is no indication of Shift + Q being on or off however the behavior of the cursor provides a positive indication.
+There is no indication of kbd:[Shift + Q] being on or off however the behavior of the cursor provides a positive indication.
 
 * When placing track underground as for a tunnel, first check 'Hide Terrain Shape' in the View Menu
 * Now, position the cursor very close to the end on the previously installed track section to place the next track section. 
 * For new track to SNAP to previously installed track, the previous track section MUST have the Yellow TDB lines present.
-* To add a newly placed track section to the TDB when in manual (`Ctrl + Q`) mode: 
+* To add a newly placed track section to the TDB when in manual (kbd:[Ctrl + Q]) mode: 
 
 1.Select the track. Blue outline appears. 
-2. press the `Z` key. Yellow line appears & track is added to the TDB. Save to make final. 
+2. press the kbd:[Z] key. Yellow line appears & track is added to the TDB. Save to make final. 
 
 Do NOT move the track if TDB lines are present
 
 * Dragging track underground? _Don't try it!_ 
-* Misplace or lose a track underground? (which dragging is sure to do) Press `DELETE` and do over! 
+* Misplace or lose a track underground? (which dragging is sure to do) Press kbd:[DELETE] and do over! 
 
 === Placing New Tracks
 
@@ -157,10 +157,10 @@ image::images/ret1.png[]
 [IMAGE]
 image::images/ret2.png[]
 
-* You can adjust track position by pressing `T` and using `4,6,8,2` keys (move XZ axis), `9,3` keys (move Y axis).
-* You can adjust track rotation by pressing `R` and using `4,6` keys.
-* You can adjust track elevation by pressing `R` and using `8,2` keys. The Properties window will show you elevation value.
-* You can hold `Ctrl` with *R* & *T* mode to change the step rate (0.10%).
+* You can adjust track position by pressing kbd:[T] and using `4,6,8,2` keys (move XZ axis), `9,3` keys (move Y axis).
+* You can adjust track rotation by pressing kbd:[R] and using `4,6` keys.
+* You can adjust track elevation by pressing kbd:[R] and using `8,2` keys. The Properties window will show you elevation value.
+* You can hold kbd:[Ctrl] with kbd:[[R] & kbd:[T] mode to change the step rate (0.10%).
 
 [NOTE]
 Depending on your keyboard layout, you can also use other keys. See _<<editor>>_.
@@ -169,37 +169,37 @@ Depending on your keyboard layout, you can also use other keys. See _<<editor>>_
 
 image::images/ret3.png[]
 
-* Press `Z` to add track to the TDB (Track DataBase). If you want to remove track from the TDB and keep the shape - press `Z` again.
+* Press kbd:[Z] to add track to the TDB (Track DataBase). If you want to remove track from the TDB and keep the shape - press kbd:[Z] again.
 
 [WARNING] 
  Never translate or rotate track when it is in the TDB (when it has a yellow line) !!! If you do, you will need to delete this track and place new one.
 
-* When track is in TDB, you can press `F` to adjust terrain to the track. You can also do it later by selecting the track you want to adjust and press `F`. See more: <<Editing_terrain>>.
+* When track is in TDB, you can press kbd:[F] to adjust terrain to the track. You can also do it later by selecting the track you want to adjust and press kbd:[F]. See more: <<Editing_terrain>>.
 
 [IMAGE]
 image::images/ret4.png[]
 
 * If you want to place the next track, click around the endpoint (the blue pole) where you want to add next track. 
-* If you have difficulty placing a track above or below ground, press `Q` to change placement mode to `stick to all`. 
+* If you have difficulty placing a track above or below ground, press kbd:[Q] to change placement mode to `stick to all`. 
 
 [IMAGE]
 image::images/ret5.png[]
 
-* If you want to change direction of track or joining point, press `X`. *Do it before pressing `Z`!*
+* If you want to change direction of track or joining point, press kbd:[X]. *Do it before pressing kbd:[Z]!*
 
 [IMAGE]
 image::images/ret6.png[]
 
-* If you want to delete track from TDB, but keep the shape placed, press `Z`
+* If you want to delete track from TDB, but keep the shape placed, press kbd:[Z].
 
 [IMAGE]
 image::images/ret7.png[]
 
-If you want to delete track completely, press `Delete`. In this case, you don't need to press `Z`.
+If you want to delete track completely, press kbd:[Delete]. In this case, you don't need to press kbd:[Z].
 
 
 [TIP]
-To adjust a road piece, Press `Z`. This should remove the Blue Line above the selected road.  Select the road again and attempt to drag it to where you want it connected.  It _should drag along the terrain!_  If it doesn't then toggle the Cursor Mode using [Shift+Q] Key.  You might need to try using a different road section to get it to snap correctly.
+To adjust a road piece, Press kbd:[Z]. This should remove the Blue Line above the selected road.  Select the road again and attempt to drag it to where you want it connected.  It _should drag along the terrain!_  If it doesn't then toggle the Cursor Mode using kbd:[Shift+Q] Key.  You might need to try using a different road section to get it to snap correctly.
 
 
 
@@ -231,7 +231,7 @@ The values "car number" and "car speed" affect the speed and density of traffic.
 
 Car speed is in meters per second. 60 mph is approximately 27 meters/sec. I have seen a table somewhere that converts m/sec to mph but I don't recall where it was. Basically multiply mph by 0.447 to get meters per second. For kilometers per hour to meters per second multiply by 0.278.
 
-If the car spawner handle refuses to cross a road joint it means you do not have a good joint there and you need to remove the road sections and rebuild them. Road sections can be finicky to join especially multi lane highways that sometimes will join misaligned. Roads on a grade or over a bridge can be difficult. Try using shorter road sections and turning off "stick to terrain" (Shift-Q).
+If the car spawner handle refuses to cross a road joint it means you do not have a good joint there and you need to remove the road sections and rebuild them. Road sections can be finicky to join especially multi lane highways that sometimes will join misaligned. Roads on a grade or over a bridge can be difficult. Try using shorter road sections and turning off "stick to terrain" kbd:[Shift-Q].
 
 [TIP]
 Bad road joints can be identified by a longer blue pole at the bad joint than a standard "good" joint. Anyway as you say, the car spawner will not move past it, so thats a good enough indicator something is wrong. Try to lay roads end to end rather than trying to join them up, as the precision pieces are somewhat limited when using default shapes.

@@ -105,16 +105,16 @@ image::images/consist2.png[]
 
 *Available Actions using the Keyboard* 
 
-`F`:: Flip, This will reverse the current consist item
-`Delete`::  This will delete the current consist item
-`Left` or `Right`:: This will move a consist item left or right
+kbd:[F]:: Flip, This will reverse the current consist item
+kbd:[Delete]::  This will delete the current consist item
+kbd:[Left Arrow] or kbd:[Right Arrow]:: This will move a consist item left or right
 
 [NOTE] 
   You can also use the slider bar at the bottom of the to slide the windows left and right if the consist is larger than the width of a screen 
 
 *The Context Menu Options* 
 
-When you *"Right-Click"* with the mouse above an item in the consist, that device becomes the selected item and a context menu appears with available actions. 
+When you kbd:[RMB] "Right-Click" with the mouse above an item in the consist, that device becomes the selected item and a context menu appears with available actions. 
 
 *Available Actions using the "Right-Click" Context Menu*
 
