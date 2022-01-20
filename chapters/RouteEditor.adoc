@@ -111,7 +111,7 @@ Max Voltage:: The overhead line voltage.
 
 Start Tile:: The {RE} will start at this world position. Changing these values is not recommended while creating new route.
 
-[IMAGE]how to use
+[IMAGE]
 image::images/ren4.png[]
 
 You can now begin editing your new route.
@@ -162,9 +162,9 @@ Shows the route visuals.
 [#editor]
 === Using the Editor
 
-`F1 ... F12`::    Choose a tool-set.
-`Ctrl-Shift-S`::   Save the route
-`B`::   Create new Tile at current position
+kbd:[F1] ... kbd:[F12]::    Choose a tool-set.
+kbd:[Ctrl-Shift-S]::   Save the route
+kbd:[B]::   Create new Tile at current position
 
 [IMAGE]
 image::images/rec4.png[]
@@ -173,18 +173,18 @@ image::images/rec4.png[]
 
 ===== Navigating Keys
 
-`AWSD` (and *Arrows* if `UseNumPad=False in 'settings.txt'`)::  Move left, right, front, back.
+kbd:[AWSD] (and *Arrows* if `UseNumPad=False in 'settings.txt'`)::  Move left, right, front, back.
 
 * Min Speed is keyboard arrow keys + SHIFT key.
 * Std Speed is keyboard arrow keys.
 * Max Speed is keyboard arrow keys + CTRL key.
 
-`.` (Period Key):: Top Down View. Press to toggle on/off
+kbd:[.] (Period Key):: Top Down View. Press to toggle on/off
 
 See Camera Speed Presets in <<settings>>
 
 [TIP] 
- Press left mouse button and move mouse to look around.
+ Press kbd:[LMB] left mouse button and move mouse to look around.
 
 <<<
 [#keyboard]
@@ -199,7 +199,7 @@ Keyboard has two layouts depending on the setting in the `settings.txt` file.
 2. If `useNumPad = false` TSRE assumes you will use the Arrow Keys
 
 [TIP]
- Remember: `Ctrl + Z` will *Undo* the last operation.  This is probably the most important tip you should remember.
+ Remember: kbd:[Ctrl + Z] will *Undo* the last operation.  This is probably the most important tip you should remember.
  
 
 <<<
@@ -235,7 +235,7 @@ image::images/rec2.png[]
   The Navi Window will also show the current tile object count and removed object count. 
 
 [TIP]
-If your camera is looking down on terrain, you would also beflying down to terrain by using the arrow-key to move foreward. If you press the period-key `.`( dot ), you are flying horizontally, and the camera is looking down. By pressing dot `.` a second time, you will get the standard-function back.
+If your camera is looking down on terrain, you would also be flying down to terrain by using the arrow-key to move forward. If you press the period-key `.`( dot ), you are flying horizontally, and the camera is looking down. By pressing dot `.` a second time, you will get the standard-function back.
 
 <<<
 
@@ -243,9 +243,9 @@ If your camera is looking down on terrain, you would also beflying down to terra
 
 === Working With Objects:
 
-`Q`:: Place a new object.
-`Ctrl + Q`:: Toggle the "manual/auto" `add track to TDB` option (use Z key for manual).
-`Shift + Q`::  Change the placement mode: stick only to terrain / stick to everything.
+kbd:[Q]:: Place a new object.
+kbd:[Ctrl + Q]:: Toggle the "manual/auto" `add track to TDB` option (use Z key for manual).
+kbd:[Shift + Q]::  Change the placement mode: stick only to terrain / stick to everything.
 
 [IMAGE]
 image::images/rec5.png[]
@@ -256,44 +256,45 @@ In TSRE, when laying track inside tunnels, use: `Shift + Q`. It will change the 
 
 ==== Object Placement Keys
 
-`E`:: Select
+kbd:[E]:: Select
 
-`R`:: Rotate
-`T`:: Translate / Transform
-`Y`:: Scale. Use for example with transfers, dynamic tracks
+kbd:[R]:: Rotate
+kbd:[T]:: Translate / Transform
+kbd:[Y]:: Scale. Use for example with transfers, dynamic tracks
 
-`Numpad keys` + `pgup` / `pgdown`:: Use for *R/T/Y* if in keyboard layout 1 mode.
-`Arrows` and `pgup` / `pgdown`::    Use *R/T/Y* if layout 2.
+kbd:[Numpad keys] + kbd:[pgup] / kbd:[pgdown]:: Use for *R/T/Y* if in keyboard layout 1 mode.
+kbd:[Arrows] and kbd:[pgup] / kbd:[pgdown]::    Use *R/T/Y* if layout 2.
 
-`X`:: Flip
+kbd:[X]:: Flip
 
 
-`Ctrl`:: Change *R/T/Y* step slower.
-`Alt`:: Change *R/T/Y* step faster.
+kbd:[Ctrl]:: Change *R/T/Y* step slower.
+kbd:[Alt]:: Change *R/T/Y* step faster.
 
-`H`:: Adjust object position to terrain.
-`N`:: Adjust object rotation to terrain.
+kbd:[H]:: Adjust object position to terrain.
+kbd:[N]:: Adjust object rotation to terrain.
 
-`P`:: Pick object. You can pick existing object and place it in different place
-`CTRL`:: Holding `CTTL` while "picking" will allow selection of multiple items
-`C`:: Clone object. Creates object duplicate at the same position.
-`Delete`:: Delete selected object.
-`Mouse Scroll Wheel`::  Raise/Lower object after placing
+kbd:[P]:: Pick object. You can pick existing object and place it in different place
+kbd:[CTRL]:: Holding kbd:[CTRL] while "picking" will allow selection of multiple items
+kbd:[C]:: Clone object. Creates object duplicate at the same position.
+kbd:[Delete]:: Delete selected object.
+kbd:[Mouse Scroll Wheel]::  Raise/Lower object after placing
 
 [TIP]
 In the TSRE `Tools` menu of the Objects window is a built-in ruler function.  When measuring mileposts in Real-World routes, use the Geo length rather than game length. It's remarkably fast to measure out 1600 meters, place a milepost, and move on to the next.  Make sure you delete the ruler objects when you're done. {OR} won't necessarily choke on them, but they will create errors in the log file if left
 
 ==== Track Keys
 
-`Z`:: add selected track to TDB.
-`X`:: change new track position. Use before Z.
-`F`:: adjust terrain to track. Use after Z. See more: Editing terrain.
+kbd:[Z]:: add selected track to TDB.
+kbd:[X]:: change new track position. Use before Z.
+kbd:[F]:: adjust terrain to track. Use after Z. See more: Editing terrain.
 
 ==== Terrain Keys
 
-`Z`:: change the terrain 'height-map' painting direction: *+* or *-*
-`/`:: Toggle Terrain Collision mode.
-`CTRL`:: Auto-Paint Mode
+kbd:[Z]:: change the terrain 'height-map' painting direction: *+* or *-*
+kbd:[/]:: Toggle Terrain Collision mode.
+kbd:[CTRL]:: Auto-Paint Mode
+kbd:[CTRL+V,H]:: Toggle "Hide Terrain"
 
 
 <<<
@@ -315,34 +316,34 @@ You can use the Mouse Scroll wheel to Raise or Lower object after placing
 
 
 [TIP]
- Remember: using `Shift+Q` you can change placement mode between *stick only to terrain* or *stick to everything*.
+ Remember: using kbd:[Shift+Q] you can change placement mode between *stick only to terrain* or *stick to everything*.
 
 [TIP]
- Remember: `Ctrl + Z` will *Undo* the last operation.  
+ Remember: kbd:[Ctrl + Z] will *Undo* the last operation.  
  
 
 ==== Selecting Objects
 
 You can select all objects using Select Tool. Enable it using:
 
-* `E` key
+* kbd:[E] key
 * Right click -> *Select*
 * Edit Menu -> *Select*
-* Select button in *F1* Object Tools
+* Select button in kbd:[F1] Object Tools
 
-Press and hold `CTRL` while selecting to select multiple items
+Press and hold kbd:[CTRL] while selecting to select multiple items
 
 ==== Manipulating Objects
 
-* `E` key
+* kbd:[E] key
 * Right click -> *Select*
 * Edit Menu -> *Select*
-* Use the `R` ket to Rotate, `T` key to Transform, `Y` key to Scale
+* Use the kbd:[R] key to Rotate, kbd:[T] key to Transform, kbd:[Y] key to Scale
 
 a. You can select object and move it around using mouse. Use mouse wheel to raise or lower its position. 
-b. You can perform advanced translation by pressing `T` and using `4,6,8,2` keys{DOT} to move in X and Z Axis, and `9,3` keys to move in Y axis.
-c. You can adjust object rotation by pressing `R` and using `4,6,8,2` keys{DOT}.
-d. You can press `Ctrl` to change `RT` step.
+b. You can perform advanced translation by pressing kbd:[T] and using kbd:[4,6,8,2] keys{DOT} to move in X and Z Axis, and kbd:[9,3] keys to move in Y axis.
+c. You can adjust object rotation by pressing kbd:[R] and using kbd:[4,6,8,2] keys{DOT}.
+d. You can press kbd:[Ctrl] to change `R` & `T` step rate.
 
 [NOTE]
  {DOT} Depending on your keyboard layout, you can use other keys. See: <<editor>>
@@ -355,9 +356,9 @@ d. You can press `Ctrl` to change `RT` step.
 
 There are multiple options for object duplication
 
-* Select object and press `Ctrl+C`, find place you want new object and press `Ctrl+V`
-* Press `C` to clone object and make duplicate at the same position.
-* Press `P` to pick object. Now you can click `Place New` button and place this object in a new location.
+* Select object and press kbd:[Ctrl+C], find place you want new object and press kbd:[Ctrl+V]
+* Press kbd:[C] to clone object and make duplicate at the same position.
+* Press kbd:[P] to pick object. Now you can click `Place New` button and place this object in a new location.
 
 ==== How to delete objects
 
@@ -427,11 +428,11 @@ When adding track I'd suggest keeping `auto-add to TDB` off. Press combo `Ctrl+Q
 
 ==== Copying Tracks
 
-You can duplicate an existing track by find the one you want, selecting it and then pressing `P`.
+You can duplicate an existing track by find the one you want, selecting it and then pressing kbd:[P].
 
 Now you can click `Place New` and place this track at another location.
 
-You can also select track and press `Ctrl+C` to copy it and then move to the location where you want add the new track and press `Ctrl+V` to paste it.
+You can also select track and press kbd:[Ctrl+C] to copy it and then move to the location where you want add the new track and press kbd:[Ctrl+V] to paste it.
 
 [IMAGE]
 image::images/ret8.png[]
@@ -595,21 +596,17 @@ image::images/levelR2.png[]
 
 This little function should allow you to have proper massive-sized crossings and limited-track-reach mileposts, among other things.
 
+<<<
 ==== Signals
 
 *Linking Signals* 
 
-
-
-
 1. Click 'Link' button.
 2. Click 'Link Set' button.
-3. Click on track (siding for example) you waypoints
+3. Click on track 
 
 [IMAGE]
 image::images/signalLink1.png[]
-
-
 
 [TIP]
   Be sure the pointer (cursor) is set to *Stick to Anything mode*. `Shift+Q` toggles the selection.
@@ -628,7 +625,7 @@ If the Link is set, the `text` in the button 'Link' will be written in `green` a
 [WARNING]
 You will have only one try to set this. If the 'Link' does not get set, you will need to start steps 1-3 over again.  Also, avoid moving the camera while doing these steps as this will also force you to start over.
 
-
+<<<
 *Easy Junction*
 
 [IMAGE]
@@ -687,6 +684,9 @@ To add sounds in TSRE,  go to "Object View" then in the right hand window under 
 <<<
 
 === Editing Terrain
+
+[TIP]
+kbd:[Alt+V,H] will Toggle terrain view on and off. Handy for finding out what you might have "lost" below ground level.
 
 ==== Ace File Thumbnails
 
