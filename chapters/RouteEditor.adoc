@@ -383,13 +383,15 @@ The general sequence of steps for adding tracks is as follows.
 Having the {OR} *Track Viewer* tool open when using TSRE is a useful assistant when editing a route. It works fine even with a one monitor setup. Navigation becomes easy and tracking down errant TDB items too!
 
 [WARNING]
- Advice from Vince: A good rule to follow is NEVER move a track section if the `Yellow TDB` line appears above the track section.
+----
+Advice from Vince: A good rule to follow is NEVER move a track section if the `Yellow TDB` line appears above the track section.
 
- Vince also says that a good track addition sequence is:
- 1. Place the track
- 2. Adjust the elevation, and for Dynamic Track, make "all" curve adjustments
- 3. Bring terrain to the track
- 4. Press kbd:[Z] to finally add your changes to the TDB
+Vince also says that a good track addition sequence is:
+1. Place the track
+2. Adjust the elevation, and for Dynamic Track, make "all" curve adjustments
+3. Bring terrain to the track
+4. Press the Z key to finally add your changes to the TDB
+----
 
 [TIP]
 It is recommend you turn OFF `auto add to TDB` while adding / adjusting track and so prevent TDB corruption.
