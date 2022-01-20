@@ -15,6 +15,7 @@
 :icons: font
 :title-page-background-image: image:images/cover.png[]
 :pdf-page-size: [8.25in, 11.69in]
+:cmt: `#`
 :mu: µ
 :ohm: Ω
 :dot: •

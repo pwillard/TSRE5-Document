@@ -141,7 +141,7 @@ image::images/rec1.png[]
 
 `Tools->Properties`:: show/hide properties tab.
 `Tools->NaviWindow`:: show/hide navigation window.
-`Tools->kbd:[F1] - Tools->kbd:[F12]:: choose a tool-set to work with.
+`Tools->`kbd:[F1] `- Tools->`kbd:[F12]:: choose a tool-set to work with.
 
 `Help->About`:: show app info.
 
@@ -822,11 +822,11 @@ Be careful when "painting" terrain. I am not sure how, but it appears brushing t
 
 Perhaps using the "add if in radius" setting would avoid any unwanted artifacts like these being generated.
 
+The example below is definitely not DEM artifacts
+----
 [IMAGE]
 image::images/terrain artifacts.jpg[]
 
-these are definitely not DEM artifacts
-----
 
 <<<
 

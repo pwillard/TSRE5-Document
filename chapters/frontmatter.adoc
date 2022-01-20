@@ -120,8 +120,7 @@ Persistent Settings for TSRE can be managed using  the `settings.txt` in the pro
 
 ==== How does `settings.txt` work?
 
-[NOTE]
-Any line in the `Settings.txt` file that begins with `#` is "commented out" and is therefore *DISABLED*.  So, to *enable* the AASAMPLES option in the first line, you would edit the `SETTINGS.TXT` file the TSRE folder with  the text editor of your choice and delete the `#`  in front of AASAMPLES.
+Any line in the `Settings.txt` file that begins with {cmt} is _commented out_ and is therefore *DISABLED*.  So, to *enable* the AASAMPLES option in the first line, you would edit the `SETTINGS.TXT` file the TSRE folder with  the text editor of your choice and delete the {cmt}  in front of AASAMPLES.
 
 
 Below is a sample settings file. Some parts of it need to be modified with content that is related to you personally such as folder locations and online map tool keys.

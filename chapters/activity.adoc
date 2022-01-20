@@ -295,7 +295,7 @@ image::images/events10.png[]
 Item 3:: Complete Activity successfully.
 Item 4:: End Activity without success.
 
- End activity with or without success. 
+End activity with or without success. 
 
 Item 5:: Increases an event's activation level
 Item 6:: Decreases an event's activation level
