@@ -140,10 +140,230 @@ Just select traffic from the list.
 [IMAGE]
 image::images/image12.png[]
 
+=== Time Table
+
+Editing Timetable should be done after player service and traffic is selected. Selecting new player service or traffic will reset Timetable values.
+
+Click `Open Timetable Editor`.
+
+[IMAGE]
+image::images/timetable3.png[]
+
+A new window will appear:
+
+[IMAGE]
+image::images/timetable1.png[]
+
+Traffic trains can run with default timetable so there is no need for editing.
+
+Manual Edit:
+
+Select the service that you want to edit on the left and edit timetable values (double click on table cell). 
+
+Automatic Calculation:
+
+Click `Calculate` button.
+If you want to set later station arrival or depart time, enter new time and click `Calculate` again.
+If you want to remove longer station stops, remove all timetable vales and click `Calculate`.
+
+[TIP]
+The timetable calculation is based on max speed and max acceleration values from consist file. You can modify consist acceleration by editing performance column
+
+=== Working with Paths
+
+TSRE path editor is still under development. Now TSRE can’t edit paths, but you can choose path from the list and use Edit button to see it.
 
 
+[IMAGE]
+image::images/paths1.png[]
 
+[WARNING]
+Current version of TSRE will crash if selected path is broken.
 
+[IMAGE]
+image::images/paths2.png[]
+
+Now, for creating new paths you can use Track Viewer from Open Rails directory.
+
+=== Events
+
+Click `Open Event Editor`.
+
+[IMAGE]
+image::images/events1.png[]
+
+A new window will appear:
+
+[IMAGE]
+image::images/events2.png[]
+
+1. Event type list.
+2. Event list.
+3. Click this button to create new event.
+4. Click this button to delete selected event. 
+5. Event type specific properties.
+6. Event properties.
+7. Outcome list.
+8. Click this button to add new outcome.
+9. Click this button to remove selected outcome.
+10. Outcome settings.
+
+*Action event:*
+
+[IMAGE]
+image::images/events3.png[]
+
+Step 1:: Stop at final station.
+No specific properties.
+
+Step 2:: Pick up Wagons.
+Add cars to the wagon list.
+
+Step 3:: Assemble Train.
+Add cars to the wagon list.
+
+Step 4:: Assemble Train at location.
+Add cars to the wagon list.
+Select location.
+
+Step 5:: Drop off cars at location.
+Add cars to the wagon list.
+Select location.
+
+*Wagon List:*
+
+To add new item to wagon list, select loose consist car and click Pick Selected.
+To jump to wagon location, select item on the list and click Jump To Selected.
+To remove wagon from the list, select item on the list and click Remove Selected.
+To edit wagon description, select item on the list and click Edit Description.
+
+[IMAGE]
+image::images/events4.png[]
+
+*Location*
+
+Select `siding` and click `Link Selected`.
+
+[IMAGE]
+image::images/events5.png[]
+
+Step 6:: Pick Up Passengers
+
+Select station stop from player service station stops list.
+
+[IMAGE]
+image::images/events6.png[]
+
+Step7:: Reach Speed
+
+Set Speed Value
+
+[IMAGE]
+image::images/events7.png[]
+
+Step 8:: Make a pickup (This feature is not complete)
+
+*Location Event*
+
+To set new location, click Pick new location button and click on the track you want the event. 
+To jump to event location, click Jump to location button.
+You can set event radius.
+
+[IMAGE]
+image::images/events8.png[]
+
+*Time Event*
+
+Enter activation time of the event relative from activity beginning. 
+
+[IMAGE]
+image::images/events9.png[]
+
+*Outcomes*
+
+Item 1:: None.
+
+Empty outcome. Removed on route save.
+
+Item 2:: Display a message.
+
+Enter message in the text box below. Message window will be shown during simulation when event is activated.
+
+[IMAGE]
+image::images/events10.png[]
+
+Item 3:: Complete Activity successfully.
+Item 4:: End Activity without success.
+
+ End activity with or without success. 
+
+Item 5:: Increases an event's activation level
+Item 6:: Decreases an event's activation level
+Item 7:: Restore an event's activation level
+Item 8:: Activate an event
+
+Choose and event from the list below:
+
+[IMAGE]
+image::images/events11.png[]
+
+Item 9:: Start ignoring speed limit
+Item 10:: Stop ignoring speed limit
+
+Start / stop ignoring speed limits. 
+
+Item 11:: Play sound from a file
+
+Enter sound file name from “sound” route directory and choose sound type.
+Read more about it in Open Rails Manual: 
+`10.16.4 LocationEventandTimeEventSoundFile`
+
+[IMAGE]
+image::images/events12.png[]
+
+Item 12:: Change the weather
+
+Choose weather change from Weather Change List.
+
+[IMAGE]
+image::images/events13.png[]
+
+TSRE requires new file in route directory: `weathertransitions.dat`
+This file contains list of `ORTSWeatherChanges` that can be chosen in `Outcome` properties.
+Editing this file using TSRE is not yet possible. You need to use a text editor.
+
+Read more about ORTSWeatherChange in Open Rails Manual: 
+`10.16.5 WeatherChangeActivityEvent`
+
+[IMAGE]
+image::images/events14.png[]
+
+`ORTSWeatherChanges` added to activity file by hand using Open Rails guide are not visible in TSRE outcome list, but are properly loaded and saved. If you want to change the event WeatherChange using TSRE, just add new Weather Outcome and the weather definition will be replaced.
+
+*Restricted speed zones and Failed signals*
+
+[IMAGE]
+image::images/events15.png[]
+
+Creating new restricted speed zone:
+
+1. Click New button under speed zone list.
+2. Click on track you want new restricted speed zone.
+3. Select one of the zone pointers and move it to desired position.
+
+Removing speed zone:: Select speed zone and press kbd:[Delete] key, or `Delete` button under speed zone list.
+
+*Failed Signals*
+
+[IMAGE]
+image::images/events15.png[]
+
+Creating new restricted speed zone:
+
+Step 1:: Select signal you want to disable.
+Step 2:: Press Disable button under failed signal list.
+
+Removing speed zone:: Select signal on failed signals list and press Delete button under failed signal list.
 
 
 

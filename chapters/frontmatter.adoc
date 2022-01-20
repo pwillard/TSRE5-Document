@@ -288,3 +288,75 @@ The list below is an attempt to describe each option, where possible.
 
 [NOTE]
 If the comment says *new* and nothing else... we still need a good explanation of what it's supposed to do.
+
+=== Changes
+
+What's new:
+
+0.7.001
+- some dynamic track bug fixes
+- fixed bug when placing elevated complex tracks and shapes
+- fixed bug when signals face wrong direction after track vector editing
+- TSRE creates an empty graphic.ace file when making a new route, so MSTS won't crash on load
+- multiplayer editing demo
+
+0.699
+- autoFix function. TSRE will remove all broken objects if autoFix is set to true in settings.txt
+- new error detected by TSRE - signal linked to wrong trackNode
+
+[IMAGE]
+image::images/change1.png[]
+
+0.698
+- introduction to error & messages. New window + route checks + new option: "loadAllWFiles = true"
+- randomized object placement
+- multiple ref files
+- shape viewer reload file
+- geo terrain editable offset
+- improved kml rendering - try "markerLines = true"
+- improved Image Maps download
+- seasonal editing
+- option to customize number of recent items list: "numRecentItems = X"
+- many fixes and features already forgotten XD
+
+0.69752
+
+- fixed RE shape preview window
+
+0.69751
+
+- fixed selection bug
+
+0.6975
+
+- shape viewer
+- fixed shader shadow bug
+- fixed bug when moved carspawner marker is not properly displayed in some tools
+
+0.6974
+
+- fixed bug when editing water on tile with water disabled
+
+0.6973
+
+- fixed Quad Tree bug (disappearing terrain)
+- fixed bug when moved platform marker is not properly displayed in some tools
+
+0.6972
+
+- fixed bug with loading DDS textures defined directly in data files.
+- fixed bug when train path stations were not in order while making services.
+
+0.697
+
+- new installation method. TSRE uses now Tar archiwes and own tar file extractor instead of windows .cab files. So, now automatic installation should work on all operating systems.
+
+0.6963
+
+- elevation info for dynamic tracks and rulers
+- set position Y value for group of objects
+- edit position of signal shape in properties window
+- more actions available from the context menu
+- pick elevation for placement -> easy placement of elevated track using short segments
+- new option "useTdbEmptyItems = false" may help editing broken routes?
+

@@ -24,10 +24,13 @@ To start working with Route Editor you need to:
 
 * (Optional) Set the `gameRoot` value in the application settings file to your desired Root Directory. See: <<settings>>
 
-* Open `TSRE5.exe`, or `TSRE5x32.exe` if you are using a 32 bit version of Windows
+* Open `TSRE5x.exe`, or `TSRE5x32.exe` if you are using a 32 bit version of Windows where `x` equals the program version number.
 
 [IMAGE]
 image::images/re1.png[]
+
+NOTE: If you want to use Route Editor, just open your TSRE executable. The Activity Editor is also available within the Route Editor.
+If you want to use the Consist Editor, use the `ConsistEditor.bat` file to start the program.
 
 
 * If you have properly set up the `gameRoot` settings then the Route Editor is ready to use
