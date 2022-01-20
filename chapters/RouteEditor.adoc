@@ -793,7 +793,7 @@ image::images/rete4.png[]
 
 *For Fine Adjustments to terrain* 
 
-* kbd:[F2] then Click on *HeightMap+* --> *Brush settings:* `Size=1`, `Intensity=1`(this is fine setting) 
+* kbd:[F2] then Click on *HeightMap+* -> *Brush settings:* `Size=1`, `Intensity=1`(this is fine setting) 
 
 * In the View Menu, Check `Terrain Grid` (it's easy when you can see the vertex's to position the cursor.) 
 
@@ -933,10 +933,11 @@ If you want to create embankment or cutting, select the track or road (it must b
 ===== Road/Terrain Adjustment
 
 To adjust terrain under the road:
-1 Click "View" at the top of the screen, and tick "Terrain Grid"
-2 Press kbd:[F2] to get the terrain window on the right. Set "Size" and "Intensity" to `1`, "Height Type" to `Add-Simple`
-3 Select the "HeightMap" button at the top (it turns light grey)
-4 Mouse click repeatedly on the terrain junctions to adjust the terrain height. The keyboard kbd:[Z] key adjusts between up/down.
+
+1. Click "View" at the top of the screen, and tick "Terrain Grid"
+2. Press kbd:[F2] to get the terrain window on the right. Set "Size" and "Intensity" to `1`, "Height Type" to `Add-Simple`
+3. Select the "HeightMap" button at the top (it turns light grey)
+4. Mouse click repeatedly on the terrain junctions to adjust the terrain height. The keyboard kbd:[Z] key adjusts between up/down.
 
 If the road piece is already in the rdb (or you just placed it without deselecting), just press the kbd:[F] key. This will raise the terrain under your road piece, but doesn't raise it everywhere else.
 
