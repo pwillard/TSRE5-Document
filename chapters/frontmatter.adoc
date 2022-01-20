@@ -59,8 +59,7 @@ For example, you would download:  http://koniec.org/tsre5/data/TSRE5_v0.6955.exe
    While the download file is an installer of sorts, it is not a "Windows" installer. The program will run from where ever you placed it so make sure you place the downloaded file where you want TSRE to permanently run from.
 
 [WARNING]
-  If you install your MSTS into \Program Files\ or \program Files (x86)\ expect problems due to Microsoft Security.
-  TSRE will not operate corretly in a *system* managed folder like these . You must place the *EXE* somewhere else, like maybe a new folder you that you name `C:\Programs\TSRE\`.
+  Please do not put the TSRE .exe file into C:\Program Files or C:\Program Files (x86). If you install your MSTS into \Program Files\ or \program Files (x86)\ expect problems due to Microsoft Security controls.  TSRE will not operate correctly in a *system* managed folder like these . You must place the *EXE* somewhere else, like maybe a new folder you that you name `C:\Programs\TSRE\`.
  
 Run the *EXE* file that was downloaded. The TSRE executable will download the additional application data from the server.
 
@@ -120,6 +119,10 @@ Persistent Settings for TSRE can be managed using  the `settings.txt` in the pro
   Configuring the `settings.txt` file is optional but it can be very helpful. Since the program is still under development, this list of options can change.
 
 ==== How does `settings.txt` work?
+
+[NOTE]
+Any line in the `Settings.txt` file that begins with `#` is "commented out" and is therefore *DISABLED*.  So, to *enable* the AASAMPLES option in the first line, you would edit the `SETTINGS.TXT` file the TSRE folder with  the text editor of your choice and delete the `#`  in front of AASAMPLES.
+
 
 Below is a sample settings file. Some parts of it need to be modified with content that is related to you personally such as folder locations and online map tool keys.
 

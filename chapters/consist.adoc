@@ -1,7 +1,7 @@
 == Consist Editor
 
 [NOTE]
-Unlike MSTS RE, there is no built in TrackViewer.  There is, however, an ORTS TrackViewer utility that can be downloaded from the ORTS Website. http://openrails.org/files/ORTS_Trackviewer_manual.pdf  It can be used to edit paths. --Baldwin 
+Unlike MSTS Route Editor, there is no built in TrackViewer.  There is, however, an ORTS TrackViewer utility that can be downloaded from the ORTS Website. http://openrails.org/files/ORTS_Trackviewer_manual.pdf  It can be used to edit paths. --Baldwin 
 
 [TIP]
 You don't place LC's via the map like the old AE, you can now place them by selecting the spur name from the pull down menu and zooming the camera around the route to that exact spot. Then you watch via the camera as the consist gets placed. See it as you flip its direction or slide adjust the starting point. --Geepster
@@ -10,7 +10,22 @@ The Consist Editor is a built-in part of the TSRE5 application.  It is enabled b
 
 * To use the Consist Editor you must have a version of TSRE5 that is V0.6124 or higher.
 * You need to edit the `settings.txt` file and set the path to your MSTS/OR routes/trains directory, Example: `gameRoot = F:/train simulator`
-* You run the `ConsistEditor.bat` file from the command line or you can use Windows Explorer to copy the `ConsistEditor.bat` file and then use "Paste Shortcut" to save it to your desktop.  You can then use the new desktop icon to start the Consist Editor.
+* You must run the `ConsistEditor.bat` file from the command line or you can use Windows Explorer to copy the `ConsistEditor.bat` file and then use "Paste Shortcut" to save it to your desktop.  You can then use the new desktop icon to start the Consist Editor.
+
+
+To use the consist editor, the TSRE program needs to be given a "command line option" that tells it to operate in a CONSIST mode versus ROUTE EDITOR mode.  This is what the `ConsistEditor.bat` file accomplishes.
+If you wish, you can also create a new desktop shortcut to TSRE and name it `Consist Editor` and then edit the properties of the shortcut to also include "--conedit".
+
+image::images/shortcut.png[]
+
+The contents os the `BAT` file is simply "TSRE5_v0.698.1.exe --conedit"
+
+[NOTE]
+All TSRE executables are *numbered* releases, so if you have a newer or older version, the numbers after `TSRE5_v` would be different.
+
+
+
+
 
 === How to use the Consist Editor
 
