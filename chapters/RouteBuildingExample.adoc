@@ -84,9 +84,24 @@ Additionally I can't figure why if I select a track section (Blue Outlined) why 
 1. select and use the Transform feature. 
 2. now select the already selected (blue outlined) object if you need to move the object into a final position.
 
-Seems a bit silly but this editor is a work-in-progress so I have gotten used to having to select over and over again as just a very small nit. Annoying but not a show stopper.
 
-==== Tips for Using the TRANSFORM panel
+[TIP]
+----
+When typing grade in on the TSRE Elevation Panel there is a problem if the tracksection is 'flipped'.
+
+When you place a curve it normally curves to the left. All works well when entering grade values in the elevation panel.
+
+Not so if track is 'flipped' i.e. curves to the right and it's impossible to manually enter into any field in the elevation panel.
+
+If I'm setting grade on multiple curve-to-the-right (flipped) sections it's convenient to paste a grade entry copied from text.
+In the editor there is a 'Search' field on the Objects Panel a few lines from the top.
+If I'm setting grade to lets say 2.5% I type 2.50 into the percent field ( or 25.00 into the permille field).
+As long as you don't type into these fields it's ok and copy / paste from the Search is an easy spot to put you grade data.
+----
+
+
+
+==== Tips for Using the TRANSFORM Panel
 
 This is very very helpful. A great feature only lacking a detailed method of Operation.
 
@@ -249,6 +264,17 @@ If you want to delete track completely, press kbd:[Delete]. In this case, you do
 To adjust a road piece, Press kbd:[Z]. This should remove the Blue Line above the selected road.  Select the road again and attempt to drag it to where you want it connected.  It _should drag along the terrain!_  If it doesn't then toggle the Cursor Mode using kbd:[Shift+Q] Key.  You might need to try using a different road section to get it to snap correctly.
 
 
+[TIP]
+----
+Dynamic Track
+
+{dot} Place track
+{dot} Adjust Dynamic Track Properties
+{dot} Save w/no TDB lines
+{dot} Re-Select track 
+{dot} Press `Z` to update TDB
+{dot} Save
+----
 
 === Placing objects - A guide
 
