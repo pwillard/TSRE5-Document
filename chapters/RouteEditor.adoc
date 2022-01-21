@@ -491,6 +491,24 @@ For use when you need to align ANYTHING to track.
 [TIP]
   Signals will automatically align to the track when placed except for direction. Use `Flip`  or kbd:[X] to change direction.
 
+===== Modifying Track After Signals are Present
+
+[Warning]
+Generally, you just don't want to do this as it si fraught with danger.
+
+As you can see in the picture below, the gantry sites empty, however, in MSTS activity Editor there *are* signals here. You can also see them  in the track monitor.
+
+[IMAGE]
+image::images/MISSING SIGNAL OBJECT IN TDB.jpg[]
+
+So AE & Sim agree, there is a signal here but not visible. It is a 'Phantom' signal.
+
+Using TSRE, I've found an easy way to remove them. Only problem is that it also fouls up any other signals on the same Track Vector and they need to be either replaced or most often, just relinked.
+
+Actually,  the track section with the phantom on it does NOT need to be copy-delete-paste back-save. All you need do in TSRE with the track section selected is press kbd:[Z], which removes track from the TDB, then save. Re-select the track and press kbd:[Z] again (yellow tdb lines appear) then save to add track back to the TDB.
+
+
+
 
 ==== Copy Rotation
 
@@ -501,6 +519,7 @@ For use when you need to align ANYTHING to track.
 
 [IMAGE]
 image::images/reo3.png[]
+
 
 === Object Panels
 
@@ -519,6 +538,21 @@ image::images/reo3.png[]
 ==== Platforms and Sidings 
 
 
+==== Roads
+
+With the MSTS editor there was no choice when installing roads. If they were added to the route they got added into the Road Database file.
+
+If you need short roads and some that would not be seen from a passing train having these roads without car spawners would result in taking up unnecessary space in the Road Database file and they serve no purpose other than to complicate the database file!
+
+So why not just eliminate the database entry for these roads and leave them as static objects?
+
+* METHOD *
+
+With TSRE5, select the road for which you want to eliminate it's database entry. Press the kbd:[Z] key. The blue road database line vanishes. Save now and you're done.
+
+The road section has been deleted from the routes RDB this leaving the road as a static object.
+
+Note: To create roads without car spawners you can also use John Milligan's Dumb Roads. Just static scenery, no rdb entries.
 
 ==== Carspawners
 
@@ -564,7 +598,7 @@ Car spawners can also be used for walking people. Refer to *section 15.6* of the
 
 ==== Level Crossings
 
-==== Simplifying Placement
+===== Simplifying Placement
 
 Step 1:: Place your first interactive. Start with the gate shape. Use the NumPad arrow keys to move your shape generally close the desired position. During this process you may move the camera laterally, but you should not rotate the camera at all! The grid that TSRE uses while moving an object using the NumPad arrows is based on camera angle, so rotating it after placing an object will throw off subsequent objects, and they will not line up perfectly. At this point, this is what we should have:
 
@@ -637,7 +671,7 @@ If the Link is set, the `text` in the button 'Link' will be written in `green` a
 You will have only one try to set this. If the 'Link' does not get set, you will need to start steps 1-3 over again.  Also, avoid moving the camera while doing these steps as this will also force you to start over.
 
 <<<
-*Easy Junction*
+===== Easy Junction
 
 [IMAGE]
 image::images/sig1.jpg[]
@@ -659,7 +693,8 @@ image::images/sig1.jpg[]
 [IMAGE]
 image::images/sig2.jpg[]
 
-*Complex Junction*
+<<<
+===== Complex Junction
 
 [IMAGE]
 image::images/sig3.jpg[]
@@ -690,7 +725,12 @@ These guides will work on any switch, not just double slips.
 
 
 ==== Soundregions
+
 To add sounds in TSRE,  go to "Object View" then in the right hand window under "Other" you will find "Sound Regions". 
+
+Additionally, you can review the {or} Manual in section 13.3. This can automatically add sounds to curves and points. There is a link to download a set of sound files.  
+
+Note: It was noticed that one of the sounds called for was not in the download. If you copy one of the files to be the missing file that was referenced, you can get it working. 
 
 <<<
 
@@ -827,6 +867,7 @@ The example below is definitely not DEM artifacts
 [IMAGE]
 image::images/terrain artifacts.jpg[]
 
+NOTE: Latest TSRE version should have resolved issues with these random spikes.
 
 <<<
 
