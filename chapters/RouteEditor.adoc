@@ -521,6 +521,9 @@ Actually,  the track section with the phantom on it does NOT need to be copy-del
 image::images/reo3.png[]
 
 
+[TIP]
+When you rotate an object by use of the Copy/Paste or Transform button, be sure to re-select the object (even though it appears to be selected (blue outline)) by use of the 'E' key or Select Button. This is to allow you to regain fine movement control when the Ctrl Key is pressed and held with the movement keys.
+
 === Object Panels
 
 ==== Static Objects 
