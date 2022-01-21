@@ -100,6 +100,53 @@ I do know that holding the kbd:[Ctrl] key down as I tap the kbd:[NumPad 2] or kb
 A display of grade as is done for 'normal' track is preferred. 
 Now add a Grade Panel OK button to set the typed in grade and we'll be cooking.
 
+* Transform Panel - ROTATE *
+
+(See the lower part of the panel)
+
+Rotate will revolve or translate an object reference based on the objects PIVOT point.  This pivot point is also known as the ORIGIN that was set by the creator of that object. It can be seen as the point where the Red, Green and Blue axis lines join.
+
+NOTE: Different objects might have requirements on where this *origin* is located, for example rail cars place a pivot point in the center of the shape, Road and Track shapes place the pivot at an extreme end of the shape while but most scenery can have the pivot point anywhere. Hopefully the modeler chose a reasonable location.
+
+*  So, rotation (transforms) will always occur based on the origin point.
+*  When an object is ROTATED or SLOPED up / down grade, the grade angle and rotation is specified in DEGREES. In the Grade Panel this angle is referred in several different ways all meaning the same thing.
+*  When a TRACK is initially placed it's pointing NORTH, 0 degrees
+*  If you rotate it +90 degrees the track is now pointing EAST.
+*  If you rotate it -90 degrees the track is now pointing WEST.
+*  If you rotate it +270 degrees the track also ends up pointing WEST.
+
+ ALL the above examples start with the track in it's initially placed position pointing NORTH. BUT...
+
+*  You may enter a value in the `Transform Panel` AT ANY TIME you need to 'nudge' it just a bit to achieve the alignment you want.
+*  If the track is say pointing SOUTH and you need to rotate is just a few degrees, that's what you would enter into the 'Y' axis field
+
+Now the Transform Panel Examine the lower half of the panel, the ROTATE Section.
+Three Fields: 'X' 'Y' 'Z'
+
+[IMAGE]
+image::images/TransformPanel.jpg[]
+
+* `X` is along the LENGTH of the Track Section. Enter a 1 here and the track rotates (slopes) up by 1 degree.
+* `Y` is the vertical axis. The track rotates about (around) this axis.
+* `Z` is across the track . . .Not exactly sure what this might do as I have not used this field. Maybe TILT the track from side to side? Experiment! Let us know what YOU find!
+
+*Practical Uses for Transform*
+
+Have you ever had to join track sections on a grade? Tough, especially if you're joining to an already installed section.
+Getting that gradient _exactly_ right can be a pain. You've been using the grade adjust panel but exact joining just won't work.
+Let's say you need to raise one end of the track by less than a centimeter (about 3/8ths of an inch). This is when you use Transform!
+
+Conditions:
+1. Track section selected, pres kbd:[Z] key so you see no yellow `TDB` lines showing for the track section
+2. On the Transform Panel enter 0.01 (1 centimeter) in the `X` field and press kdb:[OK]
+
+Result:
+The track end opposite the pivot end will elevate by 1 centimeter. 
+
+So, lets say that 0.01 was too much so you need to slope it down just a bit, by half the amount you raised it.
+Enter -0.005 in the `X` field. This lowers the track by half the amount you raised it in step 2 above.
+
+
 ==== Some thoughts on Laying Track
 
 When swapping track sections in and out it's better to set TSRE to NOT automatically add track into the database. 
@@ -157,9 +204,9 @@ image::images/ret1.png[]
 [IMAGE]
 image::images/ret2.png[]
 
-* You can adjust track position by pressing kbd:[T] and using `4,6,8,2` keys (move XZ axis), `9,3` keys (move Y axis).
-* You can adjust track rotation by pressing kbd:[R] and using `4,6` keys.
-* You can adjust track elevation by pressing kbd:[R] and using `8,2` keys. The Properties window will show you elevation value.
+* You can adjust track position by pressing kbd:[T] and using kbd:[4,6,8,2] keys (move XZ axis), kbd:[9,3] keys (move Y axis).
+* You can adjust track rotation by pressing kbd:[R] and using kbd:[4,6] keys.
+* You can adjust track elevation by pressing kbd:[R] and using kbd:[8,2] keys. The Properties window will show you elevation value.
 * You can hold kbd:[Ctrl] with kbd:[[R] & kbd:[T] mode to change the step rate (0.10%).
 
 [NOTE]
