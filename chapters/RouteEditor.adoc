@@ -537,6 +537,11 @@ image::images/reo3.png[]
 
 ==== Platforms and Sidings 
 
+Place a siding or platform marker and fill in the properties for each item.
+
+On the TSRE Objects Panel you would enter 'platform' and find the Platform marker you want.
+Select it, place on track. Movement is about the same as MSTS. Use kbd:[2,4,6,8] keys to move them or you can drag w/mouse.
+
 
 ==== Roads
 
