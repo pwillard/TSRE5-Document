@@ -258,6 +258,15 @@ kbd:[Shift + Q]::  Change the placement mode: stick only to terrain / stick to e
 [IMAGE]
 image::images/rec5.png[]
 
+
+The TSRE5 Objects Panel has a search function. With it, you can search on any part of a shape's filename.
+
+[IMAGE]
+image::images/SearchFunctionTSRE.jpg[]
+
+
+
+
 [TIP]
 In TSRE, when laying track inside tunnels, use: kbd:[Shift + Q]. It will change the placement mode between "stick only to terrain" and "stick to everything". Then you will then be able to stick the new track to the existing track that is under the terrain.
 
@@ -325,11 +334,14 @@ You can use the Mouse Scroll wheel to Raise or Lower object after placing
 
 
 [TIP]
- Remember: using kbd:[Shift+Q] you can change placement mode between *stick only to terrain* or *stick to everything*.
+Remember: using kbd:[Shift+Q] you can change placement mode between *stick only to terrain* or *stick to everything*.
 
 [TIP]
- Remember: kbd:[Ctrl + Z] will *Undo* the last operation.  
+Remember: kbd:[Ctrl + Z] will *Undo* the last operation.  
  
+[TIP]
+Holding the kbd:[Shift] key while dragging with the mouse will cause an object to rotate
+
 
 ==== Selecting Objects
 
