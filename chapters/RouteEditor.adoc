@@ -1102,17 +1102,21 @@ image::images/reg8.png[]
 
 ==== HGT terrain data import 
 
-HGT terrain data import allows you to easily create realistic terrain. The easiest to use place I have found to get HGT files is below.
+HGT terrain data import allows you to easily create realistic terrain. The easiest to use place I have found to *find* the HGT data files is below.
 
-http://www.viewfinderpanoramas.org/dem3.html
+http://dwtkns.com/srtm30m/
 
+NOTE: While this web page will let you *find* the DEM (Height) data that you want... and allow you to have the DOWNLOAD link for this data, you still need to have a (free) account with HTTP://urs.earthdata.nasa.gov to actually download them.  So... first things first... get your free account at  https://urs.earthdata.nasa.gov/users/new  Registration Page.  Any web based instructions older than 2016 might not tell you need to also have a free account to use  these sites. 
+
+The downloaded data will be in inside ZIP files.
+
+Nasa also has a web page: https://earthexplorer.usgs.gov/  but my opinion is that it is less user-friendly to use as the first link above. I'm not even going to explain how to get DEM data from this site... I leave that up to the reader.
 
 [TIP]
-SRTM HGT data is available from other official sources, such as NASA.gov and the USGS.gov websites.  Note: the USGS/NASA Sites change constantly so don't expect these links to be permanently correct. Example: 
-as well as https://earthexplorer.usgs.gov/   Since 2016, you need to also have a free account to use  these sites.  With Earth Explorer, You want to locate the results that contain the SRTM - SRTMGL1 database.
+ With Earth Explorer, I believe that you want to locate the results that contain the NASA LPDAAC Collections -> NASA SRTM -> SRTM -> NASA SRTMGL30 database. ( I have not done this personally)
 
-
-NOTE: The link provided in the Official TSRE5 website no longer works.
+[WARNING]
+The link provided in the Official TSRE5 website no longer works.
 
 1. Set *geoPath* in settings to directory where you have your HGT files. _See: <<settings>>_
 2. Go to *Geo Tools*. Menu `Tools->Geo` or kbd:[F3].
