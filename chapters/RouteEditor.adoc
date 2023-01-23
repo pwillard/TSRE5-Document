@@ -300,6 +300,9 @@ kbd:[Mouse Scroll Wheel]::  Raise/Lower object after placing
 [TIP]
 In the TSRE `Tools` menu of the Objects window is a built-in ruler function.  When measuring mileposts in Real-World routes, use the Geo length rather than game length. It's remarkably fast to measure out 1600 meters, place a milepost, and move on to the next.  Make sure you delete the ruler objects when you're done. {OR} won't necessarily choke on them, but they will create errors in the log file if left
 
+[TIP]
+Translate operation should be performed first, before Rotate, as a Translate really drops shape's position down again, as it was placed originally.
+
 <<<
 ==== Track Keys
 
@@ -914,7 +917,7 @@ You can use `Pick` button and pick a texture from the existing small tile instea
   You can't lock small tile to avoid painting it by mistake.
 
 [NOTE]
-  Remember that painted textures need a lot of memory and disk space. Use them in important locations only. 
+Remember that painted textures need a lot of memory and disk space. Use them in important locations only. For ground texture don`t forget to eventually compress with DXT1. It won't lose quality and will save space
 
 [IMAGE]
 image::images/rete6.png[]
@@ -1036,6 +1039,11 @@ Current version of Route Editor supports three different types of marker files f
 
 [NOTE]
   The original MKR files are the legacy method of placement references used with the MSTS Route Editor.  This is by far the most common method used when creating MSTS routes, however, with TSRE5  everyone should use *KML* or *GPX* methods instead.
+
+[TIP]
+Another handy tool when routebuilding is GPS visualizer: https://www.gpsvisualizer.com/
+
+
 
 
 ===== How to create KML/GPX format files
