@@ -130,18 +130,20 @@ image::images/rec1.png[]
 ==== Menu
 
 `Route->Save`:: Save changes.
-`Route->Create Paths`:: Delete all existing paths and create new simple paths for each track end node. You can use it to test route in OR without manually creating paths. If route has custom paths - make backup first!
-`Route->Edit Route settings`:: edit route settings (TRK file) in new window.
+`Route->Create Debug Paths`:: Delete all existing paths and create new simple paths for each track end node. You can use it to test route in OR without manually creating paths. If route has custom paths - make backup first!
+`Route->Edit Route settings`:: Edit route settings (TRK file) in new window.
 `Route->Exit`:: Close the route editor.
 
-`Edit->Copy`:: copy selected object kbd:[CTRL+C].
-`Edit->Paste`:: paste selected object kbd:[CTRL+V].
+`Edit->Undo`:: Undo last action kbd:[CTRL+Z].
+`Edit->Copy`:: Copy selected object kbd:[CTRL+C].
+`Edit->Paste`:: Paste selected object kbd:[CTRL+V].
+`Edit->Select Tool`:: Select oblect kbd:[E].
 
 `View`:: show/hide route objects.
 
 `Tools->Properties`:: show/hide properties tab.
 `Tools->NaviWindow`:: show/hide navigation window.
-`Tools->`kbd:[F1] `- Tools->`kbd:[F12]:: choose a tool-set to work with.
+`Tools->`kbd:[F1] `- Tools->`kbd:[F12]:: Choose a tool-set to work with.
 
 `Help->About`:: show app info.
 
@@ -175,9 +177,10 @@ image::images/rec4.png[]
 
 kbd:[AWSD] (and *Arrows* if `UseNumPad=False in 'settings.txt'`)::  Move left, right, front, back.
 
-* Min Speed is keyboard arrow keys + kbd:[SHIFT] key.
+* Min Speed is keyboard arrow keys + kbd:[Ctrl] key.
 * Std Speed is keyboard arrow keys.
-* Max Speed is keyboard arrow keys + kbd:[CTRL] key.
+* Max Speed is keyboard arrow keys + kbd:[Shift] key.
+* Move up kbd:[W-Spacebar], Move down kbd:[S-Spacebar].
 
 kbd:[.] (Period Key):: Top Down View. Press to toggle on/off
 
