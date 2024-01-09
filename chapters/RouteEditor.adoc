@@ -20,6 +20,9 @@ To start working with the Route Editor you need to:
 [WARNING]
   If you haven't done this by now, please make sure that you are running any instances of MSTS outside of system managed folders like `c:\program files(x86)`.  This means that you didn't accept the default folder options when installing MSTS from CDROMS.  It is recommended that a root directory for MSTS be used, like `C:\MSTS`.  This installation location would be one of your possible `gameRoot` locations.
 
+[TIP]
+TSRE is much more stable than the MSTS route editor: you can place many more objects on the tile and do some things , which were previously impossible. It's not perfect though - so it's probably a good idea to back up your work from time to time.
+
 
 === Overview
 
@@ -453,6 +456,34 @@ Vince Says:
 When adding track I'd suggest keeping `auto-add to TDB` off. Press combo kbd:[Ctrl+Q] to toggle. _Sound familiar?_
 
 
+==== Dynamic Track Tips
+
+* TIPS From Jerry Sullivan * 
+
+While it is probably preferrable to not to use Dynamic Track, it is not difficult to set up in TSRE. 
+
+* First you need to know the degree of curve which will be indicated on a track chart if you are trying to duplicate the real world. 
+* Then you need to know the gradient. 
+
+{DT} in TSRE is better than in MSTS in one respect. You can make it bend either direction, left or right, by using, or not using, a minus sign "-" in front of the angle. 
+
+* When you first select {DT} the first tangent is already there, set at 10 Meters. 
+* Now select the first curve (I would recommend only using one curve per piece of {DT}) and you will see a minimal radius & curve. 
+* On the track chart the curve was labeled either 4.25 degrees, or 4 degree 15 minutes. 
+* Using a constant that surveyors use up to about 10 degree cuves divide 1746 meters/4.25 degree = 410.8 meters radius. (or you could divide 1746 by the radius to get degrees).. 
+* Now make the {DT} bend one way or the other by inserting the minus sign. No plus sign needed. Now select the 2nd tangent & it will appear with a minimum length. 
+* Now adjust radius, degrees in the curve, and the tangent length to get a fit. Tricky at first by easy once you get the hang of it. 
+
+[IMAGE]
+image::images/gulf_switch_area.jpg[]
+
+[TIP] 
+Using the mouse is nearly useless. Use the keyboard to enter the adjustments because you may get down to a hundreth of a meter or degree and the mouse key does not go that low. Sometiimes there is no other way. If you have 3 curved tracks and the only value that is close is 90 meters, then you can lay a 90 meter radius curve but then have to use dynamic track to get 95 & 100, or 90 & 85 meter curves. 
+
+[NOTE]
+Jerry Says: "I don't like it, I minimize use of it, but sometimes you have no choice.""
+
+Attached is a image at the north (top) end of the tracks that go south from Beckley, WV area down Gulf creek. There are tunnels, at one point 4 layers of track, and Gulf Switch is actually a switchback. Two railroads are here. The lower one is the formere C&O and other is the former Virginian, then NS, and now a shortline. The C&O part was abandoned about 1995 or so. And yes, there are some {DT} pieces in this spaghetti bowl. Click image for larger version
 
 
 ==== Copying Tracks
