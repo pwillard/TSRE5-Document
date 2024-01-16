@@ -26,6 +26,8 @@
 :OR: Open Rails
 :source-highlighter: rouge
 :DT: Dynamic Track
+:CPP: C/C++
+:NB: NetBeans
 
 
 <<<
@@ -97,6 +99,13 @@ include::chapters/activity.adoc[]
 :sectids!:
 :numbered!:
 include::chapters/consist.adoc[]
+
+<<<
+
+[appendix]
+= Compiling Your Own Copy of TSRE 
+include::chapters/Appendix1.adoc[]
+
 
 
 

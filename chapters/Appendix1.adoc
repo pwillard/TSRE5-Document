@@ -1,0 +1,93 @@
+
+There may be some nuances to the installation process, depending on the operating system and the environment. This section will cover the steps required to set up a local development environment for the TSRE project.  These steps should be followed in-sequence as they are dependent on each other.  The goal is to create the same development environment used by GOKU, which by 2024 is a bit dated so newer versions of the tools and libraries cannot be used without many modifications.  This is not something that will be addressed here.  
+
+The installation process that starts on the next page assumes that you are using Windows 10 or Windows 11, though it should be quite similar if using slightly older versions of Windows.  If you are choosing to build the environment on a different operating system, you will need to make some modifications to the instructions.  
+
+[NOTE]
+It is believed that GOKU did is his TSRE development on a LINUX Operating System, so it should be possible to follow the same basic steps on LINUX, though it is not tested.
+
+== Establishing a Local Development Environment for TSRE
+
+Setting Up the Java Development Environment:: To successfully build the TSRE project, it is essential to have the Java Development Kit (JDK) installed, with a version no later than 13.0.2. It is crucial to stick to this specific version, as a file required for the C++ / {NB} installation is not present in JDK versions newer than 13.0.2.  The JDK is a pre-requisite for the installation of {NB}. 
+
+[TIP]
+Visit https://jdk.java.net/archive/ to obtain the JDK installation software.   https://download.java.net/java/GA/jdk13.0.2/d4173c853231432d94f001e99d882ca7/8/GPL/openjdk-13.0.2_windows-x64_bin.zip is the file that you want.
+
+The Java download listed above is just a zip file with folders, so you will need to extract it somewhere. Once that's done you'll need to set two Environment Variables:
+`JAVA_HOME` and `PATH`
+
+The `JAVA_HOME` environment variable will be the path to the folder where it's installed and the `PATH` entry will qdded to your existing path statements with the same value you used for JAVA_HOME above.
+
+[TIP]
+Setting environment values in Windows 10 and 11 require you to use the Control Panel SYSTEM section  (Control Panel -> System and Security -> System -> Advanced System Settings -> Environment Variables).
+
+A recommendation is to unzip the JAVA kit (\Downloads\openjdk-13.0.2_windows-x64_bin) in your downloads directory and then COPY the `JDK-12.2` folder inside of it to `C:\Programs\jdk-13.0.2`.  
+
+<<<
+
+See the screenshots below:
+
+[IMAGE]
+image::images/java1.png[]
+
+[IMAGE]
+image::images/java2.png[]
+
+For reference, this is what that folder looks like:​​
+
+[IMAGE]
+image::images/java3.png[]
+
+
+After the steps above, you should be able to install {NB}. ​
+
+
+
+Installation of {NB}:: You will need to install Apache {NB} 20.  You can download it from here: https://{NB}.apache.org/front/main/download/nb20/ The download that you want is specifically the `Apache-{NB}-20r1-bin-windows-x64.exe` from that page.
+
+Specifically: https://dlcdn.apache.org/netbeans/netbeans-installers/20/Apache-NetBeans-20r1-bin-windows-x64.exe   <- Is the file you want.  The installation process is relatively straightforward.  
+
+
+Installation of C/C++ plugin for {NB}}:: You will need to install the {CPP} plugin for {NB}. You can do this by going to *Tools > Plugins > Settings* and choose `NetBeans 8.2 Plugin Portal`.  Then, in the *Tools > Plugins > Available Plugins* tab,  find the one called {CPP} (From the NETBEANS 8.2  Plugin Portal). And click install.  Once the installation is complete, you will need to restart {NB} There should be no extra steps required other than what is referred to below.
+
+[NOTE]
+During the installation of the {NB} {CPP} plugin,  the installer may complain that it needs a file names `unpack200.exe`. If it does, you can direct the installer to choose the file within the *JDK 13.0.2* that you just installed previously.
+
+[TIP]
+By default, the file is located at: `C:\Program Files\Java\jdk-13.0.2\bin\unpack200.exe`
+
+Installing Qt 5.7:: You will need to install Qt 5.7. since this is the version that GOKU was using.   You can download it from here:  https://download.qt.io/new_archive/qt/5.7/5.7.0/
+You will be specifically selecting the file `qt-opensource-windows-x86-mingw530-5.7.0.exe` to download
+
+[WARNING]
+The QT installer is quite large, so it will take a while to download.
+
+Installing MinGW:: You will need to install MinGW.  You can download it from here: https://sourceforge.net/projects/mingw/ - you will be selecting the file `mingw-get-setup.exe` to download if you are using Windows 10 or 11.
+
+Installing OpenAL Soft Binaries:: you need to download the OpenAL Soft binaries, this is where things start to get interesting. You'll specifically need version 1.18.2 from this page: https://www.openal-soft.org/openal-binaries/ 
+
+[WARNING]
+As of this writing, January 2024, the *openal-soft.org* URL is non-responsive, and that was not the case two weeks ago when this was initially downloaded. 
+
+You can try getting it from here instead if the other does not work for you: https://web.archive.org/web/20230805164149/https://openal-soft.org/openal-binaries/openal-soft-1.18.2-bin.zip
+
+There is one problem with the binaries that get downloaded though as they don't work with *MinGW* and *g++* out of the box. You will always get linking errors if you try to use the libraries directly from the zip file. The fix is to create the required `.a` library file ourselves, and fortunately that is a simple process. You will the application file named  `dlltool`` do create it. This application file is part of in the MinGW installation so it will be available in the MinGW bin folder.
+
+You'll need to open up  a `cmd.exe` terminal and type in the following commands (You can press the Windows Key and Choose "Command Prompt"):
+
+[source,bash]
+----
+cd C:\openal-soft-1.18.2-bin\libs\Win64
+C:\MinGW\bin\dlltool -d OpenAL32.def -D OpenAL32.dll -k -a -l libopenal32.a -v
+----
+
+Example: 
+
+[IMAGE]
+image::images/cmd1.png[]
+
+This will create a MinGW compatible library that links successfully when building TSRE5. Of course, the paths in the above commands might be different depending on where you have put things in the previous steps. Now you should have a file named `libopenal32.a`, and we will need this in the next step.
+
+[IMAGE]
+image::images/cmd2.png[]
+
