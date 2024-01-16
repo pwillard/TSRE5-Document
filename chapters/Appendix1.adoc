@@ -8,7 +8,7 @@ It is believed that GOKU did is his TSRE development on a LINUX Operating System
 
 == Establishing a Local Development Environment for TSRE
 
-Setting Up the Java Development Environment:: To successfully build the TSRE project, it is essential to have the Java Development Kit (JDK) installed, with a version no later than 13.0.2. It is crucial to stick to this specific version, as a file required for the C++ / {NB} installation is not present in JDK versions newer than 13.0.2.  The JDK is a pre-requisite for the installation of {NB}. 
+Step 1: Setting Up the Java Development Environment:: To successfully build the TSRE project, it is essential to have the Java Development Kit (JDK) installed, with a version no later than 13.0.2. It is crucial to stick to this specific version, as a file required for the C++ / {NB} installation is not present in JDK versions newer than 13.0.2.  The JDK is a pre-requisite for the installation of {NB}. 
 
 [TIP]
 Visit https://jdk.java.net/archive/ to obtain the JDK installation software.   https://download.java.net/java/GA/jdk13.0.2/d4173c853231432d94f001e99d882ca7/8/GPL/openjdk-13.0.2_windows-x64_bin.zip is the file that you want.
@@ -43,28 +43,31 @@ After the steps above, you should be able to install {NB}. ​
 
 
 
-Installation of {NB}:: You will need to install Apache {NB} 20.  You can download it from here: https://{NB}.apache.org/front/main/download/nb20/ The download that you want is specifically the `Apache-{NB}-20r1-bin-windows-x64.exe` from that page.
+Step 2: Installation of {NB}:: You will need to install Apache {NB} 20.  You can download it from here: https://{NB}.apache.org/front/main/download/nb20/ The download that you want is specifically the `Apache-{NB}-20r1-bin-windows-x64.exe` from that page.
 
-Specifically: https://dlcdn.apache.org/netbeans/netbeans-installers/20/Apache-NetBeans-20r1-bin-windows-x64.exe   <- Is the file you want.  The installation process is relatively straightforward.  
+Specifically, the file you want is: https://dlcdn.apache.org/netbeans/netbeans-installers/20/Apache-NetBeans-20r1-bin-windows-x64.exe
+
+[TIP]
+NetBeans may complain about the JDK if one has not been installed correctly.  If this happens, you should redo the JAVA JDK steps above.
 
 
-Installation of C/C++ plugin for {NB}}:: You will need to install the {CPP} plugin for {NB}. You can do this by going to *Tools > Plugins > Settings* and choose `NetBeans 8.2 Plugin Portal`.  Then, in the *Tools > Plugins > Available Plugins* tab,  find the one called {CPP} (From the NETBEANS 8.2  Plugin Portal). And click install.  Once the installation is complete, you will need to restart {NB} There should be no extra steps required other than what is referred to below.
+Step 3: Installation of C/C++ plugin for {NB}}:: You will need to install the {CPP} plugin for {NB}. You can do this by going to *Tools > Plugins > Settings* and choose `NetBeans 8.2 Plugin Portal`.  Then, in the *Tools > Plugins > Available Plugins* tab,  find the one called {CPP} (From the NETBEANS 8.2  Plugin Portal). And click install.  Once the installation is complete, you will need to restart {NB}.  There should be no extra steps required other than what is referred to below.
 
 [NOTE]
 During the installation of the {NB} {CPP} plugin,  the installer may complain that it needs a file names `unpack200.exe`. If it does, you can direct the installer to choose the file within the *JDK 13.0.2* that you just installed previously.
 
 [TIP]
-By default, the file is located at: `C:\Program Files\Java\jdk-13.0.2\bin\unpack200.exe`
+By default, the file is located at: `C:\Program Files\Java\jdk-13.0.2\bin\unpack200.exe` if you had used an installer, but remember that we downloaded the JDK *files* and possibly placed them in a different folder. For Example:  `C:\Programs\jdk-13.0.2`, so it wouild be `C:\Programs\jdk-13.0.2\bin\unpack200.exe`) 
 
-Installing Qt 5.7:: You will need to install Qt 5.7. since this is the version that GOKU was using.   You can download it from here:  https://download.qt.io/new_archive/qt/5.7/5.7.0/
+Step 4: Installing Qt 5.7:: You will need to install Qt 5.7. since this is the version that GOKU was using.   You can download it from here:  https://download.qt.io/new_archive/qt/5.7/5.7.0/
 You will be specifically selecting the file `qt-opensource-windows-x86-mingw530-5.7.0.exe` to download
 
 [WARNING]
 The QT installer is quite large, so it will take a while to download.
 
-Installing MinGW:: You will need to install MinGW.  You can download it from here: https://sourceforge.net/projects/mingw/ - you will be selecting the file `mingw-get-setup.exe` to download if you are using Windows 10 or 11.
+Step 5: Installing MinGW:: You will need to install MinGW.  You can download it from here: https://sourceforge.net/projects/mingw/ - you will be selecting the file `mingw-get-setup.exe` to download if you are using Windows 10 or 11.
 
-Installing OpenAL Soft Binaries:: you need to download the OpenAL Soft binaries, this is where things start to get interesting. You'll specifically need version 1.18.2 from this page: https://www.openal-soft.org/openal-binaries/ 
+Step 6: Installing OpenAL Soft Binaries:: you need to download the OpenAL Soft binaries, this is where things start to get interesting. You'll specifically need version 1.18.2 from this page: https://www.openal-soft.org/openal-binaries/ 
 
 [WARNING]
 As of this writing, January 2024, the *openal-soft.org* URL is non-responsive, and that was not the case two weeks ago when this was initially downloaded. 
@@ -90,4 +93,145 @@ This will create a MinGW compatible library that links successfully when buildin
 
 [IMAGE]
 image::images/cmd2.png[]
+
+Step 7: Configuring the NetBeans build:: If you haven't done so already, it's time to clone the TSRE5 repository from GitHub.
+
+In the top menu bar go to *Team => Remote => Clone...*, that will bring up the following dialog:
+
+[IMAGE]
+image::images/Screenshot 03.png[]
+
+* Specify the repository URL as "https://github.com/GokuMK/TSRE5", and then the local directory you want to clone the repo to.
+* Next specify the remote branch. 
+* Check "master" if it isn't already.
+
+[IMAGE]
+image::images/Screenshot 04.png[]
+
+Click next.
+
+The final step should look like something this:
+
+[IMAGE]
+image::images/Screenshot 05.png[]
+
+* Then click Finish. NetBeans will now clone the repo and open the project for you.
+* When the project has loaded you'll want to right click it, and select Properties:
+
+
+[IMAGE]
+image::images/Screenshot 06.png[]
+
+* We will need to add some extra Qt linking settings.  Select `Qt` under categories.
+* Then scroll all the way down to the bottom and find "Custom Definitions".
+* Next, click on the small button with "..."​
+
+[IMAGE]
+image::images/Screenshot 07.png[]
+
+You will see another dialog where you need to add the following lines:
+
+[source,bash]
+----
+LIBS += -lopengl32
+LIBS += -lglu32
+LIBS += -lglut32
+LIBS += -L"C:\openal-soft-1.18.2-bin\libs\Win64"
+----
+
+Again change the path if necessary, it should look like this when you're done:
+
+[IMAGE]
+image::images/Screenshot 08.png[]
+
+* Click OK.
+* Next we'll need to change the path for the OpenAL Soft binaries
+* Now select "C++ Compiler" under Categories.
+* Click the small button with "..." in the "Include Directories" line.
+* Then edit the path to where you put the OpenAL Soft binaries, with the ".\include" subdirectory appended to it.
+
+For Example:  "C:\openal-soft-1.18.2-bin\include":
+
+[IMAGE]
+image::images/Screenshot 09.png[]
+
+* Click OK.
+* Then go to *Linker* under Categories and specify the path to the `libopenal32.a` file we created earlier.
+* In my case this is `C:\openal-soft-1.18.2-bin\libs\Win64\libopenal32.a`
+* You can edit the string directly or use the "Add Library File..." button.
+
+[IMAGE]
+image::images/Screenshot 10.png[]
+
+* Click OK.
+* The final thing we need to do before we can build TSRE5 is to tell NetBeans where Qt and the compiler tools are located.
+* Go to "Build" under categories.
+* Click the small "..." button in the "Tool collection" line.
+
+[IMAGE]
+image::images/Screenshot 12.png[]
+
+It will bring up the following dialog:
+
+[IMAGE]
+image::images/Screenshot 13.png[]
+
+​All the fields here will be blank when you open it.
+
+* Here you need fill out all the the fields like above.
+* It does not matter whether you create a new Tool Collection or modify an existing one. And you can name it whatever you want.
+* When you have filled out the fields click "OK".
+* And make sure the Tool Collection that you filled out the fields for is selected like this:
+
+[IMAGE]
+image::images/Screenshot 14.png[]
+
+You should now be able to compile TSRE5. 
+
+Step 8: Compile the project:: It's now time to build. You can do this by clicking the hammer in the toolbar or you can press F11.
+
+[IMAGE]
+image::images/Screenshot 15.png[]
+
+[NOTE]
+Sometimes the build fails with messages like this:
+
+[source,bash]
+----
+mv: cannot move qttmp-Release_x64.mk to nbproject/qt-Release_x64.mk: Permission denied
+----
+
+ And that's just something you can disregard and try again until it works. I don't know why NetBeans does this occasionally.
+
+Step 9: Making the compiled .exe able to start outside of NetBeans:: When it's been built you can start it within NetBeans with the play button in the toolbar or by pressing F6. The built TSRE5.exe is put inside the "./dist" folder of the same directory that you cloned the repository to.
+
+For Example:  "C:\Users\Peter\Documents\NetBeansProjects\TSR E5\T SRE5\dist\Release_x64\MinGW_1-Windows".
+
+* To run TSRE5.exe outside of NetBeans, there's one more thing we have to do.
+* And that is to move a couple of dll's into the directory with the TSRE5.exe file.
+* Copy the following dll's from `C:\Qt\Qt5.7.0\5.7\mingw53_32\bin`:
+[source,bash]
+----
+libstdc++-6.dll
+libgcc_s_dw2-1.dll
+libwinpthread-1.dll
+Qt5Core.dll
+Qt5Gui.dll
+Qt5Network.dll
+Qt5WebSockets.dll
+Qt5Widgets.dll
+----
+
+So that the folder looks like this:
+
+[IMAGE]
+image::images/Screenshot 16.png[]
+
+[NOTE]
+The reason why these are not present with the TSRE5.exe built by Goku is that they are somehow included in the executable when he builds it and that doesn't happen here for some reason.
+
+[TIP]
+When TSRE starts for the first time it downloads the `appdata` folders it needs from Goku's webserver and creates the `settings.txt` file.
+
+
 
