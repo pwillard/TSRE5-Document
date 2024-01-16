@@ -3,6 +3,8 @@ The installation process may vary based on your operating system and environment
 
 The installation instructions, beginning  on the next page, are tailored for Windows 10 or Windows 11. If you are using slightly older versions of Windows, the process should be similar. However, if you opt to build the environment on a different operating system, be prepared to make adjustments to the instructions.
 
+The steps in the Appendix were outlined (figured out) by Trainsim.com forum member *pgroenbaek*.  They deserve much appreciation for their efforts in compiling the information.
+
 [NOTE]
 It is believed that GOKU did is his TSRE development on a LINUX Operating System, so it should be possible to follow the same basic steps on LINUX, though it is not tested.
 
@@ -247,7 +249,9 @@ Qt5WebSockets.dll
 Qt5Widgets.dll
 ----
 
-So that the folder looks like this:
+
+
+The folder looks like this, if you skipped linking the addional files:
 
 [IMAGE]
 image::images/Screenshot 16.png[]
