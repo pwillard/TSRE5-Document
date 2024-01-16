@@ -51,7 +51,7 @@ Specifically, the file you want is: https://dlcdn.apache.org/netbeans/netbeans-i
 NetBeans may complain about the JDK if one has not been installed correctly.  If this happens, you should redo the JAVA JDK steps above.
 
 
-Step 3: Installation of C/C++ plugin for {NB}}:: You will need to install the proper {CPP} plugin for {NB}. You can do this by going to *Tools > Plugins > Settings* and choose `NetBeans 8.2 Plugin Portal`. You will want to make sure it installs. Exit and restart {NB}  
+Step 3: Installation of C/C++ plugin for {NB}}:: You will need to install the proper {CPP} plugin for {NB}. You can do this by going to *Tools > Plugins > Settings* and choose `NetBeans 8.2 Plugin Portal`. You will want to make sure it installs by using the update button. Exit and restart {NB}  
 [IMAGE]
 image::images/ScreenshotNB.png[]
 
@@ -97,9 +97,11 @@ As of this writing, January 2024, the *openal-soft.org* URL is non-responsive, a
 
 You can try getting it from here instead if the other does not work for you: https://web.archive.org/web/20230805164149/https://openal-soft.org/openal-binaries/openal-soft-1.18.2-bin.zip
 
-The plot thickens at this point, however, as an issue arises with the downloaded binaries since they don't seamlessly integrate with `MinGW` and `g++`. Attempting to use the libraries directly from the zip file inevitably leads to linking errors. The solution lies in generating the necessary `.a` library file, a straightforward process. You'll utilize the `dlltool` application file for this task, and it is conveniently included in the `MinGW` installation and accessible in the *MinGW* `bin` folder.
+As with the JDK files, the ZIP file for the OpenAL Soft binaries unzips into a set of folders. A simple solution is to also locate the extracted files in `C:\programs\` so you end up with:  `c:\programs\openal-soft-1.18.2-bin`.
 
-You'll need to open up  a `cmd.exe` terminal and type in the following commands (You can press the Windows Key and Choose "Command Prompt"):
+The plot thickens at this point, however, as an issue arises with the downloaded binaries since they don't seamlessly integrate with `MinGW` and `g++`. Attempting to use the libraries directly from the zip file inevitably leads to linking errors. The solution lies in generating the necessary `.a` library file, which is a straightforward process. You'll utilize the `dlltool` application file for this task, and it is conveniently included in the `MinGW` installation and accessible in the *MinGW* `bin` folder.
+
+You'll need to open up  a `cmd.exe` terminal and type in the following commands (You can press the Windows Key and type "command" in the search bar and then Choose "Command Prompt"):
 
 [source,bash]
 ----
