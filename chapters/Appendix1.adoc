@@ -121,7 +121,7 @@ image::images/cmd2.png[]
 
 Step 7: Configuring the NetBeans build:: If you haven't done so already, it's time to clone the TSRE5 repository from GitHub.
 
-In the top menu bar go to *Team => Remote => Clone...*, that will bring up the following dialog:
+In the top menu bar go to *Team => GIT => Clone...*, that will bring up the following dialog:
 
 [IMAGE]
 image::images/Screenshot 03.png[]
