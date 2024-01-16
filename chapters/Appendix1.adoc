@@ -78,19 +78,26 @@ By default, the file is located at: `C:\Program Files\Java\jdk-13.0.2\bin\unpack
 Step 4: Installing Qt 5.7:: You will need to install Qt 5.7. since this is the version that GOKU was using.   You can download it from here:  https://download.qt.io/new_archive/qt/5.7/5.7.0/
 You will be specifically selecting the file `qt-opensource-windows-x86-mingw530-5.7.0.exe` to download
 
+[TIP]
+You can skip over the screens that talk about setting up an account, as you will not be needing that.  You will also be using only the default settings, so you will press kbd:[NEXT] a few times.  The default installation path is fine. `C:\Qt\Qt5.7.0`
+
 [WARNING]
 The QT installer is quite large, so it will take a while to download.
 
 Step 5: Installing MinGW:: You will need to install MinGW.  You can download it from here: https://sourceforge.net/projects/mingw/ - you will be selecting the file `mingw-get-setup.exe` to download if you are using Windows 10 or 11.
 
-Step 6: Installing OpenAL Soft Binaries:: you need to download the OpenAL Soft binaries, this is where things start to get interesting. You'll specifically need version 1.18.2 from this page: https://www.openal-soft.org/openal-binaries/ 
+[TIP]
+There have been some questions about *what to install* with the MinGW installer as there are many options.  It should be apparent, but remember that we are installing the tools to have a "Basic Setup" for the {CPP} compiler suite (AKA {GPP}). The installation choices here would be to mark the `mingw-developer-toolkit` and `mingw32-gcc-g++` packages for installation.  There is a lot going on while the installer is running, so it may take a while.
+
+
+Step 6: Installing OpenAL Soft Binaries:: You need to download the OpenAL Soft binaries.  You will specifically need version *1.18.2* from this page: https://www.openal-soft.org/openal-binaries/ 
 
 [WARNING]
 As of this writing, January 2024, the *openal-soft.org* URL is non-responsive, and that was not the case two weeks ago when this was initially downloaded. 
 
 You can try getting it from here instead if the other does not work for you: https://web.archive.org/web/20230805164149/https://openal-soft.org/openal-binaries/openal-soft-1.18.2-bin.zip
 
-There is one problem with the binaries that get downloaded though as they don't work with *MinGW* and *g++* out of the box. You will always get linking errors if you try to use the libraries directly from the zip file. The fix is to create the required `.a` library file ourselves, and fortunately that is a simple process. You will the application file named  `dlltool`` do create it. This application file is part of in the MinGW installation so it will be available in the MinGW bin folder.
+The plot thickens at this point, however, as an issue arises with the downloaded binaries since they don't seamlessly integrate with `MinGW` and `g++`. Attempting to use the libraries directly from the zip file inevitably leads to linking errors. The solution lies in generating the necessary `.a` library file, a straightforward process. You'll utilize the `dlltool` application file for this task, and it is conveniently included in the `MinGW` installation and accessible in the *MinGW* `bin` folder.
 
 You'll need to open up  a `cmd.exe` terminal and type in the following commands (You can press the Windows Key and Choose "Command Prompt"):
 
