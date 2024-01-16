@@ -1,7 +1,7 @@
 
-There may be some nuances to the installation process, depending on the operating system and the environment. This section will cover the steps required to set up a local development environment for the TSRE project.  These steps should be followed in-sequence as they are dependent on each other.  The goal is to create the same development environment used by GOKU, which by 2024 is a bit dated so newer versions of the tools and libraries cannot be used without many modifications.  This is not something that will be addressed here.  
+The installation process may vary based on your operating system and environment. This section provides a step-by-step guide to establishing a local development environment for the TSRE project. It's crucial to follow these steps sequentially, as they are interdependent. The objective is to replicate the development environment used by GOKU, which, as of 2024, is somewhat outdated. Consequently, incorporating newer versions of tools and libraries would require extensive modifications, a topic not covered here.
 
-The installation process that starts on the next page assumes that you are using Windows 10 or Windows 11, though it should be quite similar if using slightly older versions of Windows.  If you are choosing to build the environment on a different operating system, you will need to make some modifications to the instructions.  
+The installation instructions, beginning  on the next page, are tailored for Windows 10 or Windows 11. If you are using slightly older versions of Windows, the process should be similar. However, if you opt to build the environment on a different operating system, be prepared to make adjustments to the instructions.
 
 [NOTE]
 It is believed that GOKU did is his TSRE development on a LINUX Operating System, so it should be possible to follow the same basic steps on LINUX, though it is not tested.
@@ -51,13 +51,29 @@ Specifically, the file you want is: https://dlcdn.apache.org/netbeans/netbeans-i
 NetBeans may complain about the JDK if one has not been installed correctly.  If this happens, you should redo the JAVA JDK steps above.
 
 
-Step 3: Installation of C/C++ plugin for {NB}}:: You will need to install the {CPP} plugin for {NB}. You can do this by going to *Tools > Plugins > Settings* and choose `NetBeans 8.2 Plugin Portal`.  Then, in the *Tools > Plugins > Available Plugins* tab,  find the one called {CPP} (From the NETBEANS 8.2  Plugin Portal). And click install.  Once the installation is complete, you will need to restart {NB}.  There should be no extra steps required other than what is referred to below.
+Step 3: Installation of C/C++ plugin for {NB}}:: You will need to install the proper {CPP} plugin for {NB}. You can do this by going to *Tools > Plugins > Settings* and choose `NetBeans 8.2 Plugin Portal`. You will want to make sure it installs. Exit and restart {NB}  
+[IMAGE]
+image::images/ScreenshotNB.png[]
+
+In the *Tools > Plugins > Available Plugins* tab,  you should now be able to find the plugin called {CPP} (From the NETBEANS 8.2  Plugin Portal). Click install.  Once the installation is complete, you should again restart {NB} to be sure averything is setup correctly.  
+
+[IMAGE]
+image::images/ScreenshotNB1.png[]
+
+[IMAGE]
+image::images/ScreenshotNB2.png[]
+
+[IMAGE]
+image::images/ScreenshotNB3.png[]
 
 [NOTE]
-During the installation of the {NB} {CPP} plugin,  the installer may complain that it needs a file names `unpack200.exe`. If it does, you can direct the installer to choose the file within the *JDK 13.0.2* that you just installed previously.
+During the installation of the {NB} {CPP} plugin,  the installer may complain that it needs a file names `unpack200.exe`. If it does, you can direct the installer to choose the file within the *JDK 13.0.2* that you just installed previously.  If you have setup the JDK correctly, the installer should be able to find the file and you won't see the message.
 
 [TIP]
 By default, the file is located at: `C:\Program Files\Java\jdk-13.0.2\bin\unpack200.exe` if you had used an installer, but remember that we downloaded the JDK *files* and possibly placed them in a different folder. For Example:  `C:\Programs\jdk-13.0.2`, so it wouild be `C:\Programs\jdk-13.0.2\bin\unpack200.exe`) 
+
+
+
 
 Step 4: Installing Qt 5.7:: You will need to install Qt 5.7. since this is the version that GOKU was using.   You can download it from here:  https://download.qt.io/new_archive/qt/5.7/5.7.0/
 You will be specifically selecting the file `qt-opensource-windows-x86-mingw530-5.7.0.exe` to download
