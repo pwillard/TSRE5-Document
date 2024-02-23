@@ -41,6 +41,18 @@ The TSRE5 application attempts to resolve some of these _new needs_ and _legacy 
 
 The TSRE5 application is for content developers who wish to create or edit routes, consists and activities for {OR} or MSTS.
 
+=== TSRE is now Open Source
+
+The TSRE5 project is now open source and can be found at https://github.com/GokuMK/TSRE5. 
+
+Some programmers have forked the project and have created their own versions of the program, including a 64 Bit version.  These versions are not supported by the original author of TSRE5.  The original author of TSRE5 is not responsible for any issues that may arise from using these versions.
+
+Versions older than 0.8 are considered stable originals of the program.  Versions 0.8 and newer are considered forked beta versions not created by the original author.  Compiled versions of these newer development versions can be downloaded from http://www.trainsim.com file library.
+
+Instructions on how to compile your own version of TSRE5 can also be found at http://www.trainsim.com forum. 
+
+
+
 <<<<
 
 === How to Download TSRE5 
@@ -291,6 +303,24 @@ If the comment says *new* and nothing else... we still need a good explanation o
 === Changes
 
 What's new:
+
+0.8.002
+- 64 Bit Support
+- Added new settings:
+
+  wireLineHeight = 6.7         // sets the yellow TDB line height to help position catenary/bridges
+  sectionLineHeight = 5        // sets the grey Tsection line that people probably don't notice is there
+  terrainSize = 1              // sets the cut/fill size value
+  terrainEmbankment = 2        // sets the cut/fill embankment value
+  terrainCut = 2               // sets the cut/fill cut value
+  terrainRadius = 9            // sets the cut/fill radius value
+  terrainBrushSize = 1         // sets the terrain brush size
+  terrainBrushIntensity = 12   // sets the terrain brush intensity
+  selectedTerrWidth=4          // sets the width of the terrain tile selection lines
+  selectedTerrColor = #FFB612  // sets the color for terrain tile selection lines
+  selectedWidth=2              // sets the width of the object selection lines
+  selectedColor = #B612FF      // sets the color for object selection lines
+
 
 0.7.001
 - some dynamic track bug fixes
