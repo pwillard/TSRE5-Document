@@ -304,8 +304,6 @@ If the comment says *new* and nothing else... we still need a good explanation o
 === Changes
 
 
-
-
 What's new:
 
 
@@ -464,7 +462,7 @@ image::images/change1.png[]
 
 0.697
 
-* new installation method. TSRE uses now Tar archiwes and own tar file extractor instead of windows .cab files. So, now automatic installation should work on all operating systems.
+* new installation method. TSRE uses now Tar archives and own tar file extractor instead of windows .cab files. So, now automatic installation should work on all operating systems.
 
 0.6963
 
