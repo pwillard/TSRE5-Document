@@ -311,91 +311,86 @@ What's new:
 
 8.004 adds the following:
 
-Default offset from track centerline added for signal and milepost placement (sigOffset setting)
-Reload Marker Files (file menu)
-Show Speedposts in Marker dropdowns automatically (similar to Sidings and Platforms)
-Adds all shapes in Route\Shapes directory to an "Non-Indexed" category on the Objects pane
-Add "reload settings" function which will reload some (not all) of the values from Settings.txt
-Addresses multiple paths for include files
-Add new Settings token MapAPIKey (optionally separates this from being included in the URL)
-Warning message given if trying to rename a track or static shapefile to file that doesn't exist in the appropriate Shapes directory
-Fixes Mass calculations into metric tonnes for commonly supported units (lb, kg, t-us, t-uk)
-Reduced logging messages while debugOutput = false
-New settings tokens to disable ORTS default texture handling:
+* Default offset from track centerline added for signal and milepost placement (sigOffset setting)
+* Reload Marker Files (file menu)
+* Show Speedposts in Marker dropdowns automatically (similar to Sidings and Platforms)
+* Adds all shapes in Route\Shapes directory to an "Non-Indexed" category on the Objects pane
+* Add "reload settings" function which will reload some (not all) of the values from Settings.txt
+* Addresses multiple paths for include files
+* Add new Settings token MapAPIKey (optionally separates this from being included in the URL)
+* Warning message given if trying to rename a track or static shapefile to file that doesn't exist in the appropriate Shapes directory
+* Fixes Mass calculations into metric tonnes for commonly supported units (lb, kg, t-us, t-uk)
+* Reduced logging messages while debugOutput = false
+* New settings tokens to disable ORTS default texture handling:
 
-imageSubstitution = false will only use texture type defined in shapefile (Will not affect TERRTEX files)
-imageUpgrade = false will not show DDS if both ACE and DDS are provided​
+* imageSubstitution = false will only use texture type defined in shapefile (Will not affect TERRTEX files)
+* imageUpgrade = false will not show DDS if both ACE and DDS are provided​
 
 Changes from v8.003
 
-  Fixes platform left/right line heights
-  Optional support for ViewsphereDB and VDbID entries in world file objects as these aren't used by OpenRails
-  Added mouse wheel support for zooming in/out as long as objects aren't selected
-  Added Provider name to Map Loading Page (taken from URL in Settings) and disables satellite map loading if no URL is specified
-  Added new offset value in Settings.txt to correct for zoom level differences in URL and restore Z17/Z18 selection for MapBox
-  Copy Position and Position/Rot now includes tile
-  Dynamic curves now up to 15000m
-  Extended debug logging on/off via Settings txt
-  Fixes multiple JNodePosN entries
-  Enable revised symbols for interactive objects (signal, speedpost, platform, siding) via Settings.txt
-  Maximum auto-placement distance now configurable via Settings.txt
-  Camera elevation above terrain can default to locked via Settings.txt
-  ​Consist Editor now supports adding ORTS EOTD's to consists
-  Consist Editor displays ORFreightAnimations including Load-OR files
-  Activity Editor should no longer crash in the Traffic Editor when clicking on the Time tool
-  Option to have detailed or simplified logging via Settings.txt
-  Corrected startup window position issues on multiple monitor for Consist Editor and Shape Viewer
-  Configurable rail position and size for dynamic track rendering
-  Status Window to show modal features: Camera Lock, Camera Terrain Lock, AutoTDBSave, StickToTerrain, Terrain Brushes, and Rotate/Transform/Resize
-  Unsaved dialog now works when track is added or removed from the TDB
-  Data precision rolled back to 7 decimal places, which should eliminate excessive decimal values for some items, and may have fixed broken vectors (zigzags)
-  Adds Camera placement and rotation options
-  Adds "Tangent" calculation logic​
-  ​Settings values are no longer case sensitive
-  Settings values to activate features can be any of the following: 1, true, on
-  Last saved timer
-  Option to display terrain elevation in feet
-  Double click on route name to Load route
+* Fixes platform left/right line heights
+* Optional support for ViewsphereDB and VDbID entries in world file objects as these aren't used by OpenRails
+* Added mouse wheel support for zooming in/out as long as objects aren't selected
+* Added Provider name to Map Loading Page (taken from URL in Settings) and disables satellite map loading if no URL is specified
+* Added new offset value in Settings.txt to correct for zoom level differences in URL and restore Z17/Z18 selection for MapBox
+* Copy Position and Position/Rot now includes tile
+* Dynamic curves now up to 15000m
+* Extended debug logging on/off via Settings txt
+* Fixes multiple JNodePosN entries
+* Enable revised symbols for interactive objects (signal, speedpost, platform, siding) via Settings.txt
+* Maximum auto-placement distance now configurable via Settings.txt
+* Camera elevation above terrain can default to locked via Settings.txt
+* ​Consist Editor now supports adding ORTS EOTD's to consists
+* Consist Editor displays ORFreightAnimations including Load-OR files
+* Activity Editor should no longer crash in the Traffic Editor when clicking on the Time tool
+* Option to have detailed or simplified logging via Settings.txt
+* Corrected startup window position issues on multiple monitor for Consist Editor and Shape Viewer
+* Configurable rail position and size for dynamic track rendering
+* Status Window to show modal features: Camera Lock, Camera Terrain Lock, AutoTDBSave, StickToTerrain, Terrain Brushes, and Rotate/Transform/Resize
+* Unsaved dialog now works when track is added or removed from the TDB
+* Data precision rolled back to 7 decimal places, which should eliminate excessive decimal values for some items, and may have fixed broken vectors (zigzags)
+* Adds Camera placement and rotation options
+* Adds "Tangent" calculation logic​
+* ​Settings values are no longer case sensitive
+* Settings values to activate features can be any of the following: 1, true, on
+* Last saved timer
+* Option to display terrain elevation in feet
+* Double click on route name to Load route
 
 
 v8.003
- New symbols for platform and siding objects, signal objects and speedposts.
- Removes support for ViewsphereDB and VDbID entries in world file objects as these aren't used by OpenRails (legacySupport setting)
- Added mouse wheel support for zooming in/out as long as objects aren't selected
- Status updates for modal features displayed in the Navi box for AutoTDBSave, StickToTerrain, Terrain Brushes, and Rotate/Transform/Resize
- Added Provider name to Map Loading Page (taken from URL in Settings) and disables satellite map loading if no URL is specified
- Copy Position and Position/Rot now includes tile to avoid pastes near tile boundary to appear in the expected position
- Dynamic curves now supported up to 15000m radius
- Extended debug logging on/off in Settings txt
- Fixes multiple JNodePosN entries
- EOTD support
- Fixes seasonal editing
- Adds Camera placement and rotation options
-Adds "Tangent" calculation logic
-Adds "last saved" timer
-Allow display of terrain elevation in feet
-Double-click route name in load window to Load
 
- legacySupport --- this will eventually be used to allow you to save MSTS ViewSphereDBID's in shapefiles. Those lines aren't needed by ORTS, so the default is already set to false. It's currently dormant, but the setting is there for when it goes live.
-
- newSymbols = true -- this triggers the new arrow shapes for interactives where applicable. Setting to false will go back to the pyramid shapes.
-
- maxAutoPlacement = 999 ---- this was requested for increasing autoplacement from 999m to 9999m. I decided to make it configurable. It's tested up to 10Km, and may work further than that. Autoplacement stops at the next junction node regardless of this setting.​
-
- Fixes MapBox with an updated setting and a new setting:
-
-
- imageMapsUrl = https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/{lon},{lat},{zoom}/{res}x{res}?access_token=yourApiTokenValue imageMapsZoomOffset = -1
-
- Added Status Windows for modal features: Camera, AutoTDBSave, StickToTerrain, Terrain Brushes, and Rotate/Transform/Resize
+* New symbols for platform and siding objects, signal objects and speedposts.
+* (Removes support for ViewsphereDB and VDbID entries in world file objects as these aren't used by OpenRails (legacySupport setting)
+* Added mouse wheel support for zooming in/out as long as objects aren't selected
+* Status updates for modal features displayed in the Navi box for AutoTDBSave, StickToTerrain, Terrain Brushes, and Rotate/Transform/Resize
+* Added Provider name to Map Loading Page (taken from URL in Settings) and disables satellite map loading if no URL is specified
+* Copy Position and Position/Rot now includes tile to avoid pastes near tile boundary to appear in the expected position
+* Dynamic curves now supported up to 15000m radius
+* Extended debug logging on/off in Settings txt
+* Fixes multiple JNodePosN entries
+* EOTD support
+* Fixes seasonal editing
+* Adds Camera placement and rotation options
+* Adds "Tangent" calculation logic
+* Adds "last saved" timer
+* Allow display of terrain elevation in feet
+* Double-click route name in load window to Load
+* legacySupport --- this will eventually be used to allow you to save MSTS ViewSphereDBID's in shapefiles. Those lines aren't needed by ORTS, so the default is already set to false. It's currently dormant, but the setting is there for when it goes live.
+* newSymbols = true -- this triggers the new arrow shapes for interactives where applicable. Setting to false will go back to the pyramid shapes.
+* maxAutoPlacement = 999 ---- this was requested for increasing autoplacement from 999m to 9999m. I decided to make it configurable. It's tested up to 10Km, and may work further than that. Autoplacement stops at the next junction node regardless of this setting.​
+* Fixes MapBox with an updated setting and a new setting:
+* ImageMapsUrl = https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/{lon},{lat},{zoom}/{res}x{res}?access_token=yourApiTokenValue imageMapsZoomOffset = -1
+* Added Status Windows for modal features: Camera, AutoTDBSave, StickToTerrain, Terrain Brushes, and Rotate/Transform/Resize
 
 
 [NOTE]
 Within the last year, the zoom function was broken by a change at MapBox. This fix restores the ability to go between Z17 and Z18 on the fly as you can with Google Maps.
 
 0.8.002
-- 64 Bit Support
-- Added new settings:
+
+* 64 Bit Support
+* Added new settings:
 
   wireLineHeight = 6.7         // sets the yellow TDB line height to help position catenary/bridges
   sectionLineHeight = 5        // sets the grey Tsection line that people probably don't notice is there
@@ -412,69 +407,71 @@ Within the last year, the zoom function was broken by a change at MapBox. This f
 
 
 0.7.001
-- some dynamic track bug fixes
-- fixed bug when placing elevated complex tracks and shapes
-- fixed bug when signals face wrong direction after track vector editing
-- TSRE creates an empty graphic.ace file when making a new route, so MSTS won't crash on load
-- multiplayer editing demo
+
+*  some dynamic track bug fixes
+*  fixed bug when placing elevated complex tracks and shapes
+*  fixed bug when signals face wrong direction after track vector editing
+*  TSRE creates an empty graphic.ace file when making a new route, so MSTS won't crash on load
+*  multiplayer editing demo
 
 0.699
-- autoFix function. TSRE will remove all broken objects if autoFix is set to true in settings.txt
-- new error detected by TSRE - signal linked to wrong trackNode
+
+* autoFix function. TSRE will remove all broken objects if autoFix is set to true in settings.txt
+* new error detected by TSRE - signal linked to wrong trackNode
 
 [IMAGE]
 image::images/change1.png[]
 
 0.698
-- introduction to error & messages. New window + route checks + new option: "loadAllWFiles = true"
-- randomized object placement
-- multiple ref files
-- shape viewer reload file
-- geo terrain editable offset
-- improved kml rendering - try "markerLines = true"
-- improved Image Maps download
-- seasonal editing
-- option to customize number of recent items list: "numRecentItems = X"
-- many fixes and features already forgotten XD
+* introduction to error & messages. New window + route checks + new option: "loadAllWFiles = true"
+* randomized object placement
+* multiple ref files
+* shape viewer reload file
+* geo terrain editable offset
+* improved kml rendering - try "markerLines = true"
+* improved Image Maps download
+* seasonal editing
+* option to customize number of recent items list: "numRecentItems = X"
+* many fixes and features already forgotten XD
 
 0.69752
 
-- fixed RE shape preview window
+* fixed RE shape preview window
 
 0.69751
 
-- fixed selection bug
+* fixed selection bug
 
 0.6975
 
-- shape viewer
-- fixed shader shadow bug
-- fixed bug when moved carspawner marker is not properly displayed in some tools
+* shape viewer
+* fixed shader shadow bug
+* fixed bug when moved carspawner marker is not properly displayed in some tools
 
 0.6974
 
-- fixed bug when editing water on tile with water disabled
+* fixed bug when editing water on tile with water disabled
 
 0.6973
 
-- fixed Quad Tree bug (disappearing terrain)
-- fixed bug when moved platform marker is not properly displayed in some tools
+* fixed Quad Tree bug (disappearing terrain)
+* fixed bug when moved platform marker is not properly displayed in some tools
 
 0.6972
 
-- fixed bug with loading DDS textures defined directly in data files.
-- fixed bug when train path stations were not in order while making services.
+* fixed bug with loading DDS textures defined directly in data files.
+* fixed bug when train path stations were not in order while making services.
 
 0.697
 
-- new installation method. TSRE uses now Tar archiwes and own tar file extractor instead of windows .cab files. So, now automatic installation should work on all operating systems.
+* new installation method. TSRE uses now Tar archiwes and own tar file extractor instead of windows .cab files. So, now automatic installation should work on all operating systems.
 
 0.6963
 
-- elevation info for dynamic tracks and rulers
-- set position Y value for group of objects
-- edit position of signal shape in properties window
-- more actions available from the context menu
-- pick elevation for placement -> easy placement of elevated track using short segments
-- new option "useTdbEmptyItems = false" may help editing broken routes?
+* elevation info for dynamic tracks and rulers
+* set position Y value for group of objects
+* edit position of signal shape in properties window
+* more actions available from the context menu
+* pick elevation for placement -> easy placement of elevated track using short segments
+* new option "useTdbEmptyItems = false" may help editing broken routes?
 
