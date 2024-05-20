@@ -251,6 +251,7 @@ The list below is an attempt to describe each option, where possible.
 |	#hudScale	|		|	*new* True/False
 |	ignoreMissingGlobalShapes 	|	 true	|	True/False  hide unavailable global shapes 
 | imageMapsUrl = https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/{lon},{lat},17/{res}x{res}?access_token=yourtoken | Format changed. There is a section on how to use this in the manual.
+| imageSubstitution = true | Set to true if you want to use the image substitution feature. (dds ace) 
 |	leaveTrackShapeAfterDelete 	|	 false	|	True/False  Set to true if you want to manually fix broken TDB vectors in {RE}. _Only for advanced users_
 |	loadAllWFiles 	|	 true	|	*new* True/False
 |	#mainwindowslayout	|	 PWT	|	Default, Other options include "TWP", "PTW", "WTP" etc.  Using just "W" will make all windows be separate.
@@ -302,7 +303,67 @@ If the comment says *new* and nothing else... we still need a good explanation o
 
 === Changes
 
+
+
+
 What's new:
+
+
+8.004 adds the following:
+
+ Offset from track centerline added for signal and milepost placement (sigOffset setting)
+ Reload Marker Files (file menu)
+ Show Speedposts in Marker dropdowns automatically (similar to Sidings and Platforms)​
+ Adds all shapes in Route\Shapes directory to an "Non-Indexed" category on the Objects pane
+ TDB Fixes
+ Address multiple paths for include files
+ Considers engine/wagon mass values in excess of 999 tons as pounds and converts them to tons
+ Reduced informational logging entries
+ Adds new Settings token MapAPIKey (optionally separates this from being included in the URL)
+ Mass calculations into metric tonnes for commonly supported units (lb, kg, t-us, t-uk)
+ Reduced logging messages while debugOutput = false
+
+  New settings tokens to disable ORTS texture handling:
+   imageSubstitution = false 
+   imageUpgrade = false
+ Allow image substitution to be disabled by setting imageSubstitution = false and make sure that it will not apply to the TERRTEX files
+ Warning message given if trying to rename a track or static shapefile to file that doesn't exist in the appropriate Shapes directory
+
+
+v8.003
+ New symbols for platform and siding objects, signal objects and speedposts.
+ Removes support for ViewsphereDB and VDbID entries in world file objects as these aren't used by OpenRails (legacySupport setting)
+ Added mouse wheel support for zooming in/out as long as objects aren't selected
+ Status updates for modal features displayed in the Navi box for AutoTDBSave, StickToTerrain, Terrain Brushes, and Rotate/Transform/Resize
+ Added Provider name to Map Loading Page (taken from URL in Settings) and disables satellite map loading if no URL is specified
+ Copy Position and Position/Rot now includes tile to avoid pastes near tile boundary to appear in the expected position
+ Dynamic curves now supported up to 15000m radius
+ Extended debug logging on/off in Settings txt
+ Fixes multiple JNodePosN entries
+ EOTD support
+ Fixes seasonal editing
+ Adds Camera placement and rotation options
+Adds "Tangent" calculation logic
+Adds "last saved" timer
+Allow display of terrain elevation in feet
+Double-click route name in load window to Load
+
+ legacySupport --- this will eventually be used to allow you to save MSTS ViewSphereDBID's in shapefiles. Those lines aren't needed by ORTS, so the default is already set to false. It's currently dormant, but the setting is there for when it goes live.
+
+ newSymbols = true -- this triggers the new arrow shapes for interactives where applicable. Setting to false will go back to the pyramid shapes.
+
+ maxAutoPlacement = 999 ---- this was requested for increasing autoplacement from 999m to 9999m. I decided to make it configurable. It's tested up to 10Km, and may work further than that. Autoplacement stops at the next junction node regardless of this setting.​
+
+ Fixes MapBox with an updated setting and a new setting:
+
+
+ imageMapsUrl = https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/{lon},{lat},{zoom}/{res}x{res}?access_token=yourApiTokenValue imageMapsZoomOffset = -1
+
+ Added Status Windows for modal features: Camera, AutoTDBSave, StickToTerrain, Terrain Brushes, and Rotate/Transform/Resize
+
+
+[NOTE]
+Within the last year, the zoom function was broken by a change at MapBox. This fix restores the ability to go between Z17 and Z18 on the fly as you can with Google Maps.
 
 0.8.002
 - 64 Bit Support
