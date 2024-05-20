@@ -2,7 +2,7 @@
 
 === Route Building 
 
-Creating a railway route requires a variety of components.  These components should mostly be prepared in advance as they will be the items you will rely on to create youyr unique route. This list is not intended to be daunting to the route builder, rather it is meant to give an understanding of what is involved in a "complete" route, such as the 6 default {OR} routes.
+Creating a railway route requires a variety of components.  These components should mostly be prepared in advance as they will be the items you will rely on to create your unique route. This list is not intended to be daunting to the route builder, rather it is meant to give an understanding of what is involved in a "complete" route, such as the 6 default {OR} routes.
 
 To create a complete {OR} route, the items included would be: 
 
@@ -32,7 +32,8 @@ To create a complete {OR} route, the items included would be:
 
 Constructing a thorough itinerary from the bottom up is a complicated task, even for a small route. It is essential to plan such a route systematically. This guide is designed to meet this requirement. 
 
-I was not informed at the beginning of my route-building journey about the amount of research and knowledge that would be needed to create a high-quality route. For example, I was unaware of the resources such as track profiles, Sanborn or topo maps, and hundreds of photographs that I would need to be familiar with.
+[NOTE]
+(Author's Notes) I was not informed at the beginning of my route-building journey about the amount of research and knowledge that would be needed to create a high-quality route. For example, I was unaware of the resources such as track profiles, Sanborn or topo maps, and hundreds of photographs that I would need to be familiar with.
 
 Building custom models and researching the route are both very laborious tasks, taking up at least 90% of the total effort. Installing the tracks and roads is minimal in comparison, provided you understand where to put them. Static models, although requiring knowledge of modeling, are even more straightforward. Although custom models require a significant amount of work, this is mostly due to the need for correct pictures to create the art that covers them. Making Terrtex images, however, is much harder; it needs to be a consistent tile so that there is no visible pattern, and there is currently no online resource to obtain samples of Terrtex files.
 
@@ -41,20 +42,16 @@ Some available tools do make creating seamless tiles somewhat easier.  These too
 
 === Route Building Tips
 
-The best way to start is t build a small route.  With a maximumum of 5 to 10 miles in size, you won't get overwhelmed when trying to figure out the route building tools.  Make something you can get operational in a short time. You will sometimes encounter errors or deign problems that would force you to backup
-several steps, and that is much less traumatic with a small route.
+The best way to start is t build a small route.  With a maximum of 5 to 10 miles in size, you won't get overwhelmed when trying to figure out the route building tools.  Make something you can get operational in a short time. You will sometimes encounter errors or deign problems that would force you to backup several steps, and that is much less traumatic with a small route.
 
 
 When laying tracks, the process typically involves attaching one track section at a time to the previous one. Start with the first track section and build out from there, either in one or two directions or even more if you include switches. Track laying should be done in a systematic fashion, one small section at a time. As for adding other elements, it's not as strict, but it's important to follow a certain sequence to avoid potential problems down the line.
 
 It is essential to understand that track and terrain (mountains, valleys, etc.) are interconnected during the construction process. Usually, one shapes the landscape while laying the track. Unless one imports the terrain and track layout from an outside source (which requires more skills, software, and techniques that are not provided by {OR}), it is necessary to link the terrain shaping together with the track laying, since they are inseparable unless the ground is completely flat.
 
-Once tracks have been laid, particularly over hills and mountains, it can be difficult to alter
-them. Even though the existing track can be removed, it is arduous to fill in the space left with
-new track. This is because it is challenging to join two tracks together within a few centimeters,
-especially when the ground is uneven.
+Once tracks have been laid, particularly over hills and mountains, it can be difficult to alter them. Even though the existing track can be removed, it is arduous to fill in the space left with new track. This is because it is challenging to join two tracks together within a few centimeters, especially when the ground is uneven.
 
-Backups, backups, backups.  It is important to save "extra coipies" of your work in progress as well as saving often during a session to avoid catastropic loss of effort should the route editor crash.
+Backups, backups, backups.  It is important to save "extra copies" of your work in progress as well as saving often during a session to avoid catastrophic loss of effort should the route editor crash.
 
 Studying existing routes within the Route Editor can provide a wealth of ideas and techniques for creating your own route. Whether it be original default routes or add-on routes, you are sure to find something useful to apply to your own route.
 
@@ -82,17 +79,50 @@ Planning ahead is essential for building a successful model railroad. Begin by s
 
 Having a plan for your route is essential for any modeler. This is because you need to first choose a set of square tiles for your route to be situated on. Furthermore, it is important to have an understanding of where to place the bigger elements such as curves, loops, wyes, valleys, and mountains, as each tile is only about 2km by 2km square (1.24mi by 1.24mi).
 
+[NOTE]
+• 1 ft = 0.3048 m
+• 1 chain (ch) = 20.1168 m
+• 1 mile = 1609.34 m
+
 [TIP]
-You can make a "marker" file for guidance in laying track (this will place markers on the terrain,
-so you can lay your track from marker to marker). But this requires that you know the GPS
-coordinates of each marker: these are not so easy to generate, especially for free-style routes. 
+You can make a "marker" file for guidance in laying track (this will place markers on the terrain, so you can lay your track from marker to marker). But this requires that you know the GPS coordinates of each marker: these are not so easy to generate, especially for free-style routes. 
 
 [NOTE]
 Peter at "Coals to Newcastle" website has also created a resource page dedicated to a "getting started with route building" tutorial and is well worth the visit.
 
+=== Beginning a New Route
+
+1. Create a new route in TSRE.
+2. Choose a name for the route. `Name ID: My_New_Route` This will be the name in all the Sub-folder files
+3. Choose a Geographical area for the route. Latitude and Longitude are in decimal degrees. This will position the geological starting point for the route.
+4. Route Display Name: This is the name that will be displayed in the route list and will not change the folder names used above.
+5. Set "Terrain Error Scale" to 0 for best performance. This controls the number of Polys/faces shown in each tile. You can increase this number to get a better view of the terrain, but it will take longer to load.
+
+At this point you will have a folder structure for your route and it will be populated with a default set of track sections, content and configuration files. TSRE also creates the initial terrain tile based on the geographical area you selected.
+
+----
+C:/OPENRAILS - ROOT /GLOBAL /SHAPES
+                            /TEXTURES
+                    /ROUTES
+                    /SOUND
+                    /TRAINS /CONSISTS
+                            /TRAINSET
+----
+
+
+=== Tsection.dat files
+
+There are two `Tsection.dat` files: The `GLOBAL/Tsection.datfile` is a regularly extended database of all common road and track sections and provides the Open Rails Train Simulator with invisible vectors along which trains and cars travel. The route's Local <route>/Tsection.datfile
+is for storing data about dynamic tracks used in this route only. Note that track and road objects are stored in the `GLOBAL/Shapes` folder while their textures(.ace or .dds) are stored in your your route’s local `Textures`` folder.
+
+
+=== Scenery Objects
+
+The scenery objects for your route are stored in the `<route>/Shapes` folder. These are the objects that are used to flesh out the route. The `GLOBAL/Shapes and GLOBAL/textures` folder contains default items supplied for use in all routes like rail sections so you should not place your scenery items there. 
+
+
+
 === Laying Track with gradients
-
-
 
 ==== Tips for Placing and Rotating Tracks for Gradients
 *From Vince Cockeram*
