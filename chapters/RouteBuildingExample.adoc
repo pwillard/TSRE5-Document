@@ -79,10 +79,11 @@ Planning ahead is essential for building a successful model railroad. Begin by s
 
 Having a plan for your route is essential for any modeler. This is because you need to first choose a set of square tiles for your route to be situated on. Furthermore, it is important to have an understanding of where to place the bigger elements such as curves, loops, wyes, valleys, and mountains, as each tile is only about 2km by 2km square (1.24mi by 1.24mi).
 
-[NOTE]
-• 1 ft = 0.3048 m
-• 1 chain (ch) = 20.1168 m
-• 1 mile = 1609.34 m
+Some conversions:
+
+ • 1 ft = 0.3048 m
+ • 1 chain (ch) = 20.1168 m
+ • 1 mile = 1609.34 m
 
 [TIP]
 You can make a "marker" file for guidance in laying track (this will place markers on the terrain, so you can lay your track from marker to marker). But this requires that you know the GPS coordinates of each marker: these are not so easy to generate, especially for free-style routes. 
