@@ -1203,9 +1203,32 @@ https://search.earthdata.nasa.gov/search/granules/collection-details?p=C10000002
 
 
 
+
+
 <<<
 
 ==== Using Satellite Images
+
+You can use either Google or MapBox. The formats are slightly different, but work just the same.
+
+There are some differences with GOKU's original releases and the more current community 8.xxx releases related to the ZOOM settings that come after `{LAT} and {LON}` where you need to subtract 1 from the ZOOM value.
+
+For example:
+
+[source,bash]
+----
+// TSRE 8.00x+
+imageMapsUrl = https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/{lon},{lat},{zoom}/{res}x{res}?access_token=MapAPIKey = yourMapBoxKeyValue
+//
+// Important!!! MapBox currently needs this setting: imageMapsZoomOffset = -1
+imageMapsZoomOffset = -1​
+
+// TRSE 7.00x
+
+imageMapsUrl = https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/{lon},{lat},16/{res}x{res}?access_token=yourMapBoxKeyValue
+----
+
+
 
 ===== Google Maps
 
@@ -1234,8 +1257,12 @@ http://www.Mapbox.com
 2.  Once you obtain your API KEY, open the *TSRE* `settings.txt` file and alter *imageMapsURL* line with the following code:
 
 ----
-imageMapsUrl = http://api.mapbox.com/v4/mapbox.satellite/{lon},{lat},{zoom}/{res}x{res}.png?access_token=INSERT_YOUR_API_KEY_HERE
+imageMapsUrl = https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/{lon},{lat},17/{res}x{res}?access_token=INSERT_YOUR_API_TOKEN_HERE
 ----
+
+[NOTE]
+Token format has changed in Mapbox API.  You need to insert your API key in place of `INSERT_YOUR_API_TOKEN_HERE`. The new token format is longer.
+
 
 Example:
 
@@ -1244,6 +1271,27 @@ image::images/mapbox1.jpg[]
 
 [WARNING]
 You might find that using these map projections for Japan are problematic,however for Europe and America it works well...
+
+Another Example showing zoom options:
+
+The zoom has changed and must be entered manually.
+
+ Standard Terrain
+ Raster Image Z18 =17
+ Raster Image Z17 =16
+ Distance Terrain
+ Raster Image Z18 =13
+ Raster Image Z17 =12
+ Example: Standard Terrain Raster Image Z18 =17
+
+Code:
+
+`imageMapsUrl = https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/{lon},{lat},17/{res}x{res}?access_token=+YOUR_MAPBOX_ACCESS_TOKEN`
+
+
+[NOTE]
+Regarding: "{lon},{lat},17/{res}x{res}"
+You don't need to add the lon or lat coordinates in place, or the res size. This is done automatically by mapbox. From there you can choose Raster17 or Raster18 with 17 being more common, and it should load up fine.
 
 <<<
 
