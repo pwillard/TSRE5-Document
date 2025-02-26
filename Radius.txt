@@ -1,0 +1,5 @@
+"r" is the radius of the curve formed by the track;
+"d" is the a degrees of angle of the track piece about the circle.
+The theoretical circle always runs through the center of the track piece. For odd numbers of tracks, that means the center of the middle track. For even numbers of tracks, that means inbetween the innermost tracks.
+
+From JOVET

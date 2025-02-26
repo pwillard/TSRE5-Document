@@ -178,12 +178,19 @@ image::images/rec4.png[]
 
 ===== Navigating Keys
 
-kbd:[AWSD] (and *Arrows* if `UseNumPad=False in 'settings.txt'`)::  Move left, right, front, back.
+General Movement: 
 
+kbd:[AWSD] (and *Arrows* if `UseNumPad=False in 'settings.txt'`)::  Left, Right, Foreward, Backward.
+
+* Move up (vertical) kbd:[W-Spacebar]
+* Move down (vertical) kbd:[S-Spacebar].
+
+Movement Speed:
+
+* Std Speed is keyboard arrow keys only.
 * Min Speed is keyboard arrow keys + kbd:[Ctrl] key.
-* Std Speed is keyboard arrow keys.
 * Max Speed is keyboard arrow keys + kbd:[Shift] key.
-* Move up kbd:[W-Spacebar], Move down kbd:[S-Spacebar].
+
 
 kbd:[.] (Period Key):: Top Down View. Press to toggle on/off
 
@@ -828,7 +835,7 @@ If you want to remove it, unregister the library using the command:
 Once the removal step is performed, you can then delete the files.
 
 [NOTE] 
-This thumbnail library is only for 64 bit only
+This thumbnail library is only for 64 bit systems only
 
 
 

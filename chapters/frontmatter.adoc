@@ -250,8 +250,8 @@ The list below is an attempt to describe each option, where possible.
 |	#hudEnabled 	|	 true	|	*new* True/False
 |	#hudScale	|		|	*new* True/False
 |	ignoreMissingGlobalShapes 	|	 true	|	True/False  hide unavailable global shapes 
-| imageMapsUrl = https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/{lon},{lat},17/{res}x{res}?access_token=yourtoken | Format changed. There is a section on how to use this in the manual.
-| imageSubstitution = true | Set to true if you want to use the image substitution feature. (dds ace) 
+|   Maps | imageMapsUrl = https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/{lon},{lat},17/{res}x{res}?access_token=yourtoken | Format changed. There is a section on how to use this in the manual.
+|   DDS/ACE  | imageSubstitution = true | Set to true if you want to use the image substitution feature. (dds ace) 
 |	leaveTrackShapeAfterDelete 	|	 false	|	True/False  Set to true if you want to manually fix broken TDB vectors in {RE}. _Only for advanced users_
 |	loadAllWFiles 	|	 true	|	*new* True/False
 |	#mainwindowslayout	|	 PWT	|	Default, Other options include "TWP", "PTW", "WTP" etc.  Using just "W" will make all windows be separate.
@@ -266,7 +266,7 @@ The list below is an attempt to describe each option, where possible.
 |	#ortsEngEnable 	|	 true	|	*new*
 |	#playerMode 	|	 true	|	*new*
 |	#proceduralTracks 	|	 true	|	*new*
-|	#renderTrItems 	|	 true	|	Ture/False  Set to true if you want to see TDB items. _Only for advanced users_ 
+|	#renderTrItems 	|	 true	|	True/False  Set to true if you want to see TDB items. _Only for advanced users_ 
 |	#routeMergeString	|		|	*new*
 |	#routeName 	|	 cmk	|	Place a route name here if you want to skip the Load Window and instead use this route on startup.  
 |	#season	|		|	*new*
@@ -473,3 +473,183 @@ image::images/change1.png[]
 * pick elevation for placement -> easy placement of elevated track using short segments
 * new option "useTdbEmptyItems = false" may help editing broken routes?
 
+
+== Eric's Settings List
+
+----
+debugOutput = false  /// leave at top for expanded logging and set to true
+//
+///////////////////////  Route and UI Startup
+// gameRoot = ""                        // your ORTS Content drive and folder
+// routeName = ""                       // add route name to skip menu
+//  startTileX = ""                      // optional start location
+//  startTileY = ""                      // optional start location
+//  markerLines = true                   // Show markers when loaded
+//  loadAllWFiles = false                // Loads entire world to check errors
+//  toolsHidden = false                  //
+//  usenNumPad = true                    //
+//  tileLod = 1                          // tiles in each direction to load
+//                                         // loading 2+ can be memory heavy
+//  objectLod = 4000                     // 2000 is plenty for most purposes
+//  maxObjLag = 10                       //
+//  allowObjLag = 1000                   //
+//  cameraFov = 35                       //
+//  oglDefaultLineWidth = 1              // width of standard lines
+//
+//  ignoreMissingGlobalShapes = true     // false shows only track/road shapes present in Global\Shapes
+//  useQuadTree = true
+//  numRecentItems = 15                  // Length of recently used items list
+//  consoleOutput = true                // Toggles log output if launched from command prompt
+//  systemTheme = false                 // default is dark theme.... setting to false goes to Windows pallete for your PC
+//  
+//  lockCamera = true                    // same as hitting the . when moving about with the camera, can be unset
+//
+// legacySupport = false                 // true retains VDBId values not used in ORTS
+// newSymbols = true                     // default is true, false uses the TSRE pyramids
+//
+// mainWindowLayout = "PWTS"              // Order of windows: P = Properties, T = Tools, W = World, S = Status
+//                                         // Default is PWT -- TWP reverses
+//                                         // Tools and Property -- omitting
+//                                         // floats tools in separate windows
+//  
+//  LogFileDays = 20    // delete TSRE logs over X days old, can be any integer value
+//  LogFileMax = 99    //   deletes older TSRE logs once there are X logs in the directory, can be any integer value
+///////////// if these aren't provided, screen gets centered with Navi to the left  
+//  mainWindow = 100, 100                    // X, Y of main windows and load window
+//  naviWindow = 50, 50                     // X, Y of Navigation window for RE
+//
+//  legacySupport = false                  // enable retention of ViewDBSphere and VDBID when true
+//
+///////////////////////// Track Database and File Saving
+//  autoFix = true                       // Automatically repair TDB anomalies
+//  useOnlyPositiveQuaternions = false   //
+//  writeEnabled = true                  // set to false for read-only
+//  writeTDB = true                      // set to manually decide what to add to TDB via Z key  
+//  warningBox = true                    // Warn before exiting without a save
+//  leaveTrackShapeAfterDelete = false   // Use only when deleting track/road but keeping TDB entry
+//
+//
+//  sortTileObjects = true               // no idea what this does
+//  snapableOnlyRot = false              // Allow free rotation
+//  shadowsEnabled = true               // This can affect performance if true
+//  shadowMapSize = 2048
+//  shadowLowMapSize = 1024
+//  textureQuality = 1
+//  AASamples = 16
+//  deleteTrWatermarks = true            // removes detail not used by ORTS
+//  deleteViewDbSpheres = true           // removes detail not used by ORTS
+//  useTdbEmptyItems = true              // Preserves UID numbering when deleting items from TDB
+//  useWorkingDir = false                // true will save to the TSRE folder
+//
+//
+//   railProfile = 0.7175, 0.7895   // sets inner/outer position from center for dynamic track rails
+
+//
+///////////////////////////  Editing presets
+//  trackElevationMaxPm = 100            // maximum grade permille
+//  defaultElevationBox = 0
+//  defaultMoveStep = 0.25
+//  renderTrItems = false                // Show the black boxes for TrItems
+//  cameraStickToTerrain = true          // Stop camera from going underground, toggled with "/" key
+//  wireLineHeight = 10.7          // V08.x  Yellow line height
+//  sectionLineHeight = 5.0       // V08.x  Grey line height
+//  selectedWidth = 2             // V08.x  Terrain selection line width
+//  selectedColor = #B612FF       // V08.x  Terrain selection line color
+//  selectedTerrWidth = 4         // V08.x  Terrain selection line width
+//  selectedTerrColor = #FFB612   // V08.x  Terrain selection line color
+//  terrainSize = 1               // V08.x  Terrain cut/fill size
+//  terrainEmbankment = 5         // V08.x  Terrain embankment width
+//  terrainCut = 5                // V08.x  Terrain cut width
+//  terrainRadius = 9             // V08.x  Terrain cut/fill radius
+//  terrainBrushSize = 1          // V08.x  Terrain adjustment brush size radius
+//  terrainBrushIntensity = 10    // V08.x  Terrain adjustment intensity 1-100
+//  sigOffset = 2.5                 // V08.x   Offset in meters from track centerline for signals and mileposts
+//
+//
+////////////////////  Layout and UI Settings
+//  mainWindowLayout =
+//  fullscreen = false                 // Prevents screen from being maximized
+//  ceWindowLayout =
+//  colorConView = "#FF0000"
+//  colorShapeView = "#00FF00"
+//  cameraSpeedMin = 1                 // Camera movement with CTRL
+//  cameraSpeedStd = 3                 // Camera movement normal
+//  cameraSpeedMax = 40                // Camera movement with SHIFT
+//  mouseSpeed =
+//  proceduralTracks = false           // Unfinished feature?
+//  soundEnabled = false               // Sound doesn't work, so....
+//  hudEnabled = TRUE                 //
+//  hudScale = 1                      //
+//  season = ""                        // For editing winter/autumn/spring/summer
+//  seasonalEditing = false            //
+//  useImperial = true                 // show terrain elevation in Navi window in Feet vs. Meters
+//  markerHeight = 10           // V08.x  Height of the marker stick
+//  markerText = 6.7             // V08.x  Text size for marker text
+//  viewMarkers = true         // V08.x   show Markers
+//  viewCompass = true       // V08.x  show Compass on startup​
+//
+//////////////////// Texture Substitution Settings //////////////////////
+// By default, TSRE will mimic ORTS texture replacement logic.
+// Setting the following to false will allow for better detection of shape definition errors and missing textures
+////////
+// imageSubstitution = false  // V08.x  true by default, shows ACE if DDS is missing and DDS if ACE is missing
+// imageUpgrade = false       // V08.x  true by default, false forces displaying texture called for in shapefile material
+//​
+////////////////////////////// Map and Terrain Features
+// geoPath = "" // Drive and folder for HGT files
+//////////////////////////////  Image Maps
+// mapImageResolution = 2048 // Image resolution for downloaded map imagery
+//
+//  Image Maps require a valid API key from either Google or MapBox
+//
+//  Google Maps --- one setting to uncomment after API key added
+//  imageMapsUrl = http://maps.googleapis.com/maps/api/staticmap?center={lat},{lon}&zoom={zoom}&size={res}x{res}&maptype=satellite&key=
+//  MapAPIKey = yourGoogleKeyValue
+//
+//  Mapbox --- two settings to uncomment after API key added
+//  imageMapsUrl = https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/{lon},{lat},{zoom}/{res}x{res}?access_token=
+//  MapAPIKey = yourMapBoxKeyValue
+//
+//  Important!!!  MapBox currently needs this setting: imageMapsZoomOffset = -1
+//  imageMapsZoomOffset = -1
+//
+//​/////////// Other Functions
+//
+// DeepUnderground = -100    //  value in meters that will trigger the check for track that is unreasonably deep
+//
+// ListFiles = true    //   produce files showing files and tracks used, files present that are unused, and files that are missing
+// 
+// routeMergeString = "route:X:Y:Z" // For merging a second route with offsets X Y Z applied if
+//       // world geometry is not identicall
+// routeMergeString = "IRM:0:0:0"   // For merging a second route with offsets X Y Z applied if                
+                       // world geometry is not identical
+// routeMergeTerrain = false   // set to true if you want to import the merged route's terrain, which might overwrite existing terrain
+// routeMergeTDB = false     // set to true if you want to add all track from the merged route into the combined route's TDB/RDB
+// routeMergeTerrtex = false   // set to true if you want to import all terrain textures, which might overwrite existing textures
+
+
+// objectsToRemove = "" // Comma separated list of shapefiles to remove, requires "ListAllFiles" and "LoadAllWFiles" to be true
+//
+// fpsLimit = 59 // for multi-player feature from 7.x
+// serverAuth // for Client-server only, multi-player feature from 7.x
+// createNewIfNotExist = true //
+// ortsEngEnable = false // multi-player feature from 7.x
+// playerMode = // multi-player feature from 7.x
+// useNetworkEng = false // for Client-server only, multi-player feature from 7.x
+// fogDensity =
+// fogColor =
+// skyColor =
+//
+//  LoadConsists = false    // skip loading existing consists when loading the editor
+//  LoadActivities = false     // skip checking activities when loading the editor
+// 
+//
+///////////////////////////// Consist and Shape Viewer
+// ortsEngEnable = true // Give precedence to eng file settings in /OpenRails folders
+// ceWindowLayout = "CU1" // C - Consists, 1 = Main List, 2 = Second List,
+// // U = List of Units within selected consist
+// // Default is C1 -- C1U may be more useful as you can
+// // view without scrolling the entire left-right graphic list
+//
+​
+----
