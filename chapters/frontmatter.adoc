@@ -41,6 +41,18 @@ The TSRE5 application attempts to resolve some of these _new needs_ and _legacy 
 
 The TSRE5 application is for content developers who wish to create or edit routes, consists and activities for {OR} or MSTS.
 
+=== TSRE is now Open Source
+
+The TSRE5 project is now open source and can be found at https://github.com/GokuMK/TSRE5. 
+
+Some programmers have forked the project and have created their own versions of the program, including a 64 Bit version.  These versions are not supported by the original author of TSRE5.  The original author of TSRE5 is not responsible for any issues that may arise from using these versions.
+
+Versions older than 0.8 are considered stable originals of the program.  Versions 0.8 and newer are considered forked beta versions not created by the original author.  Compiled versions of these newer development versions can be downloaded from http://www.trainsim.com file library.
+
+Instructions on how to compile your own version of TSRE5 can also be found at http://www.trainsim.com forum. 
+
+
+
 <<<<
 
 === How to Download TSRE5 
@@ -238,7 +250,8 @@ The list below is an attempt to describe each option, where possible.
 |	#hudEnabled 	|	 true	|	*new* True/False
 |	#hudScale	|		|	*new* True/False
 |	ignoreMissingGlobalShapes 	|	 true	|	True/False  hide unavailable global shapes 
-|	imageMapsUrl 	|	 http://api.mapbox.com/v4/mapbox.satellite/{lon},{lat},{zoom}/{res}x{res}.png?access_token |	There is a section on how to use this in the manual.
+|   Maps | imageMapsUrl = https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/{lon},{lat},17/{res}x{res}?access_token=yourtoken | Format changed. There is a section on how to use this in the manual.
+|   DDS/ACE  | imageSubstitution = true | Set to true if you want to use the image substitution feature. (dds ace) 
 |	leaveTrackShapeAfterDelete 	|	 false	|	True/False  Set to true if you want to manually fix broken TDB vectors in {RE}. _Only for advanced users_
 |	loadAllWFiles 	|	 true	|	*new* True/False
 |	#mainwindowslayout	|	 PWT	|	Default, Other options include "TWP", "PTW", "WTP" etc.  Using just "W" will make all windows be separate.
@@ -253,7 +266,7 @@ The list below is an attempt to describe each option, where possible.
 |	#ortsEngEnable 	|	 true	|	*new*
 |	#playerMode 	|	 true	|	*new*
 |	#proceduralTracks 	|	 true	|	*new*
-|	#renderTrItems 	|	 true	|	Ture/False  Set to true if you want to see TDB items. _Only for advanced users_ 
+|	#renderTrItems 	|	 true	|	True/False  Set to true if you want to see TDB items. _Only for advanced users_ 
 |	#routeMergeString	|		|	*new*
 |	#routeName 	|	 cmk	|	Place a route name here if you want to skip the Load Window and instead use this route on startup.  
 |	#season	|		|	*new*
@@ -290,72 +303,353 @@ If the comment says *new* and nothing else... we still need a good explanation o
 
 === Changes
 
+
 What's new:
 
+
+8.004 adds the following:
+
+* Default offset from track centerline added for signal and milepost placement (sigOffset setting)
+* Reload Marker Files (file menu)
+* Show Speedposts in Marker dropdowns automatically (similar to Sidings and Platforms)
+* Adds all shapes in Route\Shapes directory to an "Non-Indexed" category on the Objects pane
+* Add "reload settings" function which will reload some (not all) of the values from Settings.txt
+* Addresses multiple paths for include files
+* Add new Settings token MapAPIKey (optionally separates this from being included in the URL)
+* Warning message given if trying to rename a track or static shapefile to file that doesn't exist in the appropriate Shapes directory
+* Fixes Mass calculations into metric tonnes for commonly supported units (lb, kg, t-us, t-uk)
+* Reduced logging messages while debugOutput = false
+* New settings tokens to disable ORTS default texture handling:
+
+* imageSubstitution = false will only use texture type defined in shapefile (Will not affect TERRTEX files)
+* imageUpgrade = false will not show DDS if both ACE and DDS are provided​
+
+Changes from v8.003
+
+* Fixes platform left/right line heights
+* Optional support for ViewsphereDB and VDbID entries in world file objects as these aren't used by OpenRails
+* Added mouse wheel support for zooming in/out as long as objects aren't selected
+* Added Provider name to Map Loading Page (taken from URL in Settings) and disables satellite map loading if no URL is specified
+* Added new offset value in Settings.txt to correct for zoom level differences in URL and restore Z17/Z18 selection for MapBox
+* Copy Position and Position/Rot now includes tile
+* Dynamic curves now up to 15000m
+* Extended debug logging on/off via Settings txt
+* Fixes multiple JNodePosN entries
+* Enable revised symbols for interactive objects (signal, speedpost, platform, siding) via Settings.txt
+* Maximum auto-placement distance now configurable via Settings.txt
+* Camera elevation above terrain can default to locked via Settings.txt
+* ​Consist Editor now supports adding ORTS EOTD's to consists
+* Consist Editor displays ORFreightAnimations including Load-OR files
+* Activity Editor should no longer crash in the Traffic Editor when clicking on the Time tool
+* Option to have detailed or simplified logging via Settings.txt
+* Corrected startup window position issues on multiple monitor for Consist Editor and Shape Viewer
+* Configurable rail position and size for dynamic track rendering
+* Status Window to show modal features: Camera Lock, Camera Terrain Lock, AutoTDBSave, StickToTerrain, Terrain Brushes, and Rotate/Transform/Resize
+* Unsaved dialog now works when track is added or removed from the TDB
+* Data precision rolled back to 7 decimal places, which should eliminate excessive decimal values for some items, and may have fixed broken vectors (zigzags)
+* Adds Camera placement and rotation options
+* Adds "Tangent" calculation logic​
+* ​Settings values are no longer case sensitive
+* Settings values to activate features can be any of the following: 1, true, on
+* Last saved timer
+* Option to display terrain elevation in feet
+* Double click on route name to Load route
+
+
+v8.003
+
+* New symbols for platform and siding objects, signal objects and speedposts.
+* (Removes support for ViewsphereDB and VDbID entries in world file objects as these aren't used by OpenRails (legacySupport setting)
+* Added mouse wheel support for zooming in/out as long as objects aren't selected
+* Status updates for modal features displayed in the Navi box for AutoTDBSave, StickToTerrain, Terrain Brushes, and Rotate/Transform/Resize
+* Added Provider name to Map Loading Page (taken from URL in Settings) and disables satellite map loading if no URL is specified
+* Copy Position and Position/Rot now includes tile to avoid pastes near tile boundary to appear in the expected position
+* Dynamic curves now supported up to 15000m radius
+* Extended debug logging on/off in Settings txt
+* Fixes multiple JNodePosN entries
+* EOTD support
+* Fixes seasonal editing
+* Adds Camera placement and rotation options
+* Adds "Tangent" calculation logic
+* Adds "last saved" timer
+* Allow display of terrain elevation in feet
+* Double-click route name in load window to Load
+* legacySupport --- this will eventually be used to allow you to save MSTS ViewSphereDBID's in shapefiles. Those lines aren't needed by ORTS, so the default is already set to false. It's currently dormant, but the setting is there for when it goes live.
+* newSymbols = true -- this triggers the new arrow shapes for interactives where applicable. Setting to false will go back to the pyramid shapes.
+* maxAutoPlacement = 999 ---- this was requested for increasing autoplacement from 999m to 9999m. I decided to make it configurable. It's tested up to 10Km, and may work further than that. Autoplacement stops at the next junction node regardless of this setting.​
+* Fixes MapBox with an updated setting and a new setting:
+* ImageMapsUrl = https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/{lon},{lat},{zoom}/{res}x{res}?access_token=yourApiTokenValue imageMapsZoomOffset = -1
+* Added Status Windows for modal features: Camera, AutoTDBSave, StickToTerrain, Terrain Brushes, and Rotate/Transform/Resize
+
+
+[NOTE]
+Within the last year, the zoom function was broken by a change at MapBox. This fix restores the ability to go between Z17 and Z18 on the fly as you can with Google Maps.
+
+0.8.002
+
+* 64 Bit Support
+* Added new settings:
+
+  wireLineHeight = 6.7         // sets the yellow TDB line height to help position catenary/bridges
+  sectionLineHeight = 5        // sets the grey Tsection line that people probably don't notice is there
+  terrainSize = 1              // sets the cut/fill size value
+  terrainEmbankment = 2        // sets the cut/fill embankment value
+  terrainCut = 2               // sets the cut/fill cut value
+  terrainRadius = 9            // sets the cut/fill radius value
+  terrainBrushSize = 1         // sets the terrain brush size
+  terrainBrushIntensity = 12   // sets the terrain brush intensity
+  selectedTerrWidth=4          // sets the width of the terrain tile selection lines
+  selectedTerrColor = #FFB612  // sets the color for terrain tile selection lines
+  selectedWidth=2              // sets the width of the object selection lines
+  selectedColor = #B612FF      // sets the color for object selection lines
+
+
 0.7.001
-- some dynamic track bug fixes
-- fixed bug when placing elevated complex tracks and shapes
-- fixed bug when signals face wrong direction after track vector editing
-- TSRE creates an empty graphic.ace file when making a new route, so MSTS won't crash on load
-- multiplayer editing demo
+
+*  some dynamic track bug fixes
+*  fixed bug when placing elevated complex tracks and shapes
+*  fixed bug when signals face wrong direction after track vector editing
+*  TSRE creates an empty graphic.ace file when making a new route, so MSTS won't crash on load
+*  multiplayer editing demo
 
 0.699
-- autoFix function. TSRE will remove all broken objects if autoFix is set to true in settings.txt
-- new error detected by TSRE - signal linked to wrong trackNode
+
+* autoFix function. TSRE will remove all broken objects if autoFix is set to true in settings.txt
+* new error detected by TSRE - signal linked to wrong trackNode
 
 [IMAGE]
 image::images/change1.png[]
 
 0.698
-- introduction to error & messages. New window + route checks + new option: "loadAllWFiles = true"
-- randomized object placement
-- multiple ref files
-- shape viewer reload file
-- geo terrain editable offset
-- improved kml rendering - try "markerLines = true"
-- improved Image Maps download
-- seasonal editing
-- option to customize number of recent items list: "numRecentItems = X"
-- many fixes and features already forgotten XD
+* introduction to error & messages. New window + route checks + new option: "loadAllWFiles = true"
+* randomized object placement
+* multiple ref files
+* shape viewer reload file
+* geo terrain editable offset
+* improved kml rendering - try "markerLines = true"
+* improved Image Maps download
+* seasonal editing
+* option to customize number of recent items list: "numRecentItems = X"
+* many fixes and features already forgotten XD
 
 0.69752
 
-- fixed RE shape preview window
+* fixed RE shape preview window
 
 0.69751
 
-- fixed selection bug
+* fixed selection bug
 
 0.6975
 
-- shape viewer
-- fixed shader shadow bug
-- fixed bug when moved carspawner marker is not properly displayed in some tools
+* shape viewer
+* fixed shader shadow bug
+* fixed bug when moved carspawner marker is not properly displayed in some tools
 
 0.6974
 
-- fixed bug when editing water on tile with water disabled
+* fixed bug when editing water on tile with water disabled
 
 0.6973
 
-- fixed Quad Tree bug (disappearing terrain)
-- fixed bug when moved platform marker is not properly displayed in some tools
+* fixed Quad Tree bug (disappearing terrain)
+* fixed bug when moved platform marker is not properly displayed in some tools
 
 0.6972
 
-- fixed bug with loading DDS textures defined directly in data files.
-- fixed bug when train path stations were not in order while making services.
+* fixed bug with loading DDS textures defined directly in data files.
+* fixed bug when train path stations were not in order while making services.
 
 0.697
 
-- new installation method. TSRE uses now Tar archiwes and own tar file extractor instead of windows .cab files. So, now automatic installation should work on all operating systems.
+* new installation method. TSRE uses now Tar archives and own tar file extractor instead of windows .cab files. So, now automatic installation should work on all operating systems.
 
 0.6963
 
-- elevation info for dynamic tracks and rulers
-- set position Y value for group of objects
-- edit position of signal shape in properties window
-- more actions available from the context menu
-- pick elevation for placement -> easy placement of elevated track using short segments
-- new option "useTdbEmptyItems = false" may help editing broken routes?
+* elevation info for dynamic tracks and rulers
+* set position Y value for group of objects
+* edit position of signal shape in properties window
+* more actions available from the context menu
+* pick elevation for placement -> easy placement of elevated track using short segments
+* new option "useTdbEmptyItems = false" may help editing broken routes?
 
+
+== Eric's Settings List
+
+----
+debugOutput = false  /// leave at top for expanded logging and set to true
+//
+///////////////////////  Route and UI Startup
+// gameRoot = ""                        // your ORTS Content drive and folder
+// routeName = ""                       // add route name to skip menu
+//  startTileX = ""                      // optional start location
+//  startTileY = ""                      // optional start location
+//  markerLines = true                   // Show markers when loaded
+//  loadAllWFiles = false                // Loads entire world to check errors
+//  toolsHidden = false                  //
+//  usenNumPad = true                    //
+//  tileLod = 1                          // tiles in each direction to load
+//                                         // loading 2+ can be memory heavy
+//  objectLod = 4000                     // 2000 is plenty for most purposes
+//  maxObjLag = 10                       //
+//  allowObjLag = 1000                   //
+//  cameraFov = 35                       //
+//  oglDefaultLineWidth = 1              // width of standard lines
+//
+//  ignoreMissingGlobalShapes = true     // false shows only track/road shapes present in Global\Shapes
+//  useQuadTree = true
+//  numRecentItems = 15                  // Length of recently used items list
+//  consoleOutput = true                // Toggles log output if launched from command prompt
+//  systemTheme = false                 // default is dark theme.... setting to false goes to Windows pallete for your PC
+//  
+//  lockCamera = true                    // same as hitting the . when moving about with the camera, can be unset
+//
+// legacySupport = false                 // true retains VDBId values not used in ORTS
+// newSymbols = true                     // default is true, false uses the TSRE pyramids
+//
+// mainWindowLayout = "PWTS"              // Order of windows: P = Properties, T = Tools, W = World, S = Status
+//                                         // Default is PWT -- TWP reverses
+//                                         // Tools and Property -- omitting
+//                                         // floats tools in separate windows
+//  
+//  LogFileDays = 20    // delete TSRE logs over X days old, can be any integer value
+//  LogFileMax = 99    //   deletes older TSRE logs once there are X logs in the directory, can be any integer value
+///////////// if these aren't provided, screen gets centered with Navi to the left  
+//  mainWindow = 100, 100                    // X, Y of main windows and load window
+//  naviWindow = 50, 50                     // X, Y of Navigation window for RE
+//
+//  legacySupport = false                  // enable retention of ViewDBSphere and VDBID when true
+//
+///////////////////////// Track Database and File Saving
+//  autoFix = true                       // Automatically repair TDB anomalies
+//  useOnlyPositiveQuaternions = false   //
+//  writeEnabled = true                  // set to false for read-only
+//  writeTDB = true                      // set to manually decide what to add to TDB via Z key  
+//  warningBox = true                    // Warn before exiting without a save
+//  leaveTrackShapeAfterDelete = false   // Use only when deleting track/road but keeping TDB entry
+//
+//
+//  sortTileObjects = true               // no idea what this does
+//  snapableOnlyRot = false              // Allow free rotation
+//  shadowsEnabled = true               // This can affect performance if true
+//  shadowMapSize = 2048
+//  shadowLowMapSize = 1024
+//  textureQuality = 1
+//  AASamples = 16
+//  deleteTrWatermarks = true            // removes detail not used by ORTS
+//  deleteViewDbSpheres = true           // removes detail not used by ORTS
+//  useTdbEmptyItems = true              // Preserves UID numbering when deleting items from TDB
+//  useWorkingDir = false                // true will save to the TSRE folder
+//
+//
+//   railProfile = 0.7175, 0.7895   // sets inner/outer position from center for dynamic track rails
+
+//
+///////////////////////////  Editing presets
+//  trackElevationMaxPm = 100            // maximum grade permille
+//  defaultElevationBox = 0
+//  defaultMoveStep = 0.25
+//  renderTrItems = false                // Show the black boxes for TrItems
+//  cameraStickToTerrain = true          // Stop camera from going underground, toggled with "/" key
+//  wireLineHeight = 10.7          // V08.x  Yellow line height
+//  sectionLineHeight = 5.0       // V08.x  Grey line height
+//  selectedWidth = 2             // V08.x  Terrain selection line width
+//  selectedColor = #B612FF       // V08.x  Terrain selection line color
+//  selectedTerrWidth = 4         // V08.x  Terrain selection line width
+//  selectedTerrColor = #FFB612   // V08.x  Terrain selection line color
+//  terrainSize = 1               // V08.x  Terrain cut/fill size
+//  terrainEmbankment = 5         // V08.x  Terrain embankment width
+//  terrainCut = 5                // V08.x  Terrain cut width
+//  terrainRadius = 9             // V08.x  Terrain cut/fill radius
+//  terrainBrushSize = 1          // V08.x  Terrain adjustment brush size radius
+//  terrainBrushIntensity = 10    // V08.x  Terrain adjustment intensity 1-100
+//  sigOffset = 2.5                 // V08.x   Offset in meters from track centerline for signals and mileposts
+//
+//
+////////////////////  Layout and UI Settings
+//  mainWindowLayout =
+//  fullscreen = false                 // Prevents screen from being maximized
+//  ceWindowLayout =
+//  colorConView = "#FF0000"
+//  colorShapeView = "#00FF00"
+//  cameraSpeedMin = 1                 // Camera movement with CTRL
+//  cameraSpeedStd = 3                 // Camera movement normal
+//  cameraSpeedMax = 40                // Camera movement with SHIFT
+//  mouseSpeed =
+//  proceduralTracks = false           // Unfinished feature?
+//  soundEnabled = false               // Sound doesn't work, so....
+//  hudEnabled = TRUE                 //
+//  hudScale = 1                      //
+//  season = ""                        // For editing winter/autumn/spring/summer
+//  seasonalEditing = false            //
+//  useImperial = true                 // show terrain elevation in Navi window in Feet vs. Meters
+//  markerHeight = 10           // V08.x  Height of the marker stick
+//  markerText = 6.7             // V08.x  Text size for marker text
+//  viewMarkers = true         // V08.x   show Markers
+//  viewCompass = true       // V08.x  show Compass on startup​
+//
+//////////////////// Texture Substitution Settings //////////////////////
+// By default, TSRE will mimic ORTS texture replacement logic.
+// Setting the following to false will allow for better detection of shape definition errors and missing textures
+////////
+// imageSubstitution = false  // V08.x  true by default, shows ACE if DDS is missing and DDS if ACE is missing
+// imageUpgrade = false       // V08.x  true by default, false forces displaying texture called for in shapefile material
+//​
+////////////////////////////// Map and Terrain Features
+// geoPath = "" // Drive and folder for HGT files
+//////////////////////////////  Image Maps
+// mapImageResolution = 2048 // Image resolution for downloaded map imagery
+//
+//  Image Maps require a valid API key from either Google or MapBox
+//
+//  Google Maps --- one setting to uncomment after API key added
+//  imageMapsUrl = http://maps.googleapis.com/maps/api/staticmap?center={lat},{lon}&zoom={zoom}&size={res}x{res}&maptype=satellite&key=
+//  MapAPIKey = yourGoogleKeyValue
+//
+//  Mapbox --- two settings to uncomment after API key added
+//  imageMapsUrl = https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/{lon},{lat},{zoom}/{res}x{res}?access_token=
+//  MapAPIKey = yourMapBoxKeyValue
+//
+//  Important!!!  MapBox currently needs this setting: imageMapsZoomOffset = -1
+//  imageMapsZoomOffset = -1
+//
+//​/////////// Other Functions
+//
+// DeepUnderground = -100    //  value in meters that will trigger the check for track that is unreasonably deep
+//
+// ListFiles = true    //   produce files showing files and tracks used, files present that are unused, and files that are missing
+// 
+// routeMergeString = "route:X:Y:Z" // For merging a second route with offsets X Y Z applied if
+//       // world geometry is not identicall
+// routeMergeString = "IRM:0:0:0"   // For merging a second route with offsets X Y Z applied if                
+                       // world geometry is not identical
+// routeMergeTerrain = false   // set to true if you want to import the merged route's terrain, which might overwrite existing terrain
+// routeMergeTDB = false     // set to true if you want to add all track from the merged route into the combined route's TDB/RDB
+// routeMergeTerrtex = false   // set to true if you want to import all terrain textures, which might overwrite existing textures
+
+
+// objectsToRemove = "" // Comma separated list of shapefiles to remove, requires "ListAllFiles" and "LoadAllWFiles" to be true
+//
+// fpsLimit = 59 // for multi-player feature from 7.x
+// serverAuth // for Client-server only, multi-player feature from 7.x
+// createNewIfNotExist = true //
+// ortsEngEnable = false // multi-player feature from 7.x
+// playerMode = // multi-player feature from 7.x
+// useNetworkEng = false // for Client-server only, multi-player feature from 7.x
+// fogDensity =
+// fogColor =
+// skyColor =
+//
+//  LoadConsists = false    // skip loading existing consists when loading the editor
+//  LoadActivities = false     // skip checking activities when loading the editor
+// 
+//
+///////////////////////////// Consist and Shape Viewer
+// ortsEngEnable = true // Give precedence to eng file settings in /OpenRails folders
+// ceWindowLayout = "CU1" // C - Consists, 1 = Main List, 2 = Second List,
+// // U = List of Units within selected consist
+// // Default is C1 -- C1U may be more useful as you can
+// // view without scrolling the entire left-right graphic list
+//
+​
+----

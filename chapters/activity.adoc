@@ -269,6 +269,8 @@ To set new location, click Pick new location button and click on the track you w
 To jump to event location, click Jump to location button.
 You can set event radius.
 
+Radius:: This parameter should define the "tolerance" of the location event; in other words, when the front of the train is at a distance of the location event which is less than Range (in meters), the location event is considered as hit. It is reasonable that, if such parameter is set at 0, the location event will never be hit, because the distance check is not continuous.
+
 [IMAGE]
 image::images/events8.png[]
 

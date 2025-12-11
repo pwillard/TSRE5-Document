@@ -1,15 +1,129 @@
-== Route Building - By Example
+== Route Building - Step By Step
 
-=== Route Building Tools
+=== Route Building 
+
+Creating a railway route requires a variety of components.  These components should mostly be prepared in advance as they will be the items you will rely on to create your unique route. This list is not intended to be daunting to the route builder, rather it is meant to give an understanding of what is involved in a "complete" route, such as the 6 default {OR} routes.
+
+To create a complete {OR} route, the items included would be: 
+
+. custom terrain shapes and textures
+. tracks
+. rail yards
+. bridges
+. tunnels and other underground structures
+. water
+. stations
+. platforms
+. overhead electric wires and gantries
+. signals
+. speed limits
+. mileposts
+. roads with traffic definitions
+. controlled level crossings
+. refueling equipment
+. static and dynamic trains
+. textured houses and other buildings
+. various visual objects (such as rocks, fences, junk piles, and railroad equipment)
+. city objects
+. industrial complexes
+. people and animals
+. train and environmental sounds
+. and at least one defined activity. 
+
+Constructing a thorough itinerary from the bottom up is a complicated task, even for a small route. It is essential to plan such a route systematically. This guide is designed to meet this requirement. 
+
+[NOTE]
+(Author's Notes) I was not informed at the beginning of my route-building journey about the amount of research and knowledge that would be needed to create a high-quality route. For example, I was unaware of the resources such as track profiles, Sanborn or topo maps, and hundreds of photographs that I would need to be familiar with.
+
+Building custom models and researching the route are both very laborious tasks, taking up at least 90% of the total effort. Installing the tracks and roads is minimal in comparison, provided you understand where to put them. Static models, although requiring knowledge of modeling, are even more straightforward. Although custom models require a significant amount of work, this is mostly due to the need for correct pictures to create the art that covers them. Making Terrtex images, however, is much harder; it needs to be a consistent tile so that there is no visible pattern, and there is currently no online resource to obtain samples of Terrtex files.
+
+[TIP]
+Some available tools do make creating seamless tiles somewhat easier.  These tools include Gimp, Krita, Affinity Designer and Photoshop.
 
 === Route Building Tips
+
+The best way to start is t build a small route.  With a maximum of 5 to 10 miles in size, you won't get overwhelmed when trying to figure out the route building tools.  Make something you can get operational in a short time. You will sometimes encounter errors or deign problems that would force you to backup several steps, and that is much less traumatic with a small route.
+
+
+When laying tracks, the process typically involves attaching one track section at a time to the previous one. Start with the first track section and build out from there, either in one or two directions or even more if you include switches. Track laying should be done in a systematic fashion, one small section at a time. As for adding other elements, it's not as strict, but it's important to follow a certain sequence to avoid potential problems down the line.
+
+It is essential to understand that track and terrain (mountains, valleys, etc.) are interconnected during the construction process. Usually, one shapes the landscape while laying the track. Unless one imports the terrain and track layout from an outside source (which requires more skills, software, and techniques that are not provided by {OR}), it is necessary to link the terrain shaping together with the track laying, since they are inseparable unless the ground is completely flat.
+
+Once tracks have been laid, particularly over hills and mountains, it can be difficult to alter them. Even though the existing track can be removed, it is arduous to fill in the space left with new track. This is because it is challenging to join two tracks together within a few centimeters, especially when the ground is uneven.
+
+Backups, backups, backups.  It is important to save "extra copies" of your work in progress as well as saving often during a session to avoid catastrophic loss of effort should the route editor crash.
+
+Studying existing routes within the Route Editor can provide a wealth of ideas and techniques for creating your own route. Whether it be original default routes or add-on routes, you are sure to find something useful to apply to your own route.
+
+Historically, routes in legacy MSTS had some difficulties with the use of dynamic track.  It does seem that {OR} has much less difficulty with dynamic track so using them is now much less risky. Some people are saying that using of dynamic tracks is safe for {OR} and looks and feels great since it reduces rough transitions. These days, some people are saying that they always use dynamic tracks and just use the available curve shapes for actual curve transitions.
+
+There are many authors who have created track and road sections with textures, and these can be found online. A regularly extended database, known as the `Tsection.dat` file, contains all available track section-specific vector components. Trains and cars traverse invisible vectors, while textures are merely attached to these vectors to make them visible and more varied. Ultimately, it is up to the route author to decide which track and road sections to use in the route, taking into account the specific variables such as broad, middle, or narrow gauge, etc.
+
+[NOTE]
+Routes can be expanded later if that is desireable. 
 
 
 
 === Route Planning
 
-=== Laying Track with gradients
+What kind of route do you want?
 
+* Will it use real terrain elevations, or will it be fictional?
+* Will it consist of one or more mainline(s), dual-tracked or otherwise, yards, sidings,
+spurs, loops, wyes, bridges, tunnels, overpasses, grades, switchbacks?
+* What kind of terrain will you need to make?
+* Where will be the stations, towns, hills, mountains, valleys, rivers, lakes be?
+* How much detail do you want to include. 
+
+Planning ahead is essential for building a successful model railroad. Begin by sketching out a rough map of the desired route, allowing room for potential improvisation during the actual construction. Be aware that the geographic area of the layout may be subject to expansion as you build, so a flexible plan is key.
+
+Having a plan for your route is essential for any modeler. This is because you need to first choose a set of square tiles for your route to be situated on. Furthermore, it is important to have an understanding of where to place the bigger elements such as curves, loops, wyes, valleys, and mountains, as each tile is only about 2km by 2km square (1.24mi by 1.24mi).
+
+Some conversions:
+
+ • 1 ft = 0.3048 m
+ • 1 chain (ch) = 20.1168 m
+ • 1 mile = 1609.34 m
+
+[TIP]
+You can make a "marker" file for guidance in laying track (this will place markers on the terrain, so you can lay your track from marker to marker). But this requires that you know the GPS coordinates of each marker: these are not so easy to generate, especially for free-style routes. 
+
+[NOTE]
+Peter at "Coals to Newcastle" website has also created a resource page dedicated to a "getting started with route building" tutorial and is well worth the visit.
+
+=== Beginning a New Route
+
+1. Create a new route in TSRE.
+2. Choose a name for the route. `Name ID: My_New_Route` This will be the name in all the Sub-folder files
+3. Choose a Geographical area for the route. Latitude and Longitude are in decimal degrees. This will position the geological starting point for the route.
+4. Route Display Name: This is the name that will be displayed in the route list and will not change the folder names used above.
+5. Set "Terrain Error Scale" to 0 for best performance. This controls the number of Polys/faces shown in each tile. You can increase this number to get a better view of the terrain, but it will take longer to load.
+
+At this point you will have a folder structure for your route and it will be populated with a default set of track sections, content and configuration files. TSRE also creates the initial terrain tile based on the geographical area you selected.
+
+----
+C:/OPENRAILS - ROOT /GLOBAL /SHAPES
+                            /TEXTURES
+                    /ROUTES
+                    /SOUND
+                    /TRAINS /CONSISTS
+                            /TRAINSET
+----
+
+
+=== Tsection.dat files
+
+There are two `Tsection.dat` files: The `GLOBAL/Tsection.datfile` is a regularly extended database of all common road and track sections and provides the Open Rails Train Simulator with invisible vectors along which trains and cars travel. The route's Local <route>/Tsection.datfile
+is for storing data about dynamic tracks used in this route only. Note that track and road objects are stored in the `GLOBAL/Shapes` folder while their textures(.ace or .dds) are stored in your your route’s local `Textures`` folder.
+
+
+=== Scenery Objects
+
+The scenery objects for your route are stored in the `<route>/Shapes` folder. These are the objects that are used to flesh out the route. The `GLOBAL/Shapes and GLOBAL/textures` folder contains default items supplied for use in all routes like rail sections so you should not place your scenery items there. 
+
+
+
+=== Laying Track with gradients
 
 ==== Tips for Placing and Rotating Tracks for Gradients
 *From Vince Cockeram*
@@ -27,7 +141,7 @@ When Elevating track, remember the 'snap' elevation settings to get a smooth gra
 
 4. The track will elevate or descend in *0.1 per-cent steps* with each key tap of kbd:[NumPad 8] or kbd:[NummPad 2].
 
-5. The *0.1 grade per-cent* is equal to *1.0 per-mille* which is equal to *0.058 degrees* (MSTS measurement) steps.
+5. The *0.1 grade per-cent* is equal to *1.0 per-mille* which is equal to *0.058 degrees* ({OR} measurement) steps.
 
 6. *All three of these gradient values are displayed on the TSRE panel, left side.* 
 
@@ -164,6 +278,13 @@ Enter -0.005 in the `X` field. This lowers the track by half the amount you rais
 
 ==== Some thoughts on Laying Track
 
+[IMPORTANT]
+----
+Rule #1 of editing track is that there must be no interactive objects on the node being edited - a node being the section of track between two red and/or blue poles. If track is edited while interactives are present, those interactives will now be corrupted.
+
+Also, Attaching two switch points (marked by red poles in editor) directly to each other will cause train crash in game and will be noted in LOG-file. Instead, we should always insert at least one track section between two switches.
+----
+
 When swapping track sections in and out it's better to set TSRE to NOT automatically add track into the database. 
 The yellow lines over the track are a graphic representation of the TDB.
 
@@ -298,7 +419,7 @@ When you select a handle it turns a lighter shade of purple and data for the spa
 
 You may move the handles either by dragging with the mouse or using the arrow keys. I am told that Selecting the "Expand" button expands the spawner to the extent of the road, but I have not tried that myself. Note that it is not recommended to have a car spawner longer than 2 km. 
 
-Note: There is no need to drag handles over long distances. Move more than a couple of tiles away from the origin of the spawner and it will stop displaying. If you lose the handles, you can lose the ability to delete it so would need to fix it in the 'w' file (which nobody wants to do). In this case you can increase tile rendering radius "tileLod" in settings.txt and wait until cars reach location of car spawner placement and you can select car spawner by selecting a car. But that's the reason why it isn't recommended.  What to keep in mind: in MSTS car spawners longer than 2 km may cause issues, in TSRE longer than 6 km. 
+Note: There is no need to drag handles over long distances. Move more than a couple of tiles away from the origin of the spawner and it will stop displaying. If you lose the handles, you can lose the ability to delete it so would need to fix it in the 'w' file (which nobody wants to do). In this case you can increase tile rendering radius "tileLod" in settings.txt and wait until cars reach location of car spawner placement and you can select car spawner by selecting a car. But that's the reason why it isn't recommended.  What to keep in mind: in {OR} car spawners longer than 2 km may cause issues, in TSRE longer than 6 km. 
 
 The values "car number" and "car speed" affect the speed and density of traffic. The car number refers to the average number of seconds between spawning a car so higher numbers mean less traffic such as for a rural road. I have found that a car number of 1 tends to produce vehicles so fast that they are sometimes bumper to bumper or worse. Note that the spawning mechanism randomizes vehicle appearance so this is just an average number.
 
@@ -309,7 +430,7 @@ If the car spawner handle refuses to cross a road joint it means you do not have
 [TIP]
 Bad road joints can be identified by a longer blue pole at the bad joint than a standard "good" joint. Anyway as you say, the car spawner will not move past it, so thats a good enough indicator something is wrong. Try to lay roads end to end rather than trying to join them up, as the precision pieces are somewhat limited when using default shapes.
 
-The cars spawned by the car spawner are defined by the "carspawn.dat" file in the root directory of your route. For MSTS there is only one car list. For Open Rails you can define multiple car lists. This is useful when you want to have different cars for different roads or lanes of a road. For example on my 6 lane freeway I have cars and trucks in the right 2 lanes but cars only in the left lane, which is common in many US Interstates and freeways. To set up multiple car lists see section 15.5 of the Open Rails Manual.
+The cars spawned by the car spawner are defined by the "carspawn.dat" file in the root directory of your route. For {OR} there is only one car list. For Open Rails you can define multiple car lists. This is useful when you want to have different cars for different roads or lanes of a road. For example on my 6 lane freeway I have cars and trucks in the right 2 lanes but cars only in the left lane, which is common in many US Interstates and freeways. To set up multiple car lists see section 15.5 of the Open Rails Manual.
 
 
 Car Spawner Speeds Table
@@ -334,3 +455,8 @@ Car Spawner Speeds Table
 |30		|108	|67.1
 |35		|126	|78.3
 |===
+
+==== Markers
+
+[TIP]
+Well, with TSRE, once You've modified a track, platform marker won't disappear immediately, but if You'll try to move it then - it will. I also have seen, it's only one end disappeared first. But anyway, the only sense of them is to see their names for copy and paste to new ones, and, as You've said - the reminder. Once You've touch them - it already will be too late, so we should care to delete them first, As Travis suggests.

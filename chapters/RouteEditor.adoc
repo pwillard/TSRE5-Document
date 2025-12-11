@@ -20,6 +20,9 @@ To start working with the Route Editor you need to:
 [WARNING]
   If you haven't done this by now, please make sure that you are running any instances of MSTS outside of system managed folders like `c:\program files(x86)`.  This means that you didn't accept the default folder options when installing MSTS from CDROMS.  It is recommended that a root directory for MSTS be used, like `C:\MSTS`.  This installation location would be one of your possible `gameRoot` locations.
 
+[TIP]
+TSRE is much more stable than the MSTS route editor: you can place many more objects on the tile and do some things , which were previously impossible. It's not perfect though - so it's probably a good idea to back up your work from time to time.
+
 
 === Overview
 
@@ -130,18 +133,20 @@ image::images/rec1.png[]
 ==== Menu
 
 `Route->Save`:: Save changes.
-`Route->Create Paths`:: Delete all existing paths and create new simple paths for each track end node. You can use it to test route in OR without manually creating paths. If route has custom paths - make backup first!
-`Route->Edit Route settings`:: edit route settings (TRK file) in new window.
+`Route->Create Debug Paths`:: Delete all existing paths and create new simple paths for each track end node. You can use it to test route in OR without manually creating paths. If route has custom paths - make backup first!
+`Route->Edit Route settings`:: Edit route settings (TRK file) in new window.
 `Route->Exit`:: Close the route editor.
 
-`Edit->Copy`:: copy selected object kbd:[CTRL+C].
-`Edit->Paste`:: paste selected object kbd:[CTRL+V].
+`Edit->Undo`:: Undo last action kbd:[CTRL+Z].
+`Edit->Copy`:: Copy selected object kbd:[CTRL+C].
+`Edit->Paste`:: Paste selected object kbd:[CTRL+V].
+`Edit->Select Tool`:: Select oblect kbd:[E].
 
 `View`:: show/hide route objects.
 
 `Tools->Properties`:: show/hide properties tab.
 `Tools->NaviWindow`:: show/hide navigation window.
-`Tools->`kbd:[F1] `- Tools->`kbd:[F12]:: choose a tool-set to work with.
+`Tools->`kbd:[F1] `- Tools->`kbd:[F12]:: Choose a tool-set to work with.
 
 `Help->About`:: show app info.
 
@@ -173,11 +178,19 @@ image::images/rec4.png[]
 
 ===== Navigating Keys
 
-kbd:[AWSD] (and *Arrows* if `UseNumPad=False in 'settings.txt'`)::  Move left, right, front, back.
+General Movement: 
 
-* Min Speed is keyboard arrow keys + kbd:[SHIFT] key.
-* Std Speed is keyboard arrow keys.
-* Max Speed is keyboard arrow keys + kbd:[CTRL] key.
+kbd:[AWSD] (and *Arrows* if `UseNumPad=False in 'settings.txt'`)::  Left, Right, Foreward, Backward.
+
+* Move up (vertical) kbd:[W-Spacebar]
+* Move down (vertical) kbd:[S-Spacebar].
+
+Movement Speed:
+
+* Std Speed is keyboard arrow keys only.
+* Min Speed is keyboard arrow keys + kbd:[Ctrl] key.
+* Max Speed is keyboard arrow keys + kbd:[Shift] key.
+
 
 kbd:[.] (Period Key):: Top Down View. Press to toggle on/off
 
@@ -299,6 +312,9 @@ kbd:[Mouse Scroll Wheel]::  Raise/Lower object after placing
 
 [TIP]
 In the TSRE `Tools` menu of the Objects window is a built-in ruler function.  When measuring mileposts in Real-World routes, use the Geo length rather than game length. It's remarkably fast to measure out 1600 meters, place a milepost, and move on to the next.  Make sure you delete the ruler objects when you're done. {OR} won't necessarily choke on them, but they will create errors in the log file if left
+
+[TIP]
+Translate operation should be performed first, before Rotate, as a Translate really drops shape's position down again, as it was placed originally.
 
 <<<
 ==== Track Keys
@@ -447,6 +463,34 @@ Vince Says:
 When adding track I'd suggest keeping `auto-add to TDB` off. Press combo kbd:[Ctrl+Q] to toggle. _Sound familiar?_
 
 
+==== Dynamic Track Tips
+
+* TIPS From Jerry Sullivan * 
+
+While it is probably preferrable to not to use Dynamic Track, it is not difficult to set up in TSRE. 
+
+* First you need to know the degree of curve which will be indicated on a track chart if you are trying to duplicate the real world. 
+* Then you need to know the gradient. 
+
+{DT} in TSRE is better than in MSTS in one respect. You can make it bend either direction, left or right, by using, or not using, a minus sign "-" in front of the angle. 
+
+* When you first select {DT} the first tangent is already there, set at 10 Meters. 
+* Now select the first curve (I would recommend only using one curve per piece of {DT}) and you will see a minimal radius & curve. 
+* On the track chart the curve was labeled either 4.25 degrees, or 4 degree 15 minutes. 
+* Using a constant that surveyors use up to about 10 degree cuves divide 1746 meters/4.25 degree = 410.8 meters radius. (or you could divide 1746 by the radius to get degrees).. 
+* Now make the {DT} bend one way or the other by inserting the minus sign. No plus sign needed. Now select the 2nd tangent & it will appear with a minimum length. 
+* Now adjust radius, degrees in the curve, and the tangent length to get a fit. Tricky at first by easy once you get the hang of it. 
+
+[IMAGE]
+image::images/gulf_switch_area.jpg[]
+
+[TIP] 
+Using the mouse is nearly useless. Use the keyboard to enter the adjustments because you may get down to a hundreth of a meter or degree and the mouse key does not go that low. Sometiimes there is no other way. If you have 3 curved tracks and the only value that is close is 90 meters, then you can lay a 90 meter radius curve but then have to use dynamic track to get 95 & 100, or 90 & 85 meter curves. 
+
+[NOTE]
+Jerry Says: "I don't like it, I minimize use of it, but sometimes you have no choice.""
+
+Attached is a image at the north (top) end of the tracks that go south from Beckley, WV area down Gulf creek. There are tunnels, at one point 4 layers of track, and Gulf Switch is actually a switchback. Two railroads are here. The lower one is the formere C&O and other is the former Virginian, then NS, and now a shortline. The C&O part was abandoned about 1995 or so. And yes, there are some {DT} pieces in this spaghetti bowl. Click image for larger version
 
 
 ==== Copying Tracks
@@ -791,7 +835,7 @@ If you want to remove it, unregister the library using the command:
 Once the removal step is performed, you can then delete the files.
 
 [NOTE] 
-This thumbnail library is only for 64 bit only
+This thumbnail library is only for 64 bit systems only
 
 
 
@@ -914,7 +958,7 @@ You can use `Pick` button and pick a texture from the existing small tile instea
   You can't lock small tile to avoid painting it by mistake.
 
 [NOTE]
-  Remember that painted textures need a lot of memory and disk space. Use them in important locations only. 
+Remember that painted textures need a lot of memory and disk space. Use them in important locations only. For ground texture don`t forget to eventually compress with DXT1. It won't lose quality and will save space
 
 [IMAGE]
 image::images/rete6.png[]
@@ -1036,6 +1080,11 @@ Current version of Route Editor supports three different types of marker files f
 
 [NOTE]
   The original MKR files are the legacy method of placement references used with the MSTS Route Editor.  This is by far the most common method used when creating MSTS routes, however, with TSRE5  everyone should use *KML* or *GPX* methods instead.
+
+[TIP]
+Another handy tool when routebuilding is GPS visualizer: https://www.gpsvisualizer.com/
+
+
 
 
 ===== How to create KML/GPX format files
@@ -1161,9 +1210,32 @@ https://search.earthdata.nasa.gov/search/granules/collection-details?p=C10000002
 
 
 
+
+
 <<<
 
 ==== Using Satellite Images
+
+You can use either Google or MapBox. The formats are slightly different, but work just the same.
+
+There are some differences with GOKU's original releases and the more current community 8.xxx releases related to the ZOOM settings that come after `{LAT} and {LON}` where you need to subtract 1 from the ZOOM value.
+
+For example:
+
+[source,bash]
+----
+// TSRE 8.00x+
+imageMapsUrl = https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/{lon},{lat},{zoom}/{res}x{res}?access_token=MapAPIKey = yourMapBoxKeyValue
+//
+// Important!!! MapBox currently needs this setting: imageMapsZoomOffset = -1
+imageMapsZoomOffset = -1​
+
+// TRSE 7.00x
+
+imageMapsUrl = https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/{lon},{lat},16/{res}x{res}?access_token=yourMapBoxKeyValue
+----
+
+
 
 ===== Google Maps
 
@@ -1192,8 +1264,12 @@ http://www.Mapbox.com
 2.  Once you obtain your API KEY, open the *TSRE* `settings.txt` file and alter *imageMapsURL* line with the following code:
 
 ----
-imageMapsUrl = http://api.mapbox.com/v4/mapbox.satellite/{lon},{lat},{zoom}/{res}x{res}.png?access_token=INSERT_YOUR_API_KEY_HERE
+imageMapsUrl = https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/{lon},{lat},17/{res}x{res}?access_token=INSERT_YOUR_API_TOKEN_HERE
 ----
+
+[NOTE]
+Token format has changed in Mapbox API.  You need to insert your API key in place of `INSERT_YOUR_API_TOKEN_HERE`. The new token format is longer.
+
 
 Example:
 
@@ -1202,6 +1278,27 @@ image::images/mapbox1.jpg[]
 
 [WARNING]
 You might find that using these map projections for Japan are problematic,however for Europe and America it works well...
+
+Another Example showing zoom options:
+
+The zoom has changed and must be entered manually.
+
+ Standard Terrain
+ Raster Image Z18 =17
+ Raster Image Z17 =16
+ Distance Terrain
+ Raster Image Z18 =13
+ Raster Image Z17 =12
+ Example: Standard Terrain Raster Image Z18 =17
+
+Code:
+
+`imageMapsUrl = https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/{lon},{lat},17/{res}x{res}?access_token=+YOUR_MAPBOX_ACCESS_TOKEN`
+
+
+[NOTE]
+Regarding: "{lon},{lat},17/{res}x{res}"
+You don't need to add the lon or lat coordinates in place, or the res size. This is done automatically by mapbox. From there you can choose Raster17 or Raster18 with 17 being more common, and it should load up fine.
 
 <<<
 
