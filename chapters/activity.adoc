@@ -366,6 +366,107 @@ Step 2:: Press Disable button under failed signal list.
 Removing speed zone:: Select signal on failed signals list and press Delete button under failed signal list.
 
 
+=== Activity Creation Tutorial
+
+==== Step 1: Prepare Consists
+
+Use the Consist Editor to build all train sets you need.
+
+Save each consist with clear names (for example: PlayerFreight.con, AIExpress.con).
+
+==== Step 2: Prepare Paths
+
+In Track Viewer, lay out paths for each service (player and AI).
+
+Save paths with descriptive names (for example: PlayerMainline.pat, AI_Siding.pat).
+
+==== Step 3: Create the Player Service
+
+. Open TSRE Activity Editor.
+. Create a new activity (menu:File[New Activity]).
+. Add a Player Service:
+
+Assign the player consist.
+
+Select the player path.
+
+Set start time and starting location.
+
+Define performance parameters (speed limits, timetable if needed).
+
+==== Step 4: Add AI Services
+
+. Add additional services for AI trains.
+. Assign each AI service a consist and path.
+. Set start times so they interact with the player train.
+. Adjust priorities (express vs. local) to control dispatcher behavior.
+
+==== Step 5: Define Events & Instructions
+
+Add station stops or pickup/drop-off events for the player service.
+
+Use instructions such as "wait for 2 minutes" or "pickup cars".
+
+Test timing so AI trains cross paths realistically.
+
+==== Step 6: Create a Traffic File
+
+Traffic files (.trf) define background traffic patterns for your activity.
+Use the following procedure in TSRE:
+
+. In TSRE, open the Activity Editor and select Traffic.
+. Create a new traffic file (menu:File[New Traffic]).
+. Add AI services into the traffic file:
+
+Each service requires a consist, path, and start time.
+
+You may reuse paths and consists already created.
+. Configure service details:
+
+Priority: determines dispatcher handling (express, passenger, freight).
+
+Start time: controls when the AI train enters the activity.
+
+Repeat interval: optional, for recurring services.
+. Save the traffic file with a clear name (for example: LocalTraffic.trf).
+. Link the traffic file to your activity:
+
+In the Activity Editor, assign the traffic file to the activity.
+
+This ensures AI trains spawn according to the traffic file.
+
+==== Step 7: Test & Refine
+
+Run the activity in Open Rails.
+
+Watch for conflicts (AI collisions, missed meets).
+
+Adjust start times, paths, or priorities in TSRE until the activity flows correctly.
+
+==== Quick Checklist
+
+ Build consists in Consist Editor
+
+ Create paths in Track Viewer
+
+ Create player service in TSRE
+
+ Add AI services in TSRE
+
+ Define events and instructions
+
+ Build traffic file (.trf) in TSRE
+
+ Link traffic file to activity
+
+ Test in Open Rails
+
+[NOTE]
+Any time you edit the Traffic File, reselect the Traffic File in the top menu before saving.
+This is a known TSRE quirk.
+
+
+
 
 
 
