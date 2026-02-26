@@ -247,6 +247,10 @@ Select `siding` and click `Link Selected`.
 [IMAGE]
 image::images/events5.png[]
 
+[IMAGE]
+image::iamges/linkselected.png[]
+You need to click on the orange arrow that looks like this.
+
 Step 6:: Pick Up Passengers
 
 Select station stop from player service station stops list.
