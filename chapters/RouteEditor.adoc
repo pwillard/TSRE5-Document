@@ -36,7 +36,7 @@ image::images/re1.png[]
 If you have properly set up the `gameRoot` settings then the {RE} is ready to use.  
 
 
-<<<<
+<<<
 [#begin]
 === Starting a Session
 
@@ -69,7 +69,7 @@ image::images/lr3.png[]
 
 
 
-<<<<
+<<<
 [#newroute]
 === Creating A New Route
 
@@ -119,7 +119,7 @@ image::images/ren4.png[]
 
 You can now begin editing your new route.
 
-<<<<
+<<<
 [#mainwindow]
 === Getting Around in the Route Editor
 
@@ -383,7 +383,7 @@ c. You can adjust object rotation by pressing kbd:[R] and using kbd:[4,6,8,2] ke
 d. You can press kbd:[Ctrl] to change `R` & `T` step rate.
 
 [NOTE]
- {DOT} Depending on your keyboard layout, you can use other keys. See: <<editor>>
+ {dot} Depending on your keyboard layout, you can use other keys. See: <<editor>>
 
 [TIP] 
   When you rotate an object by use of the Copy/Paste or Transform button, be sure to re-select the object (even though it appears to be selected (blue outline)) by using the kbd:[E] key or the `Select` Button. This is to allow you to regain fine movement control when the `Ctrl` Key is pressed and held with the movement keys.
@@ -402,7 +402,7 @@ There are multiple options for object duplication
 * Select the object and press kbd:[Delete].
 
 
-<<<<
+<<<
 
 ==== Working with Track sections
 
@@ -539,7 +539,7 @@ For use when you need to align ANYTHING to track.
 * Any object placed within the distance specified in the *Snappable max radius field*, will align to the track.
 * Set the size radius smaller to align objects in crowded areas.
 
-{DOT} _This is set in the_ `Target Field Default` _setting is Tracks_
+{dot} _This is set in the_ `Target Field Default` _setting is Tracks_
 
 [TIP]
   This sure makes placing track-side equipment, bridges, platforms, gantries easy, even on curve!. Placed items will follow (align to) the track grade. If the alignment is off by 90 degrees,  use the `Rot Y 90` button. The correct gradient will follow the rotation! 
@@ -549,7 +549,7 @@ For use when you need to align ANYTHING to track.
 
 ===== Modifying Track After Signals are Present
 
-[Warning]
+[WARNING]
 Generally, you just don't want to do this as it si fraught with danger.
 
 As you can see in the picture below, the gantry sites empty, however, in MSTS activity Editor there *are* signals here. You can also see them  in the track monitor.
@@ -669,7 +669,7 @@ Step 1:: Place your first interactive. Start with the gate shape. Use the NumPad
 [IMAGE]
 image::images/Xing_1.jpg[]
 
-<<<<
+<<<
 Step 2:: Place the second interactive - in this case, the flashers. Use the same method for moving the object as the first one. Once the flasher is in place, if there are no more `interactives` to be placed, you may move and rotate the camera freely. Another progress shot:
 
 [IMAGE]
@@ -792,12 +792,13 @@ These guides will work on any switch, not just double slips.
 
 To add sounds in TSRE,  go to "Object View" then in the right hand window under "Other" you will find "Sound Regions". 
 
-Additionally, you can review the {or} Manual in section 13.3. This can automatically add sounds to curves and points. There is a link to download a set of sound files.  
+Additionally, you can review the {OR} Manual in section 13.3. This can automatically add sounds to curves and points. There is a link to download a set of sound files.  
 
 Note: It was noticed that one of the sounds called for was not in the download. If you copy one of the files to be the missing file that was referenced, you can get it working. 
 
 <<<
 
+[#Editing_terrain]
 === Editing Terrain
 
 [TIP]
@@ -1345,7 +1346,7 @@ For more information, refer to the *HGT terrain data import* section of this doc
 At this point, the preparations are complete and we can start `TSRE5` and open the route in which we want to add the distant mountains. Once it is loaded in the main window, choose `Settings -> Terrain Editing: -> Distant Terrain` from the top menu. 
 
 [IMAGE]
-image::images/DistantMountTSre5.png[]
+image::images/DistantMountTSRE5.png[]
 
 [TIP]
 To return to normal terrain editing so you once again see the terrain of the route, simply select the item `Settings -> Terrain Editing: -> Detailed Terrain`. 
@@ -1353,7 +1354,7 @@ To return to normal terrain editing so you once again see the terrain of the rou
 Once the `Distant Terrain` option is selected, the standard terrain will disappear and TSRE will display the current Distant Mountain settings, and these don't exist yet.  
 
 [IMAGE]
-image::images/DistantMountTSre5-2.png[]
+image::images/DistantMountTSRE5-2.png[]
 
 The right side `Tools` options menu normally contains the objects we must select.  We need the `Geo` window tools options and 
 we reach it by either opening the menu at the top under `Tools` or by pressing the kbd:[F3] key.
@@ -1362,7 +1363,7 @@ To create a new tile, press the kbd:[B] key and a window will open asking whethe
 new tile. Answer: "Yes". 
 
 [IMAGE]
-image::images/DistantMountTSre5-3.png[]
+image::images/DistantMountTSRE5-3.png[]
 
 It will say that the tile exists and if we want to overwrite it, again Answer: "YES".
 
@@ -1371,7 +1372,7 @@ _next section of text needs some clarification_
 The new tile just created is much larger than those of the normal terrain (which have the side of 2 km) and if, as in the figure below, we are close to the edge of the tile, once you have finished fixing this, it is sufficient to move to the area white and repeat the creation procedure from button B onwards. 
 
 [IMAGE]
-image::images/DistantMountTSre5-4.png[]
+image::images/DistantMountTSRE5-4.png[]
 
 In the `Geo` window, which we opened by pressing kbd:[F3], we must now press the `Load Height` button and 
 with the left mouse button click on a portion of the created tile to select it. 
@@ -1380,15 +1381,14 @@ A new black window opens, press the big `Load` button at the top and an image of
 reliefs of the area will appear. 
 
 [IMAGE]
-image::images/DistantMountTSre5-5.png[]
+image::images/DistantMountTSRE5-5.png[]
 
 If this does not happen, check that you have correctly entered the path to the `geodata` folder and that the `hgt` file covering that part of the territory is present. 
 Once this is done you can close the window and the new tile will show the view of the area. 
 
 [IMAGE]
-image::images/DistantMountTSre5-6.png[]
+image::images/DistantMountTSRE5-6.png[]
 
-[]
 Before leaving the editor, remember to save your work. 
 
 

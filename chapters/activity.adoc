@@ -147,12 +147,12 @@ Editing Timetable should be done after player service and traffic is selected. S
 Click `Open Timetable Editor`.
 
 [IMAGE]
-image::images/timetable3.png[]
+image::images/timetable3.PNG[]
 
 A new window will appear:
 
 [IMAGE]
-image::images/timetable1.png[]
+image::images/timetable1.PNG[]
 
 Traffic trains can run with default timetable so there is no need for editing.
 

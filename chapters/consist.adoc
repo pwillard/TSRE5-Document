@@ -41,7 +41,7 @@ All TSRE executables are *numbered* releases, so if you have a newer or older ve
 [IMAGE]
 image::images/Consistexit.png[]
 
-<<<< 
+<<<
 
 ==== Starting a new Consist or open an existing one:
 

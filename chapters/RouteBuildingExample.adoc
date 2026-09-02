@@ -33,16 +33,22 @@ To create a complete {OR} route, the items included would be:
 Constructing a thorough itinerary from the bottom up is a complicated task, even for a small route. It is essential to plan such a route systematically. This guide is designed to meet this requirement. 
 
 [NOTE]
-(Author's Notes) I was not informed at the beginning of my route-building journey about the amount of research and knowledge that would be needed to create a high-quality route. For example, I was unaware of the resources such as track profiles, Sanborn or topo maps, and hundreds of photographs that I would need to be familiar with.
+====
+(Author's Notes) I was not informed at the beginning of my route-building journey about the amount of research and knowledge that would be needed to create a high-quality route. For example, I was unaware of the resources such as track profiles, Sanborn or topo maps, and hundreds of photographs that I would need to be familiar with.  This is a warning to anyone who is considering building a route.  It is not a simple task, and it requires a lot of research and knowledge to do it well.  I have learned that the more you know about the area you are modeling, the better your route will be.  I have also learned that it is important to be patient and take your time.  Rushing through the process will only lead to mistakes and frustration.  Take your time, do your research, and enjoy the process of creating a route that you can be proud of.
+
 
 Building custom models and researching the route are both very laborious tasks, taking up at least 90% of the total effort. Installing the tracks and roads is minimal in comparison, provided you understand where to put them. Static models, although requiring knowledge of modeling, are even more straightforward. Although custom models require a significant amount of work, this is mostly due to the need for correct pictures to create the art that covers them. Making Terrtex images, however, is much harder; it needs to be a consistent tile so that there is no visible pattern, and there is currently no online resource to obtain samples of Terrtex files.
+====
 
 [TIP]
-Some available tools do make creating seamless tiles somewhat easier.  These tools include Gimp, Krita, Affinity Designer and Photoshop.
+Some available tools do make creating seamless tiles somewhat easier.  These tools include Gimp, Krita, Affinity Studio and Photoshop.
+
+[TIP]
+Additionally, a number of new and modern tools are available or are being developed for content creators by people like Scott, Eric and Piotr (GOKU) at the http://www.trainsim.com website.  These tools are designed to make the creation of content easier and more efficient.  They are worth checking out if you are interested in creating your own content for {OR}.   SCOLIDEX,  Open Rails Terrain Builder, which now has 4 Meter tile support and can do a number of things to improve the quality of your route.  Additionally, Scott is working with others on a forked version of TSRE called GenX which is designed to be more user-friendly and efficient focusing mostly on terrain.  These tools are still in development, but they show great promise for the future of content creation for {OR}.
 
 === Route Building Tips
 
-The best way to start is t build a small route.  With a maximum of 5 to 10 miles in size, you won't get overwhelmed when trying to figure out the route building tools.  Make something you can get operational in a short time. You will sometimes encounter errors or deign problems that would force you to backup several steps, and that is much less traumatic with a small route.
+The best way to start is t build a small route.  With a maximum of 5 to 10 miles in size, you won't get overwhelmed when trying to figure out the route building tools.  Make something you can get operational in a short time. You will sometimes encounter errors or deign problems that would force you to backup several steps, and that is much less traumatic with a small route.  The fact that it can acquire terrain data for you  from the Internet.
 
 
 When laying tracks, the process typically involves attaching one track section at a time to the previous one. Start with the first track section and build out from there, either in one or two directions or even more if you include switches. Track laying should be done in a systematic fashion, one small section at a time. As for adding other elements, it's not as strict, but it's important to follow a certain sequence to avoid potential problems down the line.
@@ -86,7 +92,24 @@ Some conversions:
  • 1 mile = 1609.34 m
 
 [TIP]
-You can make a "marker" file for guidance in laying track (this will place markers on the terrain, so you can lay your track from marker to marker). But this requires that you know the GPS coordinates of each marker: these are not so easy to generate, especially for free-style routes. 
+You can make a "marker" file for guidance in laying track (this will place markers on the terrain, so you can lay your track from marker to marker). But this requires that you know the GPS coordinates of each marker: these are not so easy to generate, especially for free-style routes.   Methods for generating GPS coordinates include using Google Earth, or using a GPS device to record the coordinates of each marker.  You can also use a combination of both methods to generate the coordinates.  Once you have the coordinates, you can create a marker file in the route's REF file and place the markers on the terrain.  This will allow you to lay your track from marker to marker, making it easier to follow your planned route.
+
+In your route, a marker file would look like this:
+
+[source,text]
+----
+SIMISA@@@@@@@@@@JINX0I0t______
+Marker ( -82.75562122291988 33.720944409809505 "10" 2 )
+Marker ( -82.79515255787757 33.556065046797634 "2" 2 )
+Marker ( -82.7976003531139 33.574105282445245 "2" 2 )
+Marker ( -82.79652190435222 33.59214551809285 "3" 2 )
+Marker ( -82.79023621203216 33.61102483446826 "4" 2 )
+Marker ( -82.77999878744863 33.629484610479786 "5-halfway" 2 )
+Marker ( -82.77025916424249 33.647944386491275 "6" 2 )
+Marker ( -82.76757077820339 33.666404162502765 "7" 2 )
+Marker ( -82.75882911804926 33.68486393851429 "8" 2 )
+Marker ( -82.7536962613324 33.7029041741619 "9" 2 )
+----
 
 [NOTE]
 Peter at "Coals to Newcastle" website has also created a resource page dedicated to a "getting started with route building" tutorial and is well worth the visit.
