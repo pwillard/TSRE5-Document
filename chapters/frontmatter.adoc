@@ -47,9 +47,20 @@ The TSRE5 project is now open source and can be found at https://github.com/Goku
 
 Some programmers have forked the project and have created their own versions of the program, including a 64 Bit version.  These versions are not supported by the original author of TSRE5.  The original author of TSRE5 is not responsible for any issues that may arise from using these versions.
 
-Versions older than 0.8 are considered stable originals of the program.  Versions 0.8 and newer are considered forked beta versions not created by the original author.  Compiled versions of these newer development versions can be downloaded from http://www.trainsim.com file library.
+Versions older than 0.8 are considered stable originals of the program.  Versions 0.8 and newer are considered forked beta versions not created by the original author.  Compiled versions of these newer development versions can be downloaded from http://www.trainsim.com file library.  This version is getting some extra features and bug fixes that are not in the original TSRE5.
 
 Instructions on how to compile your own version of TSRE5 can also be found at http://www.trainsim.com forum. 
+
+=== TSRE-GenX
+
+TSRE-GenX is a TSRE5 fork by Scott Brunner. The source repository is available at https://github.com/scottb613/TSRE5-SCOmod.
+
+The fork is focused on improving the route-building workflow, especially terrain and texture work. One documented feature is the dedicated *F3 Terrain Texture* panel, which expands TERRTEX painting with safer texture loading, clearer previews, reusable brush presets, arbitrary texture rotation, and tile-level Auto Paint for tracks, roads, and shorelines.
+
+
+
+[NOTE]
+Because TSRE-GenX is a fork, some menus and behavior may differ from the original TSRE5 builds described elsewhere in this manual. When following TSRE-GenX-specific instructions, verify that you are running Scott Brunner's TSRE5-SCOmod/GenX build.
 
 
 

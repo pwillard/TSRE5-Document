@@ -1,0 +1,449 @@
+= Open Rails Sound Sources
+
+This draft summarizes Open Rails sound source behavior from the OpenRails reference repository. It is intended as source material for TSRE5/Open Rails route and content documentation.
+
+== Overview
+
+Open Rails sound playback is controlled mainly by `.sms` files, but an `.sms` file is only one part of the system. A sound also needs a source: a world position, a track region, a train vehicle, a cab or passenger view, an activity event, or a route feature such as a crossing, signal, pickup, container crane, or turntable.
+
+The source determines where and when the sound is considered for playback. The `.sms` file determines which `.wav` files play and how they respond to triggers, distance, speed, weather, season, time of day, and simulator state.
+
+== Major Sound Source Categories
+
+World-positioned sound sources::
+Fixed sounds placed in a route world sound file.
+
+Sound regions::
+Track-associated sound areas, commonly used for track sounds or region-specific ambience.
+
+Rolling-stock sounds::
+Sounds attached to locomotives, wagons, tenders, and passenger cars.
+
+Cab and interior sounds::
+Sounds heard from cab or passenger views, including controls, alarms, cab radio, cab light, wipers, train control system events, and similar equipment.
+
+Route and global sounds::
+Weather, crossings, signals, turntables, transfertables, automatic curve/switch sounds, and track-region sounds.
+
+Activity and event sounds::
+Sounds associated with activity events or scripted behavior.
+
+Pickup and loader sounds::
+Fuel towers, animated loaders/unloaders, and container cranes.
+
+== World Sound Sources
+
+World sound sources are fixed sound emitters defined in a world sound file. Open Rails recognizes this structure:
+
+[source]
+----
+TR_WorldSoundFile (
+    SoundSource (
+        FileName ( "soundfile.sms" )
+        Position ( x y z )
+    )
+)
+----
+
+Fields:
+
+SoundSource::
+Defines a fixed source of sound in the world.
+
+FileName::
+The `.sms` file played by the source.
+
+Position::
+The source position within the world tile.
+
+World-positioned sound sources are suitable for localized ambient or scenery sounds: factories, water, machinery, birds, station ambience, or other sounds that come from a fixed point.
+
+== Sound Regions
+
+World sound files can also define sound regions:
+
+[source]
+----
+TR_WorldSoundFile (
+    SoundRegion (
+        SoundRegionTrackType ( n )
+        SoundRegionRoty ( angle )
+        TrItemId ( ... )
+    )
+)
+----
+
+Fields:
+
+SoundRegionTrackType::
+The track sound region/type used by the region.
+
+SoundRegionRoty::
+Rotation/orientation value for the region.
+
+TrItemId::
+Links the sound region to track items.
+
+Sound regions differ from fixed sound sources because they are associated with track features or track regions rather than only a single position.
+
+== SMS File Structure
+
+Open Rails parses `.sms` files as a hierarchy:
+
+[source]
+----
+Tr_SMS
+    ScalabiltyGroup
+        Activation
+        Deactivation
+        Streams
+            Stream
+                Triggers
+                VolumeCurve
+                FrequencyCurve
+                Volume
+                ORTSTimeOfDay
+                ORTSSeason
+                ORTSWeather
+----
+
+The historical spelling `ScalabiltyGroup` is used by MSTS/Open Rails files.
+
+A `ScalabiltyGroup` may include:
+
+* `Activation`
+* `Deactivation`
+* `Streams`
+* `Volume`
+* `Stereo`
+* `Ignore3D`
+
+Open Rails differs from MSTS in one important way: for AI trains, Open Rails uses the same `ScalabiltyGroup` as player trains, rather than forcing AI trains to group 0. This allows AI trains to use more of the available trigger logic.
+
+== Activation and Deactivation
+
+Activation/deactivation blocks may include:
+
+* `ExternalCam`
+* `CabCam`
+* `PassengerCam`
+* `Distance`
+* `TrackType`
+
+In Open Rails, camera activation is handled more implicitly than in MSTS. In general:
+
+* Cab or passenger views hear the relevant inside sounds.
+* External sounds are also heard from inside views, except for external sounds belonging to the trainset currently hosting the camera.
+* External sounds heard from inside are attenuated.
+* External views hear external sounds.
+* Sounds must still be within their activation distance.
+
+A special cab-only use is possible by calling an `.sms` from a `.wag` file, using `Activation ( CabCam )`, and placing the wagon in a suitable consist context. This can be used for things such as radio messages.
+
+== Streams
+
+Each `Stream` defines one playable sound stream. Streams can have:
+
+* `Priority`
+* `Triggers`
+* `Volume`
+* `VolumeCurve`
+* `FrequencyCurve`
+* `ORTSTimeOfDay`
+* `ORTSSeason`
+* `ORTSWeather`
+
+A stream normally becomes audible through one or more triggers. Curves can then adjust volume or pitch while it is playing.
+
+== Trigger Types
+
+Open Rails recognizes these trigger families in `.sms` streams:
+
+Initial_Trigger::
+Runs when the stream/source initializes.
+
+Discrete_Trigger::
+Runs when a numbered simulator event occurs, such as horn on/off, bell on/off, doors, pantographs, brakes, cab controls, train control system events, and other simulator actions.
+
+Variable_Trigger::
+Runs when a simulator variable crosses a threshold.
+
+Random_Trigger::
+Runs at random intervals within configured delay limits.
+
+Dist_Travelled_Trigger::
+Runs based on distance traveled.
+
+Joint_*Axle_Trigger::
+Runs when vehicles pass track joints. Variants exist for 2, 3, 4, 6, and 8 axle stock.
+
+Switch_*Axle_Trigger::
+Runs when vehicles pass switches. Variants exist for 2, 3, 4, 6, and 8 axle stock.
+
+Xover_*Axle_Trigger::
+Runs when vehicles pass crossovers. Variants exist for 2, 3, 4, 6, and 8 axle stock.
+
+== Sound Commands
+
+Triggers can issue these sound commands:
+
+PlayOneShot::
+Plays one selected `.wav` file once.
+
+StartLoop::
+Starts a continuously looping sound.
+
+StartLoopRelease::
+Starts a loop with release behavior using cue points.
+
+ReleaseLoopRelease::
+Releases a loop and lets it play to the end.
+
+ReleaseLoopReleaseWithJump::
+Releases a loop by jumping through cue points. This is useful for sounds such as horns, but is more CPU-intensive.
+
+DisableTrigger::
+Disables another trigger.
+
+EnableTrigger::
+Enables another trigger.
+
+SetStreamVolume::
+Changes stream volume.
+
+`PlayOneShot`, `StartLoop`, and `StartLoopRelease` can list one or more files and use either sequential or random selection.
+
+== Volume and Frequency Curves
+
+A stream may include volume and frequency curves. Supported control types include:
+
+* `DistanceControlled`
+* `SpeedControlled`
+* `Variable1Controlled`
+* `Variable1_2Controlled`
+* `Variable1_3Controlled`
+* `Variable1_4Controlled`
+* `Variable2Controlled`
+* `Variable2BoosterControlled`
+* `Variable3Controlled`
+* `BrakeCylControlled`
+* `CurveForceControlled`
+* `AngleofAttackControlled`
+* `CarFrictionControlled`
+* `WheelRPMControlled`
+* `CarDistanceTrackControlled`
+* `CarTunnelDistanceControlled`
+* `BackPressureControlled`
+
+Common uses:
+
+DistanceControlled::
+Fade a sound by distance from the source.
+
+SpeedControlled::
+Increase or reduce volume/pitch with vehicle speed.
+
+Variable1Controlled::
+Usually throttle. For steam locomotives, variants allow multiple steam engines.
+
+Variable2Controlled::
+Diesel RPM, electric tractive force, or steam cylinder pressure.
+
+Variable2BoosterControlled::
+Steam booster cylinder pressure.
+
+Variable3Controlled::
+Dynamic brake for diesel/electric, or fuel rate for steam.
+
+BrakeCylControlled::
+Brake cylinder pressure.
+
+CurveForceControlled::
+Useful for flange squeal on curves.
+
+AngleofAttackControlled::
+Useful for curve-related sounds.
+
+CarFrictionControlled::
+Varies with car friction.
+
+WheelRPMControlled::
+Wheel speed / wheel rotation effects.
+
+CarDistanceTrackControlled::
+Distance from car to camera for track sounds.
+
+CarTunnelDistanceControlled::
+Tunnel entry/exit effects.
+
+BackPressureControlled::
+Steam back-pressure effects.
+
+== Weather, Season, and Time Filters
+
+Streams can be limited by:
+
+ORTSSeason::
+Spring, Summer, Autumn, Winter.
+
+ORTSWeather::
+Clear, Snow, Rain.
+
+ORTSTimeOfDay::
+One or more time intervals.
+
+These filters allow route ambience or vehicle sounds to change with environmental conditions.
+
+== Route-Based Track Sounds
+
+Open Rails can play track sounds at the route level instead of requiring every wagon or locomotive to define its own joint, switch, and curve sounds.
+
+This is useful for:
+
+* track joints
+* switches
+* crossovers
+* curve squeal
+* tunnel effects
+* sleeper-type variation
+
+Route parameters involved include:
+
+ORTSPlayTrackSoundsBaseContinuous::
+Causes the first track-region `.sms` file in `ttype.dat` to play continuously.
+
+ORTSDistanceBetweenTrackJoints::
+Defines the spacing between simulated track joints.
+
+ORTSConcreteSleepers::
+Allows sounds to differ between wood and concrete sleepers.
+
+ORTSSwitchSMSNumber::
+Identifies the `ttype.dat` entry for automatic switch sounds.
+
+ORTSCurveSMSNumber::
+Identifies the `ttype.dat` entry for automatic curve squeal.
+
+ORTSCurveSwitchSMSNumber::
+Identifies the `ttype.dat` entry for combined curve/switch sounds.
+
+Automatic switch and curve sounds reduce the need to place individual sound sources or sound regions over every switch or curve.
+
+== Container Crane Sounds
+
+Container stations are handled internally as special pickup objects. A container crane may define:
+
+[source]
+----
+ORTSCraneSound ( "ContainerCrane.sms" )
+----
+
+Lookup behavior:
+
+* First relative to the route `SOUND` folder.
+* If not found there, relative to the global Train Simulator `SOUND` folder.
+
+Container crane discrete triggers include:
+
+[cols="1,3",options="header"]
+|===
+| Trigger | Function
+
+| 1 | CraneXAxisMove
+| 2 | CraneXAxisSlowDown
+| 3 | CraneYAxisMove
+| 4 | CraneYAxisSlowDown
+| 5 | CraneZAxisMove
+| 6 | CraneZAxisSlowDown
+| 7 | CraneYAxisDown, triggered when the grabber hits the container
+|===
+
+== Turntable and Transfertable Sounds
+
+Turntables and transfertables can use a default sound file defined in the route `.trk` file:
+
+[source]
+----
+ORTSDefaultTurntableSMS ( turntable.sms )
+----
+
+Typical trigger meanings:
+
+[cols="1,3",options="header"]
+|===
+| Trigger | Function
+
+| 1 | Turntable starts turning empty
+| 2 | Turntable starts turning with train on board
+| 3 | Turntable stops
+|===
+
+== Fuel Towers, Crossings, Signals, and Weather
+
+Open Rails manages several MSTS-style route/system sound files, including:
+
+`crossing.sms`::
+Crossing sounds.
+
+`ingame.sms`::
+Control error and permission announcements.
+
+Fuel tower sounds::
+Fuel/pickup-related sounds.
+
+`signal.sms`::
+Signal sounds. Discrete trigger 1 is managed.
+
+`clear_ex.sms`, `clear_in.sms`, `rain_ex.sms`, `rain_in.sms`, `snow_ex.sms`, `snow_in.sms`::
+Weather-related external and internal sounds.
+
+== Rolling-Stock and Cab Sounds
+
+Rolling stock can use `.sms` files for:
+
+* exterior locomotive sounds
+* cab sounds
+* passenger-view sounds
+* wagon sounds
+* brake sounds
+* door sounds
+* pantograph sounds
+* power supply sounds
+* train control system sounds
+* horn, bell, sander, compressor, wipers, and other control sounds
+
+Open Rails makes many discrete triggers available in both cab and external `.sms` files, not only in cab `.sms` files.
+
+== Suggested Document Structure
+
+A fuller guide could be organized as:
+
+. Overview
+. Sound source categories
+. World sound sources
+. Sound regions
+. `.sms` structure
+. Activation/deactivation
+. Streams and triggers
+. Volume/frequency curves
+. Route-level track sounds
+. Rolling-stock sounds
+. Cab and passenger sounds
+. Special route features
+.. crossings
+.. signals
+.. weather
+.. fuel towers/pickups
+.. container cranes
+.. turntables/transfertables
+. Practical examples
+. Reference tables
+
+== Reference Source Files
+
+This draft was developed from these OpenRails reference files:
+
+* `Source/Orts.Formats.Msts/WorldSoundFile.cs`
+* `Source/Orts.Formats.Msts/SoundManagmentFile.cs`
+* `Source/Documentation/Manual/sound.rst`
+* `Source/Documentation/Manual/features-rollingstock.rst`

@@ -23,6 +23,7 @@
 :degree: °
 :mult: ×
 :RE: Route Editor
+:MSTS: Microsoft Train Simulator
 :OR: Open Rails
 :source-highlighter: rouge
 :DT: Dynamic Track
@@ -82,7 +83,8 @@ include::chapters/frontmatter.adoc[]
 :sectids!:
 :numbered!:
 include::chapters/RouteEditor.adoc[]
-
+include::chapters/PolyVegPlanterUserGuide.adoc[]
+include::chapters/WaterRulerAndWaterToolsUserGuide.adoc[]
 <<<
 
 :sectids!:

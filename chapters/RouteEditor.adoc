@@ -610,7 +610,7 @@ If you need short roads and some that would not be seen from a passing train hav
 
 So why not just eliminate the database entry for these roads and leave them as static objects?
 
-* METHOD *
+*Method*
 
 With TSRE5, select the road for which you want to eliminate it's database entry. Press the kbd:[Z] key. The blue road database line vanishes. Save now and you're done.
 
@@ -774,17 +774,174 @@ These guides will work on any switch, not just double slips.
 
 ==== Speedposts
 
+Speedposts are interactive route objects that tell the simulator where a speed limit changes. In MSTS and {OR}, the route data is stored separately from the visible sign shape, so the important part is not just placing the sign model, but making sure the speedpost is attached to the correct track vector and has the intended speed value.
+
+General workflow:
+
+1. Select the appropriate speedpost object from the object list.
+2. Place it near the track where the speed limit should begin.
+3. Check that the speedpost links to the correct track, especially near junctions, sidings, crossovers, or parallel tracks.
+4. Enter the desired speed value in the properties panel.
+5. Save the route and test the location in {OR}.
+
+[IMAGE]
+image::images/speedpost1.jpg[]
+
+[TIP]
+When placing speedposts on routes with several parallel tracks, zoom in and verify the linked track before saving. A speedpost that appears visually correct can still be linked to the wrong track vector.
+
+[NOTE]
+In recent TSRE builds, speedposts can appear in marker-style dropdowns in a similar way to sidings and platforms. This makes them easier to find later when checking a route.
+
 
 
 ==== Pickups 
+
+Pickups are route objects used for loading or unloading consumable or freight items, such as water, coal, diesel fuel, sand, grain, gravel, or similar commodities. They are defined as pickup objects in the route's `REF` file and placed in the world like other interactive objects.
+
+[NOTE]
+I'm not certain how well pickups work in {OR} yet. I have not tried using any so I have not tested them myself. If you have experience with pickups in {OR}, please share your findings. 
+
+===== Pickup Type List
+
+Open Rails supports these pickup/load types: FreightGrain, FreightCoal, FreightGravel, FreightSand, FuelWater, FuelCoal, FuelDiesel, FuelWood, FuelSand, FreightGeneral, FreightLivestock, FreightFuel, FreightMilk, SpecialMail, and Container.
+
+Note: in .wag/.eng IntakePoint entries use the keyword, e.g. FreightMilk; route/world pickup definitions often use the numeric value in PickupType, e.g. PickupType ( 13 0 ).
+
+
+At minimum, a pickup needs:
+
+* A shape file to display the pickup object.
+* A pickup type, such as coal, water, diesel fuel, or sand.
+* A placement location that the train can reach.
+* A fill or unload rate appropriate for the intended use.
+
+Example: 
+
+[source, text]
+----
+Pickup (
+Filename ( "RotaryDump.s" )
+Shadow( DYNAMIC)
+Class ( "Pickup Objects" )
+Description ( "Rotary Coal Dump" )
+PickupType ( _FUEL_COAL_ )
+)
+----
+
+Pickup type names appear in more than one form. The world file stores the type as a number, Open Rails code and wagon `IntakePoint` entries use the enum-style name, and object lists or `REF` pickup definitions commonly use an uppercase name form such as `FUELCOAL` or \_FUEL_COAL_.
+
+[cols="1,2,2,2",options="header"]
+|===
+| Number | Name | Location Name | Ref File Name format
+
+| 0 | `None` | `NONE` | \_NONE_
+| 1 | `FreightGrain` | `FREIGHTGRAIN` | \_FREIGHT_GRAIN_
+| 2 | `FreightCoal` | `FREIGHTCOAL` | \_FREIGHT_COAL_
+| 3 | `FreightGravel` | `FREIGHTGRAVEL` | \_FREIGHT_GRAVEL_
+| 4 | `FreightSand` | `FREIGHTSAND` | \_FREIGHT_SAND_
+| 5 | `FuelWater` | `FUELWATER` | \_FUEL_WATER_
+| 6 | `FuelCoal` | `FUELCOAL` | \_FUEL_COAL_
+| 7 | `FuelDiesel` | `FUELDIESEL` | \_FUEL_DIESEL_
+| 8 | `FuelWood` | `FUELWOOD` | \_FUEL_WOOD_
+| 9 | `FuelSand` | `FUELSAND` | \_FUEL_SAND_
+| 10 | `FreightGeneral` | `FREIGHTGENERAL` | \_FREIGHT_GENERAL_
+| 11 | `FreightLivestock` | `FREIGHTLIVESTOCK` | \_FREIGHT_LIVESTOCK_
+| 12 | `FreightFuel` | `FREIGHTFUEL` | \_FREIGHT_FUEL_
+| 13 | `FreightMilk` | `FREIGHTMILK` | \_FREIGHT_MILK_
+| 14 | `SpecialMail` | `SPECIALMAIL` | \_SPECIAL_MAIL_
+| 15 | `Container` | `CONTAINER` | \_CONTAINER_
+|===
+
+Location Name is the name used in the wagon or tender `IntakePoint` entry. The Ref File Name format is the name used in the route's `REF` file for the pickup object.
+
+
+For example, a `REF` file may list a pickup object as `PickupType ( \_FUEL_COAL_ )`, while the placed world object may appear as `PickupType ( 6 0 )`, and the matching wagon or tender intake point uses `FuelCoal`. Some editor object lists may display the same name without underscores, for example `FUELCOAL`.
+
+General workflow:
+
+1. Make sure the pickup object is listed in the route's `REF` file.
+2. Select the pickup from the TSRE object list.
+3. Place it beside or over the track where the train should stop.
+4. Set the pickup type and rate values in the properties panel if TSRE exposes them for the selected object.
+5. Save the route and test the pickup in {OR} by stopping at the location and using the simulator's pickup/loading command.
+
+[TIP]
+For fuel, water, coal, and sand facilities, place the visible scenery and the interactive pickup object together. The scenery makes the location obvious to the player; the pickup object provides the simulator function.
+
+[WARNING]
+Pickups should be tested in the simulator. A pickup can look correct in the editor but fail in use if the type, rate, or track placement is wrong.
 
 
 
 ==== Hazard Objects 
 
+Hazard objects are interactive objects used to create route hazards that the simulator can detect. {OR} supports MSTS-style route hazard files (`.haz`), but behavior can depend on how the route and activity use those definitions.
+
+Use hazard objects sparingly and document their purpose. A hazard that is easy to overlook in the editor can become confusing later when testing or maintaining the route.
+
+General workflow:
+
+1. Confirm that the route has the hazard definition files required by the content you are using.
+2. Select the hazard object from the TSRE object list.
+3. Place it at the intended location.
+4. Check the object's direction, radius, or other properties if TSRE exposes them.
+5. Save the route and test the hazard in {OR}.
+
+[NOTE]
+This section needs more route-specific examples. Good examples would include the exact object name, what file it writes to, and what the player should experience in {OR}.
+
+[TIP]
+Keep a written note of intentional hazards while building a route. They are easy to forget after scenery and track work moves on to another area.
+
 
 
 ==== Soundsources 
+
+Sound sources are fixed route objects that play a sound from a location in the world. They are useful for ambient route sounds such as industries, stations, crossings, water, city noise, birds, or other location-specific effects.
+
+{OR} supports MSTS-style route sound source data (`ssource.dat`) and `.sms` sound files. The sound source object provides the position; the `.sms` file controls what sound plays, how far away it can be heard, and how it behaves.
+
+General workflow:
+
+1. Make sure the required `.sms` and `.wav` files are available in the route or simulator sound folders.
+2. Select the sound source object in TSRE.
+3. Place the sound source at the location where the sound should originate.
+4. Set the sound file or sound source properties if TSRE exposes them.
+5. Save the route and test from several camera distances in {OR}.
+
+Example SSOURCE.DAT
+
+[source, text]
+----
+SIMISA@@@@@@@@@@JINX0Z1t______
+
+Sound  ( Name ( "Town - small - modern" )					FileName ( "town_s_m.sms" )	)
+Sound  ( Name ( "Town - small - older design" )				FileName ( "town_s_o.sms" )	)
+Sound  ( Name ( "Town - larger - modern" )				FileName ( "town_l_m.sms" )	)
+Sound  ( Name ( "Town - larger - older design" ) 			FileName ( "town_l_o.sms" )	)
+Sound  ( Name ( "City - small - modern" ) 				FileName ( "city_s_m.sms" )	)
+Sound  ( Name ( "City - small - older design" ) 			FileName ( "city_s_o.sms" )	)
+Sound  ( Name ( "City - larger - modern" ) 				FileName ( "city_l_m.sms" )	)
+Sound  ( Name ( "City - larger - older design" ) 			FileName ( "city_l_o.sms" )	)
+Sound  ( Name ( "Traffic - parked or at crossing - modern" ) 	FileName ( "traf_p_m.sms" )	)
+Sound  ( Name ( "Traffic - parked or at crossing - older design" )	FileName ( "traf_p_o.sms" )	)
+Sound  ( Name ( "Traffic - in motion - modern" )			FileName ( "traf_m_m.sms" )	)
+Sound  ( Name ( "Traffic - in motion - older design" ) 		FileName ( "traf_m_o.sms" )	)
+Sound  ( Name ( "Farm - small - with livestock" )			FileName ( "farm_s_a.sms" )	)
+Sound  ( Name ( "Farm - small - with machinery" ) 			FileName ( "farm_s_m.sms" )	)
+Sound  ( Name ( "Farm - large - with livestock" ) 			FileName ( "farm_l_a.sms" )	)
+Sound  ( Name ( "Farm - large - with machinery" ) 			FileName ( "farm_l_m.sms" )	)
+Sound  ( Name ( "Water - small - running (river)" ) 			FileName ( "watr_s_r.sms" )	)
+Sound  ( Name ( "Water - large - running (river)" ) 			FileName ( "watr_l_r.sms" )	)
+Sound  ( Name ( "Water - still (lake)" ) 					FileName ( "water_s.sms" )	)
+----
+
+[TIP]
+Use sound sources as local details rather than route-wide background audio. A small number of well-placed sounds is usually more convincing than many loud or overlapping sources.
+
+[WARNING]
+If a sound source does not play in {OR}, check both the route placement and the referenced `.sms`/`.wav` files. Missing or misnamed sound files may not be obvious from the route editor alone.
 
 
 
@@ -1391,6 +1548,17 @@ image::images/DistantMountTSRE5-6.png[]
 
 Before leaving the editor, remember to save your work. 
 
+== GENX Version of TSRE
+
+The GenX version is adding a number of unique features to the route building process.  One of these features is the ability to create a "polyveg" (short for "polygonal vegetation") area, which allows for more precise placement of vegetation in the route.  This is a significant improvement over the previous method of placing vegetation, which was limited to rectangular areas.  The polyveg feature allows for more natural and realistic placement of trees and other vegetation, which can greatly enhance the visual appeal of the route.
+
+So, I guess Scott has unleashed some new terminology on us:
+
+PolyVeg would define a multi-vertex polygon, giving much more precise control over exactly where vegetation appears.  This is useful for irregular shapes like forest edges, riverbanks, or coastlines. 
+
+NOTE: Scott is also a Flight-Sim developer so sometimes I think some of the FS terminology creeps into the OR world, as I have never heard anyone mention polyveg or even rectveg in the {MSTS}/{OR} world.  If its been there prior to now, its been a good secret.
+
+Additional features are improved Dynamic track handling, Improved file handling and improved memory management. The GenX version is still in development, but it shows great promise for the future of route building in {OR}.  
 
 
 

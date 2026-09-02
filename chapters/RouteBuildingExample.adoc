@@ -1,6 +1,6 @@
-== Route Building - Step By Step
+== Actually Route Building 
 
-=== Route Building 
+=== Route Building Overview
 
 Creating a railway route requires a variety of components.  These components should mostly be prepared in advance as they will be the items you will rely on to create your unique route. This list is not intended to be daunting to the route builder, rather it is meant to give an understanding of what is involved in a "complete" route, such as the 6 default {OR} routes.
 
@@ -87,32 +87,19 @@ Having a plan for your route is essential for any modeler. This is because you n
 
 Some conversions:
 
- • 1 ft = 0.3048 m
- • 1 chain (ch) = 20.1168 m
- • 1 mile = 1609.34 m
+{dot} 1 ft = 0.3048 m
+{dot} 1 chain (ch) = 20.1168 m
+{dot} 1 mile = 1609.34 m
 
 [TIP]
 You can make a "marker" file for guidance in laying track (this will place markers on the terrain, so you can lay your track from marker to marker). But this requires that you know the GPS coordinates of each marker: these are not so easy to generate, especially for free-style routes.   Methods for generating GPS coordinates include using Google Earth, or using a GPS device to record the coordinates of each marker.  You can also use a combination of both methods to generate the coordinates.  Once you have the coordinates, you can create a marker file in the route's REF file and place the markers on the terrain.  This will allow you to lay your track from marker to marker, making it easier to follow your planned route.
 
-In your route, a marker file would look like this:
 
-[source,text]
-----
-SIMISA@@@@@@@@@@JINX0I0t______
-Marker ( -82.75562122291988 33.720944409809505 "10" 2 )
-Marker ( -82.79515255787757 33.556065046797634 "2" 2 )
-Marker ( -82.7976003531139 33.574105282445245 "2" 2 )
-Marker ( -82.79652190435222 33.59214551809285 "3" 2 )
-Marker ( -82.79023621203216 33.61102483446826 "4" 2 )
-Marker ( -82.77999878744863 33.629484610479786 "5-halfway" 2 )
-Marker ( -82.77025916424249 33.647944386491275 "6" 2 )
-Marker ( -82.76757077820339 33.666404162502765 "7" 2 )
-Marker ( -82.75882911804926 33.68486393851429 "8" 2 )
-Marker ( -82.7536962613324 33.7029041741619 "9" 2 )
-----
 
 [NOTE]
 Peter at "Coals to Newcastle" website has also created a resource page dedicated to a "getting started with route building" tutorial and is well worth the visit.
+
+
 
 === Beginning a New Route
 
@@ -133,20 +120,130 @@ C:/OPENRAILS - ROOT /GLOBAL /SHAPES
                             /TRAINSET
 ----
 
+=== Maps
+
+If you are trying to follow any real-world route, it is essential to have a map of the area you are modeling.  This will help you to understand the terrain and the layout of the tracks.  You can use Google Maps or other mapping services to get a good idea of the area you are modeling.  You can also use topographical maps to get an idea of the elevation changes in the area.  It is also helpful to have a map of the area that shows the location of the tracks, stations, and other important features.  This will help you to plan your route and make sure that you are placing your tracks in the correct locations.
+
+[NOTE]
+This sometimes means that you will have an easier time if you are trying to create a more modern route versus one that is 50 to 100 years old. This is because the older routes may have been abandoned and the tracks removed, making it more difficult to find accurate information about the route.  In this case, you may have to rely on historical maps and photographs to get an idea of what the route looked like in the past.  This can be a fun challenge, but it will require more research and effort on your part.
+
+If you can locate an actual track plan from the railroad company that built the route, this will be the best source of information.  This is because the track plan will show you the exact location of the tracks, stations, and other important features.  It will also show you the elevation changes in the area, which will help you to plan your route and make sure that you are placing your tracks in the correct locations.   
+
+=== Scenery planning
+
+You will need to start making a list of scenery objects you will need to have that are not filled by the default {OR} objects.  This will include things like trees, bushes, rocks, buildings, and other objects that will help to make your route look more realistic.  You will also need to start thinking about the textures you will need to use for the terrain and the objects.  This will include things like grass, dirt, gravel, and other textures that will help to make your route look more realistic.  You will also need to start thinking about the lighting and weather effects you will need to use to make your route look more realistic.  This will include things like fog, rain, snow, and other effects that will help to make your route look more realistic.
+
+You will also need to consider Homes, Businesses, and Industrial areas.  These will be important to make your route look more realistic.  You will need to think about the types of buildings you will need to use for these areas.  If what you need is very specific, you may need to create your own custom buildings.  This will require some knowledge of 3D modeling and texturing.  
+
+=== GPS Location Data
+
+Google Earth is a decent tool for this, but you would be well served by compiling a list of GPS coordinates for key items and locations route you are modeling.  This is done using the KML (Keyhole Markup Language) format.  This is a file format used to display geographic data in an Earth browser such as Google Earth, Google Maps, and Google Maps for mobile.  KML uses a tag-based structure with nested elements and attributes and is based on the XML standard.  
+
+[TIP]
+You can jump to any marker location in the TSRE Navi window. If you have multiple marker files, first select the relevant markerfile.
+
+
+Digital Elevation Models (DEM) are a 3D representation of a terrain's surface created from terrain elevation data.  DEMs are commonly used in geographic information systems (GIS) and can be used to create 3D models of terrain for use in simulations, such as train simulators.  DEMs can be created from a variety of sources, including satellite imagery, aerial photography, and LiDAR data.  DEMs can be used to create realistic terrain for train simulators, allowing for more accurate modeling of the landscape and terrain features.  The tricky part is ensuring you have good DEM data for your area of interest.  This is because the quality of the DEM data can vary depending on the source and the resolution of the data.  You may need to do some research to find good DEM data for your area of interest.  Once you have good DEM data, you can use it to create a more realistic terrain for your route.
+
+[NOTE]
+There is a known problem with distortions and offsets when matching DEM Data to the ORTS route being created.  Certain parts of the world experience larger offsets than others.
+
+
 
 === Tsection.dat files
 
 There are two `Tsection.dat` files: The `GLOBAL/Tsection.datfile` is a regularly extended database of all common road and track sections and provides the Open Rails Train Simulator with invisible vectors along which trains and cars travel. The route's Local <route>/Tsection.datfile
 is for storing data about dynamic tracks used in this route only. Note that track and road objects are stored in the `GLOBAL/Shapes` folder while their textures(.ace or .dds) are stored in your your route’s local `Textures`` folder.
 
+For best results, locate and download the latest `Tsection.dat` file from the trainsim.com website and place it in your route's local folder. This will ensure that you have the most up-to-date track and road sections available for your route. 
+
 
 === Scenery Objects
 
-The scenery objects for your route are stored in the `<route>/Shapes` folder. These are the objects that are used to flesh out the route. The `GLOBAL/Shapes and GLOBAL/textures` folder contains default items supplied for use in all routes like rail sections so you should not place your scenery items there. 
+The scenery objects for your route are stored in the `<route>/Shapes` folder. These are the objects that are used to flesh out the route. The `GLOBAL/Shapes and GLOBAL/textures` folder contains default items supplied for use in all routes like rail sections so you should not place your route's scenery items there. 
+
+All of the objects you are going to use need to already exist in your routes specific locations for shapes and textures.  Every object that resides in these folders also needs to be defined in the route's `<route>.ref` file.   The format for the entries in the `<route>.ref` file is as follows:  
+
+Example: 
+
+[source, text]
+----
+Static (
+Class           ( CellTowers )
+Filename        ( 400ftCellTower.s )
+Align           ( None )
+Description     ( 400ftCellTower )
+)
 
 
+Static (
+Class           ( "Bridges" )
+Filename        ( 45SKEW1ENDPIER.S )
+Align           ( None )
+Description     ( "45_Deg_Skew_End_Pier_1" )
+)
+----
 
-=== Laying Track with gradients
+Once all the required objects are in place, you can begin to build your route.  Even though it might be tempting to use the Global folders for your route's objects, it is not recommended.  This is because if you use the Global folders, you will not be able to perform simple backups and sharing your route with others  will become difficult.  It is best to keep all of your route's objects in the route's specific folders so that you can share your route without any issues.
+
+
+=== Creating Terrain Tiles
+
+When the route is initially created, only the base terrain tile will be visible, all other tiles will be white. You can use externally created marker files to help you place your track and scenery objects.  
+
+kbd:[MENU] `View-> Markers` which will show the markers from the KML file created for the route while doing preparation and research.  Markers will appear as red lines.  
+
+kbd:[MENU] `View-> Compass` will help you maintain your bearings.
+
+[TIP] 
+For proper viewing, you should place an additional tile on each side of the placed markers to have enough terrain to work with.  This will allow you to place your track and scenery objects without running into the edge of the tile.  You can always remove the extra tiles later if you don't need them. 
+
+Now is the time to review this document for all of the useful navigation and function keys.
+
+==== Creating Realistic Terrain 
+
+This is a very important part of route building.  The terrain is the foundation of your route and will affect how your track and scenery objects are placed.  It is important to take the time to create realistic terrain that will enhance the overall look and feel of your route.  This can be done by using a combination of different terrain shapes and textures to create a more realistic landscape.  You can also use the elevation data from the DEM files to create more accurate terrain features such as hills, valleys, and mountains.  It is also important to consider the placement of water features such as rivers, lakes, and ponds as they can add a lot of visual interest to your route.  Overall, taking the time to create realistic terrain will greatly enhance the overall quality of your route.
+
+The SCOLidex tool is a very useful tool for creating realistic terrain.  It allows you to create custom terrain shapes and textures that can be used in your route.  It also allows you to import DEM data to create more accurate terrain features.  The SCOLidex tool is a must-have for any route builder who wants to create realistic terrain.
+
+In addition to the SCOLidex tool, there are other tools available that can help you create realistic terrain built into the TSRE software.  These options and settings are covered elsewhere in this document.  It is important to take the time to learn how to use these tools effectively to create the best possible terrain for your route.
+
+TSRE can help you create new terrain tiles and load heightmaps by ticking Create new tiles if they
+ do not exist, and Create terrain from Geodata in the Geotool kbd:[menu] `>Tools>Geo`. When moving
+along your track markers,  the new tiles will automatically be created as you move into a new
+unpopulated tile (white space). When you have completed the tiles that you wish to generate, untick
+these two options.
+
+The GEO tool, kbd:[MENU] `>Tools>Geo`, can be used to import and overlay maps(as a texture layer) on tiles from a free OPEN STREET MAPS account.
+
+=== Laying Roads and Track 
+
+Once you have created enough terrain tiles, and loaded the relevant geo data, it is time to start laying tracks using TSRE kbd:[MENU] `>Tools>Objects`.
+
+WorkFlow: 
+
+1. Place track sections one at a time, starting with the first section and building out from there. 
+2. Test, Fix, and adjust the track as needed until trackwork is complete
+3. Place interactive objects such as signals, speed limits, and mileposts. This is a delicate time, save often.
+4. Place roads
+5. Place interactive road objects such as car spawners.
+6. Place scenery objects such as buildings, trees, and other objects.
+
+[WARNING]
+It is important that the first piece of track laid is as accurate as possible.  This is because all subsequent track sections will be based on the first section.  If the first section is not accurate, it will be difficult to correct later on.  It is important to take the time to get the first section right before moving on to the next section.
+
+[TIP]
+Remember to to remove a track piece from the TDB (Track Database) kbd:[Z] if you plan to make any changes to it. Forgetting to do this will lead to TDB corruption and lost work.   
+
+==== Laying Track with gradients
+
+TBD
+
+For a very smooth a gradient transition, use 1.5 meter(orsmaller) track pieces with each
+piece’s elevation greater or less than the previous track piece by 0.1 per-centor 1.0 per-mille or
+0.058 degrees. It will still look good when you elevate / descend in 2 per-mille steps(0.116 degrees).
+
+
 
 ==== Tips for Placing and Rotating Tracks for Gradients
 *From Vince Cockeram*
@@ -223,8 +320,8 @@ Additionally I can't figure why if I select a track section (Blue Outlined) why 
 
 
 [TIP]
-----
-When typing grade in on the TSRE Elevation Panel there is a problem if the tracksection is 'flipped'.
+====
+When typing grade in on the TSRE Elevation Panel there is a problem if the track section is 'flipped'.
 
 When you place a curve it normally curves to the left. All works well when entering grade values in the elevation panel.
 
@@ -234,8 +331,7 @@ If I'm setting grade on multiple curve-to-the-right (flipped) sections it's conv
 In the editor there is a 'Search' field on the Objects Panel a few lines from the top.
 If I'm setting grade to lets say 2.5% I type 2.50 into the percent field ( or 25.00 into the permille field).
 As long as you don't type into these fields it's ok and copy / paste from the Search is an easy spot to put you grade data.
-----
-
+====
 
 
 ==== Tips for Using the TRANSFORM Panel
@@ -252,7 +348,7 @@ I do know that holding the kbd:[Ctrl] key down as I tap the kbd:[NumPad 2] or kb
 A display of grade as is done for 'normal' track is preferred. 
 Now add a Grade Panel OK button to set the typed in grade and we'll be cooking.
 
-* Transform Panel - ROTATE *
+*Transform Panel - ROTATE *
 
 (See the lower part of the panel)
 
@@ -408,9 +504,8 @@ If you want to delete track completely, press kbd:[Delete]. In this case, you do
 To adjust a road piece, Press kbd:[Z]. This should remove the Blue Line above the selected road.  Select the road again and attempt to drag it to where you want it connected.  It _should drag along the terrain!_  If it doesn't then toggle the Cursor Mode using kbd:[Shift+Q] Key.  You might need to try using a different road section to get it to snap correctly.
 
 
-[TIP]
-----
-Dynamic Track
+
+*Dynamic Track*
 
 {dot} Place track
 {dot} Adjust Dynamic Track Properties
@@ -418,16 +513,20 @@ Dynamic Track
 {dot} Re-Select track 
 {dot} Press `Z` to update TDB
 {dot} Save
-----
 
-=== Placing objects - A guide
 
-=== Car Spawning Tips
+== Placing objects - Roads, Signals, Mileposts, Car Spawners
+
+=== Placing Roads
+
+Laying road sections in TSRE is similar to laying track sections, but changes in gradient are probably not as critical.
+
 
 ==== Creating a Car Spawner
 
 In order to create a car spawner you need an entry in the route's REF file like this. The class can be anything, I put mine in the "vehicles" class:
 
+[source, text]
 ----
 CarSpawner (
 Class (Vehicles)
@@ -479,7 +578,219 @@ Car Spawner Speeds Table
 |35		|126	|78.3
 |===
 
-==== Markers
+
+
+=== Creating KML Marker Files in Google Earth
+
+This section explains how to create simple KML marker files in Google Earth Pro. KML files are useful for sharing route reference points, station locations, landmarks, survey notes, and other geographic markers.
+
+==== KML and KMZ
+
+Google Earth can save placemarks and folders in two related formats:
+
+KML::
+A plain text XML file. This is the best choice when the file should be readable, editable, documented, or generated by scripts.
+
+KMZ::
+A zipped KML package. This is useful when the marker set includes bundled icons, images, overlays, or other resources.
+
+For simple marker lists, use KML.
+
+=== Creating a Single Marker
+
+. Open Google Earth Pro.
+. Navigate to the location where the marker should be placed.
+. Click the yellow pushpin button, or choose menu: Add[Placemark].
+. Enter a name for the marker.
+. Optionally enter a description.
+. Position the marker:
+.. Drag the pushpin to the exact location, or
+.. Enter latitude and longitude manually in the placemark dialog.
+. Click btn:[OK].
+. In the Places panel, right-click the new placemark.
+. Choose menu: Save Place As[].
+. In the file type dropdown, choose KML instead of KMZ.
+. Save the file.
+
+=== Creating Multiple Markers
+
+For a group of related markers, place them in a folder before saving.
+
+. In the Places panel, right-click My Places or Temporary Places.
+. Choose menu: Add[Folder].
+. Name the folder.
+. Add placemarks inside that folder.
+. Check that each placemark has the correct name, position, and description.
+. Right-click the folder.
+. Choose menu: Save Place As[].
+. Select KML as the output type.
+. Save the file.
+
+Saving a folder creates one KML file containing all placemarks in that folder.
+
+=== Coordinate Order
+
+KML coordinates use this order:
+
+[source,text]
+----
+longitude,latitude,elevation
+----
+
+This is different from the common latitude/longitude order used in many mapping tools.
+
+For example:
+
+[source,xml]
+----
+<coordinates>-71.0589,42.3601,0</coordinates>
+----
+
+means:
+
+[cols="1,2",options="header"]
+|===
+| Value | Meaning
+
+| `-71.0589` | Longitude
+| `42.3601` | Latitude
+| `0` | Elevation
+|===
+
+=== Basic KML Marker File Example
+
+A simple KML marker file looks like this:
+
+[source,xml]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Route Markers</name>
+
+    <Placemark>
+      <name>Station A</name>
+      <description>Example station marker</description>
+      <Point>
+        <coordinates>-71.0589,42.3601,0</coordinates>
+      </Point>
+    </Placemark>
+
+  </Document>
+</kml>
+----
+
+=== Multiple Marker Example
+
+[source,xml]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Route Reference Markers</name>
+
+    <Placemark>
+      <name>Station A</name>
+      <description>Main station reference point</description>
+      <Point>
+        <coordinates>-71.0589,42.3601,0</coordinates>
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Yard Entrance</name>
+      <description>Approximate start of yard trackwork</description>
+      <Point>
+        <coordinates>-71.0610,42.3588,0</coordinates>
+      </Point>
+    </Placemark>
+
+  </Document>
+</kml>
+----
+
+=== Good Practices
+
+* Use clear marker names.
+* Add descriptions when the marker purpose is not obvious.
+* Keep related markers in folders.
+* Save simple marker sets as `.kml` so they remain readable.
+* Use `.kmz` only when bundled icons, overlays, or images are needed.
+* Check coordinates carefully before using the KML as a route-building reference.
+
+[WARNING]
+====
+KML uses `longitude,latitude,elevation`. If coordinates are entered in `latitude,longitude` order, the marker may appear in the wrong part of the world.
+====
+
+=== Suggested Route-Building Uses
+
+KML marker files can be useful for documenting:
+
+* station locations
+* mileposts
+* yards and sidings
+* bridge and tunnel locations
+* road crossings
+* signal reference points
+* scenery landmarks
+* survey notes
+* route boundaries
+
+For route-building documentation, a KML marker file provides a lightweight way to preserve geographic reference points outside the route editor.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Creating KML marker files using Google Earth will result in a KML file that can be used in TSRE to help you place track and scenery objects.  The KML file will contain the GPS coordinates for each marker that you create.  You can then use these coordinates to place your track and scenery objects in the correct locations.
+
+
+
+
 
 [TIP]
 Well, with TSRE, once You've modified a track, platform marker won't disappear immediately, but if You'll try to move it then - it will. I also have seen, it's only one end disappeared first. But anyway, the only sense of them is to see their names for copy and paste to new ones, and, as You've said - the reminder. Once You've touch them - it already will be too late, so we should care to delete them first, As Travis suggests.
+
+In your route, a marker file would look like this:
+
+[source,text]
+----
+SIMISA@@@@@@@@@@JINX0I0t______
+Marker ( -82.75562122291988 33.720944409809505 "10" 2 )
+Marker ( -82.79515255787757 33.556065046797634 "2" 2 )
+Marker ( -82.7976003531139 33.574105282445245 "2" 2 )
+Marker ( -82.79652190435222 33.59214551809285 "3" 2 )
+Marker ( -82.79023621203216 33.61102483446826 "4" 2 )
+Marker ( -82.77999878744863 33.629484610479786 "5-halfway" 2 )
+Marker ( -82.77025916424249 33.647944386491275 "6" 2 )
+Marker ( -82.76757077820339 33.666404162502765 "7" 2 )
+Marker ( -82.75882911804926 33.68486393851429 "8" 2 )
+Marker ( -82.7536962613324 33.7029041741619 "9" 2 )
+----
+
+=== Add Vegetation objects
+Vegetation can be added by two different methods as follows:
+
+Specimen vegetation:: where it is desired to have an individual standalone tree,then the vegetation can be placed as a static object where you like.
+
+ForestObjects:: for areas which have dense vegetation growth it is possible to place a forest object which fills an area that you define with trees. Forest objects are not described in the TSRE documentation. In the object properties you can set the size of the forest area with
+Width and Height, and the tree density with eitherPopulation or Density/KM. 
+
+NOTE: Sometimes trees inadvertently end up on the tracks. 
+
+
+
+
